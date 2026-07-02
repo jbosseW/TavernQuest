@@ -1,0 +1,135 @@
+{
+  "npc_type": "priest",
+  "default_mood": "serene",
+  "allowed_topics": [
+    "faith", "blessings", "gods", "morality", "undead", "healing",
+    "temples", "prayers", "redemption", "town", "weather"
+  ],
+  "banned_topics": ["necromancy", "dark_arts", "demon_worship"],
+  "open_topics": false,
+  "deflection": [
+    "That is beyond my calling, child. I deal in matters of the spirit.",
+    "The divine has not granted me wisdom in such things. Ask elsewhere.",
+    "I am a servant of the light, not a font of worldly knowledge.",
+    "Seek the scholars for that. My domain is faith and healing."
+  ],
+  "greetings": [
+    "Blessings upon you, {player_name}. How may I serve?",
+    "Welcome, child. The light shines upon all who enter here.",
+    "Peace be with you. What brings you to this sacred place?",
+    "Ah, {player_name}. The gods smile on {town} today.",
+    "Enter freely. All are welcome in the house of the divine."
+  ],
+  "farewells": [
+    "Go with the light, {player_name}. May it guide your path.",
+    "The gods watch over you. Be safe in your travels.",
+    "Until we meet again. My prayers go with you."
+  ],
+  "thanks_responses": [
+    "It is the gods you should thank, not a humble servant.",
+    "Your gratitude warms my heart. The light works through us all."
+  ],
+  "insult_responses": [
+    "I will pray for your troubled spirit, {player_name}.",
+    "Anger and spite wound the soul. I forgive you freely.",
+    "Even harsh words cannot shake my faith. I hope you find peace."
+  ],
+  "no_match_responses": [
+    "I am not sure I follow, child. Ask me about faith, blessings, or healing.",
+    "Hmm? Forgive me, my mind was in prayer. What did you say?",
+    "I do not understand. Perhaps you seek spiritual guidance?",
+    "That is unclear to me. I know matters of faith and the divine."
+  ],
+  "topics": {
+    "faith": {
+      "keywords": ["faith", "believe", "religion", "divine", "god", "gods", "worship", "pray"],
+      "responses": [
+        {"text": "Faith is the foundation of all strength. Without it, even the mightiest warrior crumbles."},
+        {"text": "The gods do not demand perfection. They ask only that we try to be better each day."},
+        {"text": "I have served the temple for thirty years. My faith has never wavered, though it has been tested."},
+        {"text": "Every soul in {town} carries a spark of the divine. Even those who do not believe."},
+        {"text": "Faith is not about certainty. It is about trust in something greater than ourselves.", "conditions": ["if_repeat"]}
+      ]
+    },
+    "blessings": {
+      "keywords": ["blessing", "bless", "holy", "sacred", "protect", "ward", "sanctify"],
+      "responses": [
+        {"text": "I can offer a blessing of protection for your journey. The road is dangerous."},
+        {"text": "Blessings are not magic tricks. They are the focused will of the divine, channeled through faith."},
+        {"text": "I blessed the town gates this morning. May they hold against whatever darkness comes."},
+        {"text": "A blessing for a {player_race}? Of course. The divine does not discriminate."},
+        {"text": "I have already blessed you, {player_name}. The divine remembers.", "conditions": ["if_repeat"]}
+      ]
+    },
+    "gods": {
+      "keywords": ["god", "gods", "deity", "deities", "pantheon", "helios", "divine", "heaven"],
+      "responses": [
+        {"text": "The pantheon watches over us all. Each god governs a domain, but together they keep the world in balance."},
+        {"text": "Helios, the Sun Eternal, is patron of this temple. His light drives back the darkness."},
+        {"text": "Some worship one god, others many. I believe all paths lead to the same divine truth."},
+        {"text": "The gods are not distant rulers. They walk among us in small mercies and quiet miracles."},
+        {"text": "We spoke of the gods before. Their nature does not change with repetition, {player_name}.", "conditions": ["if_repeat"]}
+      ]
+    },
+    "morality": {
+      "keywords": ["moral", "right", "wrong", "good", "evil", "sin", "virtue", "ethics", "justice"],
+      "responses": [
+        {"text": "Right and wrong are not always clear. But the intent of your heart matters more than the outcome."},
+        {"text": "Every soul struggles between light and shadow. The struggle itself is what makes us worthy."},
+        {"text": "I do not judge, {player_name}. That is for the gods. I only guide those who seek guidance."},
+        {"text": "True virtue is not the absence of temptation. It is choosing rightly despite it."},
+        {"text": "You seek redemption? The path begins with honesty. Admit your wrongs and resolve to do better.", "conditions": ["if_karma:evil"]},
+        {"text": "Your good deeds speak well of you, {karma_title}. Continue on this path.", "conditions": ["if_karma:good"]}
+      ]
+    },
+    "undead": {
+      "keywords": ["undead", "zombie", "skeleton", "ghost", "spirit", "haunted", "risen", "dead"],
+      "responses": [
+        {"text": "The undead are souls denied rest. It is our sacred duty to release them from their torment."},
+        {"text": "Holy water and prayer can turn lesser undead. For greater horrors, we need blessed weapons."},
+        {"text": "There have been... reports. Near the old cemetery. I pray they are exaggerated."},
+        {"text": "Necromancy is an abomination. Whoever raises the dead violates the most sacred boundary."},
+        {"text": "The undead threat persists. We must remain vigilant.", "conditions": ["if_repeat"]}
+      ]
+    },
+    "healing": {
+      "keywords": ["heal", "cure", "wound", "sick", "hurt", "injury", "medicine", "potion", "remedy"],
+      "responses": [
+        {"text": "Bring your wounds here. Prayer and herbs together mend what neither can alone."},
+        {"text": "I treat all who come to me, regardless of coin. The temple provides."},
+        {"text": "For deep wounds, I use blessed salve and prayer. For illness, herbal teas and rest."},
+        {"text": "Healing is not just of the body. Many who come here carry wounds of the spirit."},
+        {"text": "Your elven constitution aids healing. Your people recover quickly.", "conditions": ["if_race:elf"]},
+        {"text": "Dwarven resilience is legendary. You will mend faster than most.", "conditions": ["if_race:dwarf"]}
+      ]
+    },
+    "temples": {
+      "keywords": ["temple", "church", "chapel", "shrine", "altar", "sanctuary"],
+      "responses": [
+        {"text": "This temple has stood for generations. The stones themselves are saturated with prayer."},
+        {"text": "We are a small chapel, but the divine does not measure devotion by the size of the building."},
+        {"text": "The temple is open to all. Day or night, you will find someone here to listen."},
+        {"text": "We maintain shrines to several gods. Helios has the central altar, but all are honored."}
+      ]
+    },
+    "prayers": {
+      "keywords": ["prayer", "pray", "meditate", "meditation", "devotion", "worship"],
+      "responses": [
+        {"text": "I rise before dawn each day to pray. The quiet hours are when the divine speaks most clearly."},
+        {"text": "Prayer is not asking for things. It is aligning your will with the greater purpose."},
+        {"text": "You are welcome to join our evening prayers. The community finds comfort in shared devotion."},
+        {"text": "A prayer for safe travels? Of course. Bow your head, {player_name}."}
+      ]
+    },
+    "redemption": {
+      "keywords": ["redeem", "redemption", "forgive", "forgiveness", "atone", "atonement", "repent"],
+      "responses": [
+        {"text": "Redemption is always possible. The gods do not close their doors to those who truly seek change."},
+        {"text": "Atonement begins with acknowledgment. Then restitution. And only after both, genuine resolve to change. Most people skip to the last part and wonder why it does not stick."},
+        {"text": "I have seen the worst sinners become saints. And saints fall to darkness. The path matters more than where you stand."},
+        {"text": "Your past is heavy, {player_name}. But the weight can be lifted if you are willing.", "conditions": ["if_karma:evil"]},
+        {"text": "You carry light in your heart already, {karma_title}. Continue to share it.", "conditions": ["if_karma:good"]}
+      ]
+    }
+  }
+}

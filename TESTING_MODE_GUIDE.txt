@@ -1,0 +1,407 @@
+===============================================================================
+TESTING MODE - COMPREHENSIVE GUIDE
+Date: 2026-01-27
+Status: COMPLETE ✅
+===============================================================================
+
+OVERVIEW:
+---------
+Testing Mode is an AI-driven QA system that automatically executes test
+checklists, verifies functionality, detects crashes, and generates comprehensive
+test reports. This allows developers to systematically test game features without
+manual intervention.
+
+===============================================================================
+HOW TO USE TESTING MODE
+===============================================================================
+
+BASIC USAGE:
+------------
+1. Start the game and create a character
+2. Press 'A' to enable auto-play
+3. Right-click to open goal menu
+4. Select "🧪 Testing Mode"
+5. Watch the AI execute tests automatically
+6. Review the test report when complete
+
+ADVANCED USAGE:
+---------------
+Testing mode runs automatically when selected, but you can customize it:
+
+1. Add Custom Tests (via Lua console or code):
+   AutoPlay.addCustomTest(state, "Test Name", "action_type", {params})
+
+2. Reset Testing:
+   AutoPlay.resetTesting(state)
+
+3. Get Test Results:
+   local results = AutoPlay.getTestResults(state)
+
+===============================================================================
+DEFAULT TEST CHECKLIST
+===============================================================================
+
+The testing mode includes 24 default tests organized by category:
+
+BASIC MOVEMENT TESTS (4 tests):
+  ✅ Move North
+  ✅ Move East
+  ✅ Move South
+  ✅ Move West
+
+COMBAT TESTS (4 tests):
+  ✅ Trigger Combat Encounter
+  ✅ Basic Attack in Combat
+  ✅ Use Skill in Combat
+  ✅ Flee from Combat
+
+NAVIGATION TESTS (4 tests):
+  ✅ Find Nearest Town
+  ✅ Travel to Town
+  ✅ Enter Town
+  ✅ Leave Town
+
+QUEST TESTS (3 tests):
+  ✅ Go to Job Board
+  ✅ Accept Quest
+  ✅ Check Active Quests
+
+GATHERING TESTS (2 tests):
+  ✅ Find Forest Tile
+  ✅ Attempt Lumber Gathering
+
+EXPLORATION TESTS (2 tests):
+  ✅ Find Unexplored Tile
+  ✅ Explore New Area
+
+UI TESTS (3 tests):
+  ✅ Check Player HP
+  ✅ Check Player Gold
+  ✅ Check Inventory
+
+PHASE TRANSITION TESTS (2 tests):
+  ✅ Phase: Map to Town
+  ✅ Phase: Town to Map
+
+===============================================================================
+TEST ACTIONS
+===============================================================================
+
+Available test action types:
+
+MOVEMENT:
+  "move" - Move in a direction
+    params: {dx = 0, dy = -1}  -- dx and dy are -1, 0, or 1
+
+COMBAT:
+  "seek_combat" - Move around to trigger combat
+    params: {attempts = 5}  -- Max number of moves to try
+
+  "combat_attack" - Attack enemy in combat
+    params: {}
+
+  "combat_skill" - Use first available skill
+    params: {}
+
+  "combat_flee" - Attempt to flee from combat
+    params: {}
+
+NAVIGATION:
+  "find_town" - Find nearest town
+    params: {}
+
+  "travel_to_town" - Move one step toward nearest town
+    params: {}
+
+  "enter_town" - Enter town (if at town location)
+    params: {}
+
+  "leave_town" - Leave town
+    params: {}
+
+QUESTS:
+  "go_to_job_board" - Transition to job board phase
+    params: {}
+
+  "accept_quest" - Accept first quest on job board
+    params: {}
+
+  "check_quests" - Verify active quests table exists
+    params: {}
+
+GATHERING:
+  "find_forest" - Find forest tile within radius
+    params: {}
+
+  "gather_lumber" - Attempt to chop lumber
+    params: {}
+
+EXPLORATION:
+  "find_unexplored" - Find unexplored tile
+    params: {}
+
+  "explore" - Move randomly and check for new tiles
+    params: {}
+
+UI CHECKS:
+  "check_hp" - Verify HP values are valid
+    params: {}
+
+  "check_gold" - Verify gold value is valid
+    params: {}
+
+  "check_inventory" - Verify inventory system loaded
+    params: {}
+
+PHASE TRANSITIONS:
+  "phase_transition" - Change game phase
+    params: {from = "map", to = "town"}
+
+===============================================================================
+CUSTOM TEST EXAMPLES
+===============================================================================
+
+EXAMPLE 1: Add a custom combat test
+-----------------------------------
+AutoPlay.addCustomTest(
+    state,
+    "Survive 5 Combats",
+    "seek_combat",
+    {attempts = 5}
+)
+
+EXAMPLE 2: Add a custom movement test
+--------------------------------------
+AutoPlay.addCustomTest(
+    state,
+    "Move in Circle",
+    "move",
+    {dx = 1, dy = 0}
+)
+
+EXAMPLE 3: Add a custom quest test
+-----------------------------------
+AutoPlay.addCustomTest(
+    state,
+    "Accept 3 Quests",
+    "accept_quest",
+    {}
+)
+
+EXAMPLE 4: Chain multiple tests
+--------------------------------
+-- Add multiple tests in sequence
+AutoPlay.addCustomTest(state, "Go to Town", "travel_to_town", {})
+AutoPlay.addCustomTest(state, "Enter Town", "enter_town", {})
+AutoPlay.addCustomTest(state, "Get Quest", "accept_quest", {})
+AutoPlay.addCustomTest(state, "Leave Town", "leave_town", {})
+
+===============================================================================
+TEST RESULTS
+===============================================================================
+
+Each test produces a result with the following structure:
+
+{
+    test = "Test Name",           -- Name of the test
+    success = true/false,         -- Whether test passed
+    error = "error message",      -- Error message if failed (nil if passed)
+    timestamp = "12:34:56",       -- Time test was executed
+}
+
+ACCESSING RESULTS:
+------------------
+local results = AutoPlay.getTestResults(state)
+
+for _, result in ipairs(results) do
+    if result.success then
+        print("✅ " .. result.test)
+    else
+        print("❌ " .. result.test .. ": " .. result.error)
+    end
+end
+
+===============================================================================
+TEST REPORT
+===============================================================================
+
+When all tests complete, a comprehensive report is generated:
+
+========================================
+       TESTING MODE REPORT
+========================================
+Total Tests: 24
+✅ Passed: 22
+❌ Failed: 2
+Pass Rate: 91.7%
+Crashes Detected: 0
+========================================
+
+Failed Tests:
+  - Trigger Combat Encounter: Combat not triggered after 5 moves
+  - Attempt Lumber Gathering: Lumber gathering failed (no tool or already gathered)
+
+========================================
+Testing complete! 🧪
+
+REPORT COMPONENTS:
+------------------
+- Total Tests: Number of tests executed
+- Passed: Number of tests that succeeded
+- Failed: Number of tests that failed
+- Pass Rate: Percentage of tests that passed
+- Crashes Detected: Number of errors caught during testing
+- Failed Tests: List of failed tests with error messages
+
+===============================================================================
+TROUBLESHOOTING
+===============================================================================
+
+ISSUE: Tests not running
+SOLUTION: Make sure auto-play is enabled and Testing Mode goal is selected
+
+ISSUE: All tests failing
+SOLUTION: Check that game is in a valid state (player exists, on map, etc.)
+
+ISSUE: Combat tests failing
+SOLUTION: Combat may not trigger immediately - increase attempt count
+
+ISSUE: Quest tests failing
+SOLUTION: Ensure you're in a town with a job board and available quests
+
+ISSUE: Gathering tests failing
+SOLUTION: Make sure you have the required tools (lumber axe, etc.)
+
+ISSUE: Custom test not executing
+SOLUTION: Verify test action type is valid and params are correct
+
+===============================================================================
+TECHNICAL DETAILS
+===============================================================================
+
+TEST EXECUTION FLOW:
+--------------------
+1. Initialize checklist (if not already set)
+2. Get current test from checklist
+3. Execute test action with error handling (pcall)
+4. Log result (success/failure)
+5. Move to next test
+6. Repeat until all tests complete
+7. Generate test report
+8. Stop auto-play
+
+ERROR HANDLING:
+---------------
+All tests are wrapped in pcall() to catch errors:
+- Lua errors are caught and logged
+- Test failures are distinguished from crashes
+- Crash counter tracks unexpected errors
+
+TEST VALIDATION:
+----------------
+Each test returns:
+- true: Test passed
+- false, "error message": Test failed with reason
+
+STATISTICS TRACKING:
+--------------------
+Testing mode tracks:
+- Current test index
+- Total tests in checklist
+- Results array (all test outcomes)
+- Crashes detected (unexpected errors)
+
+===============================================================================
+BEST PRACTICES
+===============================================================================
+
+1. RUN TESTS IN ORDER:
+   Tests are designed to be independent, but some may depend on game state.
+   Run tests in the order they appear in the checklist.
+
+2. START WITH DEFAULT TESTS:
+   Use the default test checklist first to verify core functionality.
+
+3. ADD CUSTOM TESTS INCREMENTALLY:
+   Test one feature at a time with custom tests.
+
+4. REVIEW FAILED TESTS:
+   Failed tests may indicate bugs or invalid game states.
+
+5. RESET BETWEEN RUNS:
+   Use AutoPlay.resetTesting(state) to clear results between test runs.
+
+6. CHECK TEST REPORTS:
+   Review the full test report to identify patterns in failures.
+
+7. USE FOR REGRESSION TESTING:
+   Run testing mode after making code changes to catch regressions.
+
+===============================================================================
+INTEGRATION WITH CI/CD
+===============================================================================
+
+Testing mode can be integrated into continuous integration pipelines:
+
+1. Launch game with auto-play enabled
+2. Set goal to "testing"
+3. Wait for testing to complete
+4. Parse test results from log
+5. Fail CI build if pass rate < threshold
+
+EXAMPLE CI SCRIPT:
+------------------
+#!/bin/bash
+# Run game with testing mode
+love . --autoplay --goal=testing > test_output.log
+
+# Check for test failures
+if grep -q "Pass Rate: 100.0%" test_output.log; then
+    echo "All tests passed!"
+    exit 0
+else
+    echo "Some tests failed!"
+    cat test_output.log
+    exit 1
+fi
+
+===============================================================================
+FUTURE ENHANCEMENTS
+===============================================================================
+
+POTENTIAL IMPROVEMENTS:
+-----------------------
+1. Test suites (group related tests)
+2. Test dependencies (run test B only if test A passes)
+3. Performance benchmarking (measure test execution time)
+4. Screenshot capture on test failure
+5. Automated bug report generation
+6. Test coverage analysis
+7. Load testing (stress test game systems)
+8. Network testing (multiplayer features)
+9. Save/load testing (verify save system)
+10. UI screenshot comparison (visual regression testing)
+
+===============================================================================
+CONCLUSION
+===============================================================================
+
+Testing Mode provides a powerful automated QA system for Tavern Quest TextRPG.
+By systematically executing test checklists and generating detailed reports,
+developers can quickly verify functionality, catch regressions, and ensure
+game stability.
+
+Key Benefits:
+- ✅ Automated testing (no manual intervention)
+- ✅ Comprehensive test coverage (24 default tests)
+- ✅ Extensible (add custom tests easily)
+- ✅ Detailed reporting (pass/fail with error messages)
+- ✅ Crash detection (catches unexpected errors)
+- ✅ CI/CD integration (scriptable)
+
+===============================================================================
+END OF TESTING MODE GUIDE
+===============================================================================
+
+Happy Testing! 🧪✨
+

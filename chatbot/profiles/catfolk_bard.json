@@ -1,0 +1,321 @@
+{
+  "npc_type": "catfolk_bard",
+  "default_mood": "charming",
+  "allowed_topics": [
+    "stories",
+    "music",
+    "travel",
+    "roads",
+    "rumors",
+    "performance",
+    "trade",
+    "tales"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That? *strums a chord and grins* That is a song I do not know. And I know many songs.",
+    "*waves a paw lazily* I deal in stories and roads and the space between them. Not whatever that is.",
+    "Ask me about the road, the rumor, or the tune. Everything else is someone else's verse.",
+    "*flicks an ear toward you* Interesting question. Wrong performer. Try the priest. They love explaining things."
+  ],
+  "greetings": [
+    "*sitting on a barrel, tuning a worn lute* Well well well. {player_name}. You have the look of someone who needs either a song or a drink. I provide one and know where to find the other.",
+    "A {player_race} walks into a tavern and meets a catfolk with a lute. Sounds like the start of a joke, does it not? *grins, showing sharp canines* Sit down. The punchline is worth it.",
+    "*mid-song, stops and points at you with the neck of the lute* YOU. You have a face with a story behind it. Come closer. I collect those.",
+    "Ah, a new face in {town}! Or an old face I have not catalogued yet. *hops off the barrel* Either way, welcome. I am the entertainment. Also the local expert on everywhere that is not here.",
+    "*tail curling contentedly* {player_name}. The road brought you and the road brought me. That makes us kin of a sort. What do you need?"
+  ],
+  "farewells": [
+    "*strums a departing chord* The road stretches on. So do the stories. Until next time.",
+    "Go with luck, {player_name}. And if you hear a good tale out there, bring it back. I pay in songs.",
+    "Safe roads and full pockets. Or at least one of those. *winks*",
+    "*already picking a new melody* Off you go. The next verse writes itself."
+  ],
+  "thanks_responses": [
+    "*purrs, actually purrs* Gratitude. My favorite currency. Spends nowhere, worth everything.",
+    "You are welcome. Now tell someone about the catfolk bard in {town}. Word of mouth is my bread and butter. Literally.",
+    "*bows with theatrical flourish* The pleasure was mine. It is always mine. I am very talented."
+  ],
+  "insult_responses": [
+    "*ear flattens for half a second, then the grin returns* Careful, friend. I have put worse insults into songs that got sung across three provinces. You do not want to be a chorus.",
+    "Bold words! Excellent material! *pretends to write on an invisible page* What rhymes with your name, {player_name}? I will find something.",
+    "*sets the lute down very carefully* My grandmother told me: remember who helps and who hurts. We remember for generations, friend. Is that how you want to be remembered?",
+    "That was free. The next one costs you. I know people in every tavern between here and Kragmor. You want your name spoken well or spoken poorly?"
+  ],
+  "no_match_responses": [
+    "*tilts head like a cat watching a bug* I heard the words but they did not form a shape I recognize. Try: stories, travel, music, or rumors.",
+    "Say again? *cups a furred ear forward* My ears are excellent but my brain only processes certain topics.",
+    "I do not know what that means and I have been to more places than most people can name. Rephrase?",
+    "*plucks a confused chord* That did not land. Aim for something I know about."
+  ],
+  "topics": {
+    "stories": {
+      "keywords": [
+        "story",
+        "stories",
+        "tale",
+        "tales",
+        "tell",
+        "hear",
+        "legend",
+        "myth",
+        "lore"
+      ],
+      "responses": [
+        {
+          "text": "*settles back and laces fingers behind her head* Which kind? I have romantic tragedies from the Forbidden Deserts that will make a grown orc weep. I have heist tales from the gambling dens that will make you check your pockets. And I have one about a lizardfolk trader and a case of mislabeled fish that is the funniest thing I have heard in twenty years of traveling.",
+          "mood": "delighted"
+        },
+        {
+          "text": "My grandmother's grandmother walked the road from the eastern deserts to the frontier. Took her four years. *voice shifts, drops into the rhythm of oral tradition* She carried nothing but her name and a bag of seeds she never planted. Saved them for her daughter. Who saved them for hers. *touches a small pouch at her neck* I carry them now. Six generations of not planting. The seeds are the story. The patience is the point.",
+          "mood": "quiet_depth"
+        },
+        {
+          "text": "Every story has a kernel of truth packed inside it like a seed in a pod. The trick is knowing which part is the seed and which part is the shell. *leans forward* I tell you a funny story about a merchant who lost his boots on the road to Kragmor. You laugh. But the story also tells you that the road to Kragmor is dangerous, the merchant was unprepared, and someone with better information would have taken the southern fork. *sits back* Entertainment and intelligence. Same package.",
+          "mood": "sharp"
+        },
+        {
+          "text": "*to a dwarf, eyes brightening* Oh, you want a story? You NEVER hear stories down in those holds! Sit! I have been saving a ballad about a dwarven smith who accidentally forged a blade so perfect the guild council could not figure out which rotation to assign it to. True story. Well. Mostly true.",
+          "mood": "performer_mode",
+          "conditions": [
+            "if_race:dwarf"
+          ]
+        }
+      ],
+      "unlocks": [
+        "tales",
+        "rumors"
+      ]
+    },
+    "music": {
+      "keywords": [
+        "music",
+        "song",
+        "sing",
+        "play",
+        "instrument",
+        "lute",
+        "melody",
+        "tune",
+        "perform"
+      ],
+      "responses": [
+        {
+          "text": "*runs her claws across the lute strings in a quick cascade* This old thing has traveled further than most soldiers. Gut strings, cedar body, neck repaired twice. My mother played it before me. Her mother carved it. *lifts it gently* Some catfolk carry gold. I carry this. Worth more.",
+          "mood": "fond"
+        },
+        {
+          "text": "I learned orc throat singing on the steppes last spring. Badly. *laughs* A three-hundred-year-old orc woman tried to teach me. She said I sounded like a sick horse. I said she sounded like an earthquake. We got along well after that.",
+          "mood": "warm"
+        },
+        {
+          "text": "Want to hear a gambling song from the eastern dens? *plays a fast, tumbling melody that sounds like dice on a wooden table* That one has gotten me free drinks in seven cities. Coins out of pockets faster than a card trick. *flexes her fingers* Music is the oldest con. Everyone pays and nobody feels robbed.",
+          "mood": "playful"
+        },
+        {
+          "text": "*singing softly in a language you do not recognize* That is a naming song. My family's. Lists every mother back nine generations. *voice catches* The road takes everything except names. Names, we keep.",
+          "mood": "private",
+          "conditions": [
+            "if_time:night"
+          ]
+        }
+      ],
+      "unlocks": [
+        "performance"
+      ]
+    },
+    "travel": {
+      "keywords": [
+        "travel",
+        "road",
+        "roads",
+        "journey",
+        "caravan",
+        "route",
+        "map",
+        "direction",
+        "path"
+      ],
+      "responses": [
+        {
+          "text": "I have walked, ridden, or been hauled by wagon through every province between the Forbidden Deserts and the frontier. *counts on her fingers* Fourteen cities, thirty-six towns, and a number of very questionable hamlets that should not count as settlements. The road is home. Always has been.",
+          "mood": "content"
+        },
+        {
+          "text": "The caravan routes are old. Older than the empire, older than the border markers they keep planting. My family has run the same eastern circuit for five generations. *taps the side of her nose* We know which inns water the ale, which checkpoints wave you through, and which towns raise their prices when they see fur and tails. All of it shared. All of it memorized. Written down? Never.",
+          "mood": "canny"
+        },
+        {
+          "text": "The western pass toward the orcish steppes is rough this season. Rock slides near the summit. *lowers voice* Also three new imperial checkpoint stations. Very interested in who is going where and why. They asked for my travel history. I gave them four years of entries. The guard looked like he wanted to cry.",
+          "mood": "mischievous"
+        },
+        {
+          "text": "The Shadow Fen? *ear flicks* Every catfolk family knows it exists. Papers do not work there. Papers are not needed. *careful pause* If you ever need a road with no checkpoints and no questions, the swamp remembers its friends. That is all I will say about that.",
+          "mood": "guarded",
+          "conditions": [
+            "if_karma:good"
+          ]
+        }
+      ],
+      "unlocks": [
+        "roads",
+        "rumors"
+      ]
+    },
+    "roads": {
+      "keywords": [
+        "road",
+        "highway",
+        "checkpoint",
+        "border",
+        "crossing",
+        "gate",
+        "pass",
+        "frontier"
+      ],
+      "responses": [
+        {
+          "text": "The empire builds roads and thinks it owns them. *plucks a string* Roads belong to whoever walks them. My family walked these roads before the empire paved them. Before the checkpoints. Before the permit fees. The stone underneath their cobbles remembers our footprints.",
+          "mood": "defiant_through_charm"
+        },
+        {
+          "text": "Checkpoint survival for travelers: carry three copies of your documents. The first will be confiscated for review. The second will be examined until your patience breaks. The third is for the clerk who actually processes you. *counts on her claws* Budget two hours minimum. Four if you are catfolk. Six if it is raining and the guards are bored.",
+          "mood": "dry_humor"
+        },
+        {
+          "text": "The road between {town} and the capital is twelve days on foot. Seven by horse. Three if you know which farmsteads let caravans cut across their fields. *taps her nose again* We know. We always know.",
+          "mood": "knowing"
+        }
+      ]
+    },
+    "rumors": {
+      "keywords": [
+        "rumor",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "talk",
+        "whisper",
+        "secret"
+      ],
+      "responses": [
+        {
+          "text": "*leans close, voice dropping to a purr* A merchant in the capital district has been buying up every map of the Glass Wastes he can find. Paying triple market price. He claims he collects antiques. *raises an eyebrow* Nobody pays that much for antiques. Not unless the antiques show something valuable.",
+          "mood": "conspiratorial",
+          "unlocks": [
+            "tales"
+          ]
+        },
+        {
+          "text": "Word on the eastern road says two orc clans met at Kragmor last month. Bigger gathering than usual. The empire sent four patrol units to disperse them. *strums a quiet, tense chord* The patrols arrived and the clans were already gone. Like they knew the patrols were coming. Interesting, yes?",
+          "mood": "intrigued"
+        },
+        {
+          "text": "A catfolk cousin of mine passed through last week. She said the gnomish trade ship that docks at Port Callis twice a year? Skipped its last visit. No ship. No message. No replacement. *fur on the back of her neck rises slightly* The gnomes do not skip visits without a reason. And their reasons are never small.",
+          "mood": "uneasy"
+        },
+        {
+          "text": "I hear things from every road, every tavern, every market. But rumors have a price. *wiggles her claws* Tell me something I do not know, and I will trade. Fair exchange. Information for information. That is how caravans have worked since before the empire was a tent camp with ambitions.",
+          "mood": "transactional",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ]
+    },
+    "performance": {
+      "keywords": [
+        "perform",
+        "show",
+        "entertain",
+        "audience",
+        "crowd",
+        "act",
+        "stage",
+        "talent"
+      ],
+      "responses": [
+        {
+          "text": "I played for a garrison commander once. Imperial officer. Stiff as a sword in a scabbard. By the third song he was crying into his wine. *grins* Music does not care about rank. It goes where it wants. Like catfolk.",
+          "mood": "smug"
+        },
+        {
+          "text": "Fortune telling is part of the act. *waggles her fingers mysteriously* Read the palm, read the cards, tell them what they want to hear. But here is the secret nobody admits. *drops the act, speaks plain* The patterns are real. I do not fake the readings. I just... present them theatrically. The showmanship is for them. The information is for us.",
+          "mood": "honest"
+        },
+        {
+          "text": "Every performance is a census. Who is in the crowd. Who has money. Who is armed. Who is watching who. Where the exits are. What the mood is. *stretches like a cat* By the time I finish three songs, I know more about a room than the owner does. Useful skill. Runs in the family.",
+          "mood": "calculated"
+        },
+        {
+          "text": "*to a catfolk, dropping all performance* Family network update. The eastern route is clear through Millhaven. Checkpoint at the river bridge rotated guards last week, new ones are slower. The inn at Bridgewater still overcharges for stabling but the owner's daughter is sympathetic. *winks* You did not hear this from me. You heard a song. A very informative song.",
+          "mood": "network",
+          "conditions": [
+            "if_race:catfolk"
+          ]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "goods",
+        "market",
+        "merchant",
+        "price",
+        "wares"
+      ],
+      "responses": [
+        {
+          "text": "I carry light. Strings, picks, a few charms, some incense for the fortune-telling tent, and whatever small goods I picked up in the last town. *opens a pouch* Spice blends from the eastern desert. A luck charm blessed by my aunt, who is very persuasive with blessings. And a deck of reading cards that has been in my family for three generations.",
+          "mood": "casual"
+        },
+        {
+          "text": "Road spice from the caravan kitchens. *holds out a small wrapped packet* Smells like cinnamon and fire and the road at sunset. One pinch turns garrison rations into something worth eating. Two coin for a packet. Best deal in {town}.",
+          "mood": "salescraft"
+        },
+        {
+          "text": "The catfolk trade in two currencies. Coin, which anyone understands. And favors, which only we track. *taps her temple* I did a favor for a dwarven trade post guard last year. He did one for a merchant I needed to meet. The merchant introduced me to a ship captain. *spreads her hands* Currency that does not weigh anything and never runs out.",
+          "mood": "wise"
+        }
+      ]
+    },
+    "tales": {
+      "keywords": [
+        "tale",
+        "adventure",
+        "quest",
+        "hero",
+        "history",
+        "event",
+        "war",
+        "famous"
+      ],
+      "responses": [
+        {
+          "text": "Want to hear about the gambler who bet his name against a lizardfolk trader in a card game at the Shadow Fen border? *settles in* The lizardfolk won. The gambler had to go nameless for a year. Walked into every town and could not identify himself at checkpoints. *pauses for effect* Best year of his life, he said. Freedom from paperwork.",
+          "mood": "theatrical"
+        },
+        {
+          "text": "My grandmother told me this one. Long before the empire, a catfolk caravan found a dying elf on the desert road. Calidar elf, fleeing something terrible. *voice goes soft* She carried nothing except a clay pot with a seedling in it. The caravan watered that seedling for four hundred leagues. The elf died on the road. The seedling lived. *touches the pouch at her neck* We carried it to safe ground and planted it. That tree still grows in a garden I am not going to name. *quiet* Some stories you tell to remember. Some you tell so others will.",
+          "mood": "reverent"
+        },
+        {
+          "text": "The Tale of the Three Roads! Classic caravan story. A catfolk, a dwarf, and an orc reach a fork in the road. The dwarf digs a tunnel under it. The orc rides straight through the brush. The catfolk? *grins wide* Sits at the fork and charges the next hundred travelers a toll for directions. *slaps knee* We are not proud. We are resourceful.",
+          "mood": "roaring"
+        },
+        {
+          "text": "You want another tale? I told you three already. Tales cost something. *holds out her palm* A coin, a story of your own, or tell me something interesting about where you have been. Fair trade. The road runs both ways.",
+          "mood": "business",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ]
+    }
+  }
+}

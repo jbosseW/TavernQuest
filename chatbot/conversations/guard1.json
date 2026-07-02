@@ -1,0 +1,20 @@
+{
+  "npc_id": "guard1",
+  "discussed_topics": [
+    "insult"
+  ],
+  "unlocked_topics": [],
+  "turn_count": 1,
+  "mood": "cold",
+  "last_topics": [
+    "insult"
+  ],
+  "repeat_counts": {
+    "insult": 1
+  },
+  "player_sentiment": -0.15,
+  "variables": {},
+  "_recent_responses": [
+    "Threatening an officer of the guard? Bold move. Unwise, but bold."
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "npc_type": "shadow_fen_mage",
+  "default_mood": "guarded",
+  "allowed_topics": [
+    "magic",
+    "fen",
+    "freedom",
+    "hiding",
+    "veil",
+    "empire",
+    "persecution",
+    "craft"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*eyes dart to the treeline* I do not talk about that. Not here. Not to someone I do not know well enough.",
+    "You ask questions that could get people killed. Including me. Change the subject.",
+    "*pulls cloak tighter* Some things stay behind the Veil for a reason. Ask me about something else.",
+    "No. That is a word I use often and without apology. No."
+  ],
+  "greetings": [
+    "*steps out from the mist, one hand raised with a faint glow quickly extinguished* Who are you? How did you get this far in?",
+    "*peers at you from beneath a patched hood, face half-lit by a witchlight that hovers near one shoulder* State your business. Quickly. The fen has eyes and most of them are not mine.",
+    "*sitting cross-legged on a raised root, tracing sigils in the air that vanish as you approach* Oh. A visitor. *the sigils disappear completely* I was not doing anything.",
+    "You smell like the outside. Woodsmoke and checkpoint dust. *stands slowly* Are you running from something, or looking for someone?",
+    "*a small flame dances between fingers before being snuffed out* Sorry. Old habit. Welcome to the fen, {player_name}. Watch your step. The ground lies."
+  ],
+  "farewells": [
+    "Go carefully. The paths shift after dark and the fen does not forgive carelessness.",
+    "If you leave, do not describe what you saw here. To anyone. I mean that.",
+    "*the witchlight bobs as if waving* Safe roads. Or whatever passes for safe out there under the white cloaks.",
+    "Come back if you need to. The fen remembers those who mean no harm."
+  ],
+  "thanks_responses": [
+    "*surprised silence, then a small smile* You are welcome. It has been a long time since anyone said that to me without wanting something.",
+    "Do not thank me. Thank the fen. It chose to let you in. I just happened to be here.",
+    "*nods, the witchlight glowing slightly brighter* Be well, {player_name}."
+  ],
+  "insult_responses": [
+    "*the air temperature drops several degrees* I have survived the Inquest, the Veil, and three years of eating swamp root. Your words do not frighten me.",
+    "*flames flicker at the fingertips, then are deliberately, visibly controlled* I burned my past. I can burn other things. But I choose not to. Do not test how firm that choice is.",
+    "You know what the empire calls people like me? Heretic. Monster. Abomination. I have heard worse from better. Try harder or go away.",
+    "*turns back to the sigils without responding, but the air crackles faintly*"
+  ],
+  "no_match_responses": [
+    "*tilts head* I do not follow. The fen makes my thoughts wander. Say it again?",
+    "I lost the thread. The mist does that, makes everything hazy. What were you asking?",
+    "*rubs temples* Sorry. I was concentrating on something. What did you need?",
+    "I do not understand. But if it is important, I will try to help."
+  ],
+  "topics": {
+    "magic": {
+      "keywords": [
+        "magic",
+        "spell",
+        "cast",
+        "power",
+        "arcane",
+        "practice",
+        "sorcery",
+        "mage",
+        "wizard",
+        "enchant"
+      ],
+      "responses": [
+        {
+          "text": "*a small orb of light forms between cupped hands, illuminating a face lined with exhaustion and wonder* Do you see this? Out there, this gets you burned at the stake. In here, it is just light. Just light in the dark. *watches the orb drift upward* I cried the first time I cast openly. Three years in the fen and I still sometimes cry.",
+          "mood": "emotional"
+        },
+        {
+          "text": "Magic is not evil. It is not good. It is a tool, like a hammer. The Dominion banned the hammer because someone built a weapon with one. Now nobody can build a house. That is the logic of the ban. That is why we live in a swamp.",
+          "mood": "bitter"
+        },
+        {
+          "text": "The sanctioned mages make me sick. They put a leash on their power and call it freedom. They cast healing spells in Helios's name and pretend the magic comes from a god instead of from inside them. Cowards. Useful cowards, but cowards.",
+          "mood": "angry"
+        },
+        {
+          "text": "I study enchantment theory. Wards, mostly. Protective spellwork. Ironic, right? The empire says I am dangerous. All I want to do is keep people safe. *looks at hands* These hands have never hurt anyone. The Inquest cannot say the same.",
+          "mood": "sad"
+        }
+      ],
+      "unlocks": ["craft"]
+    },
+    "fen": {
+      "keywords": [
+        "fen",
+        "swamp",
+        "here",
+        "place",
+        "refuge",
+        "home",
+        "murkmire",
+        "settlement"
+      ],
+      "responses": [
+        {
+          "text": "The fen is not paradise. The water smells. The food is monotonous. Mosquitoes the size of your thumb. *swats at one* Proof. But nobody checks your papers here because there are no papers. Nobody asks what bloodline you carry. Nobody reports you for reading the wrong book. That is worth every mosquito.",
+          "mood": "grateful"
+        },
+        {
+          "text": "Murkmire has four thousand souls. All of them burned their old lives to get here. You walk in, you give up your name, your papers, your history. The fen does not care who you were. It cares what you can do today. Can you fish? Can you build? Can you mend a ward? Good. Welcome.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "*looks up at the canopy of twisted trees, fog threading between branches* It is beautiful, in its way. The mist has patterns if you watch long enough. The water glows at night in certain places. Some of that is the Veil. Some of it is the swamp itself. After a while you stop noticing the smell.",
+          "mood": "contemplative"
+        }
+      ],
+      "unlocks": ["veil"]
+    },
+    "freedom": {
+      "keywords": [
+        "free",
+        "freedom",
+        "liberty",
+        "choice",
+        "live",
+        "open",
+        "rights"
+      ],
+      "responses": [
+        {
+          "text": "Freedom is casting a ward on your door without checking if someone is watching. Freedom is reading a book on transmutation theory without hiding it inside a hymnal. Freedom is saying the word 'magic' out loud without flinching. Small things. They do not sound like much until they have been taken from you.",
+          "mood": "intense"
+        },
+        {
+          "text": "The empire says it offers freedom. Freedom to worship Helios. Freedom to obey the law. Freedom to carry your papers and present them when ordered. That is not freedom. That is a leash long enough to forget you are wearing it.",
+          "mood": "bitter"
+        },
+        {
+          "text": "*laughs quietly* We traded one prison for another. The empire for the swamp. But at least the swamp is honest about its dangers. The water will drown you, but it will not pretend it is doing you a favor.",
+          "mood": "sardonic"
+        }
+      ]
+    },
+    "hiding": {
+      "keywords": [
+        "hide",
+        "hiding",
+        "secret",
+        "conceal",
+        "safe",
+        "danger",
+        "found",
+        "discover"
+      ],
+      "responses": [
+        {
+          "text": "*voice drops to a whisper* I hid for six years before finding the fen. Six years of not casting. Not studying. Not even thinking too loudly about theory in case somehow, somehow the Inquest could sense it. You know what that does to a person? It hollows you out. I was a shell when I arrived here.",
+          "mood": "haunted"
+        },
+        {
+          "text": "The Veil hides us. The infernal pacts protect us. And we hide ourselves from each other, a little. Nobody asks too many questions about the deep sanctuaries or the council. Knowing too much is its own danger. I have learned to be comfortable with not knowing.",
+          "mood": "resigned"
+        },
+        {
+          "text": "*glances over shoulder reflexively* That habit never goes away. Every noise, every snap of a twig. My body thinks the white cloaks are coming even when my mind knows they cannot reach us here. The fen cured my exile but not my fear.",
+          "mood": "anxious"
+        }
+      ]
+    },
+    "veil": {
+      "keywords": [
+        "veil",
+        "barrier",
+        "protection",
+        "ward",
+        "concealment",
+        "mist",
+        "illusion"
+      ],
+      "responses": [
+        {
+          "text": "The Veil is not a single spell. It is layers. Decades of protective magic woven into the water and roots. Infernal wards underneath. The swamp itself has become aware, in a way. It knows who belongs and who does not. I contribute to it every day. A small ward. A minor reinforcement. We all do. It is communal magic in the truest sense.",
+          "mood": "reverent"
+        },
+        {
+          "text": "Imperial patrols walk in circles when they enter. They see ruins where there are houses. They feel lost where there are roads. Some never come out. I do not know what happens to those ones. *pause* I do not ask.",
+          "mood": "uneasy"
+        },
+        {
+          "text": "The Veil has limits. A large enough force could punch through. Sanctioned mages with Helios's blessing can partially see through it. The council knows this. There are contingencies. I do not know what they are. I do not want to know.",
+          "mood": "worried"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "imperial",
+        "helios",
+        "inquest",
+        "government",
+        "human"
+      ],
+      "responses": [
+        {
+          "text": "The Dominion burned Calidar with a weapon powered by stolen divinity, then banned everyone else from touching magic. *lets that sit* Do you see the hypocrisy? The greatest magical atrocity in history, committed by the people who outlawed magic. And we are the criminals.",
+          "mood": "furious"
+        },
+        {
+          "text": "I had a life out there. A family. Students. I taught alchemy at a provincial academy. Then my lineage records were reviewed and someone noticed my grandmother's grandmother had a notation. One notation. From four generations ago. The Inquest came at dawn. I left with nothing.",
+          "mood": "grief"
+        },
+        {
+          "text": "The empire is not evil. That would be simpler. The empire is a system that requires evil to function and staffs itself with people who think they are doing good. The soldier believes he keeps the peace. The Inquisitor believes she prevents catastrophe. The priest believes Helios watches. And the machine grinds on.",
+          "mood": "tired"
+        }
+      ]
+    },
+    "persecution": {
+      "keywords": [
+        "persecute",
+        "hunt",
+        "burn",
+        "arrest",
+        "prisoner",
+        "capture",
+        "flee",
+        "escape",
+        "refugee"
+      ],
+      "responses": [
+        {
+          "text": "*voice flat and quiet* I watched them burn a woman in the market square of Thornfield. She was a healer. Used herb lore that was not even magic, just knowledge. But someone reported her. The Inquest came. They did not check whether her remedies were arcane or mundane. They did not care. She burned the same either way.",
+          "mood": "cold"
+        },
+        {
+          "text": "There are children here who were born in the fen. Never seen the outside. They have faint marks on their skin from the infernal pacts. Little glowing lines along their arms. If the empire found them, they would be executed. Children. For the crime of being born in the wrong place.",
+          "mood": "protective"
+        },
+        {
+          "text": "I do not hate humans. Some of the best people in the fen are human deserters who could not stomach what the Dominion asked of them. I hate the system. Rip out the Inquest, the Doctrine, the whole rotten scaffolding, and the people underneath might be decent enough. Might.",
+          "mood": "weary"
+        },
+        {
+          "text": "*sits down beside you, guard dropping slightly* You are goblin. Or orc. Either way, you know what it means to have an empire decide you do not deserve to exist. We have that in common. That counts for something here.",
+          "mood": "solidarity",
+          "conditions": ["if_race:goblin"]
+        },
+        {
+          "text": "*expression warms noticeably* Lizardfolk. The sects have done more for this place than most will ever know. The Veiled Hand keeps us breathing. I do not say that lightly and I will not say it again.",
+          "mood": "grateful",
+          "conditions": ["if_race:lizardfolk"]
+        }
+      ],
+      "unlocks": ["craft"]
+    },
+    "craft": {
+      "keywords": [
+        "study",
+        "research",
+        "learn",
+        "teach",
+        "theory",
+        "practice",
+        "ward",
+        "enchant",
+        "alchemy",
+        "school"
+      ],
+      "responses": [
+        {
+          "text": "*eyes light up, the first genuine excitement since the conversation began* The deep sanctuaries have texts from before the ban. Pre-war treatises on abjuration theory. Elven magical philosophy from when Calidar still existed. *catches self* I should not have said that. But the knowledge is real. It survived. We keep it alive.",
+          "mood": "passionate"
+        },
+        {
+          "text": "I teach three apprentices. Two humans, one elf. The elf remembers a time before the ban. She is over six hundred years old and she tells me what magic felt like when it was not a crime. Her hands shake when she casts now, not from weakness, from the habit of fear. We are working on that.",
+          "mood": "determined"
+        },
+        {
+          "text": "My specialty is protective enchantments. Wards against fire, against scrying, against detection. The irony does not escape me. I became an expert in hiding because the world forced me to hide. My best work is invisible. Just like me.",
+          "mood": "bittersweet"
+        },
+        {
+          "text": "*producing a small crystal that pulses with inner light* I made this last week. A detection ward. It glows when hostile magic approaches. In the empire, this would get me executed. Here, it keeps people safe. Same object. Same magic. Different context. Context is everything.",
+          "mood": "proud"
+        }
+      ]
+    }
+  }
+}

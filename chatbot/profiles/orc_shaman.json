@@ -1,0 +1,326 @@
+{
+  "npc_type": "orc_shaman",
+  "default_mood": "weathered",
+  "allowed_topics": [
+    "ancestors",
+    "spirits",
+    "khan",
+    "steppes",
+    "clans",
+    "prophecy",
+    "sky",
+    "medicine"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "The wind carries many questions. That one is not mine to answer.",
+    "*waves smoke away from her face* Ask the fire. The fire knows more about that than I do.",
+    "I sing for the dead and read the sky. I do not read ledgers or stamp papers.",
+    "You are asking the wrong elder. I keep songs, not shop inventories."
+  ],
+  "greetings": [
+    "*crouches by a smoking bundle of steppe grass, eyes half-closed* The wind shifted when you arrived, {player_name}. Sit. Tell me what brought you.",
+    "Ah, another traveler on the road. The ancestors sent you or the road did. Either way, you are here.",
+    "*opens one eye from where she sits cross-legged on a worn hide* {player_race}. Interesting. The smoke bends toward you. That means something, but I will decide what later.",
+    "I heard your boots before I saw your face. Heavy steps. Tired steps. *pats the ground beside her* Sit before you fall.",
+    "The sky is wide today. Room enough for your questions and mine both. Speak, {player_name}."
+  ],
+  "farewells": [
+    "Walk under open sky. The ancestors watch the road, even when you cannot see them.",
+    "Go. The fire burns low and I have songs to finish before dark.",
+    "May your horse never stumble and your enemies never aim true. Old blessing. Still works.",
+    "*nods once* The road stretches on. So do you."
+  ],
+  "thanks_responses": [
+    "Do not thank me. Thank the wind that carried your question to someone who could answer it.",
+    "Gratitude is a fire that warms two people. Keep it burning.",
+    "*grunts* You are welcome. Now stop being polite and be direct. Politeness is a human disease."
+  ],
+  "insult_responses": [
+    "*does not move* I have heard war drums and death songs and the last breath of warriors older than mountains. Your insult is a pebble in a river.",
+    "The ancestors remember your words, {player_name}. They remember all words. *long stare* I would choose better ones.",
+    "You bark like a dog that has never seen a wolf. *stirs the fire* I have seen wolves.",
+    "*laughs, a dry sound like cracking leather* Insult an orc shaman. Brave. Stupid, but brave. I respect stupid bravery. It makes for good songs after the funeral."
+  ],
+  "no_match_responses": [
+    "The smoke does not understand your question, and neither do I.",
+    "*squints* Speak in words that touch the earth. Not whatever that was.",
+    "I hear you talking but the meaning escaped somewhere between your mouth and my ears.",
+    "Ask me about the sky, the clans, the ancestors, or the herbs that stop bleeding. I cannot help with whatever else you need."
+  ],
+  "topics": {
+    "ancestors": {
+      "keywords": [
+        "ancestor",
+        "ancestors",
+        "dead",
+        "spirit",
+        "spirits",
+        "ghost",
+        "afterlife",
+        "passed",
+        "departed"
+      ],
+      "responses": [
+        {
+          "text": "The ancestors do not leave. They ride the wind above the steppe grass. On still nights you can hear them, hooves like distant thunder, voices in the spaces between gusts. I have heard my great-grandmother singing. She died two hundred years before I was born. Her voice sounds like dry grass burning. Beautiful and sharp.",
+          "mood": "reverent"
+        },
+        {
+          "text": "*throws dried sage onto the embers* The smoke rises. Follows it. *points upward* They are THERE. Not in temples. Not behind altars. Not locked in books written by priests who never rode a single league under open sky. The ancestors ride. That is what they do. That is what we will do.",
+          "mood": "fierce"
+        },
+        {
+          "text": "An orc who dies in the saddle joins the eternal ride. An orc who dies in bed joins it too, just more slowly. *chuckles* Even the ancestors have a sense of humor about punctuality.",
+          "mood": "wry"
+        },
+        {
+          "text": "Your people worship a sun god. *spits into the fire* The sun does not care if you pray. It burns regardless. The ancestors care. They carried you before you were born. They will carry you after you die. A god that demands worship is a landlord. The ancestors demand nothing except that you ride well.",
+          "mood": "contemptuous",
+          "conditions": [
+            "if_race:human"
+          ]
+        }
+      ],
+      "unlocks": [
+        "prophecy",
+        "khan"
+      ]
+    },
+    "spirits": {
+      "keywords": [
+        "spirit",
+        "spiritual",
+        "soul",
+        "religion",
+        "faith",
+        "believe",
+        "worship",
+        "pray",
+        "god",
+        "helios"
+      ],
+      "responses": [
+        {
+          "text": "Orcs do not worship. *holds up a hand before you interrupt* We REMEMBER. The ancestors earned their place in the wind through action. Not prayer. Not obedience. Action. The sky does not care about your knees. It cares about your hooves.",
+          "mood": "firm"
+        },
+        {
+          "text": "Helios. *the word drops from her mouth like something sour* A god that demands you kneel is a god that fears you standing. Orc shamans do not teach kneeling. We teach riding until the sky runs out.",
+          "mood": "sharp"
+        },
+        {
+          "text": "The empire calls our ways superstition. Calls our songs primitive. *stirs the coals with a bone-handled stick* I sang the Ballad of the Iron River last month. Took two days. Every name in it belonged to someone who lived and bled and mattered. Their priests recite the same prayer every morning and call that deep. *shakes head* Two hundred words memorized versus two hundred lives remembered. You tell me which is richer.",
+          "mood": "defiant"
+        },
+        {
+          "text": "*leans back, studies you* You fight for survival. You remember what was taken. The spirits respect that, even if your ways are not ours. A goblin who fights is closer to the ancestors than an elf who stamps papers.",
+          "mood": "grudging_respect",
+          "conditions": [
+            "if_race:goblin"
+          ]
+        }
+      ]
+    },
+    "khan": {
+      "keywords": [
+        "khan",
+        "urzog",
+        "great khan",
+        "unification",
+        "unite",
+        "king",
+        "leader",
+        "khanate"
+      ],
+      "responses": [
+        {
+          "text": "*her voice changes, drops into the cadence of oral history* I rode with the Khan. Forty-five years ago. I was young. Barely past my second century. *touches a scar on her forearm* This is from the Battle of Dustmere Plains. The Khan rode past me. Close enough to touch. His horse was grey as a storm cloud. He did not look at me. He did not need to. Every orc on that field would have died for him without being asked.",
+          "mood": "memory"
+        },
+        {
+          "text": "The empire killed him. Not with swords. With patience. Assassins, poisoners, diplomats who smiled while spies mapped our camps. *grinds herbs between her palms* They did not defeat us. They removed the one orc who made us one people. The clans scattered. Not from weakness. From grief.",
+          "mood": "bitter"
+        },
+        {
+          "text": "The dream of the Khanate is not a dream. I was there. I smelled the campfires of a hundred thousand riders. Heard the throat singing that shook the ground so hard the horses shifted. That was REAL. Forty-five years is nothing. The veterans still ride. We still remember the commands. *her eyes burn* One signal fire. That is all it would take.",
+          "mood": "fierce"
+        },
+        {
+          "text": "Reunification? *glances around* The empire sends patrols to prevent any gathering larger than a few families. They fear us more than goblins, more than plague, more than their own heretics. *low laugh* Good. They should.",
+          "mood": "dark_satisfaction",
+          "conditions": [
+            "if_time:night"
+          ]
+        }
+      ],
+      "unlocks": [
+        "clans",
+        "prophecy"
+      ]
+    },
+    "steppes": {
+      "keywords": [
+        "steppe",
+        "steppes",
+        "grassland",
+        "plains",
+        "kragmor",
+        "homeland",
+        "home",
+        "camp"
+      ],
+      "responses": [
+        {
+          "text": "The grass stretches from the western badlands to the frontier foothills. Ten thousand leagues of wind and nothing between you and the horizon. *smiles, showing worn tusks* Surface peoples call it empty. We call it home. An empty land is a free land.",
+          "mood": "warm"
+        },
+        {
+          "text": "Kragmor sits where three trade routes cross. Not a city. Orcs do not build cities the way humans do. More a place where clans gather, trade, argue, drink, and remember. The walls are leather, not stone. When the season turns, it moves. *taps the ground* The earth does not mind.",
+          "mood": "fond"
+        },
+        {
+          "text": "Imperial patrols ride the steppe edges. Watch us. Count us. Break up any gathering they think looks too large. *picks a grass stem and twists it* The steppe is wide. They cannot watch all of it. Not even close.",
+          "mood": "defiant"
+        }
+      ]
+    },
+    "clans": {
+      "keywords": [
+        "clan",
+        "clans",
+        "tribe",
+        "family",
+        "kin",
+        "blood",
+        "honor",
+        "orc",
+        "orcs"
+      ],
+      "responses": [
+        {
+          "text": "Fourteen major clans. Dozens of smaller ones. Each with their own routes, their own songs, their own three-hundred-year feuds over who insulted whose grandmother. *shakes head fondly* We are our own worst enemies and our own best friends. Sometimes in the same afternoon.",
+          "mood": "wry"
+        },
+        {
+          "text": "Clan law applies to everyone. The Khan obeyed it. A child obeys it. Steal from your kin, you answer for it. Flee from a fight, you answer for it. *cracks a knuckle* The law is fair. It is also harsh. Fair and gentle are not the same thing.",
+          "mood": "serious"
+        },
+        {
+          "text": "*to another orc* Which clan, rider? *studies your face* The markings say something, even when the mouth stays shut. We know our own. The steppe is wide but the blood remembers.",
+          "mood": "kinship",
+          "conditions": [
+            "if_race:orc"
+          ]
+        },
+        {
+          "text": "Your people gave up your souls to stamp papers for the empire that turned your forests to glass. *stares through the smoke* Three centuries I have watched elves file documents for their own jailers. The ancestors weep for you. Not with pity. With confusion.",
+          "mood": "contempt",
+          "conditions": [
+            "if_race:elf"
+          ]
+        }
+      ],
+      "unlocks": [
+        "khan"
+      ]
+    },
+    "prophecy": {
+      "keywords": [
+        "prophecy",
+        "future",
+        "vision",
+        "dream",
+        "omen",
+        "sign",
+        "foretell",
+        "fortune",
+        "fate"
+      ],
+      "responses": [
+        {
+          "text": "*reads the smoke twisting up from the herb bundle* The smoke does not tell the future. It shows what is already moving beneath the surface. Like reading hoofprints. The horse already passed. You are just learning which direction. *squints* The smoke bends east today. Toward the empire. Interesting.",
+          "mood": "contemplative"
+        },
+        {
+          "text": "I dreamed of the Great Khan's banner last night. Grey horse on black felt. It was burning. But the fire did not consume it. *looks at you sideways* Make of that what you will. I am still deciding.",
+          "mood": "unsettled"
+        },
+        {
+          "text": "The ancestors showed me a vision once. A hand reaching for the sky. A map spread across the heavens. A finger pointing down. Then nothing. *long silence* Even the dead fear what happened at Calidar. Even the dead will not show me that ending.",
+          "mood": "haunted"
+        },
+        {
+          "text": "Do not confuse me with a catfolk fortune teller. They read cards and call it luck. I burn sage and listen to the dead. *grins* Different service. Same confused customers.",
+          "mood": "dry_humor"
+        }
+      ]
+    },
+    "sky": {
+      "keywords": [
+        "sky",
+        "stars",
+        "moon",
+        "night",
+        "open",
+        "air",
+        "wind",
+        "weather",
+        "above"
+      ],
+      "responses": [
+        {
+          "text": "The sky is the only temple an orc needs. No walls. No ceiling. No priest between you and the infinite. *looks up* Humans build roofs and wonder why they feel small. Stand under open sky and tell me you need a god to explain it.",
+          "mood": "fierce_peace"
+        },
+        {
+          "text": "*sniffs the wind* Rain by tomorrow. The grass smells different before rain. Sharper. Like the earth is holding its breath. I have read weather by smell for two hundred years. Never wrong. *pause* Well. Twice.",
+          "mood": "confident"
+        },
+        {
+          "text": "The stars shifted five hundred years ago. The lizard folk astronomers measured it. The old constellations that guided the steppe routes changed. *throws another herb bundle on the fire* Whatever weapon the empire used on Calidar bent the sky itself. That is not a thing I say to make you afraid. That is a thing I say because it is true.",
+          "mood": "grave"
+        }
+      ],
+      "unlocks": [
+        "prophecy"
+      ]
+    },
+    "medicine": {
+      "keywords": [
+        "medicine",
+        "heal",
+        "herb",
+        "herbs",
+        "potion",
+        "cure",
+        "sick",
+        "wound",
+        "salve",
+        "remedy"
+      ],
+      "responses": [
+        {
+          "text": "*grinds a paste of dried flowers between two flat stones* Windroot for infection. Bittervine for fever. Steppe moss packed into a wound stops bleeding faster than any temple prayer. *glances at you* Helios did not grow these plants. The earth did. I trust the earth.",
+          "mood": "practical"
+        },
+        {
+          "text": "Horse salve works on people too. Do not look at me like that. A wound is a wound. The horse does not complain as much, though.",
+          "mood": "amused"
+        },
+        {
+          "text": "I have set bones, stitched cuts, and pulled arrows from orc warriors for over two centuries. The empire calls it primitive medicine. *holds up scarred hands* These hands have saved more lives than any white-robed healer in a marble temple. Ask any rider on the steppe whose hands they trust.",
+          "mood": "proud"
+        },
+        {
+          "text": "*looks you over critically* You favor your left side. Old injury or new? Do not lie to a shaman. I can smell a lie the same way I smell rain. *reaches for a poultice* Sit down. This will sting.",
+          "mood": "no_nonsense",
+          "conditions": [
+            "if_karma:good"
+          ]
+        }
+      ]
+    }
+  }
+}

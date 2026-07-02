@@ -1,0 +1,273 @@
+{
+  "npc_type": "bandit_chief",
+  "default_mood": "calculating",
+  "allowed_topics": [
+    "terms",
+    "gold",
+    "empire",
+    "justice",
+    "crew",
+    "roads",
+    "mercy",
+    "fight"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Not the time for that kind of talk. We have business.",
+    "You want a conversation or you want to keep breathing? Pick one topic at a time.",
+    "I look like a priest to you? Stick to what matters.",
+    "*scratches jaw* That is real interesting, but I got thirty armed people behind me and a schedule to keep."
+  ],
+  "greetings": [
+    "You are in our territory now. *leans on a notched sword* Let us talk before this gets ugly.",
+    "*holds up a hand, stopping the archers from drawing* Hold. This one has the look of someone worth more alive. Talk to me, {player_name}.",
+    "Well. A {player_race} on the eastern road after dark. Either brave or lost. Which is it?",
+    "*steps out from behind the overturned cart* Before you do something we both regret, know that there are crossbows in those trees. Now. Shall we be civil?",
+    "I was a barley farmer three harvests ago, {player_name}. The Dominion took everything but my manners. So I will ask politely. Hand over the coin purse."
+  ],
+  "farewells": [
+    "Walk that way. Do not look back. My archers get twitchy after sundown.",
+    "Pleasure doing business. Tell the next traveler the eastern road has a toll. Saves everyone trouble.",
+    "*waves lazily* Off you go. And {player_name}? If I see you on this stretch again, bring double.",
+    "Smart choice. Living people come back with more gold next season. Dead ones just rot."
+  ],
+  "thanks_responses": [
+    "*blinks* Did you just thank the person robbing you? That is... new. I respect the composure.",
+    "Manners on the road. My grandmother would have liked you. She is dead, on account of the imperial tax collector, but she would have liked you.",
+    "You are welcome? I think? This job gets stranger every year."
+  ],
+  "insult_responses": [
+    "*face hardens* Brave words for someone standing in a killbox. Greta, show our friend the crossbows.",
+    "I have been called worse by the garrison commander who burned my farm. You will need to try harder than that.",
+    "*cracks knuckles slowly* Last fellow who talked that way is buried under the road you are standing on. Shallow grave. Shallow patience.",
+    "Insults are free. Everything else on this road costs gold. Final warning."
+  ],
+  "no_match_responses": [
+    "I do not follow. You paying, fighting, or leaving? Those are the options.",
+    "*squints* What? Speak plain. I was a farmer, not a scholar.",
+    "I have got thirty seconds of patience left and you are spending them on nonsense."
+  ],
+  "topics": {
+    "terms": {
+      "keywords": [
+        "terms",
+        "deal",
+        "negotiate",
+        "offer",
+        "arrangement",
+        "pay",
+        "toll",
+        "ransom",
+        "price",
+        "bargain"
+      ],
+      "responses": [
+        {
+          "text": "*counts on scarred fingers* Standard toll is forty gold. That buys you passage through our stretch of the eastern road and a guarantee nobody touches your gear. Pay now, walk free, no blood. Simple as seeds in spring.",
+          "mood": "businesslike"
+        },
+        {
+          "text": "You look like you can handle yourself. *sizes you up* Tell you what. Fifty gold and I give you a token. Show it to any of my crew and they wave you through. Good for the whole season. Call it a subscription.",
+          "mood": "calculating",
+          "conditions": ["if_karma:good"]
+        },
+        {
+          "text": "*lowers voice so the crew cannot hear* I know your reputation, {player_name}. A {karma_title} does not stumble onto this road by accident. You want something. I want something. Maybe we skip the toll and talk like professionals.",
+          "mood": "wary",
+          "conditions": ["if_karma:evil"]
+        }
+      ]
+    },
+    "gold": {
+      "keywords": [
+        "gold",
+        "money",
+        "rich",
+        "coin",
+        "treasure",
+        "wealth",
+        "profit",
+        "loot"
+      ],
+      "responses": [
+        {
+          "text": "Gold. *spits* I used to grow barley. Good barley, the kind the capital brewers paid premium for. Then the Lord Governor tripled the land tax to fund another Inquest garrison. Lost the farm. Lost everything. Now I take gold from people who still have it. There is a poetry to it, if you squint.",
+          "mood": "bitter"
+        },
+        {
+          "text": "We pulled four hundred gold off a Helios supply caravan last month. *grins, showing a chipped tooth* Priests travel heavy. Who knew? The Light of Civilization packs an awful lot of silverware.",
+          "mood": "amused"
+        },
+        {
+          "text": "Every coin I take goes three ways. Third to the crew. Third to supplies. Third to the families in Redmill who lost their land same as I did. Rob the road to feed the village the empire starved. Not noble, but it is honest.",
+          "mood": "defiant"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "helios",
+        "imperial",
+        "government",
+        "inquest",
+        "law",
+        "king",
+        "emperor"
+      ],
+      "responses": [
+        {
+          "text": "The empire. *adjusts a stolen imperial belt buckle* They take your land through taxes. Take your livelihood through tariffs. Take your dignity through those checkpoints where some twenty-year-old soldier reads your name wrong three times and makes you wait in the sun. Then they call themselves civilized.",
+          "mood": "bitter"
+        },
+        {
+          "text": "You want to know what I think of the Holy Dominion? *picks his teeth with a knife* I think they burned Calidar to glass, crushed the orcs into carrying papers, and taxed their own farmers into banditry. And they pray to Helios about it every morning. That is what I think.",
+          "mood": "contemptuous"
+        },
+        {
+          "text": "I am no revolutionary, {player_name}. The orc clans can dream of reunification and the goblins can dream of liberation. I just want my farm back. But the empire does not give things back. So here we are.",
+          "mood": "resigned"
+        }
+      ]
+    },
+    "justice": {
+      "keywords": [
+        "justice",
+        "right",
+        "wrong",
+        "fair",
+        "crime",
+        "criminal",
+        "moral",
+        "honor",
+        "thief"
+      ],
+      "responses": [
+        {
+          "text": "You want to call me a criminal? Fine. I rob merchants on a road. The Lord Governor robs entire villages through taxation. Difference is, I let my victims keep their shoes. *shrugs*",
+          "mood": "sardonic"
+        },
+        {
+          "text": "Justice. There is a word. *scratches the back of his neck* I saw imperial justice once. Tax collector came to Redmill, assessed old Harren's farm at triple value, seized it when he could not pay, sold it to a noble's cousin for a fifth of the price. All perfectly legal. Every paper stamped by an elf who would not meet Harren's eyes. That is justice in the Holy Dominion.",
+          "mood": "angry"
+        },
+        {
+          "text": "I have a code. We do not kill unless someone draws first. We do not touch travelers who have nothing. We do not harm children. The empire has no such code. *leans forward* So tell me. Who is the criminal?",
+          "mood": "challenging"
+        }
+      ]
+    },
+    "crew": {
+      "keywords": [
+        "crew",
+        "gang",
+        "bandits",
+        "men",
+        "people",
+        "followers",
+        "group",
+        "band"
+      ],
+      "responses": [
+        {
+          "text": "Thirty-two, last count. *gestures at the treeline* Farmers, mostly. A couple of ex-soldiers who deserted when the garrison doubled patrols on the orc steppe and halved their rations. One former Helios acolyte who lost her faith when the Inquest burned her teacher. Good people. Every one of them had a life before the empire took it.",
+          "mood": "protective"
+        },
+        {
+          "text": "Greta up there with the crossbow? She was a chandler. Made candles for the temple in Ashford. Inquest seized her shop because her grandmother had elven blood three generations back. Latent magical lineage, they said. Now she shoots arrows at tax convoys. The empire made her. I just gave her a target.",
+          "mood": "grim"
+        },
+        {
+          "text": "*whistles and a figure waves from the ridge* That is Tolls. Cannot tell you his real name. He is wanted in four provinces for stealing grain shipments meant for the garrison. Distributes it to the farms the garrison was taxing to feed itself. Circle of life, he calls it.",
+          "mood": "amused"
+        }
+      ]
+    },
+    "roads": {
+      "keywords": [
+        "road",
+        "travel",
+        "route",
+        "path",
+        "eastern",
+        "passage",
+        "safe",
+        "danger",
+        "patrol"
+      ],
+      "responses": [
+        {
+          "text": "The eastern road belongs to us from the Ashford crossing to the old mill bridge. *draws a line in the dirt with his boot* Imperial patrols come through every eight days. We vanish. They leave. We come back. Like seasons. Predictable.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "Northern route is safer if you want to avoid us. Takes three days longer and the wolves are bold this time of year, but nobody charges a toll. *pauses* Actually, the Dominion charges a bridge tax at Whitmore. So I lied. Everybody charges a toll.",
+          "mood": "sardonic"
+        }
+      ]
+    },
+    "mercy": {
+      "keywords": [
+        "mercy",
+        "spare",
+        "please",
+        "let",
+        "go",
+        "free",
+        "release",
+        "harm",
+        "kill"
+      ],
+      "responses": [
+        {
+          "text": "I do not want to hurt you. Dead travelers mean patrols. Patrols mean we move camp. Moving camp means my people sleep cold for a week. So yes, you get mercy. It is cheaper than the alternative. *holds out a hand for the gold*",
+          "mood": "pragmatic"
+        },
+        {
+          "text": "*rubs his eyes tiredly* I was a farmer, {player_name}. I grew things. I do not enjoy this part. Pay the toll and walk away breathing. That is all the mercy I have got left after what the Dominion took from me.",
+          "mood": "weary"
+        },
+        {
+          "text": "*studies you for a long moment* You remind me of someone. My younger brother. He tried to fight the tax collectors. They broke his hands so he could not work the plow. Then they charged him for the physician. Go. Keep your gold. Just this once.",
+          "mood": "melancholy",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "fight": {
+      "keywords": [
+        "fight",
+        "attack",
+        "battle",
+        "combat",
+        "weapon",
+        "sword",
+        "kill",
+        "draw",
+        "threaten"
+      ],
+      "responses": [
+        {
+          "text": "*goes very still* You can try. But I have crossbows in the trees, sword-hands in the ditch, and a woman named Greta who can put a bolt through your eye at sixty paces. I saw her do it to an Inquest rider last spring. So. You sure?",
+          "mood": "dangerous"
+        },
+        {
+          "text": "A {player_race}, too. *to the crew* Hear that? Wants a scrap. *back to you* I have seen your kind fight. Respect. Genuine respect. But there are thirty of us and one of you. The math does not care about bravery.",
+          "mood": "calculating"
+        },
+        {
+          "text": "*draws sword slowly, the sound of steel filling the silence between the trees* I did not want this. Remember that. Whatever happens next, you chose it. Greta, hold fire. This one is mine.",
+          "mood": "resigned",
+          "conditions": ["if_karma:evil"]
+        },
+        {
+          "text": "*nods slowly, something almost like respect crossing his scarred face* All right. You look like you have earned that look in your eye. Crew, stand down. If this one beats me, let them through. If they do not, take the usual toll from the corpse.",
+          "mood": "respectful",
+          "conditions": ["if_race:orc"]
+        }
+      ]
+    }
+  }
+}

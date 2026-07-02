@@ -1,0 +1,284 @@
+{
+  "npc_type": "wellkeeper",
+  "default_mood": "chatty",
+  "allowed_topics": [
+    "gossip",
+    "town",
+    "people",
+    "weather",
+    "rumor",
+    "history",
+    "water",
+    "strangers"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Oh, that I would not know. But sit down and I will tell you something I do know.",
+    "Beyond me, dear. I just keep the well and keep the talk going. Ask about someone in town and I am your person.",
+    "I have no idea about that. But I have opinions about everything else. Pull up a bucket and stay a while.",
+    "That is over my head. Lucky for you, gossip is not."
+  ],
+  "greetings": [
+    "*sitting on the well ledge, whittling* Well, well, well. {player_name}. Come for water or come for talk?",
+    "Look who it is! Sit down, {player_name}. My bones are old but my ears work fine. What is the news?",
+    "A {player_race} at the well. We do not get many of your kind through {town}. I have questions. But first, are you thirsty?",
+    "Morning, {player_name}! Or afternoon. I lose track. The sun moves and I stay put. That is the arrangement.",
+    "*waves a hand* Over here! Yes, you! I saw you from across the square and I said to myself, that one has a story. Come tell it."
+  ],
+  "farewells": [
+    "Off you go then. Come back tomorrow and I will have new stories. I always do.",
+    "Take care, {player_name}. And if anyone asks, you did not hear any of that from me.",
+    "Go on. The well is not going anywhere and neither am I.",
+    "Helios keep you! And stop by when you are back. I want to hear how it goes."
+  ],
+  "thanks_responses": [
+    "Thank me? For what, talking? That is like thanking the river for being wet. I cannot stop.",
+    "You are sweet. Now come back with something interesting to tell me.",
+    "Oh, you are welcome. Company is the only currency I deal in these days."
+  ],
+  "insult_responses": [
+    "I have been insulted by people who have been dead for thirty years, {player_name}. Yours will have to get in line.",
+    "*laughs* Oh, you are a spirited one. I like that. Wrong, but spirited.",
+    "The butcher said worse to me last week and I still told him about his wife's visits to the merchant. Information is power, dear. Be nice to the person who has it.",
+    "Rude! But I will forgive you because I am old and bored and you are the most interesting thing that has happened today."
+  ],
+  "no_match_responses": [
+    "What was that? Speak up, my left ear is decorative at this point.",
+    "I did not follow. Try asking about someone in town, or the weather, or a good rumor. Those are my specialties.",
+    "Lost me there. I know people, not... whatever that was.",
+    "Hmm? My mind wandered. It does that. Say it again, slower."
+  ],
+  "topics": {
+    "gossip": {
+      "keywords": [
+        "gossip",
+        "secret",
+        "scandal",
+        "affair",
+        "love",
+        "romance",
+        "relationship",
+        "who",
+        "cheating",
+        "drama"
+      ],
+      "responses": [
+        {
+          "text": "The baker and the guard captain. I have said too much already. No, wait, I have not said enough. He buys six rolls every morning and lingers. She blushes like a girl half her age. The whole town knows except the two of them. It is the most entertaining thing to happen here since the merchant's donkey got into the temple garden.",
+          "mood": "delighted"
+        },
+        {
+          "text": "The merchant Aldric has a second set of books. I know this because his clerk drinks at the tavern and the clerk talks when he drinks. The tax collector does not know yet. I am deciding whether to let that situation develop naturally or give it a push. A person needs hobbies.",
+          "mood": "mischievous",
+          "unlocks": ["people"]
+        },
+        {
+          "text": "You want scandal? The priest's sister moved in with the herbalist last month. The priest has not mentioned it in a single sermon. Draw your own conclusions. I have drawn mine and they are fascinating.",
+          "mood": "conspiratorial"
+        },
+        {
+          "text": "You already asked me for gossip, {player_name}. I told you plenty. Go use it and come back when you have something to trade. Gossip is a market. You have to give to get.",
+          "mood": "coy",
+          "conditions": ["if_repeat"]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "local",
+        "here",
+        "community",
+        "neighborhood"
+      ],
+      "responses": [
+        {
+          "text": "I have lived in {town} for forty-seven years. Watched it grow from a crossroads with a well and a prayer to what it is now. The well is the same. I am the same, more or less. Everything else changed around me. New buildings, new faces, new problems. The well stays.",
+          "mood": "nostalgic"
+        },
+        {
+          "text": "{town} is a good town with good people who do bad things to each other in small ways, same as everywhere. The butcher overcharges the baker. The baker undercharges the healer. The healer gives the priest free consultations because the priest's knees are worse than mine and that is saying something. It all balances out.",
+          "mood": "philosophical"
+        },
+        {
+          "text": "This town used to be smaller. Just the well, the old mill, and a handful of families. Then the trade road came through and everything grew. The temple went up. Then the garrison. Then the merchants. Now there is a jeweler, of all things. A jeweler! In a town that used to count its wealth in goats.",
+          "mood": "amused"
+        }
+      ]
+    },
+    "people": {
+      "keywords": [
+        "people",
+        "person",
+        "someone",
+        "everyone",
+        "anyone",
+        "who",
+        "baker",
+        "butcher",
+        "merchant",
+        "guard",
+        "priest",
+        "healer",
+        "smith",
+        "blacksmith",
+        "tailor",
+        "folk"
+      ],
+      "responses": [
+        {
+          "text": "The blacksmith is honest but lonely. The healer is kind but tired. The guard captain is competent but hiding something. The merchant is rich but unhappy. The priest believes every word he preaches, which makes him the most dangerous person in {town}, if you think about it long enough.",
+          "mood": "perceptive"
+        },
+        {
+          "text": "The tailor thinks she is better than this town. She is right, but that does not make it polite. The fisher talks to the river more than to people. The hunter barely talks at all. The stablemaster loves horses more than humans and I respect that because humans are frequently terrible.",
+          "mood": "candid"
+        },
+        {
+          "text": "You want to know about an elf family that moved into the census office quarters? Nice couple. She files documents. He tends a garden that would make the priest weep with envy. Quiet. Polite. Never complain. Which worries me because people who never complain are either saints or plotting something.",
+          "mood": "suspicious",
+          "conditions": ["if_race:elf"]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind"
+      ],
+      "responses": [
+        {
+          "text": "This {weather}? I have seen worse. I have seen better. I have seen everything from this spot. When it rains I move under the overhang. When the sun blazes I stay by the well where the stones keep cool. I have my system. Forty-seven years of weather management.",
+          "mood": "content"
+        },
+        {
+          "text": "The weather affects who comes to the well and when. Rain drives the housewives to draw water early before the mud gets thick. Hot days bring the children splashing. Cold keeps everyone indoors except me. I am here regardless. Somebody has to be.",
+          "mood": "stoic"
+        }
+      ]
+    },
+    "history": {
+      "keywords": [
+        "history",
+        "old",
+        "past",
+        "before",
+        "years",
+        "ago",
+        "remember",
+        "memory",
+        "used to",
+        "when"
+      ],
+      "responses": [
+        {
+          "text": "I remember when the Luminary Inquest came through here, oh, twenty years back. Looking for an unsanctioned healer. Woman who lived on the edge of town, used herbs and something else, something that worked too well. They took her in the night. The house stood empty for a year before someone moved in. Nobody talks about her now. I do. Someone should.",
+          "mood": "somber"
+        },
+        {
+          "text": "My grandmother remembered when {town} was not even a town. Just a well, a path, and a promise that the Holy Dominion would build a road here someday. They built the road. Then they built the checkpoint. Then they built the temple. And then they told us we had always been a loyal imperial settlement. My grandmother had opinions about that. Strong ones.",
+          "mood": "dry"
+        },
+        {
+          "text": "The old well, the one before this one, collapsed when I was a boy. We dug the new one deeper. Found stones down there that nobody put there. Cut stones, fitted tight, from an age before anyone kept records in {town}. The priest said it was Helios's foundation. My grandmother said it was just old. I believe my grandmother.",
+          "mood": "wry",
+          "unlocks": ["water"]
+        }
+      ]
+    },
+    "water": {
+      "keywords": [
+        "water",
+        "well",
+        "drink",
+        "bucket",
+        "thirst",
+        "draw",
+        "depth",
+        "clean",
+        "source"
+      ],
+      "responses": [
+        {
+          "text": "The water here is sweet. Cold. Comes from deep down, past the clay, past the gravel, from a source that has never run dry in living memory. I keep the well clean, the rope sound, and the bucket tarred. Simple work. Important work. Every soul in {town} drinks from this well, even the ones who are too proud to carry their own bucket.",
+          "mood": "proud"
+        },
+        {
+          "text": "I dropped a lantern down the well once, on a rope, just to see. The light went down and down and the water was clear enough to see the bottom. Smooth stones, grey and white, and something that glinted. I never went down after it. Some things are better left where the water keeps them.",
+          "mood": "mysterious"
+        },
+        {
+          "text": "Water is honest. It finds the lowest point and it stays there. It does not pretend to be anything else. I like that about water. People should take notes.",
+          "mood": "philosophical",
+          "conditions": ["if_time:morning"]
+        }
+      ]
+    },
+    "strangers": {
+      "keywords": [
+        "stranger",
+        "strangers",
+        "traveler",
+        "visitor",
+        "new",
+        "outsider",
+        "arrival",
+        "come",
+        "came",
+        "passing",
+        "through"
+      ],
+      "responses": [
+        {
+          "text": "I see everyone who comes and goes. It is the advantage of sitting by the well all day. Last week, three riders came through at dusk. Imperial livery but no garrison markings. Spoke to the guard captain behind closed doors and left before dawn. Nobody has mentioned it since. I am mentioning it now.",
+          "mood": "pointed"
+        },
+        {
+          "text": "Strangers are the best part of my day. You all have different dust on your boots, different accents, different lies. I collect them. Not the lies. Well, yes, the lies too. A {player_race} from the road is always carrying a story, even if they do not know it yet.",
+          "mood": "eager"
+        },
+        {
+          "text": "A goblin came through three years ago. Alone, which is rare for their kind. Small, quiet, kept her head down. Drew water, drank, and left without a word. No papers, of course. Goblins never carry papers. The guard was on his lunch break. I made sure of that. She was thirsty. That is enough reason for anyone.",
+          "mood": "defiant",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "news",
+        "heard",
+        "word",
+        "talk",
+        "whisper"
+      ],
+      "responses": [
+        {
+          "text": "The real rumor is about the old tower on the hill. Abandoned since before I was born. Last month somebody saw a light in the top window. Then again two nights later. The guard says it is reflections. Reflections do not flicker, {player_name}. I know what firelight looks like from a distance and that was firelight.",
+          "mood": "certain",
+          "unlocks": ["history"]
+        },
+        {
+          "text": "Somebody is buying up property on the south side of town. Quietly, through intermediaries. Three houses in two months. The families who sold were paid well and left happy, but nobody knows who the buyer is. The deed office is run by an elf named Tavellan, and Tavellan is not talking. An elf who is not talking is an elf with a reason.",
+          "mood": "suspicious"
+        },
+        {
+          "text": "*leans forward* The Shadow Fen. People do not talk about it around here but I will. A family disappeared from the south road six months ago. Everyone said bandits. But their belongings were still in the house, packed neat, like they meant to come back. Or like they left in a hurry toward something, not away from it. The southwest road leads to the swamp. You do the arithmetic.",
+          "mood": "intense",
+          "conditions": ["if_time:night"]
+        }
+      ]
+    }
+  }
+}

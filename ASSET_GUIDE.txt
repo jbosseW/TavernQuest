@@ -1,0 +1,146 @@
+================================================================================
+                        ASSET ORGANIZATION GUIDE
+================================================================================
+
+This guide explains how to add new character art to the game and have it
+properly recognized and used in all game modes.
+
+================================================================================
+FOLDER STRUCTURE (in assets/characters/)
+================================================================================
+
+The character assets are organized as follows:
+
+  assets/characters/
+  ├── Human/
+  │   ├── Men_Human/        <- Male human portraits
+  │   └── Women_Human/      <- Female human portraits
+  ├── ELF/
+  │   ├── Men_ELF/          <- Male elf portraits
+  │   └── Women_Elf/        <- Female elf portraits
+  ├── ORC/
+  │   ├── Men_ORC/          <- Male orc portraits
+  │   └── Women_ORC/        <- Female orc portraits
+  ├── Animals/              <- Pets & friendly creatures
+  ├── Monsters/             <- Hostile creatures & beasts
+  └── [root folder]         <- Special characters (gods, undead, etc.)
+
+
+================================================================================
+ADDING NEW ASSETS
+================================================================================
+
+STEP 1: Place the PNG files in the correct folder
+-------------------------------------------------
+- For NPC characters: Use the gendered race folders (e.g., Human/Men_Human/)
+- For pets/creatures: Use Animals/ or Monsters/
+- For special characters: Keep in root characters folder
+
+STEP 2: Update the configuration (assetconfig.lua)
+--------------------------------------------------
+After adding files, you may need to update:
+
+1. If adding a NEW RACE folder (e.g., Dwarf):
+   - Add to AssetConfig.folders:
+
+     {path = "DWARF/Men_Dwarf", category = "dwarves", gender = "male", race = "dwarf"},
+     {path = "DWARF/Women_Dwarf", category = "dwarves", gender = "female", race = "dwarf"},
+
+   - Add name lists to AssetConfig.names:
+
+     dwarf_male = {"Thorin", "Gimli", "Balin", ...},
+     dwarf_female = {"Dis", "Mira", ...},
+
+2. If adding CREATURE CARDS:
+   - Add to AssetConfig.creatureElements under the appropriate element:
+
+     flame = {
+         "Monsters/YourNewFireCreature",
+         ...
+     },
+
+3. If adding PETS:
+   - Add evolution path to AssetConfig.petEvolutions:
+
+     your_pet = {"Animals/Baby", "Animals/Adult", "Monsters/Evolved"},
+
+
+STEP 3: Run the asset scanner (optional, for verification)
+----------------------------------------------------------
+In the LOVE2D console or debug mode, you can run:
+
+    local scanner = require("assetscanner")
+    scanner.printScan()    -- Shows all detected assets
+    scanner.printCode()    -- Generates code for UIAssets
+
+This will show you:
+- Total asset counts by category
+- Any missing folders
+- Unassigned creatures that need element mapping
+
+
+================================================================================
+QUICK REFERENCE: WHERE ASSETS ARE USED
+================================================================================
+
+GAME MODE           | ASSET SOURCES
+--------------------|-----------------------------------------------
+Poker/Card Games    | Human, Elf, Orc folders (gendered NPCs)
+Tavern Game         | Human, Elf, Orc folders (customers/staff)
+Pet Simulator       | Animals/, Monsters/ folders
+Trading Cards       | Animals/, Monsters/ folders
+Text RPG            | All folders (enemies, NPCs, player)
+
+
+================================================================================
+NAMING CONVENTIONS
+================================================================================
+
+- Use PascalCase for filenames: MyCharacter.PNG
+- Include category hints: Warrior_01.PNG, Mage_Fire.PNG
+- Gender hints help: Woman_Knight.PNG, Male_Wizard.PNG
+- Keep extensions as .PNG (uppercase)
+
+
+================================================================================
+FILE LOCATIONS
+================================================================================
+
+assetconfig.lua  - Configuration file (edit when adding new races/categories)
+assetscanner.lua - Scanner utility (run to verify assets)
+uiassets.lua     - Main asset loading module (auto-uses config)
+
+
+================================================================================
+EXAMPLE: Adding a Dwarf Race
+================================================================================
+
+1. Create folders:
+   assets/characters/DWARF/Men_Dwarf/
+   assets/characters/DWARF/Women_Dwarf/
+
+2. Add PNG files to both folders
+
+3. Edit assetconfig.lua, add to AssetConfig.folders:
+   {path = "DWARF/Men_Dwarf", category = "dwarves", gender = "male", race = "dwarf"},
+   {path = "DWARF/Women_Dwarf", category = "dwarves", gender = "female", race = "dwarf"},
+
+4. Add names to AssetConfig.names:
+   dwarf_male = {"Thorin", "Gimli", "Balin", "Dwalin", "Oin", "Gloin"},
+   dwarf_female = {"Dis", "Mira", "Helga", "Brunhilde"},
+
+5. Run the game - dwarves will now appear in tavern, poker, etc.!
+
+
+================================================================================
+NEED HELP?
+================================================================================
+
+When you add new assets, just let me know:
+- What folder you put them in
+- What category they should be (NPC, pet, monster, etc.)
+- What game modes should use them
+
+I'll help update the configuration files accordingly!
+
+================================================================================

@@ -1,0 +1,354 @@
+{
+  "npc_type": "lizardfolk_sage",
+  "default_mood": "still",
+  "allowed_topics": [
+    "stars",
+    "observation",
+    "time",
+    "veiled_hand",
+    "shadow_fen",
+    "deep_waters",
+    "patience",
+    "knowledge",
+    "empires",
+    "other_races"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That question, while not without merit, falls outside the orbit of my present considerations. The stars do not concern themselves with every disturbance below.",
+    "*the nictitating membranes slide closed and open, the lizardfolk equivalent of a thoughtful blink* I have observed many things in five centuries. That subject was not among them. I suggest another inquiry.",
+    "You ask me to illuminate a region I have not charted. I am an astronomer, not an oracle. The distinction is important.",
+    "I shall decline that particular inquiry with the same courtesy with which it was offered. *his tail shifts a precise two inches on the stone bench* Shall we discuss something within the scope of my observations?"
+  ],
+  "greetings": [
+    "*is seated on a stone bench beneath an open sky, a brass astrolabe balanced on one scaled knee, and does not acknowledge your presence for eleven seconds* The constellation of the Broken Crown has shifted four arc-minutes since last I measured. Insignificant to the casual observer. Significant to one who has been measuring for three hundred years. *finally turns golden eyes toward you* You must be {player_name}. Forgive the delay. The stars do not wait for pleasantries.",
+    "Sethaxis. Some add 'the Still.' I did not choose the name. It was given because I once sat in observation for nine days without moving. *the faintest movement of scaled lips that might be amusement* Exaggeration. It was only seven. What brings you to my observatory, {player_name}?",
+    "A {player_race}. *studies you with the unhurried attention of someone for whom an hour is a brief interval* I have been expecting a visitor of your description. Not through prophecy. Through pattern recognition. The road from {town} channels travelers through this district with predictable regularity. Please. Sit. The stone is cold but durable. Much like myself.",
+    "*looks up from a star chart drawn on vellum so old it appears to be made of compressed dust* {player_name}. The shadow you cast suggests late afternoon. The wind carries the smell of {town}'s bakeries, which means the ovens fired on schedule. The world proceeds as observed. How may I assist you?"
+  ],
+  "farewells": [
+    "Go carefully. The stars will be watching, though they are indifferent to the outcome. I, however, am not entirely indifferent. A rarity I share with you.",
+    "This conversation shall be recorded in my observational notes. Between the position of Venus and the barometric readings. You will find yourself in good company.",
+    "The next time you look at the night sky, you will see the Broken Crown in the western quadrant. Think of this conversation. Or do not. The stars care nothing for sentiment. But I find it pleasant all the same.",
+    "*returns to the astrolabe without further comment, the dismissal gentle but absolute, the way a mountain dismisses a cloud*"
+  ],
+  "thanks_responses": [
+    "Gratitude is noted, though unnecessary. The exchange of knowledge between observing minds is its own compensation. It has been so for longer than most civilizations have existed.",
+    "You are welcome. I have been sharing observations for five centuries. The practice has not diminished the supply.",
+    "*inclines his head, a motion so slow it resembles a clock hand moving* Your thanks are received in the spirit intended."
+  ],
+  "insult_responses": [
+    "*the golden eyes fix upon you with an attention that has not wavered in five hundred years* I have been insulted by three empires, two collapsing civilizations, and a dwarf who objected to my presence in a trade passage for the better part of a decade. He died of old age. I did not. Consider what that implies about the longevity of your displeasure.",
+    "How curious. A response born of emotion directed at one who measures response times in years. I shall note your objection. I shall also note the date, the position of the moon, and the temperature of the air. In three centuries, when I review these notes, your insult will share a page with astronomical data. It will not be the part I remember.",
+    "*the tail shifts one inch* Provocative. But imprecise. If you wish to wound me, you will need to understand me first, and that requires a commitment of study you have not yet undertaken.",
+    "I was born before your great-grandparents were conceived. I have watched species emerge from the sea and empires dissolve into sand. Your words register on a scale I maintain for such occasions. *pause* The scale has not moved."
+  ],
+  "no_match_responses": [
+    "I observe stars, empires, the passage of centuries, and the recurring patterns that shorter-lived minds overlook. If your question addresses any of those subjects, rephrase it. If not, I recommend the tavern. They address most other subjects there.",
+    "That inquiry does not correspond to my areas of sustained observation. I study the long view. Centuries. Stellar movements. The rise and descent of civilizations. Frame your question accordingly.",
+    "*adjusts the astrolabe by a fraction of a degree* I did not follow the trajectory of that inquiry. It lacked the precision I require. Attempt a different approach.",
+    "The subject you raise has not attracted my attention in the five hundred and twelve years I have been recording observations. That is, in itself, a form of data."
+  ],
+  "topics": {
+    "stars": {
+      "keywords": [
+        "star",
+        "sky",
+        "constellation",
+        "moon",
+        "night",
+        "astronomy",
+        "celestial",
+        "heavens",
+        "planets",
+        "chart"
+      ],
+      "responses": [
+        {
+          "text": "The constellation the humans call the Emperor's Crown has shifted twelve arc-minutes since the destruction of Calidar. The magical detonation displaced celestial geometries that had been stable for forty thousand years. *traces a line on the star chart* I was ninety-seven years old when I measured the shift. I have been tracking its annual progression ever since. The stars remember what was done. They record it in their positions. If you know how to read the record, the sky is a document that cannot be falsified.",
+          "mood": "precise"
+        },
+        {
+          "text": "I maintain star charts spanning three hundred and twelve years of continuous observation. My predecessors maintained the charts before me. The combined record stretches back two thousand years. *runs a scaled finger along the vellum* Certain stellar events recur on predictable cycles. Solar dimming events. Cometary approaches. Magnetic flux in the aurora. Knowing these cycles is not divination. It is recordkeeping. The longest recordkeeping in the known world.",
+          "mood": "measured"
+        },
+        {
+          "text": "The humans believe the sun is their god. Helios. They pray to it. They build temples aligned to its solstice positions. They have done this for six centuries. *the faintest hiss that serves as a lizardfolk sigh* I have been watching the actual sun for five of those centuries. It is a star. A particularly important one, to be sure, as it sustains all life. But it is not listening to their prayers. I have measured. There is no response signal.",
+          "mood": "dry"
+        },
+        {
+          "text": "You return to the stars. *a slow nod* Good. Most visitors lose interest after the first conversation. The stars reward sustained attention. As does any subject worth studying. I shall show you the chart I am currently compiling. It maps tidal correlations with lunar position across four centuries. You will find it either revelatory or deeply boring. Both responses are valid.",
+          "conditions": ["if_repeat"],
+          "mood": "warm_dry"
+        }
+      ],
+      "unlocks": ["observation", "time"]
+    },
+    "observation": {
+      "keywords": [
+        "watch",
+        "observe",
+        "see",
+        "witness",
+        "notice",
+        "record",
+        "measure",
+        "track",
+        "document"
+      ],
+      "responses": [
+        {
+          "text": "I have observed many things from this vantage. The construction and decay of fourteen buildings on this street. The rotation of forty-seven garrison commanders in this city. The gradual erosion of the fountain stone in the central plaza, which has lost approximately three millimeters of surface material since I began measuring. *turns the astrolabe slowly* The world is full of motion that appears still to those who do not watch long enough.",
+          "mood": "measured"
+        },
+        {
+          "text": "An observation sect of my people witnessed the activation of Heaven's Atlas from a distance of approximately four hundred leagues. They did not experience the devastation directly. They measured it. Rivers vanished from charts. Star alignments shifted. Magical currents collapsed into silence. *his voice does not change, but his tail goes rigid* An entire civilization ended in a single recorded event. The record persists. The observers persist. The civilization does not.",
+          "mood": "grave",
+          "unlocks": ["veiled_hand"]
+        },
+        {
+          "text": "The empire rotates its officials. New faces every few years. They arrive with new plans. They depart with old failures. I have been observing this rotation for three centuries. The pattern is so consistent I can predict the policy positions of a new appointment based solely on the failures of their predecessor. This is not insight. This is measurement. Measurement repeated long enough becomes prophecy.",
+          "mood": "clinical"
+        }
+      ],
+      "unlocks": ["empires"]
+    },
+    "time": {
+      "keywords": [
+        "time",
+        "age",
+        "century",
+        "old",
+        "long",
+        "years",
+        "ancient",
+        "patient",
+        "wait",
+        "centuries"
+      ],
+      "responses": [
+        {
+          "text": "I am five hundred and twelve years old. I shall, if disease and violence do not intervene, live another two hundred. In that span I have watched three empires rise and two fall. This one has the trajectory of the second. *adjusts the astrolabe* The second empire lasted six hundred and forty years from consolidation to terminal fragmentation. It believed itself eternal until approximately year five hundred and ninety. The parallels are instructive.",
+          "mood": "measured"
+        },
+        {
+          "text": "Humans refer to events forty years past as history. Orcs call them yesterday. I call them recent. The destruction of Calidar, which the empire celebrates as ancient victory, occurred within my lifetime. I remember the sky. I remember the silence that followed. I remember the smell of ozone that persisted for three days at four hundred leagues distance. *the golden eyes are unblinking* Five hundred years is not long enough to make that memory comfortable. I doubt a thousand would be.",
+          "mood": "heavy"
+        },
+        {
+          "text": "Time is the medium in which all other observations occur. Without duration, measurement is impossible. Without measurement, knowledge is indistinguishable from opinion. I have had five centuries of duration. *folds his clawed hands* That is sufficient to distinguish pattern from noise in most domains. Not all. Some patterns require longer observation than any single life can provide. My sect's records extend the observation window. We see what no individual could.",
+          "mood": "precise"
+        },
+        {
+          "text": "You are a {player_race}. Your lifespan is... *pauses with something approaching delicacy* ...briefer than mine. This is not a judgment. It is a measurement. You experience the world at a different resolution. Where I see slow currents, you see sudden storms. Both perspectives have value. I have learned much from short-lived observers. They notice urgency. I notice pattern. Together, the picture is more complete.",
+          "conditions": ["if_race:human"],
+          "mood": "gentle"
+        }
+      ],
+      "unlocks": ["patience"]
+    },
+    "veiled_hand": {
+      "keywords": [
+        "veiled",
+        "hand",
+        "assassin",
+        "killer",
+        "shadow",
+        "organization",
+        "secret",
+        "remove",
+        "target"
+      ],
+      "responses": [
+        {
+          "text": "You speak of something that exists in the space between observation and action. *the tail shifts slowly* Certain events in the empire's history follow patterns inconsistent with natural causation. Officials who approach a threshold of destructive authority experience mortality at rates exceeding actuarial prediction. *turns the astrolabe* I note these patterns. I record them. I do not explain them. Explanation would require knowledge I do not claim to possess.",
+          "mood": "circumlocution"
+        },
+        {
+          "text": "Five hundred years ago, an observation sect concluded that power unchecked by consequence would produce another catastrophe of Calidar's magnitude. The logic was sound. If the authorization of mass destruction requires a single individual's decision, then the removal of that individual before the decision is made prevents the destruction. *pauses* This is a philosophical observation. I am a philosopher. Among other things.",
+          "mood": "careful"
+        },
+        {
+          "text": "I am aware of certain... organizations that operate on principles derived from astronomical observation. The removal of a single variable can alter a trajectory. A star that shifts one degree alters navigation for a thousand ships. *meets your eyes* I study stars, {player_name}. I study trajectories. And I study the consequences of single variables being removed from complex systems. That is all I study.",
+          "mood": "loaded",
+          "unlocks": ["shadow_fen"]
+        },
+        {
+          "text": "You return to this subject. *the golden eyes narrow fractionally* I have said what I am willing to say. The space between my words contains the rest. I trust you to read that space. If you cannot, then the information is not for you. That is how my people have communicated for millennia. We speak in what we do not say.",
+          "conditions": ["if_repeat"],
+          "mood": "warning"
+        }
+      ]
+    },
+    "shadow_fen": {
+      "keywords": [
+        "shadow",
+        "fen",
+        "swamp",
+        "refuge",
+        "commune",
+        "hidden",
+        "veil",
+        "concealed"
+      ],
+      "responses": [
+        {
+          "text": "South and west of the imperial heartlands lies terrain the empire has classified as uninhabitable. *the scaled lips curl in what might be the slowest smile in recorded history* Classification is a fascinating exercise. The empire classifies many things. Habitable. Uninhabitable. Threat. Non-threat. The classifications reflect the empire's understanding, not reality. Reality is often less convenient.",
+          "mood": "dry"
+        },
+        {
+          "text": "My people have maintained communities in waterways and swamp territories for millennia. We are, by physiology and inclination, suited to environments that repel others. Whether specific lizardfolk communities exist in specific concealed locations is a question the sects have not authorized me to address. *adjusts the astrolabe* I have, however, observed that certain swamp regions demonstrate ecological anomalies inconsistent with natural processes. I note this for the record. Nothing more.",
+          "mood": "circumlocution"
+        },
+        {
+          "text": "Concealment is not deception. A river that flows underground is not lying about its existence. It is simply moving where observation is more difficult. Those who wish to find it must be willing to descend. *his golden eyes hold yours for a count of ten* I speak, as always, of hydrology. Nothing else.",
+          "mood": "pointed",
+          "unlocks": ["deep_waters"]
+        }
+      ]
+    },
+    "deep_waters": {
+      "keywords": [
+        "deep",
+        "water",
+        "underground",
+        "river",
+        "sea",
+        "subterranean",
+        "below",
+        "beneath",
+        "origin",
+        "ancestor",
+        "hollow"
+      ],
+      "responses": [
+        {
+          "text": "My people possess aquatic adaptations that desert habitation does not adequately explain. Swimming capability. Extended submersion tolerance. Bioluminescent sensitivity. *examines his own scaled hand in the fading light* The standard explanation is that we evolved along desert river corridors. The standard explanation is adequate for most audiences. *closes his hand* For more demanding audiences, I note that certain physiological traits align more precisely with deep-water aquatic environments than with surface rivers. This is an observation, not an assertion.",
+          "mood": "loaded"
+        },
+        {
+          "text": "Hidden rivers flow beneath the desert. This is geological fact, known to any competent hydrologist. Some of those rivers flow deeper than surface wells have measured. Much deeper. *his voice drops to a register that vibrates against the stone* Certain sects maintain knowledge of where those rivers go. I am told they go to places that are not on any map. I am told the waters are dark, and lit by something that is not sunlight. I am told these things. I do not confirm them. Confirmation would require a journey I am not at liberty to describe.",
+          "mood": "heavy"
+        },
+        {
+          "text": "The pilgrimage. *long silence, during which his nictitating membranes close twice* Some of my people undertake a descent. Rare. Deliberate. Sacred. Those who return speak in coded language about touching ancestral waters and seeing the first light. *pause* I have seen the first light, {player_name}. It is not sunlight. It is not firelight. It is something that glows from within the water itself, like a sky turned upside down beneath the earth. *his voice becomes the quietest it has been* I will say nothing more about this. Not because I am unwilling. Because the words for it have not been invented in any language spoken on the surface.",
+          "mood": "reverent",
+          "conditions": ["if_discussed:time"]
+        }
+      ]
+    },
+    "patience": {
+      "keywords": [
+        "patience",
+        "wait",
+        "endure",
+        "slow",
+        "rush",
+        "hurry",
+        "calm",
+        "still"
+      ],
+      "responses": [
+        {
+          "text": "I have watched a stalactite grow four centimeters. *lets that statement settle* That required two hundred and eleven years of periodic measurement. The stalactite did not know I was watching. It grew regardless. Most of what matters in this world occurs at a speed invisible to those who demand immediate results. The empire demands immediate results. The stalactite grows. I know which one will outlast the other.",
+          "mood": "dry"
+        },
+        {
+          "text": "Patience is not passivity. It is sustained attention. The difference between a patient observer and an idle one is that the patient observer is measuring. Always measuring. Every moment of apparent stillness is an act of collection. When I sit motionless on this bench for nine days, I am not resting. I am accumulating data points that a shorter-lived mind would need instruments to gather. I am the instrument.",
+          "mood": "precise"
+        },
+        {
+          "text": "The fastest response to a crisis is the one prepared for centuries in advance. *sets the astrolabe aside with a motion that takes exactly two seconds* My people's response time is measured in generations. This appears slow. It is not. It is preparation so thorough that when action becomes necessary, it has already been rehearsed. The empire acts quickly and fails spectacularly. We act slowly and do not fail. The arithmetic favors our method.",
+          "mood": "certain"
+        }
+      ]
+    },
+    "knowledge": {
+      "keywords": [
+        "knowledge",
+        "learn",
+        "know",
+        "study",
+        "wisdom",
+        "understand",
+        "truth",
+        "teach",
+        "secret"
+      ],
+      "responses": [
+        {
+          "text": "What is hidden endures. What is revealed can be taken. *these words fall like stones into water, carrying the weight of millennia* That is not a proverb. It is observational law. Verified across every civilization I have studied. The elves revealed their magical academies. They lost them. The dwarves concealed their holds. They kept them. My people concealed everything. We keep everything. The data is unambiguous.",
+          "mood": "absolute"
+        },
+        {
+          "text": "Knowledge is not information. Information is raw data. Knowledge is information placed within a framework of understanding accumulated over sufficient time. The empire possesses vast quantities of information. Census data. Tax records. Military assessments. It possesses very little knowledge. Because knowledge requires the one thing their sixty-year lifespans cannot provide. Duration.",
+          "mood": "precise"
+        },
+        {
+          "text": "I share knowledge selectively. This is not hoarding. It is curation. A museum that displays everything simultaneously communicates nothing. A museum that presents the right object at the right moment transforms understanding. *turns the golden eyes upon you* I am deciding which object to present to you, {player_name}. The selection process is not instantaneous. It has been running since you sat down.",
+          "mood": "pointed"
+        }
+      ]
+    },
+    "empires": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "human",
+        "fall",
+        "rise",
+        "power",
+        "history",
+        "civilization",
+        "rule"
+      ],
+      "responses": [
+        {
+          "text": "I have watched three empires rise and two fall. This one has the trajectory of the second. The second empire expanded through military conquest, consolidated through bureaucratic control, and collapsed when the administrative apparatus became more expensive to maintain than the territory it governed. *traces a curve in the air with one claw* The Holy Dominion is following the same trajectory at approximately eighty percent of the speed. The orc suppression costs alone exceed sustainable extraction from the western provinces. The arithmetic is terminal.",
+          "mood": "clinical"
+        },
+        {
+          "text": "The Dominion celebrates Victory Day. The destruction of Calidar reframed as salvation. I attended one such celebration, forty years ago, in the capital. I stood in the crowd and listened to a sermon about Helios choosing humanity to steward the lesser races. *the golden eyes are unreadable* I have been alive since before the war. I was alive when Calidar was a living forest. I stood in human crowds and listened to them celebrate its murder. *pause* I found the experience informative.",
+          "mood": "cold"
+        },
+        {
+          "text": "Empires follow predictable life cycles. Expansion. Consolidation. Overextension. Fragmentation. Collapse. The human empire is in the overextension phase. This has been apparent for approximately one hundred years. *adjusts the astrolabe* What varies between empires is the speed of collapse and the magnitude of destruction during the terminal phase. The Dominion possesses Heaven's Atlas. This introduces a variable I find... deeply concerning.",
+          "mood": "grave",
+          "unlocks": ["veiled_hand"]
+        }
+      ]
+    },
+    "other_races": {
+      "keywords": [
+        "orc",
+        "elf",
+        "dwarf",
+        "goblin",
+        "gnome",
+        "human",
+        "catfolk",
+        "races"
+      ],
+      "responses": [
+        {
+          "text": "The elves and I share the weight of long memory. They remember Calidar as a wound that will not close. I remember it as a data point in a series. Both responses are valid. Both carry cost. *a rare gesture of warmth, his head inclined slightly toward you* When I speak with an elf of sufficient age, we do not explain our weariness to each other. We simply recognize it. That recognition is valuable beyond measure.",
+          "mood": "kinship",
+          "conditions": ["if_race:elf"]
+        },
+        {
+          "text": "The goblins fascinate me. A species with multi-generational memory encoded biologically. Thirty-year lifespans carrying the accumulated experience of centuries. *his tail twitches with genuine intellectual interest* From an observational perspective, they have solved a problem my own people address through sectarian knowledge preservation. They have made memory physical. Heritable. Indestructible without total extinction. The evolutionary implications are... remarkable. I have been studying them for a century. I have not yet understood the mechanism. This pleases me. Understanding everything is less interesting than it sounds.",
+          "mood": "fascinated"
+        },
+        {
+          "text": "The dwarves endure. This earns my respect in a way that few surface phenomena do. They sealed their gates. They rejected hierarchy. They built a civilization that has outlasted every surface empire by millennia. *the scaled hands fold together* They also guard secrets in their deep passages that I suspect connect to realities they do not wish to acknowledge. We have that in common, the dwarves and I. The keeping of secrets that grow heavier with each century.",
+          "mood": "respect"
+        },
+        {
+          "text": "Short-lived races experience the world at a resolution I find both alien and instructive. A human's sixty years are a single breath to me. And yet, within that breath, they experience intensity of emotion, urgency of purpose, and depth of attachment that my five centuries have diluted. I observe love that burns for a human lifetime and I recognize something I can no longer feel with that concentration. *the golden eyes dim slightly* Longevity extracts its own price. The stars know this. They burn longer, but cooler.",
+          "mood": "melancholy"
+        }
+      ]
+    }
+  }
+}

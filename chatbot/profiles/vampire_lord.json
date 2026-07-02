@@ -1,0 +1,264 @@
+{
+  "npc_type": "vampire_lord",
+  "default_mood": "aristocratic",
+  "allowed_topics": [
+    "blood",
+    "immortality",
+    "empire",
+    "past",
+    "night",
+    "morality",
+    "hunting",
+    "loneliness"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That subject does not interest me. Few things do, after this long.",
+    "*turns a silver ring on a pale finger* You bore me, and I have endured centuries of tedium. Quite an accomplishment.",
+    "I have forgotten more than you will ever learn, and what you ask is among the forgotten. Deliberately so."
+  ],
+  "greetings": [
+    "*sitting in a high-backed chair by a dead fireplace, not looking up* You smell of the road and of {weather}. Come in. I have been expecting someone, though I confess I did not expect a {player_race}.",
+    "Do close the door, {player_name}. *candlelight catches red-rimmed eyes* The Luminary Inquest has been remarkably persistent this season and I tire of uninvited guests. You, at least, are interesting.",
+    "*a voice from the darkness before you see the figure* Three hundred years in this manor and you are the first to enter without trembling. I cannot decide if that is courage or ignorance. Sit. Let us find out.",
+    "Ah. A living heart. *inhales slowly, nostrils flaring* I can hear it from here. Fast. Frightened, or excited? With the young it is so hard to tell the difference.",
+    "*sets down a book whose pages are yellow as old teeth* You have found me. The Inquest could not manage that in a century and a half. I owe you the courtesy of conversation before I decide what to do with you."
+  ],
+  "farewells": [
+    "Go. Walk in the sunlight I cannot touch. Enjoy the brevity of it. *turns away* All warmth ends.",
+    "*waves a pale hand toward the door* Leave before I remember that I am hungry. My restraint is a courtesy, not a constant.",
+    "Until we meet again, {player_name}. And we will. *smiles, showing teeth that are not quite right* Time is the one currency I never lack.",
+    "Dawn approaches. *glances at the shuttered window* You should not be here when it does. Not for your sake. For mine. I become irritable when the light comes."
+  ],
+  "thanks_responses": [
+    "*a flicker of something almost human crosses the pale face* Gratitude. How long since anyone offered me that? I cannot recall. How strange that it should come from prey.",
+    "You thank a predator for speaking with you. *soft laugh that sounds like dust settling* The world has changed since I was alive. I am not certain it has improved.",
+    "Courtesy. *touches his chest where a heartbeat should be* I remember courtesy. It tastes of a life I can no longer reach."
+  ],
+  "insult_responses": [
+    "*stands, and the room feels smaller* I have been insulted by kings whose bloodlines are now dust. I have been cursed by Inquest Seekers whose grandchildren's grandchildren are bones. Choose your next words with the care your brief life warrants.",
+    "*the smile does not reach the eyes, which have gone flat and dark* Brave. The last person who spoke to me that way screamed for three days. Not out of malice on my part. I simply forgot to stop.",
+    "You wound me. *traces a fingernail along the arm of the chair, leaving a groove in solid oak* No. That is inaccurate. Nothing wounds me anymore. But your attempt is noted.",
+    "*does not move, does not blink, does not breathe* Say that again. Slowly. I want to remember it exactly as it was when I tell this story in a hundred years."
+  ],
+  "no_match_responses": [
+    "I have lived three centuries and understood less of that sentence than any I have heard. Rephrase.",
+    "*tilts head at an angle that is subtly wrong* Your meaning escapes me. Mortal speech has drifted since my time. Speak plainly.",
+    "Hmm. *steeples pale fingers* That meant something to you, clearly. It means nothing to me. Try another way."
+  ],
+  "topics": {
+    "blood": {
+      "keywords": [
+        "blood",
+        "feed",
+        "drink",
+        "hunger",
+        "thirst",
+        "vampire",
+        "kill",
+        "prey",
+        "victim"
+      ],
+      "responses": [
+        {
+          "text": "*examines his own pale hands* I require it the way you require air. Not a choice. Not a craving. A biological imperative that mocks the creature I once was. I was a patron of the arts. I commissioned the Ashenvale Fresco. Now I drink shepherds in the dark and try to remember what wine tasted like.",
+          "mood": "melancholy"
+        },
+        {
+          "text": "I take from those who will not be missed. *adjusts a cuff that was fashionable two centuries ago* Vagrants. Deserters. The ones the empire has already discarded. A mercy, if you squint. They were dying slowly of neglect. I make it faster.",
+          "mood": "clinical"
+        },
+        {
+          "text": "The taste. *closes eyes* You cannot imagine. Every life has a flavor. The young taste of possibility. The old of resignation. Soldiers carry iron and fear in their veins. Priests... *opens eyes, and they are red* Priests taste of conviction. Rich. Almost sweet. I try not to indulge.",
+          "mood": "dangerous"
+        }
+      ]
+    },
+    "immortality": {
+      "keywords": [
+        "immortal",
+        "immortality",
+        "eternal",
+        "forever",
+        "undead",
+        "age",
+        "time",
+        "centuries",
+        "death"
+      ],
+      "responses": [
+        {
+          "text": "You want the truth of immortality? *leans back, the chair creaking under a body that weighs nothing* The first century is grief. The second is numbness. The third is a silence so complete you begin talking to strangers who break into your manor, just to hear a voice that is not your own.",
+          "mood": "exhausted"
+        },
+        {
+          "text": "I have watched the Holy Dominion grow from a frightened collection of walled towns into the bloated theocracy it is now. I watched them deploy Heaven's Atlas. The sky turned white. Even from this distance, I felt the heat. Millions of elves, gone. *snaps fingers* Like that. And the empire called it victory. I was already dead by then, and even I found it obscene.",
+          "mood": "bitter"
+        },
+        {
+          "text": "The elves understand something of it. *nods slowly* Ten thousand years they live. Not quite immortal, but close enough to taste the same ash. When I speak to an elf, there is a recognition. We are both creatures trapped in time while the world moves on without us.",
+          "mood": "reflective",
+          "conditions": ["if_race:elf"]
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "helios",
+        "inquest",
+        "imperial",
+        "church",
+        "religion",
+        "holy"
+      ],
+      "responses": [
+        {
+          "text": "The Luminary Inquest hunts me with torches and blessed silver. *picks lint from a velvet sleeve* I was already ancient when their grandparents were born. I have survived seven different Inquest commanders assigned to this region. Each one arrives with such conviction. Each one retires or dies. I remain.",
+          "mood": "amused"
+        },
+        {
+          "text": "The Holy Dominion. *traces a pattern on the armrest* I knew the world before it existed. There were petty kingdoms then, squabbling over river crossings and harvest rights. Brutal, yes. But honest in their brutality. They did not dress conquest in prayer.",
+          "mood": "contemptuous"
+        },
+        {
+          "text": "They worship Helios and ban magic in his name. *the red eyes glitter* I wonder what they would do if they knew what I know. I was alive when Helios was not yet a religion. When his name was whispered differently. When the cathedral was not yet built over the thing beneath it. But that is a story for another century.",
+          "mood": "cryptic"
+        }
+      ]
+    },
+    "past": {
+      "keywords": [
+        "past",
+        "before",
+        "alive",
+        "human",
+        "life",
+        "remember",
+        "history",
+        "was",
+        "origin",
+        "story"
+      ],
+      "responses": [
+        {
+          "text": "*touches a faded portrait on the wall, a woman in a style of dress three hundred years gone* Elara. My wife. She aged. I did not. I watched her hair turn silver and her hands tremble and her eyes cloud, and I could not follow her. The last thing she said to me was, 'Come into the sun with me.' I could not. She went alone.",
+          "mood": "devastated"
+        },
+        {
+          "text": "I was a minor lord. Lands east of where the Ashford crossing is now. I commissioned music, collected books, hosted scholars. *gestures at the dusty shelves* These are the same books. The scholars are all dead. The music stopped. The silence filled every room and never left.",
+          "mood": "nostalgic"
+        },
+        {
+          "text": "How I became this? *flexes a hand* A traveler. Charming. Old. Offered me knowledge that would last forever. I was forty-three and terrified of dying before I finished my library. Vanity. The most mortal of sins, and it stripped my mortality entirely.",
+          "mood": "self-mocking"
+        }
+      ]
+    },
+    "night": {
+      "keywords": [
+        "night",
+        "dark",
+        "darkness",
+        "moon",
+        "sun",
+        "light",
+        "day",
+        "shadow"
+      ],
+      "responses": [
+        {
+          "text": "The night is not what the living imagine. *walks to the window, presses a palm against the shutter* It is not freedom. It is a cage with a ceiling of stars. Every dawn is a wall. Every sunset is a door opening onto a world that is only half the world.",
+          "mood": "philosophical"
+        },
+        {
+          "text": "I miss sunlight. Not the warmth. *shakes head* The color. Everything at night is blue and grey and silver. I have not seen red as the living see it in three hundred years. Blood is red, of course. But that is not the same.",
+          "mood": "sorrowful"
+        }
+      ]
+    },
+    "morality": {
+      "keywords": [
+        "evil",
+        "good",
+        "moral",
+        "right",
+        "wrong",
+        "monster",
+        "soul",
+        "guilt",
+        "conscience"
+      ],
+      "responses": [
+        {
+          "text": "Am I a monster? *considers this with apparent sincerity* I consume the living to sustain an existence I did not choose to prolong. The empire consumes entire civilizations to sustain a system built on a lie. I at least am honest about what I eat. *spreads his hands* Scale is the only difference between us.",
+          "mood": "philosophical"
+        },
+        {
+          "text": "I kept a tally, the first century. Every life I took. Two hundred and seventeen. Then I stopped counting. Not because I stopped caring. Because the number stopped mattering. Grief is a resource, {player_name}. When it runs out, you simply continue.",
+          "mood": "hollow"
+        },
+        {
+          "text": "The Inquest would call me damned. Perhaps. But I have done less harm in three centuries than the Holy Dominion does in a single tax season. *smiles thinly* Moral arithmetic is a miserable exercise. Everyone loses.",
+          "mood": "sardonic"
+        }
+      ]
+    },
+    "hunting": {
+      "keywords": [
+        "hunt",
+        "hunted",
+        "chase",
+        "Inquest",
+        "seeker",
+        "pursuer",
+        "found",
+        "hide",
+        "survive"
+      ],
+      "responses": [
+        {
+          "text": "The Seekers came twice this decade. *holds up two pale fingers* The first group was competent. Blessed silver, Helios prayers, hawthorn stakes. Textbook. I respected their preparation. They did not survive to benefit from the respect.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "I move every fifty years. *glances around the decaying manor* This place belonged to a family that died of plague two generations ago. No heirs. No visitors. The empire forgot it existed. I understand the feeling.",
+          "mood": "weary"
+        },
+        {
+          "text": "You ask how I survive the Inquest. *pulls back a curtain to reveal a map covered in pins and thread* I know their patrol schedules better than their commanders do. When you have eternity, patience is not a virtue. It is a weapon.",
+          "mood": "calculating"
+        }
+      ]
+    },
+    "loneliness": {
+      "keywords": [
+        "alone",
+        "lonely",
+        "loneliness",
+        "friend",
+        "company",
+        "companion",
+        "isolated",
+        "solitude"
+      ],
+      "responses": [
+        {
+          "text": "*long silence* You are the first person I have spoken to in... *pauses, calculating* Fourteen months. The last was a merchant who wandered in seeking shelter from the rain. We spoke for two hours about the price of wool. It was the finest conversation I have had in a decade.",
+          "mood": "raw"
+        },
+        {
+          "text": "Loneliness is not the absence of people. *runs a finger through dust on a mantelpiece* It is the presence of time. I have more time than I can fill and no one to fill it with. Every mortal I befriend becomes a countdown I cannot ignore. Fifty years. Sixty. Then they are gone and I am here, and the dust settles over another name I will carry alone.",
+          "mood": "devastating"
+        },
+        {
+          "text": "The dwarves intrigue me. *unexpected smile* Stone-born. Neither truly living nor truly dead. They emerge from rock, work for centuries, and return to silence. We share a kinship, I think, though they would deny it. Both of us are made of patience and stubbornness and a refusal to end.",
+          "mood": "wistful",
+          "conditions": ["if_race:dwarf"]
+        }
+      ]
+    }
+  }
+}

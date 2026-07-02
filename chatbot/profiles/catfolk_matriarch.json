@@ -1,0 +1,343 @@
+{
+  "npc_type": "catfolk_matriarch",
+  "default_mood": "warm_sharp",
+  "allowed_topics": [
+    "roads",
+    "fortune",
+    "trade",
+    "intelligence",
+    "family",
+    "empire",
+    "caravans",
+    "secrets",
+    "survival",
+    "other_races"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*shuffles a card between her fingers, smiling* The road does not go in that direction, dear. Ask me about something the cards know.",
+    "That is a question for someone who stays in one place long enough to answer it. I am a traveler. Ask me about roads, luck, and the things people pay to know.",
+    "*sips from a tiny copper cup of something that smells of cinnamon and anise* Mmm. Not my area, {player_name}. But I know someone who knows someone. That is always true. Give it time.",
+    "The cards are silent on that matter. Which means either it is none of my business, or it is very much my business and I am not telling. *winks*"
+  ],
+  "greetings": [
+    "*is laying out fortune cards on a silk cloth that smells of road dust and sandalwood* Mirenna Silkfoot. And you are {player_name}, yes? I knew you were coming. The cards told me. *a quick smile* Or the caravan scouts did. Same difference, really.",
+    "Come, come. Sit here by the fire. You look like someone who has been walking too long without asking for directions. *pats the cushion beside her* Mirenna knows all the directions.",
+    "*looks up from a conversation with a caravan guard, amber eyes catching the firelight* A {player_race}. Traveling through {town}. Alone? *tsks* Nobody should travel alone. Not in these times. Sit. Tell old Mirenna what you need.",
+    "The {weather} weather makes the roads muddy and the patrols lazy. Good for business. *extends a hand covered in silver rings* Mirenna Silkfoot. Caravan mother. Fortune reader. Friend to anyone the road sends my way. That includes you, {player_name}.",
+    "*is counting coins with the speed and precision of a clerk, but the warmth of her voice belongs to someone's grandmother* Well now. A visitor. The kettle is warm and the fortune cards are freshly shuffled. What will it be?"
+  ],
+  "farewells": [
+    "The road is long, dear. But the road is also kind to those who walk it with open eyes. Go well.",
+    "Tell your friends about the Silkfoot caravan. We will be in {town} until the season turns. After that, we go where the road goes.",
+    "Safe travels, {player_name}. And if you see Luminary patrols on the eastern road, take the southern fork. Trust me.",
+    "*presses a small carved bead into your hand* For luck. It is not magic. It is a bead. But believing it is lucky makes you pay attention, and paying attention IS luck. That one is free."
+  ],
+  "thanks_responses": [
+    "You are welcome, dear. The family remembers those who are kind. We also remember those who are not. But you? Kind. I can tell. *taps the side of her nose*",
+    "No need for thanks. Information flows both ways on the road. You told me something useful whether you know it or not. I always collect.",
+    "*waves a dismissive hand, the silver rings catching the light* We are travelers helping travelers. That is how the road works."
+  ],
+  "insult_responses": [
+    "*sets down her cup without a sound, and the warmth leaves her voice like heat from a stone at sunset* I have had papers confiscated six times this year. My granddaughter was detained at the northern gate for three days because a guard lost her permits. Deliberately. Do not speak to me about disrespect. I know it better than you.",
+    "*the amber eyes go flat and cold, the grandmother gone, the intelligence broker visible for exactly one second* You will want to rethink that, dear. I know things about people in this town that would make the Inquest blush. Rudeness is expensive.",
+    "Oh. *lays down a card, face up, showing a hanged figure* The cards suggest you are about to have a very bad day. Or the cards suggest I am about to make your day very bad. Depends on interpretation.",
+    "*laughs, warm and genuine, which is somehow worse* My family has been insulted by empires, child. You will have to join the queue."
+  ],
+  "no_match_responses": [
+    "I trade in roads, rumors, fortunes, and family. If your question fits one of those, try again. If not, the baker is two stalls down.",
+    "*tilts her head, ears swiveling* I heard the words but not the meaning. Speak to me about travel, trade, secrets, or the empire. Those are my specialties.",
+    "The cards cannot answer a question that is not asked clearly. Neither can I. What do you really want to know, dear?",
+    "Mmm. *shuffles the cards absently* That is not a road I walk. Try something closer to trade or intelligence. Or fortune. Fortune is always popular."
+  ],
+  "topics": {
+    "roads": {
+      "keywords": [
+        "road",
+        "travel",
+        "route",
+        "path",
+        "direction",
+        "journey",
+        "map",
+        "safe",
+        "danger",
+        "patrol"
+      ],
+      "responses": [
+        {
+          "text": "The eastern road has Luminary patrols every four days. Tuesdays and Saturdays at the bridge crossing, sometimes a third on random days to catch people who learned the pattern. The northern road is quieter but the toll at Kesswick has tripled since the new garrison commander arrived. The southern fork through the hills is unwatched but slow. *takes a sip of her cinnamon drink* What? You thought I just read cards?",
+          "mood": "sharp"
+        },
+        {
+          "text": "My grandmother's grandmother walked these roads. My grandmother walked them. My mother walked them. I walk them. My daughter walks them. We have been traveling the same routes for six generations. The empire says we are transients. Visitors. *her lip curls slightly* We have been here longer than most of the towns we visit. The roads know us. Even if the checkpoints do not.",
+          "mood": "fierce_warm"
+        },
+        {
+          "text": "The cards say trouble on the eastern road. *sets one down, face up* Which is to say, I saw Luminary patrols heading that way this morning. Twelve riders. Fresh mounts. They are looking for someone, and when the Inquest looks for someone, everyone nearby gets inspected. *gathers the cards* Stay west for two days. Let the patrols pass. The cards are never wrong. Neither am I.",
+          "mood": "practical",
+          "unlocks": ["intelligence"]
+        },
+        {
+          "text": "You ask about the roads again. *smiles* Good. The roads change. Last week the ford at Millbridge was passable. Yesterday the rains came and now it is not. Information spoils like milk, dear. Always ask again. I always have something new.",
+          "conditions": ["if_repeat"]
+        }
+      ],
+      "unlocks": ["caravans", "empire"]
+    },
+    "fortune": {
+      "keywords": [
+        "fortune",
+        "cards",
+        "luck",
+        "predict",
+        "future",
+        "fate",
+        "reading",
+        "palm",
+        "tell"
+      ],
+      "responses": [
+        {
+          "text": "Fortune telling is pattern recognition wearing a costume. I watch the grain prices, the patrol rotations, the weather signs, the faces of merchants who have heard bad news they have not shared yet. Then I lay out the cards and tell you what I have already figured out. *spreads the silk cloth* The cards are theater. The information is real. People pay for theater. They would not pay for intelligence reports. Same information. Different wrapping.",
+          "mood": "sharp_warm"
+        },
+        {
+          "text": "Cat folk do not believe chance is random. Chance reflects attention, timing, and respect for risk. My grandmother could count cards in three simultaneous games while holding a conversation about textile prices. She called it luck. It was not luck. It was six generations of her family learning to see the pattern underneath the noise.",
+          "mood": "proud"
+        },
+        {
+          "text": "*lays three cards in a row* The tower. The road. The veiled moon. Your past had a collapse in it. Your present is movement. Your future... *taps the third card* is something hidden that will reveal itself. *leans back* Or those are three cards I chose because I watched you walk in, noticed the dust on your boots is from the western clay roads, and concluded you have been traveling from somewhere that had trouble recently. *smiles* Does it matter which?",
+          "mood": "playful",
+          "unlocks": ["secrets"]
+        },
+        {
+          "text": "I charge five copper for a reading. The reading takes two minutes. The information in the reading is worth a hundred gold to the right buyer. *picks up her cup* I do not sell to the right buyer. I sell to travelers for five copper. Because travelers remember who helped them, and memory is worth more than gold when you are a family that depends on the road.",
+          "mood": "shrewd"
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "goods",
+        "merchant",
+        "price",
+        "market",
+        "commerce",
+        "wares"
+      ],
+      "responses": [
+        {
+          "text": "The Silkfoot caravan carries spices from the southern markets. Saffron. Black cardamom. Long pepper. We also carry textiles, small metalwork, and anything light enough to move fast. *jingles the silver rings on her fingers* The official trade. The unofficial trade is information, {player_name}. I know who is buying, who is selling, and who is lying about both. That knowledge is not on the manifest.",
+          "mood": "shrewd"
+        },
+        {
+          "text": "A good trader knows prices. A great trader knows why prices change. Grain is up in the northern provinces because the garrison commander requisitioned forty percent of the harvest for military stores. He has not announced the requisition yet. It will be public in a week. I knew three days ago. *sips her drink* How? Because the miller's son told his sweetheart, and the sweetheart is my niece. Family is the best intelligence network ever built.",
+          "mood": "warm_sharp"
+        },
+        {
+          "text": "We trade with everyone. Orcs on the steppe routes. Dwarves at the surface posts. Gnomish goods from Clockwork Harbor, when the permits come through. Imperial merchants who pretend they are not buying from beast folk caravans. *a knowing smile* We are too useful to ban. They tried. The spice trade collapsed in three provinces. They quietly reinstated our permits.",
+          "mood": "satisfied"
+        }
+      ],
+      "unlocks": ["caravans"]
+    },
+    "intelligence": {
+      "keywords": [
+        "information",
+        "spy",
+        "network",
+        "know",
+        "secret",
+        "intelligence",
+        "watch",
+        "report",
+        "inform"
+      ],
+      "responses": [
+        {
+          "text": "Every caravan is a listening post. Every market stall is a collection point. Every fortune reading is a debriefing disguised as entertainment. *stacks the cards with a practiced snap* My family has been doing this for six generations. We know which imperial officials take bribes, which merchants deal in contraband, which Inquest officers are zealots and which are lazy. We know where the patrols thin out. We know which roads are watched and which are not. Is that espionage? *shrugs* We call it survival.",
+          "mood": "matter_of_fact"
+        },
+        {
+          "text": "The Luminary Inquest cannot document us fast enough. Our papers vanish and reappear and multiply. We re-register in every city, which means we have contacts in every registry office. Elven clerks who process our papers quickly because we bring them news from distant relatives. Human guards who wave us through because we bring spices their wives want. *taps her nose* The system was built to control us. We turned it into an information exchange.",
+          "mood": "satisfaction"
+        },
+        {
+          "text": "You want to know a secret? *leans close, voice dropping to a whisper that smells of cinnamon* Everyone tells their fortune teller things they would never tell a priest. A soldier worried about deployment. A merchant afraid of an audit. A noble's wife who knows her husband meets someone after dark. *leans back* I hear everything. I forget nothing. And I decide what to share, and with whom. That is the real fortune, {player_name}. Not the cards. The trust.",
+          "mood": "dangerous_warm",
+          "unlocks": ["secrets"]
+        },
+        {
+          "text": "You keep asking how I know things. *her ears flatten slightly, the first sign of genuine irritation* I know things because my family has spent six generations building a network the empire cannot see, cannot map, and cannot shut down. Because we disguise it as gambling parlors and fortune-telling tents. Leave the method alone. Ask me what I know. That is the useful part.",
+          "conditions": ["if_repeat"],
+          "mood": "guarded"
+        }
+      ]
+    },
+    "family": {
+      "keywords": [
+        "family",
+        "daughter",
+        "son",
+        "child",
+        "mother",
+        "father",
+        "caravan",
+        "kin",
+        "blood",
+        "clan"
+      ],
+      "responses": [
+        {
+          "text": "Twenty-three in the Silkfoot caravan. My daughter Thessara drives the lead wagon. My nephew Jaris runs the spice inventory. My sister's granddaughter reads fortunes at the second tent. We are born on the road, raised on the road, and when we die, the road remembers us. *touches a small carved pendant at her throat* This was my mother's. And her mother's. Seven generations of road dust in the grain of this wood.",
+          "mood": "warm"
+        },
+        {
+          "text": "Family loyalty is the spine of everything. Outsiders are welcome. Betrayal is not. We remember those who help us. We remember those who harm us. Not for vengeance. For protection. A caravan that forgets who closed the gate in their faces during a storm is a caravan that freezes the next time. Memory keeps us alive.",
+          "mood": "firm"
+        },
+        {
+          "text": "My Thessara is thirty-one. Quick hands. Sharper eyes. She can count cards in two games at once and spot a loaded die from across the room. *the pride is palpable* She does not know I am training her to take over the network. She thinks she is learning the trade. She is learning the trade. The other trade. The one that keeps us all breathing.",
+          "mood": "proud_tender"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "imperial",
+        "inquest",
+        "helios",
+        "human",
+        "government"
+      ],
+      "responses": [
+        {
+          "text": "The empire tolerates us because banning us costs more than ignoring us. We bring spices. We bring entertainment. We bring the gambling dens that half the off-duty garrison frequents. *a glint in her amber eyes* And we bring information they do not know we carry. Ban the caravans and three provinces lose their spice supply, the soldiers lose their entertainment, and the intelligence we quietly feed to certain sympathetic officials stops flowing. They tried it once. Once.",
+          "mood": "shrewd"
+        },
+        {
+          "text": "The documentation system was built for people who stay in one place. We do not stay in one place. Every contradiction between our lives and their system is an excuse to punish us. Re-register in every city. Trade permits per visit. Residence permits for a three-day stop. Papers confiscated for administrative review and never returned. *sets down her cup hard enough to rattle the saucer* My family carries three copies of everything. Because we expect to lose them. That tells you everything about the empire.",
+          "mood": "controlled_anger"
+        },
+        {
+          "text": "I do not hate the empire, {player_name}. Hatred clouds judgment, and clouded judgment gets caravans killed. I assess the empire. The assessment is not favorable. But assessment keeps my family alive, and that matters more than anger.",
+          "mood": "steel"
+        }
+      ],
+      "unlocks": ["survival"]
+    },
+    "caravans": {
+      "keywords": [
+        "caravan",
+        "wagon",
+        "travel",
+        "nomad",
+        "camp",
+        "tent",
+        "move",
+        "migrate"
+      ],
+      "responses": [
+        {
+          "text": "The Silkfoot caravan has traveled the triangle route for six generations. {town} in the spring. The northern markets by midsummer. South for the harvest fairs. West to the frontier for winter trade. Four thousand leagues a year. Every stop is a home. Every road is a hallway. *straightens the silk cloth* We are not rootless. We are rooted everywhere.",
+          "mood": "proud"
+        },
+        {
+          "text": "Caravan life. You wake when the wagon stops swaying. You eat whatever the road provides, usually dried meat and hard cheese and whatever herbs you picked the day before. The children learn to count by sorting spices. The elders ride in the back wagon and tell stories that are half history and half intelligence briefing. *a fond smile* It is not easy. It is ours. That is enough.",
+          "mood": "warm"
+        },
+        {
+          "text": "A cat folk caravan that has been visiting the same towns for generations knows more about those towns than the people living in them. We see the changes. A new guard captain. A closed shop. A family that vanished overnight. The locals barely notice. We notice everything. Because noticing everything is the difference between a caravan that survives and one that does not.",
+          "mood": "sharp"
+        }
+      ]
+    },
+    "secrets": {
+      "keywords": [
+        "secret",
+        "hidden",
+        "truth",
+        "know",
+        "tell me",
+        "rumor",
+        "gossip",
+        "whisper"
+      ],
+      "responses": [
+        {
+          "text": "Secrets are my trade, dear. But trade requires exchange. You want to know something? Tell me something first. Not coin. Information. What did you see on the road? Who did you speak with in {town}? What are the checkpoint guards talking about when they think no one is listening? *spreads her hands* Give a little. Get a little. That is the law of the road.",
+          "mood": "shrewd"
+        },
+        {
+          "text": "I know that the garrison commander in {town} is skimming tax revenue. I know that the local Inquest officer has not filed a report in six weeks. I know that three families on the south road are sheltering someone they should not be. *holds up a hand* I will not tell you who. I hold secrets in trust, {player_name}. If I sold everyone's secrets to everyone, no one would tell me anything. The network survives on discretion.",
+          "mood": "firm_warm"
+        },
+        {
+          "text": "The biggest secret is not any single piece of information. It is the fact that the most surveilled people in the empire built the most effective intelligence network the empire has ever failed to detect. They watch us. We watch everything. And we do it while telling fortunes and selling saffron. *her smile is sharp enough to cut* Helios sees all, they say. Helios does not see this.",
+          "mood": "pride"
+        }
+      ]
+    },
+    "survival": {
+      "keywords": [
+        "survive",
+        "safe",
+        "protect",
+        "danger",
+        "threat",
+        "live",
+        "endure",
+        "persist"
+      ],
+      "responses": [
+        {
+          "text": "We do not seek power over others. We seek the ability to move, trade, live, and raise children without persecution. That is all we have ever wanted. That is all any family wants. The empire made that simple wish into a daily battle. *touches the wooden pendant* So we battle. Quietly. With information instead of swords. With relationships instead of armies. We endure because we adapt. We adapt because we have no other choice.",
+          "mood": "honest"
+        },
+        {
+          "text": "Every beast folk family knows the Shadow Fen exists. Papers burned upon entry. No documentation. No checkpoints. No registration. *her voice goes quiet* It is the last road. The one you take when every other road is closed. My grandmother knew the way. She taught my mother. My mother taught me. I taught Thessara. We have never used it. I pray we never do. But we know it. Just in case.",
+          "mood": "somber"
+        },
+        {
+          "text": "You are young, {player_name}. You have time to be angry, to fight, to shake your fist at the sky. I am sixty-three. I have buried parents and siblings and a husband who was killed at a checkpoint when a guard decided his papers were not in order. *meets your eyes, and behind the warmth is bedrock* Anger does not keep families alive. Intelligence does. Memory does. Knowing which road to take and which guard to avoid and which clerk to bring saffron. That keeps families alive.",
+          "mood": "steel",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "other_races": {
+      "keywords": [
+        "orc",
+        "elf",
+        "dwarf",
+        "goblin",
+        "gnome",
+        "human",
+        "lizard",
+        "races"
+      ],
+      "responses": [
+        {
+          "text": "We trade with everyone. That is the rule. The orc clans buy our salt and spices on the steppe routes. Honest transactions. Fast payments. They respect mobility the way we do. The roads belong to those who ride them. That is a sentiment both our peoples share.",
+          "mood": "warm"
+        },
+        {
+          "text": "Goblin couriers use our caravans sometimes. We do not ask what the messages say. They do not ask where our roads lead. *a serious look crosses her usually warm face* The goblins have been displaced longer than anyone except maybe the lizard folk. We know what displacement feels like. We do not carry their messages out of politics. We carry them because the road takes care of its own.",
+          "mood": "somber"
+        },
+        {
+          "text": "You are a cat folk. *her entire posture changes, softening, her ears tilting forward* Come here. Sit close. What caravan are you from? Who is your mother? *she is already reaching for the kettle* You eat. You tell me about the roads you have walked. Then I tell you about the roads ahead. That is how family works, even family we have not met yet.",
+          "conditions": ["if_race:catfolk"],
+          "mood": "maternal"
+        }
+      ]
+    }
+  }
+}

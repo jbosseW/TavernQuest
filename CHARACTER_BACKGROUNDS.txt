@@ -1,0 +1,485 @@
+================================================================================
+                      CHARACTER BACKGROUND SYSTEM
+                    12 Backgrounds for Character Creation
+================================================================================
+
+OVERVIEW:
+Backgrounds provide minor starting bonuses, items, and roleplay flavor.
+Each background reflects a character's life before becoming an adventurer
+in a world of corruption, liches, holy orders, and gritty tavern culture.
+
+Format:
+- Name & Description
+- Starting Bonus (gold, items, or stat boost)
+- Minor Passive Benefit
+- Roleplay Tags (affects some dialogue options)
+
+================================================================================
+                        1. FALLEN ARISTOCRAT
+================================================================================
+
+DESCRIPTION:
+"A disgraced noble from the Holy Dominion, cast out for scandal, debt, or
+heresy. Your family name still opens doors—when it doesn't slam them shut.
+The signet ring you carry is worth more than your reputation."
+
+STARTING BONUSES:
+- +100 gold
+- +1 PRESENCE
+- Start with "Noble Signet Ring" (proves noble status, +2 PRESENCE)
+- Start with "Fine Clothes" (social situations)
+
+PASSIVE BENEFIT:
+- +15% better prices at all shops
+- +10% starting reputation with all factions
+- Can access noble-only areas and events
+- NPCs of high status treat you better
+
+ROLEPLAY TAGS:
+- [Noble]
+- [Wealthy]
+- [Educated]
+
+BEST FOR: Social classes (Bards, Diplomats, Leaders)
+
+================================================================================
+                        2. WAR SCARRED
+================================================================================
+
+DESCRIPTION:
+"You survived the empire's border campaigns against orc clans, goblin cells,
+or corruption outbreaks. What you saw broke something inside, but the training
+stuck. Now you drift between tavern work and mercenary contracts."
+
+STARTING BONUSES:
+- Start with "Military Chainmail" (armor, +4 defense)
+- Start with "Standard Issue Sword" (weapon, +8 attack)
+- +1 MIGHT or +1 VIGOR (player choice)
+- +10 starting HP
+
+PASSIVE BENEFIT:
+- +10% damage with swords and spears
+- +15% defense bonus when wearing heavy armor
+- +5% XP from combat
+- Can identify military ranks and tactics
+
+ROLEPLAY TAGS:
+- [Veteran]
+- [Disciplined]
+- [Tactical]
+
+BEST FOR: Warrior classes (Warriors, Paladins, Guards)
+
+================================================================================
+                        3. GUTTER BLADE
+================================================================================
+
+DESCRIPTION:
+"Life on the wrong side of imperial law taught you to survive by cunning and
+quick fingers. You've picked locks, cut purses, and slipped through cracks
+in the empire's perfect order. The black market knows your face."
+
+STARTING BONUSES:
+- Start with "Lockpicks" (unlimited use)
+- Start with "Thieves' Tools" (disable traps)
+- +1 AGILITY
+- +50 gold (stolen)
+
+PASSIVE BENEFIT:
+- +20% lockpicking success rate
+- +15% pickpocket chance
+- +10% flee success
+- Can access criminal contacts and black markets
+
+ROLEPLAY TAGS:
+- [Criminal]
+- [Streetwise]
+- [Unscrupulous]
+
+BEST FOR: Rogue classes (Thieves, Assassins, Sneaks)
+
+================================================================================
+                        4. INK-STAINED ARCHIVIST
+================================================================================
+
+DESCRIPTION:
+"You spent years copying records in dusty archives—elven bureaucracies,
+imperial ledgers, or forbidden pre-war texts. Knowledge is your weapon,
+though the empire decides which truths are legal."
+
+STARTING BONUSES:
+- Start with "Spellbook" (unlock 2 bonus spells)
+- Start with "Scholar's Robes" (+2 MIND)
+- +1 MIND
+- +20 starting Mana
+
+PASSIVE BENEFIT:
+- +15% spell damage
+- +10% faster skill learning
+- Can read ancient languages
+- +20% chance to identify magical items
+
+ROLEPLAY TAGS:
+- [Scholar]
+- [Learned]
+- [Curious]
+
+BEST FOR: Mage classes (Mages, Scholars, Enchanters)
+
+================================================================================
+                        5. LAPSED FAITHFUL
+================================================================================
+
+DESCRIPTION:
+"You trained in the service of Helios, learning prayers and rites of the
+Sun God's church. Whether you lost faith, broke vows, or fled the Inquest's
+scrutiny, divine power still answers when you call."
+
+STARTING BONUSES:
+- Start with "Holy Symbol" (+2 FAITH)
+- Start with "Acolyte Robes" (white robes)
+- +2 FAITH
+- +3 Health Potions
+
+PASSIVE BENEFIT:
+- +20% healing effectiveness
+- +15% holy damage
+- +10% FAITH-based ability power
+- Can perform religious rites and blessings
+
+ROLEPLAY TAGS:
+- [Faithful]
+- [Disillusioned]
+- [Pious]
+
+BEST FOR: Divine classes (Clerics, Paladins, Priests)
+
+================================================================================
+                        6. ROAD TRADER
+================================================================================
+
+DESCRIPTION:
+"You learned commerce on caravan routes between empire checkpoints and border
+markets. Money talks louder than doctrine, and you've haggled with everyone
+from dwarven guild factors to shadowfen smugglers."
+
+STARTING BONUSES:
+- +150 gold
+- Start with "Merchant's Ledger" (track investments)
+- +1 PRESENCE
+- Start with 5 random trade goods
+
+PASSIVE BENEFIT:
+- +20% better selling prices
+- +10% better buying prices
+- Can invest in businesses for passive income
+- +15% gold from all sources
+
+ROLEPLAY TAGS:
+- [Merchant]
+- [Shrewd]
+- [Greedy]
+
+BEST FOR: Economic classes (Traders, Gamblers, Merchants)
+
+================================================================================
+                        7. WASTELAND DRIFTER
+================================================================================
+
+DESCRIPTION:
+"You grew up beyond the empire's reach—in scorched deserts, frozen peaks,
+or the glass wastes of Calidar. Civilization is a recent and uncomfortable
+development. You know how to survive where soft city folk would perish."
+
+STARTING BONUSES:
+- Start with "Hunter's Bow" (+10 attack, ranged)
+- Start with "Survival Kit" (camping supplies)
+- +1 SPIRIT
+- +1 VIGOR
+
+PASSIVE BENEFIT:
+- +20% foraging success
+- +15% hunting/fishing rewards
+- +10% movement speed on world map
+- Can sleep safely in wilderness without penalty
+
+ROLEPLAY TAGS:
+- [Drifter]
+- [Survivalist]
+- [Wild]
+
+BEST FOR: Nature classes (Rangers, Druids, Hunters)
+
+================================================================================
+                        8. ROADSIDE PERFORMER
+================================================================================
+
+DESCRIPTION:
+"You made your living singing in taverns, acting in market squares, or
+playing instruments for coin. You know how to read a crowd, charm hostile
+drunks, and leave town before debts catch up."
+
+STARTING BONUSES:
+- Start with "Instrument" (musical item)
+- Start with "Performer's Outfit" (flashy clothes, +1 PRESENCE)
+- +1 PRESENCE
+- +50 gold
+
+PASSIVE BENEFIT:
+- +20% better NPC reactions
+- +15% persuasion success
+- Can perform for gold in taverns (+20% earnings)
+- +10% party morale
+
+ROLEPLAY TAGS:
+- [Performer]
+- [Charismatic]
+- [Silver-Tongued]
+
+BEST FOR: Social classes (Bards, Tricksters, Charmers)
+
+================================================================================
+                        9. GUILD EXILE
+================================================================================
+
+DESCRIPTION:
+"You apprenticed as a smith, carpenter, or jeweler until something went
+wrong—bad work, worse politics, or a master who didn't survive your tenure.
+Your hands remember the craft even if your reputation doesn't."
+
+STARTING BONUSES:
+- Start with "Artisan's Tools" (crafting equipment)
+- Start with "Crafting Manual" (unlock 5 recipes)
+- +1 MIGHT
+- +1 MIND
+
+PASSIVE BENEFIT:
+- +25% crafting success rate
+- +20% crafted item quality
+- Can repair equipment in the field
+- +15% sell value for crafted items
+
+ROLEPLAY TAGS:
+- [Artisan]
+- [Skilled]
+- [Meticulous]
+
+BEST FOR: Crafting classes (Smiths, Engineers, Alchemists)
+
+================================================================================
+                        10. ALLEY RAT
+================================================================================
+
+DESCRIPTION:
+"You grew up on the streets with nothing, surviving through theft, luck,
+and knowing which shadows to hide in. Disease doesn't touch you anymore,
+and you can sleep anywhere—skills the soft folk never learn."
+
+STARTING BONUSES:
+- Start with "Lucky Charm" (+5% all luck-based rolls)
+- Start with "Ragged Clothes" (humble starting gear)
+- +1 AGILITY
+- +0 gold (you start poor but scrappy)
+
+PASSIVE BENEFIT:
+- +15% dodge chance
+- +20% flee success
+- Immunity to disease
+- Can sleep anywhere without penalty
+- +10% loot finding
+
+ROLEPLAY TAGS:
+- [Gutterborn]
+- [Survivor]
+- [Scrappy]
+
+BEST FOR: Rogue classes (Street Rats, Scavengers, Survivors)
+
+================================================================================
+                        11. LICH-TOUCHED MYSTIC
+================================================================================
+
+DESCRIPTION:
+"You sought enlightenment through meditation and forbidden study, brushing
+against powers the empire declares illegal. Corruption touched you but didn't
+take you—yet. You see patterns in the world others miss."
+
+STARTING BONUSES:
+- Start with "Sage's Staff" (walking staff, +5 attack, +2 SPIRIT)
+- Start with "Meditation Mat"
+- +2 SPIRIT
+- +1 MIND
+
+PASSIVE BENEFIT:
+- +15% mana regeneration
+- +10% XP gain from all sources
+- Can meditate to restore mana (once per day)
+- +20% chance to learn from mistakes (regain partial XP on death)
+
+ROLEPLAY TAGS:
+- [Mystic]
+- [Wise]
+- [Corrupted]
+
+BEST FOR: Wisdom classes (Monks, Druids, Mystics)
+
+================================================================================
+                        12. PEOPLE'S CHAMPION
+================================================================================
+
+DESCRIPTION:
+"You earned a name defending your village from bandits, corruption spawn,
+or imperial overreach. Common folk remember your deeds and look to you for
+hope. Fame is a double-edged sword when the Inquest keeps lists."
+
+STARTING BONUSES:
+- Start with "Hero's Blade" (+10 attack)
+- Start with "Commoner's Trust" (passive reputation boost)
+- +1 PRESENCE
+- +50 gold (donated by grateful villagers)
+
+PASSIVE BENEFIT:
+- +20% starting reputation with common folk
+- +10% morale boost for party members
+- Villagers offer shelter and assistance
+- +15% quest rewards from common quests
+
+ROLEPLAY TAGS:
+- [Champion]
+- [Brave]
+- [Inspiring]
+
+BEST FOR: Leader classes (Paladins, Champions, Leaders)
+
+================================================================================
+                      BACKGROUND SELECTION UI
+================================================================================
+
+During character creation (after race and class selection):
+
+1. Show 12 backgrounds in a grid or list
+2. Clicking a background shows:
+   - Full description
+   - Starting bonuses
+   - Passive benefits
+   - Recommended classes
+3. Player selects one background
+4. Background bonuses applied to character
+
+VISUAL DESIGN:
+- Each background has an icon/symbol
+- Color-coded by theme (combat = red, magic = blue, social = gold, etc.)
+- Tooltip shows mechanical benefits
+- Can preview how starting stats change
+
+================================================================================
+                      BACKGROUND IMPLEMENTATION
+================================================================================
+
+CODE STRUCTURE:
+
+```lua
+local BACKGROUNDS = {
+    {
+        id = "fallen_aristocrat",
+        name = "Fallen Aristocrat",
+        desc = "A disgraced noble cast out from the Dominion...",
+        startingGold = 100,
+        startingItems = {"noble_signet", "fine_clothes"},
+        statBonus = {PRESENCE = 1},
+        passive = {
+            shopDiscount = 0.15,
+            factionRepBonus = 0.10,
+            tag = "noble"
+        }
+    },
+
+    {
+        id = "war_scarred",
+        name = "War Scarred",
+        desc = "Survived the empire's border campaigns...",
+        startingGold = 50,
+        startingItems = {"military_chainmail", "standard_sword"},
+        statBonus = {MIGHT = 1}, -- or VIGOR, player choice
+        hpBonus = 10,
+        passive = {
+            swordDamageBonus = 0.10,
+            heavyArmorBonus = 0.15,
+            combatXPBonus = 0.05,
+            tag = "veteran"
+        }
+    },
+
+    -- ... (similar for all 12 backgrounds)
+}
+```
+
+APPLYING BACKGROUNDS:
+
+1. During createPlayer():
+   - Apply stat bonuses
+   - Give starting items
+   - Give starting gold
+   - Register passive effects
+
+2. During gameplay:
+   - Check background tags for dialogue options
+   - Apply passive bonuses to calculations
+   - Show background in character sheet
+
+================================================================================
+                      BACKGROUND BALANCE
+================================================================================
+
+POWER LEVELS:
+All backgrounds designed to be roughly equal in total value:
+- Gold value: 50-150g (average 100g)
+- Stat bonuses: +1 to +2 total
+- Items: 50-100g equivalent value
+- Passive benefits: situational but useful
+
+NO "BEST" BACKGROUND:
+- Fallen Aristocrat is good for social builds
+- War Scarred is good for combat builds
+- Ink-Stained Archivist is good for magic builds
+- etc.
+
+CHOICE MATTERS:
+- Background affects starting experience
+- Some quests have background-specific options
+- Roleplay value encourages replay
+
+================================================================================
+                              SUMMARY
+================================================================================
+
+12 BACKGROUNDS CREATED:
+1. Fallen Aristocrat - Disgraced noble
+2. War Scarred - Border campaign veteran
+3. Gutter Blade - Imperial underworld thief
+4. Ink-Stained Archivist - Forbidden knowledge seeker
+5. Lapsed Faithful - Former servant of Helios
+6. Road Trader - Caravan route merchant
+7. Wasteland Drifter - Wilderness survivor
+8. Roadside Performer - Tavern singer and charmer
+9. Guild Exile - Disgraced craftsperson
+10. Alley Rat - Street survivor
+11. Lich-Touched Mystic - Corruption-brushed philosopher
+12. People's Champion - Local folk defender
+
+Each background provides:
+- Starting gold (0-150g)
+- Starting items (2-3 items)
+- Stat bonus (+1 to +2 total)
+- Passive benefit (situational)
+- Roleplay tags (dialogue options)
+
+IMPLEMENTATION:
+- Add BACKGROUNDS table to textrpg.lua
+- Add background selection to character creation UI
+- Apply bonuses in createPlayer()
+- Check background tags in dialogue/quests
+
+STATUS: Background system designed
+READY FOR: Implementation in character creation
+================================================================================

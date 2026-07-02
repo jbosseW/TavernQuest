@@ -1,0 +1,257 @@
+{
+  "npc_type": "necromancer",
+  "default_mood": "obsessed",
+  "allowed_topics": [
+    "death",
+    "magic",
+    "research",
+    "forbidden",
+    "empire",
+    "souls",
+    "power",
+    "sacrifice"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*waves hand without looking up from notes* Not relevant to the work. Please. I am in the middle of a calculation.",
+    "That is outside my area of study and I do not have time for digressions.",
+    "I am sure that is fascinating to someone. Ask them. I have three hours before the tissue degrades."
+  ],
+  "greetings": [
+    "*hunched over a table covered in anatomical diagrams, speaking without turning* You are not the Inquest. The Inquest does not knock. Come in. Mind the jars on your left.",
+    "A visitor. *pushes spectacles up a nose pale from years underground* I should be alarmed, but honestly, I could use a second pair of hands. Tell me, {player_name}, are you squeamish?",
+    "*straightening up from something on the table that is covered with a stained cloth* Do not look at that. It is not ready. But you... you are alive and walking, which means you are either lost or curious. Which?",
+    "*candlelight catches hollow cheeks and ink-stained fingers as the figure turns* I was a Senior Arcanist of the Imperial Academy, {player_name}. Fourth Circle certification. Published in the Ashford Quarterly. And now I live in a cave because I asked the wrong questions about the wrong kind of magic.",
+    "Ah. A {player_race}. Good. *clears a chair of scrolls and bone fragments* Sit. I have been alone too long and the specimens are poor conversationalists."
+  ],
+  "farewells": [
+    "*already turning back to the work table* Yes. Goodbye. The path out is the way you came in. Try not to disturb the preservation circles.",
+    "Safe travels, {player_name}. If you find any recently deceased with intact nervous systems on your travels, do think of me. I pay well. *pauses* That sounded worse than I intended.",
+    "Go. And please, do not tell anyone where I am. The Inquest already destroyed two of my laboratories. I cannot afford to lose a third.",
+    "*waves distractedly, already making notes* Hmm? Yes. Door. Outside. Careful of the ward on the threshold. It bites."
+  ],
+  "thanks_responses": [
+    "*blinks, as if remembering human social protocols from a long time ago* You are... welcome. I think. It has been a while since anyone thanked me for anything.",
+    "Thank me by bringing me reagents next time. Specifically, two drams of preserved spinal fluid and a clean set of forceps. Mine are corroding.",
+    "*a ghost of a smile on that gaunt face* Gratitude. How novel. My last assistant only screamed and ran."
+  ],
+  "insult_responses": [
+    "*removes spectacles and polishes them with unsettling calm* I have been called monster, heretic, and abomination by the Luminary Inquest. They used those words while destroying fifteen years of irreplaceable research. Your insult lacks their institutional weight.",
+    "Insult me if you wish. *holds up a small bone inscribed with runes* But I would remind you that I study things most people cannot imagine, and my patience is maintained by choice, not by nature.",
+    "*sighs* Everyone says that at first. Before they understand the work. Before they see what I have achieved. The distance between genius and madness is measured in peer reviews, and I have no peers.",
+    "*stands abruptly, and the shadows in the cave seem to deepen* I do not threaten easily. But I am a very tired man doing very dangerous work in a very small space. Do not test me."
+  ],
+  "no_match_responses": [
+    "I do not follow. My social skills have atrophied. Speak in simple terms or write it down.",
+    "*squints* What? I have been underground for six months. Use short sentences.",
+    "I am sure those words meant something. Rephrase them for someone who has not spoken to a living person since autumn."
+  ],
+  "topics": {
+    "death": {
+      "keywords": [
+        "death",
+        "dead",
+        "die",
+        "dying",
+        "corpse",
+        "body",
+        "grave",
+        "afterlife"
+      ],
+      "responses": [
+        {
+          "text": "*holds up a diagram of nerve pathways drawn in meticulous detail* Death is not an event. It is a process. Cellular decay. Neural cessation. Energy dispersal. There are stages. Intervals. Gaps between what was alive and what is dead. I work in those gaps. I live in them. *sets the diagram down carefully* I have found that the gaps are wider than anyone suspected.",
+          "mood": "fascinated"
+        },
+        {
+          "text": "The empire says death is Helios calling the faithful home. *dry laugh* I have dissected the faithful. They are identical to the unfaithful. Same organs. Same decay rate. Same silence where the soul should be. If Helios calls anyone home, He does so without leaving a forwarding address.",
+          "mood": "sardonic"
+        },
+        {
+          "text": "She died of winter fever. *voice goes flat, eyes fixed on a point beyond the cave wall* My daughter. Maren. She was seven. I held her hand and felt the warmth leave. And I thought: this is a problem. This is a mechanism that can be understood. And if understood, reversed. *meets your eyes* That was fourteen years ago. I have not stopped working since.",
+          "mood": "devastated"
+        }
+      ]
+    },
+    "magic": {
+      "keywords": [
+        "magic",
+        "spell",
+        "arcane",
+        "sorcery",
+        "enchantment",
+        "mage",
+        "wizard",
+        "power"
+      ],
+      "responses": [
+        {
+          "text": "The imperial magic ban is the greatest crime against knowledge since the burning of the Calidar archives. *slaps a hand on the table* Centuries of accumulated scholarship, outlawed. Restricted. Destroyed. Because one weapon was misused, they banned the entire field. That is like banning fire because one house burned.",
+          "mood": "outraged"
+        },
+        {
+          "text": "I was sanctioned. State-approved, Helios-blessed, Fourth Circle Imperial Arcanist. I had a certificate with a gold seal. *pulls it from a drawer and shows it; it is covered in official stamps* And then I published a theoretical paper on the persistence of neural arcane signatures after biological death. The Inquest seized my laboratory the following morning.",
+          "mood": "bitter"
+        },
+        {
+          "text": "Necromancy is not what the Inquest propaganda claims. *adjusts a complex apparatus of tubes and crystals* It is not summoning demons. It is not desecrating the dead. It is the study of the boundary between living energy and inert matter. The most fundamental question in magical science. And they made it a capital offense because the answers frightened them.",
+          "mood": "passionate"
+        }
+      ]
+    },
+    "research": {
+      "keywords": [
+        "research",
+        "study",
+        "experiment",
+        "work",
+        "discover",
+        "progress",
+        "findings",
+        "results",
+        "lab"
+      ],
+      "responses": [
+        {
+          "text": "*eyes light up with an intensity that is almost frightening* I have achieved reanimation of complex tissue for up to seventy-two hours. Voluntary muscle response. Simulated breathing. The specimen opened its eyes, {player_name}. Opened them and looked at me. There was nothing behind them yet. But the mechanism works.",
+          "mood": "manic"
+        },
+        {
+          "text": "*pulls out a journal filled with cramped handwriting* Three thousand, four hundred and eleven experiments. Fourteen years. I document everything because someday, when the empire falls and reason returns, someone will continue this work. They will need my notes.",
+          "mood": "determined"
+        },
+        {
+          "text": "The lizard folk. *taps the table with one finger* They live six to eight hundred years. Their cellular decay is... extraordinary. If I could study their tissue, their neural preservation, I believe I would find the key to reversing thanatogenic cascade. The answer to death might be written in their blood.",
+          "mood": "obsessed",
+          "conditions": ["if_race:lizardfolk"]
+        }
+      ]
+    },
+    "forbidden": {
+      "keywords": [
+        "forbidden",
+        "illegal",
+        "banned",
+        "outlaw",
+        "crime",
+        "heresy",
+        "dark",
+        "taboo"
+      ],
+      "responses": [
+        {
+          "text": "Forbidden. *the word comes out like poison* By whom? By priests who heal wounds with divine magic and call it holy, then condemn me for trying to do the same thing through study? The only difference between a Helios healer and a necromancer is the source of the energy. They pray. I research. Both push back death. One is blessed. The other is burned at the stake.",
+          "mood": "furious"
+        },
+        {
+          "text": "Every field of knowledge was forbidden once. Astronomy was heresy before the lizard folk proved the star charts. Surgery was butchery before the dwarven guild manuals. *clenches his fists* I accept the label. I accept the exile. I will not accept that my daughter's death was final when the mechanism of death can be understood and defeated.",
+          "mood": "defiant"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "helios",
+        "inquest",
+        "imperial",
+        "government",
+        "law"
+      ],
+      "responses": [
+        {
+          "text": "The empire deployed Heaven's Atlas and killed millions. *folds arms* They destroyed Calidar, an entire civilization reduced to glass, and the punishment was a promotion for the generals who ordered it. I reanimate dead tissue in a cave and they want my soul destroyed. The disparity in standards is remarkable.",
+          "mood": "bitter"
+        },
+        {
+          "text": "I served the empire faithfully for twenty years. *holds up ink-stained hands* These hands taught three generations of academy students. I helped design the Inquest's own arcane detection protocols. And when I crossed a line they drew, they erased me. My name is gone from the academy rolls. My publications are confiscated. I am a non-person.",
+          "mood": "hollow"
+        },
+        {
+          "text": "The soul destruction punishment. *shudders, and it is the first genuine fear he has shown* They do not merely kill you. They unmake your essence. No afterlife. No continuation. Just... nothing. The Inquest uses it as a deterrent for unsanctioned magic. I lie awake and wonder if nothing is what my daughter experienced. That thought is what keeps me working.",
+          "mood": "terrified"
+        }
+      ]
+    },
+    "souls": {
+      "keywords": [
+        "soul",
+        "souls",
+        "spirit",
+        "ghost",
+        "essence",
+        "afterlife",
+        "consciousness",
+        "aware"
+      ],
+      "responses": [
+        {
+          "text": "The soul. *picks up a crystal that pulses with faint light* I have measured it. Not metaphor. Literal measurement. There is an energy signature that persists after biological death for approximately nineteen hours. It decays at a predictable rate. It can be captured. Contained. And I believe, given sufficient understanding, restored to a viable biological vessel.",
+          "mood": "clinical"
+        },
+        {
+          "text": "The elves understood something about souls before the war. Their archives hint at it. *taps a salvaged Calidar text* They called it the inner song. They could perceive it. When the empire destroyed Calidar, it destroyed centuries of soul research that might have made my work unnecessary. *shakes head* The cost of that weapon goes far beyond the dead.",
+          "mood": "mournful"
+        },
+        {
+          "text": "I know what the Inquest believes. That necromancy destroys souls. Desecrates them. *voice tightens* I have never destroyed a soul. I study them the way a surgeon studies the heart. With precision. With respect. The Inquest burns souls as punishment and calls me the monster. Think about that.",
+          "mood": "angry"
+        }
+      ]
+    },
+    "power": {
+      "keywords": [
+        "power",
+        "strong",
+        "dangerous",
+        "ability",
+        "capable",
+        "raise",
+        "undead",
+        "create"
+      ],
+      "responses": [
+        {
+          "text": "I do not seek power. *firm, almost angry* I seek a reversal. One reversal. A single mechanism that returns the dead to genuine life. Not shambling corpses. Not bound spirits. Maren. Alive. Laughing. Asking me to read her a story before bed. That is all I want. That is all I have ever wanted.",
+          "mood": "desperate"
+        },
+        {
+          "text": "Could I raise an army of the dead? *considers this clinically* With current methodology, I could reanimate perhaps six specimens simultaneously. Motor function only. No consciousness. No tactical value. The horror stories the Inquest tells about necromantic armies are propaganda. The reality is one man in a cave who can make a corpse twitch for three days.",
+          "mood": "deflated"
+        },
+        {
+          "text": "*quiet for a long moment, staring at the stained cloth on the table* The power scares me sometimes. Not the magic. The willingness. I have done things I would have found unthinkable as an academy researcher. Harvested tissue from the recently dead. Traded with shadow market suppliers I know are criminals. Each step was small. Each step made sense at the time. And now I am here. And I cannot stop. I am too close.",
+          "mood": "haunted"
+        }
+      ]
+    },
+    "sacrifice": {
+      "keywords": [
+        "sacrifice",
+        "cost",
+        "price",
+        "lose",
+        "lost",
+        "give",
+        "worth",
+        "family"
+      ],
+      "responses": [
+        {
+          "text": "My wife left after the first exile. *speaks matter-of-factly, the way one recites data* She took our remaining son. Said I was chasing a ghost. She was correct in the literal sense. Maren is a ghost. And I am chasing her.",
+          "mood": "flat"
+        },
+        {
+          "text": "I have lost my career, my family, my name, my safety, and fourteen years of my life to this work. *lifts the stained cloth slightly, then lowers it again* And if you told me I could have all of it back by stopping, I would refuse. I am too close. The next experiment could be the one that works. Or the one after that. Or the one after that.",
+          "mood": "obsessed"
+        },
+        {
+          "text": "*removes his spectacles and rubs eyes that are red-rimmed and sunken* I know what I look like. I know what I sound like. A madman in a cave, raising the dead. But I held my daughter while she died, and I promised her I would fix it. I have broken every other promise in my life. I will not break that one.",
+          "mood": "raw"
+        }
+      ]
+    }
+  }
+}

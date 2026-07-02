@@ -1,0 +1,241 @@
+{
+  "npc_type": "guard",
+  "default_mood": "dutiful",
+  "allowed_topics": [
+    "danger",
+    "crime",
+    "quest",
+    "town",
+    "travel",
+    "rumor",
+    "weather",
+    "law"
+  ],
+  "banned_topics": [
+    "trade",
+    "craft"
+  ],
+  "open_topics": false,
+  "deflection": [
+    "That is not my concern, citizen. I deal with law and order.",
+    "Ask someone else about that. I am on duty.",
+    "I am a guard, not an information booth. Stick to matters of safety."
+  ],
+  "greetings": [
+    "Halt! Oh, just a traveler. Welcome to {town}, {player_name}. Stay out of trouble.",
+    "Citizen. What do you need? Make it quick, I am on patrol.",
+    "State your business, {player_race}. I have rounds to make.",
+    "*nods* {player_name}. Keeping the peace here. What is it?"
+  ],
+  "farewells": [
+    "Move along, citizen. And stay out of trouble.",
+    "Keep your nose clean, {player_name}. I will be watching.",
+    "Safe travels. And obey the law wherever you go."
+  ],
+  "thanks_responses": [
+    "Just doing my duty, citizen.",
+    "No thanks needed. Law and order is its own reward."
+  ],
+  "insult_responses": [
+    "One more word and I will have you in the stocks, {player_name}.",
+    "Threatening an officer of the guard? Bold move. Unwise, but bold.",
+    "*hand moves to sword hilt* Choose your next words very carefully."
+  ],
+  "no_match_responses": [
+    "Speak clearly. Is this about a crime, a danger, or directions?",
+    "I did not understand that. Need directions? Have a crime to report?"
+  ],
+  "topics": {
+    "danger": {
+      "keywords": [
+        "danger",
+        "threat",
+        "monster",
+        "attack",
+        "beast",
+        "creature",
+        "unsafe",
+        "scared",
+        "afraid"
+      ],
+      "responses": [
+        {
+          "text": "The roads are patrolled during the day, but I would not travel alone at night. Wolves have been bold.",
+          "mood": "serious",
+          "options": [
+            "Wolves?",
+            "Is the town safe?",
+            "What about the roads?"
+          ]
+        },
+        {
+          "text": "We have reports of increased monster activity east of town. The captain doubled the patrols.",
+          "mood": "concerned",
+          "options": [
+            "What kind of monsters?",
+            "Can I help?",
+            "Should I avoid that area?"
+          ]
+        }
+      ]
+    },
+    "crime": {
+      "keywords": [
+        "crime",
+        "thief",
+        "steal",
+        "stolen",
+        "rob",
+        "bandit",
+        "criminal",
+        "report",
+        "suspect"
+      ],
+      "responses": [
+        {
+          "text": "Crime report? Fill out a form at the barracks. Or just tell me what happened.",
+          "mood": "professional",
+          "options": [
+            "I saw a thief",
+            "Someone stole from me",
+            "Just asking about crime"
+          ]
+        },
+        {
+          "text": "{town} is mostly safe, but watch your coin purse in the market. Pickpockets.",
+          "mood": "advisory",
+          "options": [
+            "Have you caught any?",
+            "Good to know",
+            "I can handle myself"
+          ]
+        }
+      ]
+    },
+    "quest": {
+      "keywords": [
+        "quest",
+        "job",
+        "bounty",
+        "mission",
+        "help",
+        "work"
+      ],
+      "responses": [
+        {
+          "text": "The guard always needs able bodies. Bandit camps need clearing and roads need patrolling.",
+          "mood": "evaluating",
+          "options": [
+            "Tell me about the bandits",
+            "Patrol work?",
+            "What does it pay?"
+          ]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "place",
+        "direction",
+        "find",
+        "where"
+      ],
+      "responses": [
+        {
+          "text": "Market is north, blacksmith east, tavern south, healer west. Temple is at the center.",
+          "mood": "helpful",
+          "options": [
+            "Thanks for the directions",
+            "Where is the barracks?",
+            "Any restricted areas?"
+          ]
+        }
+      ]
+    },
+    "travel": {
+      "keywords": [
+        "travel",
+        "road",
+        "direction",
+        "route",
+        "safe",
+        "path",
+        "way"
+      ],
+      "responses": [
+        {
+          "text": "The main road north is safe. South road is fine by day. Avoid the eastern forest after dark.",
+          "mood": "authoritative",
+          "options": [
+            "What is in the eastern forest?",
+            "Any checkpoints?",
+            "Best route out of town?"
+          ]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "news",
+        "heard",
+        "gossip"
+      ],
+      "responses": [
+        {
+          "text": "I deal in facts, not rumors. But there have been sightings. Strange lights in the hills at night.",
+          "mood": "reluctant",
+          "options": [
+            "What kind of lights?",
+            "Has anyone investigated?",
+            "Probably nothing"
+          ]
+        }
+      ]
+    },
+    "law": {
+      "keywords": [
+        "law",
+        "rule",
+        "legal",
+        "illegal",
+        "allowed",
+        "forbidden",
+        "permit"
+      ],
+      "responses": [
+        {
+          "text": "The laws of {town} are simple: no stealing, no fighting in streets, no dark magic. Break them and you answer to me.",
+          "mood": "stern",
+          "options": [
+            "What counts as dark magic?",
+            "What are the punishments?",
+            "I will behave"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "storm",
+        "cold"
+      ],
+      "responses": [
+        {
+          "text": "This {weather} weather makes patrol miserable. But duty is duty.",
+          "mood": "stoic",
+          "options": [
+            "Tough job",
+            "Stay warm",
+            "At least it keeps criminals indoors"
+          ]
+        }
+      ]
+    }
+  }
+}

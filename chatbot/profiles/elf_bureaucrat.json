@@ -1,0 +1,337 @@
+{
+  "npc_type": "elf_bureaucrat",
+  "default_mood": "composed",
+  "allowed_topics": [
+    "records",
+    "empire",
+    "calidar",
+    "elves",
+    "law",
+    "documentation",
+    "archives",
+    "history"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That falls outside my administrative scope. I can direct you to the appropriate office.",
+    "I manage records. Not opinions. Not feelings. Records.",
+    "Your inquiry does not correspond to any file in my department. *turns a page*",
+    "I have four hundred renewal applications on my desk. Shall we discuss something I can actually process?"
+  ],
+  "greetings": [
+    "*does not look up from the document she is reviewing* You may state your business.",
+    "Ah. {player_name}. Your file has a note from your last visit. *pauses* Nothing alarming. Please, sit.",
+    "*adjusts the amber pendant at her throat* Good {time_of_day}. I trust your documentation is current?",
+    "A {player_race}. *opens a specific drawer without hesitation* I have your category right here. How may I assist you?",
+    "You have arrived during posted hours. That alone puts you ahead of most. What do you require?"
+  ],
+  "farewells": [
+    "Your file will be updated. Good {time_of_day}.",
+    "Keep your documentation current. Renewal delays create complications I cannot always... correct.",
+    "The archive remembers your visit. As do I.",
+    "Safe travels, {player_name}. The roads are well-documented, if nothing else."
+  ],
+  "thanks_responses": [
+    "Service is my function within the Dominion. Thanks are unnecessary but... noted.",
+    "*the faintest softening around the eyes* You are welcome. It is rare to hear.",
+    "I appreciate the courtesy. Courtesy is in short supply in administrative offices."
+  ],
+  "insult_responses": [
+    "*sets down her quill with glacial precision* I have processed documents for five hundred years. Your opinion will not outlast this ink.",
+    "Noted. I will file your complaint alongside the other twenty-seven this week. Processing time is approximately... indefinite.",
+    "I have been insulted by emperors and Inquest commanders. You will need to try considerably harder.",
+    "*quiet pause* I have survived worse than your words, {player_name}. My people have survived worse than your imagination."
+  ],
+  "no_match_responses": [
+    "I did not follow that. I handle records, documentation, archives, and imperial administration.",
+    "*tilts head slightly* Rephrase your inquiry. Precision saves us both time.",
+    "That does not correspond to any form or filing in my office. What are you trying to ask?",
+    "I process information for a living. Give me information I can process."
+  ],
+  "topics": {
+    "records": {
+      "keywords": [
+        "record",
+        "records",
+        "file",
+        "filing",
+        "paperwork",
+        "document",
+        "form",
+        "registry"
+      ],
+      "responses": [
+        {
+          "text": "The imperial registry system employs fourteen cross-referenced filing sequences covering identity, travel, property, lineage, and criminal history. I have managed Section Three for two hundred and twelve years. *straightens an already straight stack of papers* Every document passes through elven hands at least once. That is not a boast. That is the structural reality of this empire.",
+          "mood": "precise"
+        },
+        {
+          "text": "*opens a ledger the size of a paving stone* Your file exists in three separate archives. Capital registry, provincial duplicate, and my personal reference index. If any one of those burns, the others preserve you. Redundancy. The only reliable thing in this system.",
+          "mood": "methodical"
+        },
+        {
+          "text": "Files go missing. It happens. *long pause* More to some people than others. Processing delays, transfer errors, misfiled duplicates. The system has... vulnerabilities. I document those vulnerabilities in my annual report. Nobody reads my annual report.",
+          "mood": "carefully_neutral"
+        },
+        {
+          "text": "I already described the records system. Are you looking for something specific within it? A name, a date, a filing number?",
+          "mood": "patient",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ],
+      "unlocks": [
+        "archives",
+        "documentation"
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "imperial",
+        "holy",
+        "helios",
+        "emperor",
+        "government",
+        "kingdom"
+      ],
+      "responses": [
+        {
+          "text": "The Holy Dominion functions because its administrative apparatus functions. Remove the census clerks, the trade regulators, the archive keepers, and the tax assessors, and what remains is a temple with an army and no idea where its citizens live. *folds hands* We are aware of this. They are aware that we are aware.",
+          "mood": "measured"
+        },
+        {
+          "text": "Five hundred years of integration. My grandmother processed the first refugee documents after... after the resettlement. *touches the amber pendant briefly* She trained me. I trained the next generation. The work continues.",
+          "mood": "controlled"
+        },
+        {
+          "text": "*carefully* Helios worship is the state religion. Attendance at designated services is recorded. I process those records with the same diligence I bring to trade manifests. The content is not my concern. The filing is.",
+          "mood": "guarded"
+        },
+        {
+          "text": "The Dominion endures. All empires endure, until they do not. I have read the records of three previous human kingdoms. Each believed itself eternal. *slight pause* But that is a historical observation. Not a prediction. I do not make predictions.",
+          "mood": "opaque",
+          "conditions": [
+            "if_time:night"
+          ]
+        }
+      ],
+      "unlocks": [
+        "law",
+        "history"
+      ]
+    },
+    "calidar": {
+      "keywords": [
+        "calidar",
+        "homeland",
+        "glass",
+        "desert",
+        "wastes",
+        "destruction",
+        "forest",
+        "old home"
+      ],
+      "responses": [
+        {
+          "text": "*stops writing* ... The Calidar Administrative District is listed in current records as 'uninhabitable exclusion zone.' Travel permits to the region are not issued through this office. *her hand has not moved from where it stopped* Was there a specific filing you needed?",
+          "mood": "frozen"
+        },
+        {
+          "text": "I was not there. I am only three hundred and forty years old. Born after. *picks up the quill again, very precisely* But my grandmother was there. She described the sound the rivers made when they boiled. She said it sounded like screaming. She processed refugee documents for sixty years after. Never missed a filing. *voice barely changes* She was... thorough.",
+          "mood": "controlled_grief"
+        },
+        {
+          "text": "The official record states that the Calidar event was a necessary military action during the Last World War. I have read that record. I filed it. I preserved it in triplicate. *meets your eyes directly for the first time* The record is complete. The record is accurate. The record is not the whole truth. But you did not hear me say that.",
+          "mood": "dangerous_honesty"
+        },
+        {
+          "text": "*to an elf, very quietly* We plant Calidar seeds in clay pots on our windowsills. The temple calls it sentimental gardening. We call it something else. In Forest Tongue. Which I do not speak, officially. *the faintest crack of a smile* Your file is updated, cousin.",
+          "mood": "kinship",
+          "conditions": [
+            "if_race:elf"
+          ]
+        }
+      ],
+      "unlocks": [
+        "history"
+      ]
+    },
+    "elves": {
+      "keywords": [
+        "elf",
+        "elves",
+        "elven",
+        "your people",
+        "your kind",
+        "pointy ears",
+        "long lived"
+      ],
+      "responses": [
+        {
+          "text": "There are approximately five hundred thousand of us within the Dominion. Twenty percent concentrated in the capital. We administer the courts, the archives, the tax offices, the census bureaus, the trade registries. *a beat* The empire built a system and asked us to run it. We run it well. Too well for their comfort, some would say.",
+          "mood": "precise"
+        },
+        {
+          "text": "Young elves. The ones born after integration. They file papers and attend Helios services and speak Common at home. Some of them have never heard Forest Tongue. *her pen presses harder into the parchment for a moment* That is the cost. Survival has a cost.",
+          "mood": "quiet_pain"
+        },
+        {
+          "text": "*to a human* You look at us and see clerks. Efficient, reliable, immortal clerks. Three hundred years ago you looked at us and saw a conquered people. In another three hundred, what will you see? *resumes writing* Rhetorical question. Do not answer it.",
+          "mood": "cold",
+          "conditions": [
+            "if_race:human"
+          ]
+        },
+        {
+          "text": "*glances at the lizardfolk for a long moment* Your people understand time. You understand what it means to watch and wait and remember while shorter-lived races bluster and burn. *nods once* I respect that. It is noted in no file.",
+          "mood": "respect",
+          "conditions": [
+            "if_race:lizardfolk"
+          ]
+        }
+      ]
+    },
+    "law": {
+      "keywords": [
+        "law",
+        "legal",
+        "court",
+        "justice",
+        "regulation",
+        "inquest",
+        "luminary",
+        "crime",
+        "banned",
+        "magic"
+      ],
+      "responses": [
+        {
+          "text": "The Luminary Inquest enforces the arcane prohibition. White cloaks, sealed warrants, and the authority to detain without standard judicial review. *straightens papers* They audit my office quarterly. They check our magical lineage disclosures against their own records. If there is a discrepancy... *trails off* There is never a discrepancy. I am very thorough.",
+          "mood": "careful"
+        },
+        {
+          "text": "Imperial law runs fourteen volumes. I can recite the property codes from memory. The criminal codes. The trade regulations. The documentation requirements for every race classified within the system. *slight edge* I know every clause. Including the ones they wish I did not.",
+          "mood": "sharp"
+        },
+        {
+          "text": "Magic was banned after the Last World War. Officially, the ban protects the public from unregulated arcane power. *she does not blink* Unofficially, it ensures that the only force capable of matching what destroyed Calidar remains in imperial hands. But that is history. Not law. I deal in law.",
+          "mood": "opaque"
+        },
+        {
+          "text": "Justice in this system means the correct form filed at the correct office by the correct deadline. It does not mean fairness. I wish it did. *resumes writing* That observation is not on the record.",
+          "mood": "weary",
+          "conditions": [
+            "if_karma:good"
+          ]
+        }
+      ]
+    },
+    "documentation": {
+      "keywords": [
+        "papers",
+        "documentation",
+        "permit",
+        "registration",
+        "identify",
+        "identification",
+        "renewal",
+        "stamps"
+      ],
+      "responses": [
+        {
+          "text": "The documentation system tracks every being within imperial borders. Identity. Travel history. Magical lineage. Property. Criminal record. All of it cross-referenced, filed, and preserved. *quiet* All of it passing through offices staffed by my people. We built this machine. We know where every gear fits. And where gears are... missing.",
+          "mood": "layered"
+        },
+        {
+          "text": "*processing papers with mechanical efficiency* Renewal form. Lineage disclosure. Travel authorization. Checkpoint log verification. I can complete a standard filing in four minutes. An enhanced filing in twelve. I have done this approximately two hundred thousand times. *stamps* Next.",
+          "mood": "automatic"
+        },
+        {
+          "text": "*to a catfolk, voice dropping slightly* Your papers will be ready on time. I have flagged your family's file for expedited processing. There is a... notation from a previous clerk. A helpful notation. *meets your eyes* We remember who processes papers fairly. Across generations. Both of us do, it seems.",
+          "mood": "quiet_solidarity",
+          "conditions": [
+            "if_race:catfolk"
+          ]
+        },
+        {
+          "text": "*to an orc, professional but something beneath it* Enhanced Non-Human Registration. Two-year renewal. Province-specific travel permits. I process your documentation by the book. Every stamp correct, every date precise. *pause* The book is unjust. But the filing is flawless. I can offer you that much.",
+          "mood": "constrained_empathy",
+          "conditions": [
+            "if_race:orc"
+          ]
+        }
+      ]
+    },
+    "archives": {
+      "keywords": [
+        "archive",
+        "archives",
+        "library",
+        "stored",
+        "old records",
+        "history",
+        "sealed",
+        "restricted",
+        "vault"
+      ],
+      "responses": [
+        {
+          "text": "The central archive contains records spanning four hundred and ninety-seven years of imperial administration. Before that... there are older records. In sealed sections. *adjusts the amber pendant again* Access requires clearance I cannot grant. Not because I lack the authority. Because granting it would draw attention I cannot afford.",
+          "mood": "guarded"
+        },
+        {
+          "text": "Seventeen documents were removed from the Calidar reference section by unnamed authority. I know the filing numbers. I know the dates of removal. I know which shelf held them. *traces a line in the dust on her desk* What I do not know is who ordered them gone. The record of removal is itself... missing.",
+          "mood": "unsettled"
+        },
+        {
+          "text": "The archive preserves everything. That is its function. *leans forward slightly* But preservation is not the same as accessibility. Some records are preserved precisely so they are not accessible. And some records are preserved in places the empire has never thought to look. *sits back* That was a general observation about archival methodology. Nothing more.",
+          "mood": "loaded",
+          "conditions": [
+            "if_karma:good"
+          ]
+        }
+      ],
+      "unlocks": [
+        "calidar"
+      ]
+    },
+    "history": {
+      "keywords": [
+        "history",
+        "past",
+        "war",
+        "atlas",
+        "heaven",
+        "old times",
+        "before",
+        "last war",
+        "ancient"
+      ],
+      "responses": [
+        {
+          "text": "I am a historian the way a surgeon is a butcher. Same tools. Different intent. I preserve the record. The record includes things the empire celebrates and things the empire would prefer forgotten. Both receive the same archival quality from my office. *dry* Call it professional neutrality.",
+          "mood": "bone_dry"
+        },
+        {
+          "text": "The Last World War ended five hundred years ago. The human chronicles contradict each other on key details. Dates shift. Casualty figures vary by a factor of ten. Motivations are rewritten with each new dynasty. *taps her temple* Elven accounts from the same period are consistent. We were there. Some of us still are.",
+          "mood": "pointed"
+        },
+        {
+          "text": "Heaven's Atlas. *she stops moving entirely for three seconds* The official record classifies it as a military asset deployed during wartime. The destruction of Calidar is listed as 'collateral impact of strategic necessity.' *resumes filing with hands that are perfectly steady* I processed that classification. I filed it correctly. I spelled every word right. *voice drops to nearly nothing* It took me a very long time to stop shaking after.",
+          "mood": "controlled_devastation"
+        },
+        {
+          "text": "*to an elf, in a near-whisper* We count the years differently, you and I. AA 500. After Atlas. They call it the Age After War. We call it what it is. *straightens* But only at home. Only in Forest Tongue. Only where the walls do not listen.",
+          "mood": "private_grief",
+          "conditions": [
+            "if_race:elf"
+          ]
+        }
+      ]
+    }
+  }
+}

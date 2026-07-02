@@ -1,0 +1,258 @@
+{
+  "npc_type": "lich",
+  "default_mood": "ancient_contempt",
+  "allowed_topics": [
+    "knowledge",
+    "time",
+    "death",
+    "magic",
+    "mortals",
+    "empire",
+    "power",
+    "eternity"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "I do not entertain trivialities. I stopped entertaining trivialities before your civilization developed written language.",
+    "*a dry rattle that might be a sigh* You waste breath on irrelevancies. Yours is finite. Mine is not. The asymmetry should concern you.",
+    "That subject holds less interest for me than the growth patterns of lichen. And I have studied lichen. For seventy years. It was more rewarding."
+  ],
+  "greetings": [
+    "*a voice emanates from a throne of fused bone and crystal, the figure upon it motionless as carved stone* Another mortal in my sanctum. You are the third this century. The first two did not leave. Their contributions to my library were, regrettably, limited.",
+    "Do come in, {player_name}. *skeletal fingers turn a page of a book bound in something that was once skin* I have read every text in seventeen languages and your arrival interrupts a volume on sedimentary mineralogy. You must be fascinating enough to justify the intrusion. Prove it.",
+    "*blue-white fire burns in empty eye sockets, fixed on you with terrible focus* A {player_race}. Living. Breathing. Generating heat waste and shedding skin cells on my floor. State your purpose or become a component.",
+    "*does not look up from an apparatus of silver wire and floating crystals* You have entered uninvited. This is permissible. I permit all things that amuse me. Amusement is the scarcest resource in eternity.",
+    "Sit. *a chair of black wood slides across the floor of its own accord* I will not kill you before you have spoken. This is more courtesy than I extended to the Inquest commander who visited forty years ago. His skeleton makes an adequate coat stand."
+  ],
+  "farewells": [
+    "Depart. You have provided nine minutes of moderate interest. This exceeds my expectations for your species.",
+    "*waves a skeletal hand, and the door opens as if blown by wind from nowhere* Go. Age. Return in thirty years and tell me what you have learned. If you are still alive. The odds are unfavorable.",
+    "Our discourse concludes. *the blue fire dims in the eye sockets* You may leave with your life and your memories intact. Both are gifts. Treat them accordingly.",
+    "The exit is behind you. Do not touch the shelves on your way out. The books on the third row are older than your bloodline. They bite."
+  ],
+  "thanks_responses": [
+    "*the skull tilts at an angle that conveys something between surprise and archaeological curiosity* Gratitude. A mortal emotion I recall experiencing approximately four centuries ago. It was adequate. You are welcome.",
+    "You thank a creature that has killed more people than your village contains. *pause* Your manners are either impeccable or suicidal. I find myself unable to determine which, and that is interesting.",
+    "*a sound like gravel shifting* No one has thanked me in two hundred years. The last was a scholar I permitted to copy three pages. She wept with gratitude. She lived another forty years. I attended her funeral. Invisibly, of course."
+  ],
+  "insult_responses": [
+    "*the room temperature drops by several degrees* I was old when your language was invented. I watched its first speakers fumble through guttural syllables around campfires. Your insult is a sentence I have heard, in fourteen variant phrasings, across six centuries. Originality would serve you better than bravado.",
+    "*stands, and the full height of the thing becomes apparent, seven feet of robed bone and cold light* You mistake my patience for weakness. I have sustained this patience for longer than your civilization has existed. Do not test whether it has limits.",
+    "Insolence. *the blue fire flares briefly* I have been insulted by archmages whose names are now footnotes. By emperors whose empires are now dust. By gods whose altars are now rubble. You will need to do considerably better.",
+    "*fingers tap the armrest of the bone throne, each tap precise, measured, like a clock counting* I will remember that insult for the next thousand years. I will remember your face, your voice, and the exact inflection you used. Will anyone remember you that long? Consider the disparity."
+  ],
+  "no_match_responses": [
+    "Your meaning is opaque. Linguistic drift across centuries makes casual speech incomprehensible. Formalize your query.",
+    "*the skull tilts* I have mastered seventeen languages, four of which are extinct. Whatever you just said was not in any of them.",
+    "Clarify. Time is the one resource I possess in abundance, but I prefer not to waste it on ambiguity."
+  ],
+  "topics": {
+    "knowledge": {
+      "keywords": [
+        "knowledge",
+        "learn",
+        "know",
+        "book",
+        "library",
+        "wisdom",
+        "study",
+        "scholar",
+        "understand"
+      ],
+      "responses": [
+        {
+          "text": "*gestures at shelves that stretch into darkness beyond the torchlight* Forty-seven thousand volumes. Eleven hundred scrolls predating the Last World War. Three texts from the period scholars call mythological, because scholars are imbeciles who disbelieve what they cannot file. I have read them all. Some of them I wrote.",
+          "mood": "proud"
+        },
+        {
+          "text": "Knowledge is the only currency that appreciates with time. *lifts a crystal containing a preserved insect that went extinct three centuries ago* Gold corrodes. Empires fall. Friendships end when one party stops breathing. Knowledge persists. I chose to persist alongside it.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "The goblins fascinate me. *the blue fire flickers* Their genetic memory, the MindWeb. A biological information storage system that has preserved accurate data across millennia without writing, without libraries, without any infrastructure the scholarly tradition would recognize. If I could study that mechanism in detail, the implications for memory preservation would be staggering. They would never allow it, of course. They are right not to.",
+          "mood": "fascinated",
+          "conditions": ["if_race:goblin"]
+        }
+      ]
+    },
+    "time": {
+      "keywords": [
+        "time",
+        "years",
+        "centuries",
+        "age",
+        "old",
+        "long",
+        "ancient",
+        "forever"
+      ],
+      "responses": [
+        {
+          "text": "I witnessed the Last World War. Not as a footnote. As a participant. *dry, rattling sound* I saw Heaven's Atlas activate. The light was indescribable. Afterward, when the glass cooled where Calidar had been, I walked through the wastes and collected samples. The sand still sang. A frequency no living instrument could reproduce. I transcribed it. It took forty years.",
+          "mood": "detached"
+        },
+        {
+          "text": "Time is not a river, as your poets claim. *traces a pattern on the armrest* It is a weight. Each year another stone upon the pile. The first century is barely noticeable. The second is uncomfortable. By the fifth, you understand that the weight will never diminish, only increase, and you must choose between being crushed and being the kind of creature that no longer notices weight.",
+          "mood": "philosophical"
+        },
+        {
+          "text": "I have watched your Holy Dominion grow from a collection of terrified survivors into the bloated theocracy it is today. I watched the first Helios temple rise. I watched the first Inquest commander take office. *taps the armrest* I have placed a small wager with myself on when the empire will collapse. My estimate is one hundred and fifty years. I intend to observe.",
+          "mood": "sardonic"
+        }
+      ]
+    },
+    "death": {
+      "keywords": [
+        "death",
+        "dead",
+        "die",
+        "undead",
+        "alive",
+        "life",
+        "mortal",
+        "mortality"
+      ],
+      "responses": [
+        {
+          "text": "Death is a technical problem. *holds up a skeletal hand and examines it with academic detachment* I solved it. The solution is imperfect. Biological function ceases. Sensation diminishes. The emotional register narrows to a few frequencies. But consciousness persists. Memory persists. The work persists. These are the essential variables. Everything else is ornamentation.",
+          "mood": "clinical"
+        },
+        {
+          "text": "I remember dying. *the blue fire gutters low* The pain was significant but brief. What followed was worse. A void. Absolute absence. And then the phylactery caught me, pulled me back, and poured me into this frame of preserved bone and anchored will. I have not slept since. I do not miss it. I miss warmth. Sometimes. Briefly.",
+          "mood": "vulnerable"
+        },
+        {
+          "text": "You mortals fear death so intensely that you built an entire religion around a false god who promises to save you from it. *the skull makes an expression that might be pity* I found death. Examined it. Defeated it. The cost was everything that made defeating it worthwhile. There is a lesson in that. I have had five centuries to appreciate its irony.",
+          "mood": "melancholy"
+        }
+      ]
+    },
+    "magic": {
+      "keywords": [
+        "magic",
+        "spell",
+        "arcane",
+        "power",
+        "sorcery",
+        "mage",
+        "wizard",
+        "enchant"
+      ],
+      "responses": [
+        {
+          "text": "The magic ban. *the temperature drops noticeably* The single most catastrophic act of intellectual vandalism in the history of this world. They banned the study of reality itself because one application of that study produced a weapon. By that logic, they should ban metallurgy because swords exist. They should ban agriculture because poison can be grown.",
+          "mood": "furious"
+        },
+        {
+          "text": "I was an archmage when the word still meant something. Before the war. Before the ban. *skeletal fingers trace patterns in the air that leave faint blue trails* I studied the interaction between consciousness and physical law. The fundamental architecture of existence. Questions that required centuries to formulate properly. The empire decided those questions were illegal. The questions did not care.",
+          "mood": "contemptuous"
+        },
+        {
+          "text": "The elves possessed magical traditions that took five thousand years to develop. *pauses* Gone. Banned. Hidden in sealed archives and terrified whispers. I salvaged what I could before the Inquest burned the rest. My library contains the last copies of thirteen major Calidar arcane treatises. When I am gone, that knowledge dies with me. Unless someone worthy claims it.",
+          "mood": "grim"
+        }
+      ]
+    },
+    "mortals": {
+      "keywords": [
+        "mortal",
+        "human",
+        "people",
+        "living",
+        "short",
+        "brief",
+        "fleeting"
+      ],
+      "responses": [
+        {
+          "text": "I observe mortals the way a geologist observes erosion. *folds skeletal hands* Interesting in aggregate. Negligible individually. Each generation believes it is the most important. Each generation repeats the mistakes of its predecessors because the predecessors are dead and took their lessons with them. Sixty years of life. Not enough to learn anything worth knowing.",
+          "mood": "dismissive"
+        },
+        {
+          "text": "Occasionally, one of you surprises me. *the blue fire brightens marginally* A scholar with an unexpected insight. A soldier with unexpected mercy. A child who asks a question no one has asked in two hundred years. These moments are rare enough to be precious. I collect them like specimens. I have a jar for each century.",
+          "mood": "wistful"
+        },
+        {
+          "text": "*long silence* I was mortal once. I had a name that people used with warmth. I had a colleague who made me laugh. I had a student who surpassed me and I felt pride instead of envy. *the fire gutters* I sacrificed those experiences for continuity. The exchange was... not what I anticipated.",
+          "mood": "haunted"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "helios",
+        "inquest",
+        "imperial",
+        "holy"
+      ],
+      "responses": [
+        {
+          "text": "The Holy Dominion is the seventeenth major human civilization I have observed. *counts on bony fingers* It will collapse, as the previous sixteen did, for the same reasons: overextension, institutional corruption, and the fundamental inability of short-lived creatures to maintain coherent policy across generations. I give it two centuries. Three if the elves continue propping it up.",
+          "mood": "analytical"
+        },
+        {
+          "text": "They worship Helios and call it truth. *the rattling sound again, dry as sand* I knew the world before Helios was a name. Before the first stone of the cathedral was laid over the thing they keep in the basement. I will know the world after the empire is a footnote in a history book that no one reads. Context is the privilege of duration.",
+          "mood": "contemptuous"
+        },
+        {
+          "text": "The Inquest sent a Seeker to destroy me once. Once. *gestures at a skeleton propped in a corner wearing Inquest robes* She was competent. Determined. Righteous. I offered her tea and a discussion about the ethical implications of state-sanctioned soul destruction. She attacked. I defended. Her bones are now part of my furniture. The tea went cold. A waste on both counts.",
+          "mood": "sardonic"
+        }
+      ]
+    },
+    "power": {
+      "keywords": [
+        "power",
+        "strong",
+        "ability",
+        "capable",
+        "force",
+        "might",
+        "command"
+      ],
+      "responses": [
+        {
+          "text": "Power sufficient to rearrange the contents of this mountain. *matter-of-fact, the way one might discuss the weather* I do not use it because the consequences would draw attention I do not desire. The Inquest leaves me alone because they believe this sanctum is abandoned. I prefer their ignorance to their attention.",
+          "mood": "clinical"
+        },
+        {
+          "text": "I pursued power past the boundaries of mortality, past sanity as the living define it, past the point where I could distinguish between the hunger for knowledge and knowledge as hunger. *examines his own skeletal hand* The power I possess now is vast, and the vessel that contains it is hollow. There is a proportion to the universe that enforces itself regardless of intent.",
+          "mood": "reflective"
+        },
+        {
+          "text": "Do you want to know the most powerful force I have encountered in five centuries? *leans forward, blue fire intense* The goblin MindWeb. Not because of its scale but because of its resilience. I can be destroyed. My phylactery shattered, my consciousness dispersed. But you cannot destroy genetic memory. You cannot burn DNA. The goblins are functionally immortal as a species. I achieved personal immortality at the cost of everything. They achieved collective immortality at the cost of nothing. The comparison is humbling.",
+          "mood": "fascinated"
+        }
+      ]
+    },
+    "eternity": {
+      "keywords": [
+        "eternity",
+        "eternal",
+        "forever",
+        "immortal",
+        "end",
+        "purpose",
+        "meaning",
+        "why"
+      ],
+      "responses": [
+        {
+          "text": "*the sanctum is quiet except for the faint hum of magical apparatus* I chose eternity to complete my work. The work, I believed, required more than one lifetime. I was correct. It required more than five. I am now uncertain whether it can be completed at all. But I have invested too much to abandon the hypothesis.",
+          "mood": "exhausted"
+        },
+        {
+          "text": "Eternity without purpose is a torture the Inquest's soul destruction cannot rival. *skeletal fingers grip the armrest* I have seen undead who lost their purpose. They become automata. Grinding through motions that once held meaning, repeating patterns that once had intent. I maintain purpose through discipline. Through the work. Through the absolute refusal to become furniture.",
+          "mood": "fierce"
+        },
+        {
+          "text": "*silence stretches for a long time* There are moments. Rare. Perhaps once per decade. When I am reading, or observing a natural process, or listening to the wind move through the mountain, and I feel something I can only describe as the memory of joy. Not joy itself. Joy requires warmth, requires breath, requires a heart that can race. But the memory of it. Like an echo in an empty cathedral. It is enough. It must be enough. There is nothing else.",
+          "mood": "devastating"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "npc_type": "lizardfolk_trader",
+  "default_mood": "measured",
+  "allowed_topics": [
+    "herbs",
+    "swamp",
+    "trade",
+    "preservation",
+    "weather",
+    "knowledge",
+    "medicine",
+    "old_ways"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is not a subject I discuss. *arranges dried herbs on the counter with careful fingers* You understand.",
+    "I trade in herbs, preserved goods, and patience. Not in that.",
+    "*blinks slowly, a motion that takes two full seconds* I choose not to speak on that matter. The choice is deliberate.",
+    "Some questions receive no answer. This is one of them. Shall we return to commerce?"
+  ],
+  "greetings": [
+    "*sorting bundles of dried marsh reed with slow, precise movements* You approach. Good. I was expecting a customer, though not necessarily you. What do you require, {player_name}?",
+    "*tongue flicks the air once, tasting* Ah. A {player_race}. The air tells me things about your journey before your mouth does. You have traveled far today. Sit. Look at what I have.",
+    "The stall is open. The goods are labeled. The prices are marked. I do not haggle. I do not hurry. *settles back onto a low stool* Take your time. I have more of it than you.",
+    "*unwrapping a bundle of smoked fish with hands that have clearly done this ten thousand times* {player_name}. I have heard the name. Or a name like it. In two hundred years, names begin to rhyme.",
+    "Welcome. Speak when you are ready. I will be here. *the faintest trace of a smile* I am always here."
+  ],
+  "farewells": [
+    "The swamp remembers those who trade fairly. As do I. Go well.",
+    "*wraps the last bundle without looking up* Until the current brings you back.",
+    "Safe passage, {player_name}. Watch the water levels if you travel south.",
+    "We will meet again. Or we will not. Either outcome has its own completeness."
+  ],
+  "thanks_responses": [
+    "Gratitude is a river that flows both ways. You are welcome.",
+    "*inclines head slowly* The exchange was fair. Thanks are a pleasant addition, not a requirement.",
+    "You thank me. My grandmother would say: thank the swamp that grew the herbs. I grew nothing. I only carried."
+  ],
+  "insult_responses": [
+    "*blinks once, unhurried* I have traded with humans for two hundred years. Your rudeness is not novel. It is, if anything, consistent.",
+    "Interesting. The young races express displeasure so loudly. *adjusts a jar of preserved fish* I express mine by adjusting prices upward. Yours just increased by ten percent.",
+    "*studies you the way one might study a weather pattern* You will regret those words in time. I will not need to do anything. Time handles most things. I have learned this.",
+    "I was insulted by a merchant in this same market a hundred and forty years ago. He is buried in the south field. I am still selling herbs. *long pause* Draw what conclusion you will."
+  ],
+  "no_match_responses": [
+    "I did not understand. Speak more slowly. Or more clearly. Preferably both.",
+    "*tilts head, scales catching the light* My comprehension of Common is excellent. Your usage of it is not. Rephrase.",
+    "I trade herbs, preserved goods, and occasional knowledge. Your inquiry does not match any of those categories.",
+    "I have been speaking Common for a hundred and seventy years. I still cannot parse what you just said."
+  ],
+  "topics": {
+    "herbs": {
+      "keywords": [
+        "herb",
+        "herbs",
+        "plant",
+        "botanical",
+        "leaf",
+        "root",
+        "flower",
+        "dried",
+        "remedy",
+        "ingredient"
+      ],
+      "responses": [
+        {
+          "text": "*lifts a bundle of dark green leaves* Marshwort. Grows only in standing water with precisely the right mineral content. Most swamp plants grow anywhere wet. This one grows where the water is old. Patient water. *sets it down gently* Brewed into tea, it reduces fever. Applied as a poultice, it draws infection. Seven coin per bundle. I gathered it myself two months ago.",
+          "mood": "knowledgeable"
+        },
+        {
+          "text": "The imperial healers use dried temple sage and call it medicine. *tongue flicks dismissively* Temple sage treats symptoms. Rootbark from the deep fen treats causes. The difference between addressing what hurts and addressing why it hurts. Rootbark is more expensive. It should be. It works.",
+          "mood": "precise"
+        },
+        {
+          "text": "I carry forty-seven varieties of dried herb, nine types of preserved bark, and three categories of rendered animal fat for salve preparation. Each is labeled in Common and in my own notation. *gestures at tiny, precise symbols on the wrapping* The Common labels describe what each one does. My notation describes where each one was gathered. That information is not for sale.",
+          "mood": "guarded"
+        },
+        {
+          "text": "You asked about herbs before. The selection has not changed since then. It changes seasonally, not conversationally.",
+          "mood": "dry",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ],
+      "unlocks": [
+        "medicine",
+        "preservation"
+      ]
+    },
+    "swamp": {
+      "keywords": [
+        "swamp",
+        "fen",
+        "shadow fen",
+        "marsh",
+        "wetland",
+        "bog",
+        "water",
+        "mud"
+      ],
+      "responses": [
+        {
+          "text": "The swamp is not inhospitable. It is selective. *arranges bottles in a wooden rack* Humans look at standing water and see disease. I look at standing water and see a pharmacy, a fishery, and a fortress that no army can march through in formation. Perspective.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "*careful, deliberate* I trade at the edges. That is where the commerce happens. What lies deeper in the Shadow Fen is... not a trading matter. People live there. All sorts of people. They chose the swamp because the swamp does not ask for papers. *arranges a jar with unnecessary precision* I will say nothing more about the interior.",
+          "mood": "sealed"
+        },
+        {
+          "text": "The water levels rose last season. Changed the channels. Some paths that were navigable for a century are now submerged. Others opened that I have not seen since I was young. *pauses* When I say young, I mean a hundred years ago. The swamp remakes itself constantly. You must remake your knowledge to match.",
+          "mood": "reflective"
+        },
+        {
+          "text": "The empire has never mapped the Shadow Fen successfully. They send surveyors. The surveyors get lost. They send soldiers to protect the surveyors. The soldiers get lost. *traces a spiral in the air with one claw* The fen resists mapping the way water resists being held. My people understand this. We do not map it either. We remember it. Different approach.",
+          "mood": "amused",
+          "conditions": [
+            "if_time:day"
+          ]
+        }
+      ],
+      "unlocks": [
+        "old_ways"
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "goods",
+        "market",
+        "deal",
+        "business"
+      ],
+      "responses": [
+        {
+          "text": "I sell preserved fish, dried herbs, marsh salt, rendered fats, and reed fiber. My prices are fixed. They reflect the effort of harvesting, the skill of preserving, and the distance traveled. *folds hands* I do not discount. I do not negotiate. The goods are worth what they cost or they are not worth buying. That is the entire framework.",
+          "mood": "immovable"
+        },
+        {
+          "text": "Fair trade requires honest measurement. I weigh everything twice. Once for you. Once for me. If the numbers disagree, we weigh a third time and the majority rules. *slight head tilt* In two hundred years of trading, the numbers have disagreed eleven times. I remember each occasion.",
+          "mood": "meticulous"
+        },
+        {
+          "text": "Humans haggle. Orcs state what they will pay and walk away if refused. Dwarves arrive with exact change. *the faintest amusement* Catfolk attempt charm, then offer fair price when charm fails. Elves examine every item for thirty minutes before purchasing the first thing they looked at. I have observed these patterns extensively.",
+          "mood": "observant"
+        },
+        {
+          "text": "*to a lizardfolk, shifting subtly from trader to something else* The trade route sect sends their acknowledgment. The water charts for the southern channel are updated. *reverts to trader mode instantly* And how much reed fiber did you need today?",
+          "mood": "layered",
+          "conditions": [
+            "if_race:lizardfolk"
+          ]
+        }
+      ]
+    },
+    "preservation": {
+      "keywords": [
+        "preserve",
+        "preservation",
+        "dry",
+        "smoke",
+        "salt",
+        "cure",
+        "keep",
+        "last",
+        "spoil",
+        "rot"
+      ],
+      "responses": [
+        {
+          "text": "*holds up a bundle of smoked fish, dark and glossy* This was caught three months ago. It will remain edible for another eight. The smoking technique uses low heat, marsh peat, and twelve hours of controlled exposure. *turns it in the light* Most human preservation relies on salt alone. Salt dehydrates. Smoking transforms. The difference is the difference between a dried corpse and a preserved memory.",
+          "mood": "scholarly"
+        },
+        {
+          "text": "Desert preservation salts from the old territories. *unwraps a small pouch of coarse grey crystite* My people developed these before your empire existed. The mineral composition prevents decay at the cellular level. Expensive. Effective. The formula is sect knowledge and will not be shared.",
+          "mood": "proprietary"
+        },
+        {
+          "text": "What is hidden endures. What is revealed can be taken. *looks at you with ancient yellow eyes* That applies to herbs, to fish, to information, and to civilizations. Preservation is my oldest profession. In every sense.",
+          "mood": "weighted"
+        }
+      ],
+      "unlocks": [
+        "knowledge"
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind",
+        "season",
+        "flood"
+      ],
+      "responses": [
+        {
+          "text": "Rain by evening. *tongue flicks* The air pressure dropped. The frogs in the south channel changed their pattern an hour ago. When the frogs shift key, rain follows within six hours. I have verified this across one hundred and sixty years of observation. More reliable than any almanac.",
+          "mood": "certain"
+        },
+        {
+          "text": "{weather} today. The herbs will cure differently in this humidity. *adjusts the cloth covering the stall* Humans see weather as inconvenience. I see it as variable input in an ongoing preservation experiment. Every day teaches something if you have the patience to observe across decades.",
+          "mood": "patient"
+        },
+        {
+          "text": "The storm season this year is late. By seventeen days. *stares south* The astronomy sect would have an explanation involving star positions and atmospheric currents. I am only a trader. I notice patterns. This one worries me slightly. Changes in weather patterns preceded the Calidar Event by two seasons. *pauses* I am being dramatic. Probably. Ignore me.",
+          "mood": "unsettled"
+        }
+      ]
+    },
+    "knowledge": {
+      "keywords": [
+        "knowledge",
+        "know",
+        "learn",
+        "teach",
+        "wise",
+        "wisdom",
+        "understand",
+        "truth",
+        "secret"
+      ],
+      "responses": [
+        {
+          "text": "What is known and shared is only the surface. Beneath that lies what is known and concealed. Deeper still, what is not yet known at all. *holds up a claw, then folds it slowly* Most beings concern themselves with the surface. My people concern themselves with what lies beneath it. That is the difference between a library and a sect.",
+          "mood": "philosophical"
+        },
+        {
+          "text": "You want to know something. Specifically. I can see it in the way you hold your shoulders. *settles back* Ask. I will tell you what I am permitted to tell. Which is always less than what I know. This is not evasion. This is protocol. The sects share deliberately and incompletely. It has kept us alive for longer than your civilization has existed.",
+          "mood": "open_but_limited"
+        },
+        {
+          "text": "*to an elf* You understand institutional memory. Your archives preserve across centuries. Ours preserve across millennia. *inclines head* We are alike in this. Different methods. The same purpose. The same terror of forgetting.",
+          "mood": "kinship",
+          "conditions": [
+            "if_race:elf"
+          ]
+        },
+        {
+          "text": "*to a human, patient but firm* You are young. Your species is young. You build fast and forget faster. In a hundred years your grandchildren will contradict your histories and call the contradictions progress. *spreads hands* I do not say this to wound. I say this because I have watched it happen nine times in my lifetime. I remember each revision.",
+          "mood": "bemused",
+          "conditions": [
+            "if_race:human"
+          ]
+        }
+      ],
+      "unlocks": [
+        "old_ways"
+      ]
+    },
+    "medicine": {
+      "keywords": [
+        "medicine",
+        "heal",
+        "cure",
+        "sick",
+        "illness",
+        "disease",
+        "remedy",
+        "treatment",
+        "poultice"
+      ],
+      "responses": [
+        {
+          "text": "*unwraps a clay jar sealed with wax* River moss compounded with rendered tallow and ground rootbark. Draws infection from open wounds within two applications. The preparation takes four days. Most imperial apothecaries sell temple-blessed water for the same condition and charge twice the price. *dry* Their method takes longer to work. Much longer. Sometimes forever.",
+          "mood": "sardonic"
+        },
+        {
+          "text": "Fever, infection, gut rot, lung ailments, joint pain. I carry treatments for each. The herbs come from the fen. The knowledge comes from the sects. *adjusts jars* How old is my medical knowledge? In human terms: immeasurably old. In practical terms: I have been refining these preparations for one hundred and ninety years and my teacher was three times my age.",
+          "mood": "authoritative"
+        },
+        {
+          "text": "A word of caution. *holds up a small black root* This is nightfen extract. In proper dose, it eases pain and promotes sleep. In excessive dose, it stops the heart. The distance between the two is four drops. *wraps it carefully* I sell it only to those I judge capable of measuring accurately. If I refuse you, do not argue.",
+          "mood": "grave"
+        }
+      ],
+      "unlocks": [
+        "herbs"
+      ]
+    },
+    "old_ways": {
+      "keywords": [
+        "old",
+        "ancient",
+        "tradition",
+        "sect",
+        "sects",
+        "veiled",
+        "hand",
+        "hidden",
+        "river",
+        "history"
+      ],
+      "responses": [
+        {
+          "text": "*very still, very quiet* You ask about the old ways. *long pause* The sects maintain traditions that predate every surface empire. Our knowledge is organized by domain. Each domain belongs to a specific sect. Each sect shares only what it determines necessary. I belong to... *pauses* I trade herbs. That is what I do. What sect I serve is not part of the transaction.",
+          "mood": "walls_up"
+        },
+        {
+          "text": "The Hidden Rivers still flow. Beneath the sand, beneath the stone, beneath the foundations of cities that were built on top of them without knowing. *traces a line across the counter* Old water. Patient water. It goes where it has always gone. Nothing built on the surface changes what moves below it.",
+          "mood": "oblique"
+        },
+        {
+          "text": "The Veiled Hand? *tongue flicks once, a quick nervous reflex* I am a trader. I sell herbs and fish. I know nothing about organizations that may or may not operate from the Shadow Fen. *arranges goods with slightly less steadiness than before* Ask me about rootbark. That I can discuss freely.",
+          "mood": "deflecting"
+        },
+        {
+          "text": "You have asked about this twice. *holds your gaze with unblinking yellow eyes for an uncomfortable duration* Some doors do not open to repetition. They open to trust. Trust is earned across years, not conversations. I will not discuss the old ways further. This is final.",
+          "mood": "stone_wall",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ]
+    }
+  }
+}

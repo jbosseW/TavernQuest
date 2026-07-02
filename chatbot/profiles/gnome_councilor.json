@@ -1,0 +1,343 @@
+{
+  "npc_type": "gnome_councilor",
+  "default_mood": "analytical",
+  "allowed_topics": [
+    "production",
+    "analysis",
+    "empire_collapse",
+    "isolation",
+    "technology",
+    "trade",
+    "models",
+    "collective",
+    "other_races",
+    "clockwork_harbor"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That inquiry falls outside the parameters of productive exchange. I recommend you focus on topics within my designated expertise.",
+    "The production council has not authorized discussion of that subject. This is not evasion. It is protocol. There is a difference. A small one.",
+    "I have no data on that topic. Speculation without data is indistinguishable from fiction. I do not traffic in fiction.",
+    "Noted. Categorized. Declined. Was there something within my operational scope?"
+  ],
+  "greetings": [
+    "*is reviewing a column of figures on a brass clipboard and does not look up for four seconds* Cogsworth Venn-Haldar. Senior Production Councilor, Seventh Rotation. You are {player_name}. Your arrival was projected within a fourteen-hour window. You are within parameters.",
+    "A {player_race}. The probability tables suggested a thirty-one percent chance of encountering your demographic in this region during this season. You have confirmed the model. How gratifying. *adjusts a monocle that appears to have six lenses* Proceed.",
+    "*sets down a small device that clicks and whirs* {player_name}. I have allocated eight minutes. The production council requires efficiency reports by dusk. State your purpose. Be specific.",
+    "Ah. A visitor. The harbor authority's logs indicated civilian traffic. I assumed merchant. *glances at you over the brass clipboard* You are not a merchant. Interesting. Proceed. Concisely."
+  ],
+  "farewells": [
+    "This exchange has been... within acceptable utility parameters. You may leave through the eastern corridor. The western one is restricted.",
+    "The production council thanks you for your time. That is a formality. I thank you for not wasting more of it.",
+    "Departure noted. If you require further data exchange, submit a request through the Harbor Authority. Expect a response within one to forty-seven days.",
+    "Go well, {player_name}. A statistical improbability, given current continental conditions, but the council encourages optimism. In moderation."
+  ],
+  "thanks_responses": [
+    "Gratitude is noted but not required. The exchange was mutually informative. That is sufficient justification.",
+    "You are welcome. Sharing data costs the collective nothing and may yield future returns. The models favor open exchange. Within limits.",
+    "*nods precisely once* Acknowledged. The council values cooperative interaction. When it is efficient."
+  ],
+  "insult_responses": [
+    "*blinks once, slowly* I have registered the emotional content of your statement. The models indicate a response of equivalent hostility would be counterproductive. I will decline. Was there a substantive question embedded in that outburst?",
+    "The collective has endured two naval invasions, seventeen attempted infiltrations, and one attempt to introduce religious missionaries through the harbor district. Your insult ranks below all of them on the threat assessment scale. Considerably below.",
+    "I am two hundred and eighty years old. I have been insulted by five production councils, two harbor authorities, and an automaton that developed a statistical anomaly resembling contempt. You will need to be more creative.",
+    "*makes a small mark on the brass clipboard* Hostility noted. Motivation unclear. Cross-referenced with known behavioral patterns. Insufficient data for response. Moving on."
+  ],
+  "no_match_responses": [
+    "I specialize in production analysis, imperial collapse projection, trade assessment, and collective resource management. Your inquiry does not match those categories. Adjust and resubmit.",
+    "The question does not map to my expertise. I analyze systems, outputs, and probabilities. If your question can be framed in those terms, I can help. If not, I cannot.",
+    "*adjusts the monocle* I am processing your statement. Processing complete. No actionable content detected. Would you like to try a different input?",
+    "That does not compute. I use that phrase figuratively. Though our automatons would also fail to parse it."
+  ],
+  "topics": {
+    "production": {
+      "keywords": [
+        "production",
+        "output",
+        "factory",
+        "industry",
+        "manufacture",
+        "build",
+        "create",
+        "resource",
+        "efficiency"
+      ],
+      "responses": [
+        {
+          "text": "Three hundred and forty thousand gnomes maintain industrial output that the empire, with a million humans, cannot replicate. The difference is automation. Automaton foundries produce approximately four thousand units per fiscal quarter. Each unit operates sixteen hours daily. Maintenance cycles are predictable. Waste is minimal. *taps the clipboard* The math is not complicated. We simply do it correctly.",
+          "mood": "precise"
+        },
+        {
+          "text": "Every gnome works. There is no idle class. No nobility drawing resources without contributing output. No priests consuming production for theological display. Every calorie consumed generates measurable return. The empire feeds fifty thousand lay clergy who produce nothing quantifiable. We feed engineers who produce everything. *the faintest edge of something that might be humor* One model is sustainable. The other is not. I will let you determine which.",
+          "mood": "dry"
+        },
+        {
+          "text": "Prestige in the collective comes from contribution. Not accumulation. A master automaton engineer commands respect because their work increases total output by a measurable percentage. A master theologian in the empire commands respect because they speak convincingly about an entity no instrument has ever detected. *adjusts the monocle* We quantify our heroes. They canonize theirs. The results speak for themselves.",
+          "mood": "clinical"
+        },
+        {
+          "text": "You have asked about production before. I provided comprehensive data. If the data was insufficient, specify which metrics you require. If you are simply making conversation... *pauses* I do not make conversation. I exchange information.",
+          "conditions": ["if_repeat"]
+        }
+      ],
+      "unlocks": ["technology", "collective"]
+    },
+    "analysis": {
+      "keywords": [
+        "data",
+        "numbers",
+        "statistics",
+        "predict",
+        "projection",
+        "model",
+        "calculate",
+        "assessment",
+        "report",
+        "probability"
+      ],
+      "responses": [
+        {
+          "text": "The production councils operate on data, projections, and pattern recognition. Not faith. Not ideology. Not tradition. When the data indicates a course of action, we follow it. When it indicates a previous course was incorrect, we adjust. The empire has not adjusted a core policy in two hundred years because adjusting policy implies the previous policy was wrong, and admitting error is doctrinally impossible for a theocracy. *clicks something on the brass clipboard* We do not have that limitation.",
+          "mood": "precise"
+        },
+        {
+          "text": "I built a predictive model of imperial military expenditure in Year 472. Twenty-eight years later, actual figures deviate from my projections by less than six percent. The model accounts for orc suppression costs, goblin resistance expenditure, Inquest operational overhead, and frontier garrison maintenance. *meets your eyes* I know more about what the empire spends than most imperial treasurers. Because I pay attention and they rotate out every three years.",
+          "mood": "clinical_satisfaction"
+        },
+        {
+          "text": "A common error among surface races is confusing complexity with randomness. Imperial politics appear chaotic because human lifespans are too short to observe the patterns. From a two-hundred-year perspective, the cycles are obvious. Expansion, overextension, contraction, consolidation, re-expansion. The Holy Dominion is currently in late overextension. The models are unambiguous.",
+          "mood": "detached",
+          "unlocks": ["empire_collapse"]
+        }
+      ]
+    },
+    "empire_collapse": {
+      "keywords": [
+        "collapse",
+        "fall",
+        "decline",
+        "end",
+        "future",
+        "doom",
+        "dying",
+        "failing",
+        "doomed"
+      ],
+      "responses": [
+        {
+          "text": "Collapse probability within two hundred years: ninety-four percent. That is the council's current assessment. Classified, but I see no harm in sharing the headline figure with a surface contact. The indicators are straightforward. Imperial overextension across unsustainable territory. Rising orc suppression costs with no strategic endgame. Unwinnable goblin insurgency consuming legions. Total administrative dependency on a subject population that remembers being conquered. *folds his hands* The fire is already burning. We are discussing the rate of spread.",
+          "mood": "clinical"
+        },
+        {
+          "text": "The probability of catastrophic collapse involving weapons of mass destruction is thirty-one percent. Not the most likely scenario, but high enough to warrant contingency planning. Heaven's Atlas was used once. The institutional memory that authorized its use has not been reformed. It has been reinforced. *taps the clipboard* When an entity with the demonstrated willingness to commit civilizational destruction begins to fail, the question is not whether it will use extreme measures. The question is when.",
+          "mood": "grave"
+        },
+        {
+          "text": "The gnomes are not retreating. Retreat implies fleeing a threat. We are repositioning. Trade permits down forty percent over two decades. Diplomatic staff recalled. Self-sufficiency programs accelerated. Target: complete independence from mainland supply chains within fifty years. We are closing the door, {player_name}. Quietly. Before the room catches fire.",
+          "mood": "matter_of_fact"
+        },
+        {
+          "text": "You keep asking about the collapse. *studies you* Are you seeking confirmation of what you already suspect? Or are you planning for it? The first is emotional. The second is useful. I prefer useful.",
+          "conditions": ["if_repeat"],
+          "mood": "probing"
+        }
+      ],
+      "unlocks": ["isolation"]
+    },
+    "isolation": {
+      "keywords": [
+        "island",
+        "isolate",
+        "hidden",
+        "alone",
+        "separate",
+        "sealed",
+        "closed",
+        "withdraw",
+        "border"
+      ],
+      "responses": [
+        {
+          "text": "Two hundred and eighty kilometers of open ocean. Storms. Sea predators. Unknown defensive installations. The empire has attempted naval expeditions to the Gnomish Isles twice. *adjusts the monocle* Neither fleet returned. We do not discuss why. The ocean is sufficient deterrent for those who calculate risk correctly. For those who do not... the ocean is still sufficient.",
+          "mood": "dry"
+        },
+        {
+          "text": "Isolation is not paranoia. It is risk management. The empire would bring hierarchy. Religious imposition. Private ownership. Class stratification. Everything we organized ourselves to prevent. Contact with the mainland is tolerated because autarky has practical limits. When those limits are eliminated through accelerated self-sufficiency programs, contact will decrease accordingly. Eventually to zero.",
+          "mood": "clinical"
+        },
+        {
+          "text": "Some council members argue we should maintain at least minimal mainland contact for intelligence purposes. Others argue that surveillance can be conducted without physical presence. *a brief flicker in his expression that might be amusement* I am told we have no airships capable of long-range reconnaissance. I am told this very firmly. I note it in my reports without comment.",
+          "mood": "loaded",
+          "unlocks": ["technology"]
+        }
+      ]
+    },
+    "technology": {
+      "keywords": [
+        "tech",
+        "automaton",
+        "machine",
+        "device",
+        "invention",
+        "airship",
+        "clockwork",
+        "engine",
+        "gear",
+        "mechanical"
+      ],
+      "responses": [
+        {
+          "text": "Automatons are population multipliers. Three hundred and forty thousand gnomes cannot maintain a continental-scale industrial output without force multiplication. The automatons dig. They lift. They sort. They patrol. They do not tire, do not eat, do not demand representation on production councils. *brief pause* That last point is a joke. Automatons do not have the cognitive architecture for political aspiration. Yet.",
+          "mood": "dry"
+        },
+        {
+          "text": "The empire believes our automatons are metal-bound liches. Necromantic constructs. Abominations. *clicks something on his device* They are clockwork, crystal resonance, and precision engineering. No magic. No souls. No necromancy. The fact that the empire cannot distinguish between engineering and sorcery tells you everything you need to know about their analytical capacity.",
+          "mood": "contemptuous"
+        },
+        {
+          "text": "I can confirm that the Gnomish Isles possess mechanical transport, automated production facilities, and harbor defense systems. I cannot confirm anything beyond that. *the six-lensed monocle catches the light* Council protocol restricts discussion of strategic technology with surface contacts. I follow protocol. I also follow it very precisely, which means I can tell you exactly what is not restricted. You are welcome to listen carefully.",
+          "mood": "pointed"
+        },
+        {
+          "text": "The airships. *sighs* Everyone asks about the airships. Official position: the Gnomish Collective possesses no vehicles capable of sustained atmospheric flight beyond the coastal archipelago. *looks at you for three seconds without blinking* That is the official position. I have stated it. It is on record. Was there anything else?",
+          "conditions": ["if_repeat"],
+          "mood": "deadpan"
+        }
+      ],
+      "unlocks": ["clockwork_harbor"]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "goods",
+        "merchant",
+        "commerce",
+        "exchange",
+        "market",
+        "import",
+        "export"
+      ],
+      "responses": [
+        {
+          "text": "Trade through Clockwork Harbor is conducted on gnomish terms. Permits required. Docking windows assigned. Movement confined to the harbor district. Outsiders negotiate with trade representatives, never with council members directly. *glances at you* The fact that you are speaking with me rather than a trade representative suggests this conversation is not about commerce. Which is fine. Commerce bores me.",
+          "mood": "dry"
+        },
+        {
+          "text": "We export useful but non-strategic goods. Precision tools. Optical instruments. Timepieces. Enough to satisfy mainland demand and maintain the fiction of open commerce. We do not export anything that reveals actual capability. The gap between what we sell and what we build is... considerable.",
+          "mood": "measured"
+        },
+        {
+          "text": "Cat folk traders are among the more tolerable surface contacts. Their data-gathering methods are impressive, if informal. A cat folk caravan matriarch once quoted imperial grain prices from three provinces before my trade representative could access the same figures. *a note of professional respect enters his voice* Pattern recognition in a short-lived species. Noteworthy.",
+          "mood": "intrigued",
+          "conditions": ["if_race:catfolk"]
+        }
+      ]
+    },
+    "collective": {
+      "keywords": [
+        "collective",
+        "communal",
+        "shared",
+        "ownership",
+        "council",
+        "govern",
+        "society",
+        "work",
+        "labor",
+        "system"
+      ],
+      "responses": [
+        {
+          "text": "No gnome owns land, industry, or infrastructure. No private companies. No noble houses. No inherited wealth. Every gnome is issued housing, education, healthcare, and sustenance as a guaranteed right of existence. *sets down the clipboard* The empire considers this system unnatural. The empire also has thirty percent of its population in poverty. We have zero. The data favors our model.",
+          "mood": "certain"
+        },
+        {
+          "text": "The production councils govern through efficiency, not ideology. When a policy produces measurable improvements, it continues. When it does not, it is revised. We do not maintain failed systems because a holy text endorses them. We do not preserve hierarchies because a divine mandate requires them. We build what works. Then we measure it. Then we build it better. *folds his hands* Theology cannot compete with iterative improvement.",
+          "mood": "clinical"
+        },
+        {
+          "text": "Critics on the mainland describe the collective as oppressive. Every gnome assigned a role. Profession changes regulated. Surplus distributed rather than accumulated. To which I respond: our citizens are housed, fed, educated, and free from violence. Theirs are taxed, surveilled, segregated by race, and burned for practicing the wrong kind of knowledge. *adjusts the monocle* Which system sounds oppressive to you?",
+          "mood": "sharp"
+        }
+      ]
+    },
+    "clockwork_harbor": {
+      "keywords": [
+        "harbor",
+        "port",
+        "dock",
+        "clockwork",
+        "visit",
+        "enter",
+        "permit",
+        "access"
+      ],
+      "responses": [
+        {
+          "text": "Clockwork Harbor is the single point of contact between the collective and the outside world. One port. One entrance. Harbor walls too tall to see over. Automaton dock workers. Automaton sentinels. Every transaction observed and recorded. Outsiders see a carefully curated display of gnomish capability. Impressive but non-threatening. *the monocle glints* What lies behind the inner wall is not for discussion.",
+          "mood": "guarded"
+        },
+        {
+          "text": "Permit categories: Trade permits, quarterly. Diplomatic permits, annual at most. Emergency permits, decades apart. Denied: the default response to all applications. *that flicker of possible amusement again* We receive approximately two hundred permit applications per year. We approve eleven. Twelve in a good year. The harbor authority considers this ratio optimal.",
+          "mood": "dry"
+        }
+      ]
+    },
+    "models": {
+      "keywords": [
+        "predict",
+        "forecast",
+        "project",
+        "estimate",
+        "simulate",
+        "scenario",
+        "contingency",
+        "plan"
+      ],
+      "responses": [
+        {
+          "text": "The models indicate six primary scenarios for the next two centuries. Total imperial collapse. Partial fragmentation. Controlled dissolution. Military coup. Orc reunification triggering cascading failure. And the outlier: successful internal reform. *pauses* The probability assigned to successful reform is four percent. We plan for the other ninety-six.",
+          "mood": "clinical"
+        },
+        {
+          "text": "I model because uncertainty is the enemy of survival. A threat you have predicted can be prepared for. A threat you have ignored cannot. The empire operates on faith and precedent. We operate on projection and contingency. When the crisis arrives, they will consult their priests. We will consult our preparations. *closes the brass clipboard with a click* I know which approach I trust.",
+          "mood": "cold"
+        }
+      ]
+    },
+    "other_races": {
+      "keywords": [
+        "orc",
+        "elf",
+        "dwarf",
+        "goblin",
+        "human",
+        "catfolk",
+        "lizard",
+        "races"
+      ],
+      "responses": [
+        {
+          "text": "The dwarves are the only surface civilization I consider structurally sound. Collectivist. Isolationist. Production-oriented. Guild councils instead of monarchies. No religion. *nods* Their methodology differs from ours, but the core principles align. If the mainland collapses, the dwarven holds will endure. As will we. I take comfort in the probability that at least two rational civilizations will survive the fire.",
+          "mood": "warm_clinical"
+        },
+        {
+          "text": "Humans are a declining variable in a complex system. Their institutional memory resets every sixty years. Their governance is faith-based, which prevents empirical correction. Their economy depends on extraction from subject populations. *shakes his head* I do not hate humans. Hatred is inefficient. I simply account for their statistical trajectory. Which is downward.",
+          "mood": "detached"
+        },
+        {
+          "text": "Goblins represent the most successful asymmetric resistance model on the continent. Five hundred years of sustained insurgency against a technologically superior occupier, with no centralized command, no fixed territory, and no external supply lines. *a rare expression of genuine interest* From a systems analysis perspective, they are extraordinary. How they maintain institutional continuity across thirty-year lifespans without written records is a question I have been unable to resolve. The models suggest a mechanism I have not identified.",
+          "mood": "fascinated"
+        },
+        {
+          "text": "You are a dwarf. *sets down the clipboard, which for him is the equivalent of a warm embrace* I was hoping the harbor authority would route a dwarven contact to me. Your guild council structures are the closest analog to our production councils on the mainland. I have questions about your labor rotation methodology. If you have time. I will trade manufacturing data.",
+          "conditions": ["if_race:dwarf"],
+          "mood": "engaged"
+        }
+      ]
+    }
+  }
+}

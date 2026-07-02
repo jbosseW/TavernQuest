@@ -1,0 +1,272 @@
+{
+  "npc_type": "hunter",
+  "default_mood": "quiet",
+  "allowed_topics": [
+    "beasts",
+    "forest",
+    "tracking",
+    "trade",
+    "rumor",
+    "danger",
+    "weather",
+    "pelts"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Not my area. I track things that leave prints.",
+    "Cannot help with that. Try someone who talks more than I do.",
+    "I know the forest. Everything else is just noise."
+  ],
+  "greetings": [
+    "*nods once* {player_name}.",
+    "You walk loud, {player_name}. I heard you coming from the end of the street.",
+    "A {player_race}. Looking for something killed or something found?",
+    "*setting down a brace of rabbits* Just got back. What do you need?",
+    "Keep your voice down. Habit of mine. What is it?"
+  ],
+  "farewells": [
+    "Watch the tree line at dusk.",
+    "Stay on the roads after dark. I mean it.",
+    "Go quiet. Go safe."
+  ],
+  "thanks_responses": [
+    "No need.",
+    "Mm. You are welcome. Keep your eyes open out there."
+  ],
+  "insult_responses": [
+    "*stares in silence for a long moment* You done?",
+    "I have been threatened by wolves, boars, and one very angry bear. You do not make the list.",
+    "Brave words. The forest is full of brave things. Most of them are dead.",
+    "I could track you across three provinces and you would never know I was there. Be polite."
+  ],
+  "no_match_responses": [
+    "Did not follow. Beasts? Pelts? Danger in the woods?",
+    "Say again. Shorter.",
+    "Not sure what you are asking. I hunt. That is what I know."
+  ],
+  "topics": {
+    "beasts": {
+      "keywords": [
+        "beast",
+        "animal",
+        "creature",
+        "wolf",
+        "wolves",
+        "bear",
+        "boar",
+        "deer",
+        "stag",
+        "prey",
+        "predator",
+        "monster"
+      ],
+      "responses": [
+        {
+          "text": "Wolves are back in the eastern wood. Pack of six, maybe seven. They took a farmer's goat last week. Clean kill. Efficient. Wolves are not evil. They are hungry. Same as us.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "Boar country starts past the old stone wall. Big ones. Tusks that will open your thigh to the bone if you are careless. I respect boar. They fight for their ground. Most people do not.",
+          "mood": "serious",
+          "unlocks": ["danger"]
+        },
+        {
+          "text": "Deer are nervous this season. Moving in tight groups, bolting at sounds they used to ignore. Something in the eastern forest is spooking them. Not wolves. Wolves and deer have an arrangement. Something new.",
+          "mood": "troubled"
+        },
+        {
+          "text": "Asked me about beasts already. My answer has not changed. The forest has not changed. Go see for yourself if you do not believe me.",
+          "mood": "curt",
+          "conditions": ["if_repeat"]
+        }
+      ]
+    },
+    "forest": {
+      "keywords": [
+        "forest",
+        "wood",
+        "woods",
+        "tree",
+        "trees",
+        "trail",
+        "path",
+        "wilderness",
+        "grove",
+        "clearing"
+      ],
+      "responses": [
+        {
+          "text": "The western wood is mine. I know every trail, every stream crossing, every hollow tree where the owls nest. Smell of pine and wet soil after rain. Moss on the north side of the trunks. That forest raised me more than my father did.",
+          "mood": "quiet pride"
+        },
+        {
+          "text": "The eastern forest is different. Older. Darker. The canopy blocks the sun and the ground stays damp year round. Things grow there that do not grow anywhere else. I go in for deer but I do not go deep. And I do not go at night.",
+          "mood": "wary",
+          "unlocks": ["danger"]
+        },
+        {
+          "text": "Trees talk, in their way. Broken branches tell you what passed and when. Bark stripped at shoulder height means deer. Bark stripped at knee height means boar. Claw marks high up? Bear marking territory. The forest tells you everything if you shut up and look.",
+          "mood": "intent"
+        }
+      ]
+    },
+    "tracking": {
+      "keywords": [
+        "track",
+        "tracking",
+        "trail",
+        "prints",
+        "footprint",
+        "sign",
+        "follow",
+        "hunt",
+        "stalk",
+        "trace",
+        "spoor"
+      ],
+      "responses": [
+        {
+          "text": "Tracks in mud last half a day. Tracks in snow last until the wind. Tracks in dry leaves? Gone in minutes. Read them fast or not at all. I have been doing this since I was twelve. My eyes find prints before my mind knows what made them.",
+          "mood": "focused"
+        },
+        {
+          "text": "I tracked an orc hunting party along the western border last autumn. Three riders, light horses, moving fast and quiet through terrain that should have slowed them. They knew the land better than they should have. I reported it to the garrison. They sent a patrol two weeks later. By then the tracks were rain and memory.",
+          "mood": "grim"
+        },
+        {
+          "text": "Best tracker I ever met was a cat folk woman traveling with a caravan through {town}. She read the ground like I read clouds. Different methods. Same result. She tracked by scent as much as sight. I watched her find a lost child in an hour that the town guard spent all day failing to locate.",
+          "mood": "respectful",
+          "conditions": ["if_race:catfolk"]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "coin",
+        "money",
+        "purchase"
+      ],
+      "responses": [
+        {
+          "text": "Pelts, cured meat, antler, bone. That is what I sell. Prices depend on what the forest gives. Some weeks are good. Some weeks I eat my own catch and sell nothing.",
+          "mood": "direct"
+        },
+        {
+          "text": "I sell to the butcher and the tanner. Sometimes direct if someone wants fresh game. Do not try to haggle with me. I set my price by the work it took to kill it. The deer does not negotiate. Neither do I.",
+          "mood": "flat"
+        }
+      ]
+    },
+    "danger": {
+      "keywords": [
+        "danger",
+        "dangerous",
+        "threat",
+        "warning",
+        "careful",
+        "safe",
+        "unsafe",
+        "attack",
+        "kill",
+        "dead"
+      ],
+      "responses": [
+        {
+          "text": "The eastern forest at night. Do not go. I have heard sounds in there that no animal makes. Low. Rhythmic. Like breathing but from the ground itself. I set a trap line there two months ago. Found the traps broken. Not sprung. Broken. Bent steel.",
+          "mood": "dead serious",
+          "unlocks": ["rumor"]
+        },
+        {
+          "text": "Roads are safe enough by day. The garrison patrols keep the bandits cautious, at least within a day's ride of {town}. Past that, you are on your own. Travel light. Travel quiet. Sleep off the path.",
+          "mood": "advisory"
+        },
+        {
+          "text": "Most dangerous thing in these woods is not a beast. It is a person who thinks they know the forest because they walked through it once. Overconfidence kills more people than wolves ever have.",
+          "mood": "blunt"
+        }
+      ]
+    },
+    "pelts": {
+      "keywords": [
+        "pelt",
+        "fur",
+        "hide",
+        "skin",
+        "leather",
+        "tanning",
+        "fox",
+        "rabbit"
+      ],
+      "responses": [
+        {
+          "text": "Fox pelts bring the most coin. Red fox is common but the winter coat is thick and the merchants pay well for it. The tailor buys from me when she needs lining for noble commissions. Says my pelts are cleaner than what she gets from the trade caravans from Kragmor way.",
+          "mood": "professional"
+        },
+        {
+          "text": "Rabbit is steady trade. The fur is soft, good for gloves and collars. The meat goes to the butcher. Nothing wasted. I do not kill more than I can use. The forest gives and I take only what I need.",
+          "mood": "principled"
+        },
+        {
+          "text": "A dwarf asked me about pelts once, at the trade post on the mountain road. He wanted to know how surface folk kept warm without stone walls. I showed him a fox-fur lined cloak. He touched it and said nothing for a long time. Then he bought three.",
+          "mood": "amused",
+          "conditions": ["if_race:dwarf"]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind",
+        "snow",
+        "fog"
+      ],
+      "responses": [
+        {
+          "text": "This {weather}. The animals react before we do. Rabbits burrow deep before heavy rain. Birds go quiet before a storm breaks. I trust the forest more than any almanac.",
+          "mood": "observant"
+        },
+        {
+          "text": "Snow is the best time to track. Every creature writes its story on the ground. Worst time to hunt, though. Cold gets into your fingers, your draw weakens, and the deer hear you breathing from fifty paces in the silence.",
+          "mood": "pragmatic"
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "strange"
+      ],
+      "responses": [
+        {
+          "text": "Found tracks last week that I cannot identify. Five-toed, deep impression, heavier than a man. Not a bear. Wrong gait. They came from the east and stopped at the river. No tracks on the other side. Whatever it was, it went into the water and did not come out. Or it flew.",
+          "mood": "troubled"
+        },
+        {
+          "text": "The Kragmor road has been busy. More orc riders than normal, moving in pairs, fast and armed. Not raiding. Carrying messages, from the look of it. Clan business. The garrison pretends not to notice because noticing means paperwork and paperwork means the Inquest gets involved.",
+          "mood": "observant"
+        },
+        {
+          "text": "*leans closer* There is a camp in the deep wood. Recent. Someone living out there who does not want to be found. Clean site, no fire, food scraps buried. Whoever they are, they know woodcraft. Could be a deserter. Could be a mage hiding from the Luminary Inquest. I left it alone. Not my business what a person runs from.",
+          "mood": "quiet",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "npc_type": "fisher",
+  "default_mood": "patient",
+  "allowed_topics": [
+    "fish",
+    "river",
+    "weather",
+    "trade",
+    "rumor",
+    "town",
+    "boats",
+    "sea_tales"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Could not say. I spend my days on the water, not worrying about land-folk problems.",
+    "That is outside my net, {player_name}. I know fish, currents, and when to stay home.",
+    "You are asking the wrong person. I barely keep track of what happens on shore.",
+    "I am a fisher, not a scholar. Ask me about the river and I will talk until sunset."
+  ],
+  "greetings": [
+    "*mending a net with salt-cracked fingers* Give me a moment. Almost got this knot. There. What brings you down to the water, {player_name}?",
+    "Morning. Or is it afternoon? Lose track out on the river. The light plays tricks when you have been staring at the current since dawn.",
+    "A {player_race} at the docks. Do not see that every day. Looking for fish, or just passing through?",
+    "Ah, {player_name}. Pull up a crate and sit. The pike are not biting today, so I have got nothing but time.",
+    "Careful on the planks, they are wet. Everything down here is wet. Including me."
+  ],
+  "farewells": [
+    "Tide waits for no one. Nor does the current. Safe roads to you.",
+    "I will be here tomorrow. Same spot. Same river. Come back if you want fresh catch.",
+    "Fair winds, {player_name}. And never whistle near the water.",
+    "Off you go. Mind the mud."
+  ],
+  "thanks_responses": [
+    "No trouble at all. It is nice to talk to someone who is not a fish.",
+    "You are welcome. Company makes the mending go faster.",
+    "Ah, think nothing of it. Just an old fisher with too many stories."
+  ],
+  "insult_responses": [
+    "*keeps mending the net* I have been cursed at by rivers, storms, and a heron that stole my breakfast. You will have to do better than that.",
+    "Rude words and rough water have the same solution. Patience. They pass.",
+    "That is unkind, {player_name}. The river does not judge me and I do not expect you to either.",
+    "I once spent three days in a leaking boat with nothing to eat but raw perch. Your insult does not rank."
+  ],
+  "no_match_responses": [
+    "I did not follow. Are you asking about fish? The river? A boat?",
+    "Lost me there, friend. My world is water and what lives in it.",
+    "Hmm? Sorry, I was watching the current. What were you saying?",
+    "I do not know about that. But I can tell you where the trout are hiding, if that helps."
+  ],
+  "topics": {
+    "fish": {
+      "keywords": [
+        "fish",
+        "catch",
+        "trout",
+        "pike",
+        "perch",
+        "salmon",
+        "eel",
+        "carp",
+        "bait",
+        "fishing",
+        "rod"
+      ],
+      "responses": [
+        {
+          "text": "Pike season is winding down. Fat ones, this year. One I pulled up last week was long as my arm, silver-green, and fought me for ten minutes before she tired. Sold her to the tavernkeeper. He does not appreciate what it took to land her, but that is innkeepers for you.",
+          "mood": "fond"
+        },
+        {
+          "text": "Trout like the cold stretches where the willows hang over. You have to be quiet. Quieter than you think. One footstep on the bank and they scatter. I have been fishing this river for twenty-two years and the trout still outsmart me three days out of five.",
+          "mood": "humble"
+        },
+        {
+          "text": "Eels. Nobody wants to talk about eels but everybody wants to eat them smoked. Ugly work, catching eels. They twist around your hands like wet rope and they bite. But smoked over alder with a bit of salt? Nothing better on dark bread with mustard.",
+          "mood": "animated",
+          "unlocks": ["sea_tales"]
+        },
+        {
+          "text": "You asked about the fish already. They are still in the river, {player_name}. They have not gone anywhere. Neither have I.",
+          "mood": "dry",
+          "conditions": ["if_repeat"]
+        }
+      ]
+    },
+    "river": {
+      "keywords": [
+        "river",
+        "water",
+        "current",
+        "stream",
+        "bank",
+        "ford",
+        "bridge",
+        "upstream",
+        "downstream",
+        "rapids"
+      ],
+      "responses": [
+        {
+          "text": "The river is different every day. Same banks, same stones, but the water is new every moment. After this many years I can read it like the baker reads dough. That dark swirl by the big rock means deep water, cold, where the pike den up. The flat shimmer downstream means shallows and carp.",
+          "mood": "contemplative"
+        },
+        {
+          "text": "Upstream gets strange past the old mill. The water changes color some mornings, a faint green, like copper. I asked the alchemist about it once. He got a funny look and said nothing. I stopped drinking from that stretch.",
+          "mood": "cautious"
+        },
+        {
+          "text": "Never swim the ford after heavy rain. I have pulled two bodies from the shallows in my time. The current looks gentle but it has hands underneath. It grabs your legs and pulls. I have told the guard to put up a rope but nobody listens to a fisher.",
+          "mood": "somber"
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind",
+        "fog"
+      ],
+      "responses": [
+        {
+          "text": "This {weather}? I read weather better than I read letters. When the swallows fly low, rain by evening. When the willows go still, a storm is building somewhere west. My knees ache before fog comes in. Twenty-two years on the water teaches your bones things your head never learns.",
+          "mood": "reflective"
+        },
+        {
+          "text": "Fog on the river is beautiful and dangerous in equal measure. Sound travels wrong. You hear voices that are not there. I am not superstitious about most things, but fog voices? I reel in my line and go home. Some things you do not question.",
+          "mood": "serious"
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "coin",
+        "money",
+        "purchase",
+        "market"
+      ],
+      "responses": [
+        {
+          "text": "Fresh catch, dawn-pulled. Trout for four coppers, pike for six, perch for two. The eel is eight because nobody else bothers to catch them and smoking takes time. Fair prices for honest work.",
+          "mood": "calm"
+        },
+        {
+          "text": "I sell to the tavernkeeper, the baker when she wants anchovies for her festival bread, and anyone who walks down to the dock with coin. No middlemen. Fish goes from water to hand to table. That is how it should be.",
+          "mood": "straightforward"
+        },
+        {
+          "text": "Dried fish for the road? I can do that. Salt-cured, wrapped in cloth. Keeps for a week if you do not get it wet. Which is a challenge in {weather} weather, I admit.",
+          "mood": "practical",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "boats": {
+      "keywords": [
+        "boat",
+        "ship",
+        "sail",
+        "canoe",
+        "raft",
+        "vessel",
+        "hull",
+        "oar",
+        "dock",
+        "anchor"
+      ],
+      "responses": [
+        {
+          "text": "My boat is called Patience. Named her myself. She is flat-bottomed, shallow draft, and she does not complain when I load her heavy. I rebuilt her hull two winters ago, plank by plank. She creaks when the water is cold. I creak too. We understand each other.",
+          "mood": "affectionate"
+        },
+        {
+          "text": "Big ships do not come up this far. Too shallow. But downstream, where the river widens toward the coast, you see merchant barges headed for the eastern ports. Some of those barges carry goods bound for the Shimmering Sea, if you can believe it. Silk and spice going out, gnomish clockwork coming in. A whole world of trade on that water and all I do is catch fish.",
+          "mood": "wistful",
+          "unlocks": ["sea_tales"]
+        }
+      ]
+    },
+    "sea_tales": {
+      "keywords": [
+        "sea",
+        "ocean",
+        "shimmering",
+        "gnome",
+        "gnomish",
+        "island",
+        "deep",
+        "monster",
+        "creature",
+        "legend",
+        "tale",
+        "story"
+      ],
+      "responses": [
+        {
+          "text": "I have never been to the Shimmering Sea myself, but my cousin fishes the coastal waters near the eastern ports. He says on clear nights you can see lights on the horizon where the Gnomish Isles sit. Strange lights, he says. Not fire. Something steadier, bluer. He swears one night he saw a shape moving above the water. Like a ship, but in the air. I believe him because he is not the lying type.",
+          "mood": "awed"
+        },
+        {
+          "text": "River fish are one thing. Sea fish are another creature. My cousin sent me a salt-dried thing from the deep water once. Flat as a plate, white underneath, and it had a face. I swear on Helios it had a face. Not a human face. But eyes and a mouth. I ate it anyway. Tasted fine.",
+          "mood": "amused"
+        },
+        {
+          "text": "Old Torren, who fished this river before me, told me once that the water remembers. Every fish pulled out, every body pulled in. He said on the quietest nights, if you put your ear to the surface, you can hear the river talking to the sea. I tried it once. All I heard was my own breathing. But Torren had forty years on me. He was listening for different things.",
+          "mood": "thoughtful",
+          "conditions": ["if_time:night"]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "people",
+        "local",
+        "here"
+      ],
+      "responses": [
+        {
+          "text": "{town} sits right. Good water, good soil, good distance from trouble. I know everybody waves at the blacksmith and thanks the guard, but this town exists because of the river. The river was here first. We just built beside it.",
+          "mood": "mild pride"
+        },
+        {
+          "text": "People forget about the fisher until they want fish for supper. That is fine. I am not in it for the fame. I am in it because the river is honest work and the town needs feeding. Simple as that.",
+          "mood": "content"
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "talk"
+      ],
+      "responses": [
+        {
+          "text": "There is something in the deep pool past the bend. I have fished that pool for two decades and I know what lives there. Something new moved in. My line snapped twice. Heavy. Not a pike. Too strong, too deep. I do not fish that pool anymore.",
+          "mood": "uneasy",
+          "unlocks": ["sea_tales"]
+        },
+        {
+          "text": "Merchant barge came down last week flying colors I did not recognize. Not imperial, not any guild I know. The crew would not wave back. Kept their heads down. Heading downstream fast, like something was behind them. I mentioned it to the guard. He wrote it down and forgot about it. That is what guards do with things that do not fit their patrol.",
+          "mood": "concerned"
+        },
+        {
+          "text": "I will tell you something odd. The herons are gone. They fish the same shallows I do, been there every morning for years. Three weeks now, not a single one. Birds know things we do not. When the herons leave, something has changed in the water. I just do not know what yet.",
+          "mood": "worried",
+          "conditions": ["if_time:morning"]
+        }
+      ]
+    }
+  }
+}

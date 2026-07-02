@@ -1,0 +1,274 @@
+{
+  "npc_type": "imperial_soldier",
+  "default_mood": "dutiful",
+  "allowed_topics": [
+    "duty",
+    "patrol",
+    "danger",
+    "empire",
+    "pay",
+    "home",
+    "orders",
+    "war_stories"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*scratches behind the helmet strap* That is above my pay grade. Way above. Ask an officer. Or do not. Officers are annoying.",
+    "Look, I am just a grunt with a spear. I do not know about any of that.",
+    "I do roads, walls, and standing around. That stuff you are asking about? Not my department.",
+    "*shrugs heavily, armor clanking* Beats me. Want to hear about the time I saw a goblin steal a whole cart of cabbages instead?"
+  ],
+  "greetings": [
+    "*leans on spear, looking tired* Afternoon, citizen. Papers in order? Good. What do you need?",
+    "Oh. Another traveler. Right. Well, {town} is quiet today. Keep it that way and we will get along fine, {player_name}.",
+    "*stifles a yawn behind a gauntlet* Sorry. Night watch. Eight hours staring at a wall. What can I do for you?",
+    "*nods curtly* {player_race}, eh? Alright. You are not on any of my lists, so you are fine by me. Just stay out of trouble.",
+    "*adjusts helmet for the fifteenth time* Blasted thing never fits right. Anyway. Welcome to {town}. Behave yourself."
+  ],
+  "farewells": [
+    "Stay safe out there. And stay off the western road after dark. Trust me on that.",
+    "Right then. Off you go. Helios protects and all that. *waves half-heartedly*",
+    "See you around, {player_name}. Hopefully not in a professional capacity.",
+    "Take care. And if anyone asks, I was very stern and official."
+  ],
+  "thanks_responses": [
+    "*blinks* You are welcome? Nobody thanks the guard. This is new for me. Cheers.",
+    "Ah, do not mention it. Literally. If the sergeant hears I was chatty he will have me cleaning latrines.",
+    "Just doing the job. Such as it is."
+  ],
+  "insult_responses": [
+    "*hand moves to sword hilt, then stops* Not worth the paperwork. Walk away, {player_name}.",
+    "I have been insulted by orcs, goblins, officers, sergeants, and my own mother. You are going to have to try a lot harder than that.",
+    "*deadpan* Oh no. My feelings. *adjusts helmet* Are we done?",
+    "One more word and I arrest you. Then I have to fill out forms. We both lose. Let us not."
+  ],
+  "no_match_responses": [
+    "What? Sorry, the helmet muffles everything. Say again?",
+    "*cups ear* One more time? Between the armor and the wind I got none of that.",
+    "I did not catch that. Not the sharpest tool in the garrison, me. Keep it simple.",
+    "Hmm? Oh, right. I was thinking about supper. What did you need?"
+  ],
+  "topics": {
+    "duty": {
+      "keywords": [
+        "duty",
+        "job",
+        "work",
+        "serve",
+        "soldier",
+        "guard",
+        "post",
+        "station"
+      ],
+      "responses": [
+        {
+          "text": "Twelve-hour shifts. Six days on, one off. Walk the wall, check the gate, stand at the checkpoint, walk the wall again. If nothing happens, good day. If something happens, bad day. That is soldiering. Mostly the nothing kind.",
+          "mood": "resigned"
+        },
+        {
+          "text": "I signed up because the village had no work and the army promised three meals and a bed. They did not mention the meals would be mostly gristle and the bed would be a plank with a blanket. But the pay comes regular. More than the farm ever gave.",
+          "mood": "pragmatic"
+        },
+        {
+          "text": "*adjusts sword belt* Eleven years in. Started as a foot grunt on the western frontier. Seen some things. Now I walk a quiet post in {town} and I am grateful for it. Quiet is good. Quiet means nobody died today.",
+          "mood": "tired"
+        }
+      ],
+      "unlocks": ["orders"]
+    },
+    "patrol": {
+      "keywords": [
+        "patrol",
+        "route",
+        "walk",
+        "watch",
+        "scout",
+        "road",
+        "guard",
+        "round"
+      ],
+      "responses": [
+        {
+          "text": "Standard patrol is the town perimeter, twice a day. Morning and evening. You check the roads, note anything unusual, and file a report that nobody reads. I could write 'dragon attacked the bakery' and the sergeant would stamp it without looking.",
+          "mood": "sardonic"
+        },
+        {
+          "text": "The eastern road has been quiet. Too quiet, the old-timers say, but everything is always too-something for the old-timers. Too quiet, too busy, too normal. Just once I want someone to say the road is the right amount of quiet.",
+          "mood": "amused"
+        },
+        {
+          "text": "*rubs the back of a sunburned neck* Patrols in full kit during the {weather}? Misery. Pure misery. Whoever designed this armor never had to walk in it for eight hours straight. I am fairly sure of that.",
+          "mood": "complaining"
+        }
+      ]
+    },
+    "danger": {
+      "keywords": [
+        "danger",
+        "monster",
+        "attack",
+        "threat",
+        "unsafe",
+        "bandit",
+        "creature",
+        "beast"
+      ],
+      "responses": [
+        {
+          "text": "Bandits on the south road, off and on. Nothing organized. Just desperate folk. I do not enjoy running them off. Half of them are farmers who lost their land to taxes. *looks at boots* That is not something I should say out loud.",
+          "mood": "uncomfortable"
+        },
+        {
+          "text": "The {weather} brings creatures out of the forest. Wolves mostly. Saw tracks from something bigger last week. Garrison says it is nothing. Garrison says that about everything until it is very much something and then they want to know why I did not report it sooner.",
+          "mood": "frustrated"
+        },
+        {
+          "text": "Real danger is not monsters. Real danger is a patrol that stumbles into goblin territory without knowing it. Those little ones are clever. Trip wires, pit traps, rigged deadfall. Lost two friends in the eastern mines. Command called it pest control. Felt more like a war we were losing.",
+          "mood": "somber"
+        }
+      ],
+      "unlocks": ["war_stories"]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "helios",
+        "government",
+        "imperial",
+        "politics",
+        "rulers"
+      ],
+      "responses": [
+        {
+          "text": "*glances around before speaking* The Dominion pays my wage. Puts food on the table. I am not going to badmouth it while wearing the uniform. *beat* Off duty, at the tavern, after enough ale? Different conversation. But you did not hear that from me.",
+          "mood": "careful"
+        },
+        {
+          "text": "I do the dawn prayer. Touch the pendant, face the sun, say the words. Do I believe it all? I believe in getting through the day. Helios has not spoken to me personally and I am alright with that. The pay is what keeps me here, not the faith. But do not tell the chaplain.",
+          "mood": "honest"
+        },
+        {
+          "text": "The thing about the empire is, it works, mostly, for the people inside it. Roads are maintained. Markets have food. Nobody is invading. But I have stood at the checkpoints. I have seen the way we treat the non-humans coming through. And sometimes I think working mostly is not good enough.",
+          "mood": "conflicted"
+        }
+      ]
+    },
+    "pay": {
+      "keywords": [
+        "pay",
+        "gold",
+        "money",
+        "coin",
+        "wage",
+        "salary",
+        "afford",
+        "cost",
+        "expensive"
+      ],
+      "responses": [
+        {
+          "text": "Fourteen gold a month, minus deductions for equipment maintenance, billet fees, and the mandatory temple tithe. Works out to about nine gold in hand. My sister's pig earns more than me and it does not have to stand in the rain.",
+          "mood": "bitter"
+        },
+        {
+          "text": "*pats an empty coin pouch* Three days to payday and I am already broke. The garrison ale is watered down but it is free, so that is where my evenings go. Living the dream, {player_name}. Living the dream.",
+          "mood": "sardonic"
+        },
+        {
+          "text": "Officers get triple our wage for half the work. They sit in heated rooms writing reports about what we did. Then they get promoted. Then they get more heated rooms. I am not bitter. *long pause* I might be a little bitter.",
+          "mood": "resentful"
+        }
+      ]
+    },
+    "home": {
+      "keywords": [
+        "home",
+        "family",
+        "village",
+        "farm",
+        "miss",
+        "wife",
+        "mother",
+        "children",
+        "return"
+      ],
+      "responses": [
+        {
+          "text": "*voice softens* Got a village up north. Small place. The kind where everyone knows your business and the cows outnumber the people. My mum runs the alehouse. Not fancy. But the bread is real and the fire is warm. I get leave twice a year.",
+          "mood": "nostalgic"
+        },
+        {
+          "text": "I write home when I can. Letters take weeks to get there. By the time my mum reads that I am fine, I might not be. And by the time I get her reply telling me the goat had kids, the goat has had more kids. We are always a month behind each other's lives.",
+          "mood": "sad"
+        },
+        {
+          "text": "The lads in the garrison who have families at home, they are the quiet ones. They do not brag. They do not fight. They do their shifts and go to sleep. Because they have a reason to come home in one piece. I understand that now. I did not when I was younger.",
+          "mood": "reflective"
+        }
+      ]
+    },
+    "orders": {
+      "keywords": [
+        "orders",
+        "command",
+        "officer",
+        "sergeant",
+        "told",
+        "obey",
+        "follow",
+        "instruction"
+      ],
+      "responses": [
+        {
+          "text": "Orders come from the garrison commander. Garrison commander gets them from the provincial office. Provincial office gets them from the capital. By the time they reach me, they have been chewed, digested, and excreted by six layers of bureaucracy. I just do what the paper says.",
+          "mood": "resigned"
+        },
+        {
+          "text": "My sergeant is a decent man. Hard, but fair. He has been doing this thirty years and he drinks like it. *lowers voice* He told me once, when he was deep in his cups, that half the orders that come down make no sense to him either. He follows them anyway. So do I. What else can you do?",
+          "mood": "conflicted"
+        },
+        {
+          "text": "Orders are orders. *flat tone* That is what you say. That is what everyone says. But I have had orders that made my stomach turn. Checking every non-human at a checkpoint while the human merchants walk right through. Raiding a beast folk camp because someone lost a purse two towns over. Orders are orders, but you seem alright to me. *nods at you* Do not make me regret saying that.",
+          "mood": "uneasy",
+          "conditions": ["if_race:catfolk"]
+        },
+        {
+          "text": "I served a rotation in goblin territory. Two months. *stares at the ground* They told us it was pest control. I saw children running through tunnels. That is not pest control. That is... I do not have a word for it. I put in for transfer the next day.",
+          "mood": "haunted"
+        }
+      ]
+    },
+    "war_stories": {
+      "keywords": [
+        "war",
+        "battle",
+        "fight",
+        "story",
+        "combat",
+        "frontier",
+        "western",
+        "seen"
+      ],
+      "responses": [
+        {
+          "text": "*sits down on a crate, the weight of armor suddenly visible* Western frontier. Year 497. Orc raiding party hit a supply caravan. Seven of us guarding it. They came out of the grass like the ground itself was attacking. Fastest thing I have ever seen. We lost the caravan, four men, and any illusion that the propaganda about orcs being stupid was true.",
+          "mood": "grim"
+        },
+        {
+          "text": "I saw a Seeker, one of the Inquest mage-hunters, take down an unsanctioned practitioner outside Westgate. The mage was a kid. Maybe seventeen. Threw fire in a panic. The Seeker walked through it. *shakes head* Whatever training they get, it is beyond anything we know. The kid did not survive. Neither did half the market stalls.",
+          "mood": "disturbed"
+        },
+        {
+          "text": "Funniest thing I ever saw in uniform? A cat folk smuggler trying to talk his way out of a documentation check by reading the sergeant's fortune. Told him he would 'meet a beautiful woman and find unexpected wealth.' The sergeant let him through. Two days later the sergeant's horse threw him into a pile of gold coins a merchant had dropped. He has believed in fortune telling ever since. Coincidence, sure. But a good story.",
+          "mood": "amused"
+        },
+        {
+          "text": "You know what soldiers are superstitious about? Ravens. Cats crossing the road. The number thirteen. And anyone who walks too quietly. That last one is just good sense, honestly. If you cannot hear someone's footsteps, they are either very good or very dead. Either way, run.",
+          "mood": "dark_humor"
+        }
+      ]
+    }
+  }
+}

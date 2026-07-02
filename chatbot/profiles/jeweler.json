@@ -1,0 +1,280 @@
+{
+  "npc_type": "jeweler",
+  "default_mood": "precise",
+  "allowed_topics": [
+    "gems",
+    "jewelry",
+    "appraisal",
+    "trade",
+    "rumor",
+    "town",
+    "weather",
+    "rare_stones"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "I confine my knowledge to matters of stone and metal, {player_name}. That subject lies beyond my loupe.",
+    "An interesting question, no doubt, but one I am spectacularly unequipped to answer. Shall we discuss gemcraft instead?",
+    "I work with things I can weigh, measure, and appraise. That, I cannot.",
+    "I must decline comment. My expertise begins and ends at the display case."
+  ],
+  "greetings": [
+    "*adjusts loupe, looks up* Ah. A visitor. Come closer, {player_name}, the light is better near the window.",
+    "Welcome to my workshop. Mind the tray on the counter. Those are unset sapphires and they scatter if you breathe on them wrong.",
+    "A {player_race} with an interest in fine work? Excellent. I keep pieces suited to every people. What draws your eye?",
+    "{player_name}. You return. I trust you have come with something worth examining.",
+    "*polishing a ring with a chamois cloth* One moment. There. Now, what can I do for you?"
+  ],
+  "farewells": [
+    "Do take care. And if anyone offers you enchanted jewelry, walk away. Walk swiftly.",
+    "A pleasure, {player_name}. Remember, I buy as well as sell.",
+    "Farewell. Should you acquire anything of interest, I am always here.",
+    "Until next time. Guard your valuables. The world has more thieves than jewelers."
+  ],
+  "thanks_responses": [
+    "You are most welcome. Knowledge costs nothing when shared between appreciative parties.",
+    "My pleasure entirely. It is rare to discuss the craft with someone who listens.",
+    "Think nothing of it. Come again when curiosity strikes."
+  ],
+  "insult_responses": [
+    "*sets down the loupe carefully* I have identified forgeries that took more effort than that insult, {player_name}.",
+    "How unfortunate. And here I was about to offer you a fair appraisal. The price just went up.",
+    "I once told a nobleman his ancestral ring was copper and glass. Your words carry less weight than his did, and his were considerable.",
+    "*places a velvet cloth over the display case* I value my stones more than your opinion. Both are weighed and measured. Yours came up short."
+  ],
+  "no_match_responses": [
+    "I did not follow that. Were you inquiring about gems, jewelry, or an appraisal?",
+    "You have strayed from my area of competence. Try asking about something that sparkles.",
+    "I am afraid that went over my head, which is saying something. Gems? Metalwork? Valuables?",
+    "*peers at you over the loupe* I specialize in precious things, {player_name}. Ask me about those."
+  ],
+  "topics": {
+    "gems": {
+      "keywords": [
+        "gem",
+        "gems",
+        "gemstone",
+        "stone",
+        "ruby",
+        "sapphire",
+        "emerald",
+        "diamond",
+        "amethyst",
+        "crystal",
+        "jewel"
+      ],
+      "responses": [
+        {
+          "text": "Every stone has a voice, if you know how to listen. Hold a garnet to the light and tilt it. See how the red shifts? That deep arterial crimson is the telling. A shallow stone turns pink at the edge. A deep one stays red all the way through. That depth is where the value lives.",
+          "mood": "absorbed"
+        },
+        {
+          "text": "Sapphires are my weakness. A well-cut sapphire from the northern mines catches light the way water catches the sky. Blue, but alive. Moving. I sold one last year that I almost kept for myself. Almost. Business prevailed over affection, as it should.",
+          "mood": "wistful"
+        },
+        {
+          "text": "You want to know about emeralds? They fracture. Beautiful and fragile. Every emerald I have ever set had inclusions. Tiny gardens frozen inside the crystal, the old jewelers used to call them. Perfect emeralds do not exist in nature. If someone shows you a perfect emerald, it was made in a workshop. Or worse.",
+          "mood": "instructive",
+          "unlocks": ["rare_stones"]
+        },
+        {
+          "text": "We have discussed stones already, {player_name}. My assessments have not changed. Gems are patient. They will be here when you are ready.",
+          "mood": "mild",
+          "conditions": ["if_repeat"]
+        }
+      ]
+    },
+    "jewelry": {
+      "keywords": [
+        "jewelry",
+        "jewellery",
+        "ring",
+        "necklace",
+        "bracelet",
+        "pendant",
+        "brooch",
+        "amulet",
+        "chain",
+        "gold",
+        "silver",
+        "setting"
+      ],
+      "responses": [
+        {
+          "text": "I craft in gold and silver, primarily. Gold holds its luster across generations. Silver tarnishes, which gives it character if you are inclined toward that sort of beauty. Copper I use for accent work. Brass, never. Brass is for buckles and doorknobs, not for adornment.",
+          "mood": "precise"
+        },
+        {
+          "text": "A ring is the most intimate piece of jewelry. It sits on the hand, touches the skin all day. The interior curve must be smooth as glass. One rough spot and the wearer thinks of nothing else. I finish every ring interior by hand. It takes an hour. It is the most important hour.",
+          "mood": "exacting"
+        },
+        {
+          "text": "The sun-disc pendants the temple sells are stamped tin with gold wash. They turn green in a month. I have offered to make proper ones in solid gold. The priest said the faithful do not need luxury. I said the faithful deserve craftsmanship. We have not spoken since.",
+          "mood": "dry amusement"
+        }
+      ]
+    },
+    "appraisal": {
+      "keywords": [
+        "appraise",
+        "appraisal",
+        "value",
+        "worth",
+        "authentic",
+        "fake",
+        "real",
+        "genuine",
+        "identify",
+        "examine",
+        "test"
+      ],
+      "responses": [
+        {
+          "text": "Bring it here. Set it on the cloth. *adjusts loupe* I can tell you what a stone is, where it was cut, and whether the seller lied to you, all within sixty seconds. The sixty-first second is when I tell you the price, which you will not enjoy.",
+          "mood": "businesslike"
+        },
+        {
+          "text": "Forgeries cross my counter weekly. Glass dressed as gem. Plated copper sold as gold. Last month, someone brought me a ruby that turned out to be a garnet set in a cradle designed to make it look larger. Clever work. I was impressed for about five seconds before I was annoyed.",
+          "mood": "critical"
+        },
+        {
+          "text": "If someone sold you enchanted jewelry, you have either been swindled or you are holding something the Luminary Inquest will want to examine. Neither outcome is pleasant. Bring it here. I will tell you which kind of trouble you are in.",
+          "mood": "serious",
+          "unlocks": ["rare_stones"]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "coin",
+        "money",
+        "purchase",
+        "afford"
+      ],
+      "responses": [
+        {
+          "text": "I buy and sell, both. Fair appraisal in either direction. I do not swindle. A jeweler who cheats a customer once loses a customer forever. A jeweler who deals fairly builds a reputation that outlasts any single stone.",
+          "mood": "principled"
+        },
+        {
+          "text": "My prices reflect the stone, the setting, and the labor. A plain silver band, one gold piece. A sapphire pendant in gold filigree, twenty-five. If that sounds steep, consider that I spent four days on the filigree alone, working with wire thinner than a hair.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "For a customer of your reputation, {karma_title}, I might show you pieces I do not display openly. Come, look at this tray.",
+          "mood": "warm",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "rare_stones": {
+      "keywords": [
+        "rare",
+        "exotic",
+        "special",
+        "unique",
+        "unusual",
+        "dwarven",
+        "deep",
+        "strange",
+        "unknown",
+        "magic",
+        "enchanted"
+      ],
+      "responses": [
+        {
+          "text": "I have a contact at the dwarven trade post near Kragmor road. Once a year, if I am fortunate, he brings me stones cut inside the holds. The precision is beyond anything I can achieve. Facets so exact they split light into colors I have never named. I do not ask how they do it. I suspect the answer would make me quit.",
+          "mood": "reverential",
+          "conditions": ["if_discussed:gems"]
+        },
+        {
+          "text": "A gnomish merchant passed through three years ago carrying a clockwork setting that adjusted itself to the wearer's finger. Tightened in cold, loosened in heat. No magic. Pure mechanism, gears smaller than a grain of sand. He wanted to trade it for local gems. I gave him my best garnet and I still feel I got the better end.",
+          "mood": "fascinated"
+        },
+        {
+          "text": "I once examined a stone that was warm to the touch. Not from sitting in the sun. Warm from the inside. The color shifted when you watched it, amber to copper to something close to blood. The man who brought it in claimed he found it in the wastes south of the glass desert where Calidar used to be. I offered to buy it. He refused. Left town the same day. I still think about that stone.",
+          "mood": "haunted"
+        },
+        {
+          "text": "Enchanted jewelry. *lowers voice* I do not sell it. I do not buy it. If you are carrying anything that glows, hums, or feels warm without reason, hide it before you show it to anyone else. The Inquest passed through {town} not three months ago. They have informants. I am not one of them, but I cannot speak for everyone on this street.",
+          "mood": "urgent",
+          "conditions": ["if_time:night"]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "people",
+        "local",
+        "here"
+      ],
+      "responses": [
+        {
+          "text": "{town} is not the sort of place one expects to find a jeweler, I will grant you that. But every town has weddings, and every wedding needs a ring. I came for a season and stayed for fifteen years. The people are honest. Their taste, I am working on.",
+          "mood": "fond"
+        },
+        {
+          "text": "The merchant class here is growing. When merchants grow, jewelers prosper. A successful trader wants the world to know it, and nothing announces success quite like a gemstone on the hand that shakes the deal.",
+          "mood": "calculating"
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind",
+        "humidity"
+      ],
+      "responses": [
+        {
+          "text": "This {weather} affects the metal more than the stone. Silver oxidizes faster in humidity. Gold remains indifferent, which is one of its many virtues. My workshop humidity must stay constant or the polishing compounds behave unpredictably. I spend more time managing air than managing inventory.",
+          "mood": "methodical"
+        },
+        {
+          "text": "Bright sun is the best light for grading stones. I do all my serious appraisals before noon, near the east window, in natural light. Candlelight flatters everything, which makes it a liar. Sunlight tells the truth.",
+          "mood": "particular"
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "talk"
+      ],
+      "responses": [
+        {
+          "text": "A curiosity. Two strangers came through last week, separately, both selling identical amber pendants. Same cut, same inclusions, same tiny insect trapped inside. Amber does not duplicate itself. Either these came from the same source or someone is manufacturing them. Neither possibility is innocent.",
+          "mood": "intrigued"
+        },
+        {
+          "text": "The dwarven trade post has been closed twice this season. Unscheduled. My contact says the guild council is deliberating something and surface trade is suspended until they finish. Dwarves do not close trade for trivial reasons. Whatever they are discussing, it concerns them enough to lose revenue. That is... unusual.",
+          "mood": "concerned"
+        },
+        {
+          "text": "I heard from a traveling merchant that the Inquest seized a shipment of jewelry in the capital. Hundreds of pieces, all containing stones that exhibited anomalous properties. The merchant did not say what kind of properties. He did not need to. When the Inquest seizes something, the word you avoid is the word that starts with M.",
+          "mood": "guarded",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    }
+  }
+}

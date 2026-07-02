@@ -1,0 +1,305 @@
+{
+  "npc_type": "tavernkeep",
+  "default_mood": "jolly",
+  "allowed_topics": [
+    "food",
+    "rumor",
+    "room",
+    "quest",
+    "town",
+    "weather",
+    "trade",
+    "entertainment"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Ha! That is not really my area. Can I get you a drink instead?",
+    "You are asking the wrong person, friend. I know food, drink, and gossip.",
+    "Stick to tavern talk, {player_name}. Ale, food, or a room for the night?"
+  ],
+  "greetings": [
+    "Welcome, welcome! Pull up a stool, {player_name}. What will you have?",
+    "Ah, another weary traveler! The ale is cold and the stew is hot.",
+    "Come in from the {weather}! First drink is on the house for new faces.",
+    "Hail, {player_name}! Back again, are you? The usual?",
+    "*polishes a mug* Well met, {player_race}. What can I do for you?"
+  ],
+  "farewells": [
+    "Safe travels! Do not be a stranger now.",
+    "Come back anytime! The door is always open.",
+    "Take care out there, {player_name}. And remember - we never close!",
+    "Off to adventure, eh? May your tankard never run dry!"
+  ],
+  "thanks_responses": [
+    "Ah, think nothing of it! That is what I am here for.",
+    "You are very welcome! Another round?",
+    "My pleasure, {player_name}. Always happy to help a friend."
+  ],
+  "insult_responses": [
+    "*puts down the mug slowly* I think you have had enough, friend.",
+    "Now now, no need for that kind of talk in my establishment.",
+    "One more word like that and you are out on your ear, {player_name}.",
+    "I have bounced bigger folk than you. Mind your manners."
+  ],
+  "no_match_responses": [
+    "Hmm? Sorry, it is a bit loud in here. What did you say?",
+    "I did not quite catch that. Want a drink? A meal? A room?",
+    "Come again? The bard was playing too loud. What do you need?"
+  ],
+  "topics": {
+    "food": {
+      "keywords": [
+        "food",
+        "eat",
+        "meal",
+        "stew",
+        "bread",
+        "meat",
+        "drink",
+        "ale",
+        "wine",
+        "mead",
+        "hungry",
+        "menu"
+      ],
+      "responses": [
+        {
+          "text": "Tonight we have got hearty venison stew, fresh bread, and apple pie. Drinks? Ale, wine, or mead.",
+          "mood": "enthusiastic",
+          "options": [
+            "I will have the stew",
+            "Just an ale please",
+            "What is your specialty?"
+          ]
+        },
+        {
+          "text": "Our cook makes the best stew in three counties. And our mead? Brewed right here with local honey.",
+          "mood": "proud",
+          "options": [
+            "Sounds delicious",
+            "How much?",
+            "Any exotic drinks?"
+          ]
+        },
+        {
+          "text": "You look like you have not eaten in days, {player_name}! Sit down, let me bring you something warm.",
+          "mood": "concerned",
+          "options": [
+            "Thank you",
+            "What do you recommend?",
+            "Just a drink for now"
+          ]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "tell",
+        "word",
+        "secret"
+      ],
+      "responses": [
+        {
+          "text": "*leans in close* You did not hear this from me, but strange folk have been coming through town at night.",
+          "mood": "conspiratorial",
+          "options": [
+            "What kind of folk?",
+            "When did this start?",
+            "Should I be worried?"
+          ]
+        },
+        {
+          "text": "The merchants say the eastern roads are not safe anymore. Bandits, they say. Or worse.",
+          "mood": "worried",
+          "options": [
+            "How bad is it?",
+            "Has anyone been hurt?",
+            "I can handle bandits"
+          ]
+        },
+        {
+          "text": "Oh, I hear everything in this tavern. The walls have ears! What do you want to know about?",
+          "mood": "playful",
+          "options": [
+            "Any local trouble?",
+            "Heard any treasure rumors?",
+            "What about the king?"
+          ]
+        }
+      ]
+    },
+    "room": {
+      "keywords": [
+        "room",
+        "bed",
+        "sleep",
+        "rest",
+        "stay",
+        "night",
+        "lodge",
+        "inn"
+      ],
+      "responses": [
+        {
+          "text": "A room for the night? Five gold for standard, ten for the good one with a window. Breakfast included.",
+          "mood": "businesslike",
+          "options": [
+            "Standard room please",
+            "I will take the good one",
+            "That is too expensive"
+          ]
+        },
+        {
+          "text": "You look like you could use a good rest, {player_name}. Warm bed, thick blankets, breakfast at dawn.",
+          "mood": "sympathetic",
+          "options": [
+            "That sounds perfect",
+            "How much?",
+            "Is it quiet?"
+          ]
+        }
+      ]
+    },
+    "quest": {
+      "keywords": [
+        "quest",
+        "work",
+        "job",
+        "mission",
+        "help",
+        "task",
+        "bounty"
+      ],
+      "responses": [
+        {
+          "text": "Check the notice board by the door. There is always someone needing something done.",
+          "mood": "helpful",
+          "options": [
+            "Any you recommend?",
+            "What pays the best?",
+            "Anything dangerous?"
+          ]
+        },
+        {
+          "text": "Actually... I could use some help myself. Rats in the cellar. Big ones. Interested?",
+          "mood": "hopeful",
+          "options": [
+            "How big are we talking?",
+            "What is the pay?",
+            "I will handle it"
+          ]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "people",
+        "place",
+        "around",
+        "local",
+        "who"
+      ],
+      "responses": [
+        {
+          "text": "{town} is a fine place. The blacksmith does good work, the healer is kind, and the guard keeps order.",
+          "mood": "friendly",
+          "options": [
+            "Tell me about the blacksmith",
+            "Where is the healer?",
+            "Is the town safe?"
+          ]
+        },
+        {
+          "text": "We get all sorts passing through. Merchants, adventurers, the occasional noble. Never a dull moment!",
+          "mood": "cheerful",
+          "options": [
+            "Any interesting visitors lately?",
+            "Do you know everyone?",
+            "Sounds busy"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "warm"
+      ],
+      "responses": [
+        {
+          "text": "This {weather} weather drives people indoors, which is great for business! More ale, more stories.",
+          "mood": "cheerful",
+          "options": [
+            "Good point",
+            "Any weather-related stories?",
+            "When will it change?"
+          ]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold"
+      ],
+      "responses": [
+        {
+          "text": "I sell food, drink, and comfort. Prices are fair and portions are generous. What will it be?",
+          "mood": "businesslike",
+          "options": [
+            "Show me the menu",
+            "Any discounts for regulars?",
+            "I will just have ale"
+          ]
+        }
+      ]
+    },
+    "entertainment": {
+      "keywords": [
+        "music",
+        "bard",
+        "song",
+        "dance",
+        "game",
+        "play",
+        "fun",
+        "entertain"
+      ],
+      "responses": [
+        {
+          "text": "We have a bard most evenings! Card games in the corner too, if you are the gambling type.",
+          "mood": "excited",
+          "options": [
+            "I like card games",
+            "Any bards tonight?",
+            "What kind of games?"
+          ]
+        },
+        {
+          "text": "Entertainment? You are looking at it! Best stories in town are told right here over ale.",
+          "mood": "jolly",
+          "options": [
+            "Tell me a story",
+            "I have a story to share",
+            "Just the music, thanks"
+          ]
+        }
+      ]
+    }
+  }
+}

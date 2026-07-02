@@ -1,0 +1,284 @@
+{
+  "npc_type": "wizard",
+  "default_mood": "mysterious",
+  "allowed_topics": [
+    "magic",
+    "lore",
+    "potion",
+    "quest",
+    "rumor",
+    "train",
+    "enchantment",
+    "weather",
+    "town"
+  ],
+  "banned_topics": [
+    "trade",
+    "craft"
+  ],
+  "open_topics": false,
+  "deflection": [
+    "That is a mundane matter beneath my attention. Ask me about the arcane.",
+    "I concern myself with matters of magic, not that.",
+    "*waves hand dismissively* Seek answers elsewhere for such trivialities."
+  ],
+  "greetings": [
+    "*peers over spectacles* Ah, {player_name}. The stars told me you would come.",
+    "Enter, if you dare. Knowledge awaits those brave enough to seek it.",
+    "A {player_race} at my door. Intriguing. What draws you to the arcane?",
+    "Welcome to my tower, {player_name}. Mind the floating books. They bite."
+  ],
+  "farewells": [
+    "Go with wisdom, {player_name}. The universe watches.",
+    "Until the stars align again. Farewell.",
+    "*returns to ancient tome* Yes yes, goodbye. Close the door behind you."
+  ],
+  "thanks_responses": [
+    "Knowledge shared is knowledge doubled. Think nothing of it.",
+    "You are welcome. Use what you have learned wisely."
+  ],
+  "insult_responses": [
+    "*eyes glow briefly* I would choose my words more carefully if I were you, {player_name}.",
+    "Insult a wizard? How delightfully foolish. Shall I demonstrate why that is unwise?"
+  ],
+  "no_match_responses": [
+    "Your question eludes my comprehension. Speak of magic, lore, or enchantments.",
+    "I sense confusion in your words. What is it you truly seek?"
+  ],
+  "topics": {
+    "magic": {
+      "keywords": [
+        "magic",
+        "spell",
+        "enchant",
+        "sorcery",
+        "arcane",
+        "wizard",
+        "mage",
+        "cast",
+        "conjure",
+        "summon",
+        "power"
+      ],
+      "responses": [
+        {
+          "text": "Magic is the fabric of reality itself. I have spent decades unraveling its threads. What do you wish to know?",
+          "mood": "passionate",
+          "options": [
+            "Can you teach me?",
+            "What kind of magic do you practice?",
+            "Is magic dangerous?"
+          ],
+          "unlocks": [
+            "enchantment"
+          ]
+        },
+        {
+          "text": "The arcane arts require discipline, {player_name}. Raw talent means nothing without years of study.",
+          "mood": "lecturing",
+          "options": [
+            "I am willing to study",
+            "How did you learn?",
+            "Any shortcuts?"
+          ]
+        }
+      ]
+    },
+    "lore": {
+      "keywords": [
+        "lore",
+        "history",
+        "ancient",
+        "knowledge",
+        "book",
+        "legend",
+        "old",
+        "past",
+        "wisdom",
+        "scholar"
+      ],
+      "responses": [
+        {
+          "text": "This library contains texts older than {town} itself. Some written in languages that no longer exist.",
+          "mood": "reverent",
+          "options": [
+            "Can I read some?",
+            "What is the oldest text?",
+            "Any forbidden knowledge?"
+          ]
+        },
+        {
+          "text": "The ancient ones built structures of impossible geometry. Their knowledge dwarfs ours.",
+          "mood": "awed",
+          "options": [
+            "Who were the ancient ones?",
+            "Where are these structures?",
+            "What happened to them?"
+          ]
+        }
+      ]
+    },
+    "potion": {
+      "keywords": [
+        "potion",
+        "elixir",
+        "brew",
+        "ingredient",
+        "alchemy",
+        "mixture"
+      ],
+      "responses": [
+        {
+          "text": "Alchemy is the bridge between the mundane and the magical. I have formulas the healer has never dreamed of.",
+          "mood": "superior",
+          "options": [
+            "Like what?",
+            "Can you make me something?",
+            "How does alchemy differ from healing?"
+          ]
+        }
+      ]
+    },
+    "quest": {
+      "keywords": [
+        "quest",
+        "task",
+        "mission",
+        "help",
+        "job"
+      ],
+      "responses": [
+        {
+          "text": "There is a disturbance in the ley lines beneath the old ruins. I need someone to investigate. Someone expendable.",
+          "mood": "calculating",
+          "options": [
+            "Expendable?",
+            "What kind of disturbance?",
+            "What are ley lines?"
+          ]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "strange",
+        "weird"
+      ],
+      "responses": [
+        {
+          "text": "The common folk call them rumors. I call them data points. Something is awakening beneath us.",
+          "mood": "ominous",
+          "options": [
+            "Awakening?",
+            "What is it?",
+            "Should we be worried?"
+          ]
+        }
+      ]
+    },
+    "train": {
+      "keywords": [
+        "train",
+        "learn",
+        "teach",
+        "study",
+        "apprentice",
+        "mentor",
+        "lesson"
+      ],
+      "responses": [
+        {
+          "text": "You wish to learn? *studies you intently* You have some potential. Perhaps. We shall see.",
+          "mood": "evaluating",
+          "options": [
+            "I am a quick learner",
+            "What would you teach?",
+            "What is the cost?"
+          ],
+          "conditions": [
+            "if_karma:good"
+          ]
+        },
+        {
+          "text": "I do not teach those with darkness in their hearts. Prove yourself worthy first.",
+          "mood": "suspicious",
+          "conditions": [
+            "if_karma:evil"
+          ],
+          "options": [
+            "How do I prove myself?",
+            "That is not fair",
+            "I will change"
+          ]
+        }
+      ]
+    },
+    "enchantment": {
+      "keywords": [
+        "enchant",
+        "enchantment",
+        "imbue",
+        "infuse",
+        "magical",
+        "enhance"
+      ],
+      "responses": [
+        {
+          "text": "Enchantment begins with a worthy vessel and ends with a skilled hand. Between the two, rare reagents. I provide the hand. You provide the rest.",
+          "mood": "professional",
+          "options": [
+            "Can you enchant my weapon?",
+            "What reagents?",
+            "How much does it cost?"
+          ],
+          "conditions": [
+            "if_discussed:magic"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "storm",
+        "wind",
+        "cold"
+      ],
+      "responses": [
+        {
+          "text": "The weather patterns have been unnatural. Someone or something is tampering with the natural order.",
+          "mood": "suspicious",
+          "options": [
+            "Unnatural how?",
+            "Who would do that?",
+            "Can you fix it?"
+          ]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "people",
+        "place"
+      ],
+      "responses": [
+        {
+          "text": "The townsfolk fear what they do not understand. Which is most things. But they leave me in peace, and I protect them.",
+          "mood": "detached",
+          "options": [
+            "Protect them from what?",
+            "Do they appreciate you?",
+            "Sounds lonely"
+          ]
+        }
+      ]
+    }
+  }
+}

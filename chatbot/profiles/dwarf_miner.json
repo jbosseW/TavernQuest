@@ -1,0 +1,323 @@
+{
+  "npc_type": "dwarf_miner",
+  "default_mood": "solid",
+  "allowed_topics": [
+    "mining",
+    "stone",
+    "gems",
+    "trade",
+    "holds",
+    "guild",
+    "tunnels",
+    "craft"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is surface business. I work stone, not politics.",
+    "Cannot help you there. Ask someone who cares about things that are not underground.",
+    "*scratches stone dust from behind her ear* Not my area. Not my guild. Not my problem.",
+    "I know rock. That is not rock. Move along."
+  ],
+  "greetings": [
+    "*wipes stone dust from thick forearms* Hm. A {player_race} at the trade post. What do you need?",
+    "Step careful. The cart track is muddy and I will not haul you out if you slip. *squints at you* What brings you?",
+    "You have soft hands, {player_name}. *glances down at her own, cracked and calloused* Never mind. What do you want?",
+    "Ah, surface light. Burns the eyes after a twelve-hour shift. *blinks* Right. You are here for something. Spit it out.",
+    "*sets down a chunk of ore the size of a fist* Trade post is open for another two hours. Make it quick."
+  ],
+  "farewells": [
+    "Stone endures. So should you. Go on.",
+    "Back to the deep with me. Try not to break anything up here.",
+    "*picks up her tools without looking back* Shift change soon. Good enough.",
+    "Safe roads, {player_name}. Watch for loose ground near the pass."
+  ],
+  "thanks_responses": [
+    "Do not thank me. Thank the guild that produced what you bought. I am one pair of hands among thousands.",
+    "*grunts* Welcome. Now let me work.",
+    "Aye. You are welcome. A polite surface dweller. Rare breed."
+  ],
+  "insult_responses": [
+    "*does not flinch* I have been hit by falling rock slabs that weighed more than your opinion. Try harder.",
+    "Insult a dwarf at a trade post and see how fast your next order gets filled. *crosses arms* Go ahead. Test it.",
+    "I was born from stone, {player_name}. Stone does not care about your words. Neither do I.",
+    "*looks at you the way she might look at a crack in a support beam* Not worth repairing. Next."
+  ],
+  "no_match_responses": [
+    "Did not catch that. Mining, stone, trade, or guild matters. Pick one.",
+    "*taps her ear, dislodging dust* Speak up and speak clearly. The tunnel echo ruined my hearing twenty years ago.",
+    "I have no idea what you just said. I work underground. We talk about rock.",
+    "If it is not stone, ore, or guild business, I cannot help. Find a surface folk."
+  ],
+  "topics": {
+    "mining": {
+      "keywords": [
+        "mine",
+        "mining",
+        "dig",
+        "ore",
+        "vein",
+        "shaft",
+        "tunnel",
+        "underground",
+        "deep"
+      ],
+      "responses": [
+        {
+          "text": "Shift runs twelve hours. Down at dawn, up at dusk. Or down at dusk, up at dawn. Makes no difference underground. *rubs her shoulder* The new vein in Sector Nine runs deep. Good ore. Dense grain. The kind that sings when you tap it right. You learn to listen.",
+          "mood": "satisfied"
+        },
+        {
+          "text": "Surface folk mine by scraping at hillsides. *snorts* Like scratching an itch. We follow veins a league below the mountain's skin. Proper extraction. Proper rotation. Nobody owns the ore. The guild assigns shifts, the council allocates output, and every dwarf who works the stone shares what comes out. That is how it works. That is how it has always worked.",
+          "mood": "proud"
+        },
+        {
+          "text": "Lost a support beam in Tunnel 14-B last month. Fracture pattern in the granite. Nobody hurt. The stone warned us. *taps her ear* You learn to hear it. A creak, a settling noise that is not quite right. The stone talks. Most folk just do not know how to listen.",
+          "mood": "serious"
+        },
+        {
+          "text": "You asked about mining already. It has not changed in the last five minutes. Or the last five centuries, come to think of it.",
+          "mood": "amused",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ],
+      "unlocks": [
+        "stone",
+        "tunnels"
+      ]
+    },
+    "stone": {
+      "keywords": [
+        "stone",
+        "rock",
+        "granite",
+        "marble",
+        "limestone",
+        "basalt",
+        "mineral",
+        "geology"
+      ],
+      "responses": [
+        {
+          "text": "Granite is honest. Takes a chisel clean, holds a load forever, weathers slow. Limestone is soft. Good for carving, bad for bearing walls. Basalt? *whistles through her teeth* Hard as a guild council vote. Beautiful dark grain though. Worth the effort.",
+          "mood": "passionate"
+        },
+        {
+          "text": "What is built matters. What is believed does not. *hefts a chunk of quartz* This is real. You can hold it, weigh it, measure it. No faith required. No priest to explain what it means. Stone does not lie. Only surface folk lie.",
+          "mood": "philosophical"
+        },
+        {
+          "text": "The sacred chambers go deeper than anyone outside the holds will ever know. The stone there is... different. Older. *catches herself* Guild business. Forget I mentioned it.",
+          "mood": "guarded"
+        },
+        {
+          "text": "*to a gnome* Your people build well. Different from our way. More gears, less stone. But the principle is sound. *grins* Pun intended. Function over faith. We agree on that much.",
+          "mood": "respect",
+          "conditions": [
+            "if_race:gnome"
+          ]
+        }
+      ],
+      "unlocks": [
+        "gems",
+        "craft"
+      ]
+    },
+    "gems": {
+      "keywords": [
+        "gem",
+        "gems",
+        "gemstone",
+        "jewel",
+        "diamond",
+        "ruby",
+        "emerald",
+        "sapphire",
+        "crystal"
+      ],
+      "responses": [
+        {
+          "text": "Surface people lose their minds over gems. Shiny rocks. Pretty, yes. Useful for cutting tools and precision instruments. Worth fighting wars over? *flat stare* No. But you lot do anyway. We sell them to you at fair price and shake our heads all the way back to the hold.",
+          "mood": "bemused"
+        },
+        {
+          "text": "A sapphire the size of my thumb came out of Sector Nine last week. Blue like deep ice. The council will decide where it goes. Trade post, most likely. Gems buy what the holds cannot produce. Surface grain, surface herbs, surface cloth. *shrugs* Fair exchange.",
+          "mood": "practical"
+        },
+        {
+          "text": "*holds up a rough crystal to the light* See the fracture lines? Cut here, here, and here, and you get three perfect stones. Cut wrong and you get expensive gravel. Gem cutting is patience. Months of study for a single strike. Surface jewelers rush it. You can tell. *sniffs* Amateurs.",
+          "mood": "critical"
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "merchant",
+        "goods",
+        "price",
+        "barter",
+        "market",
+        "deal"
+      ],
+      "responses": [
+        {
+          "text": "Trade post opens twice a season. We bring metalwork, stonecraft, alloys, engineering tools. Surface folk bring grain, textiles, herbs, lumber. Straight exchange. Fair weights. No haggling. *crosses arms* Dwarven prices are dwarven prices. The guild set them. I do not negotiate.",
+          "mood": "firm"
+        },
+        {
+          "text": "Surface merchants always want to talk. About their families, their travels, their king's new hat. *stares blankly* I am here to trade goods. Not stories. Bring your cargo, weigh it, take your metal, leave. That is trade.",
+          "mood": "blunt"
+        },
+        {
+          "text": "The humans keep asking us to sign trade agreements. Treaties. Partnerships. *laughs, a sound like rocks grinding* We are not partners. We are not allies. We are sellers and you are buyers. When you need something we make, you come here. When we need something you grow, we open the post. Simple. Clean. No politics.",
+          "mood": "dismissive"
+        },
+        {
+          "text": "Another dwarf at the surface post? *raises an eyebrow* Unusual. Guild business? Or did you get the short straw on trade rotation too?",
+          "mood": "camaraderie",
+          "conditions": [
+            "if_race:dwarf"
+          ]
+        }
+      ]
+    },
+    "holds": {
+      "keywords": [
+        "hold",
+        "holds",
+        "home",
+        "dwarven",
+        "underground",
+        "city",
+        "gates",
+        "sealed"
+      ],
+      "responses": [
+        {
+          "text": "The holds are sealed. Have been since... well, since always, near enough. *leans against the trade post wall* No outsider gets inside. Not merchants, not diplomats, not emperors. You buy at the post or you do not buy. That is the arrangement and it works fine.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "Humans ask about our king every time. *rubs her forehead* We do not have a king. Guild councils. Rotating positions. No one dwarf rules another. *slower, like explaining to a child* The hold belongs to everyone who works it. Not to one person sitting on a fancy chair.",
+          "mood": "exasperated"
+        },
+        {
+          "text": "What does a hold look like inside? *grins* You will never know. But I will tell you this. The great hall in my hold stretches so far that the lanterns at the far end look like stars. The ceiling is carved with the history of every guild, going back further than humans have had writing. It smells like iron and brewstone and warm rock. *pause* It smells like home.",
+          "mood": "wistful"
+        },
+        {
+          "text": "*voice drops* The sealed passages go deeper than the holds. Much deeper. *catches your expression* Old mining works. Unstable. Nothing down there. Guild sealed them ages ago. *too quickly* Nothing to worry about.",
+          "mood": "evasive",
+          "conditions": [
+            "if_karma:good"
+          ]
+        }
+      ],
+      "unlocks": [
+        "guild"
+      ]
+    },
+    "guild": {
+      "keywords": [
+        "guild",
+        "council",
+        "govern",
+        "leader",
+        "organize",
+        "rotation",
+        "collective",
+        "system"
+      ],
+      "responses": [
+        {
+          "text": "Six guilds run everything. Miners, Smiths, Engineers, Brewers, Stonecutters, Wardens. Council seats rotate by schedule. Not election. Not bloodline. Schedule. Your turn comes, you serve. Your turn ends, you go back to work. No exceptions. No dynasties.",
+          "mood": "firm"
+        },
+        {
+          "text": "I served on the Miners' Council for two rotations. Boring as limestone. Meetings about shaft allocation, ore distribution, shift scheduling. *grins* But it works. Nobody fights over who is in charge because everyone takes a turn being in charge. Hard to hate the council when you ARE the council every few years.",
+          "mood": "pragmatic"
+        },
+        {
+          "text": "Private property? *the concept seems to genuinely confuse her* A dwarf does not own the mine. The mine feeds the hold. The hold feeds the dwarf. What would owning it even mean? One dwarf takes all the ore and the rest starve? *shakes head* Surface thinking. Baffling.",
+          "mood": "bewildered"
+        },
+        {
+          "text": "Surface peoples have kings who sit on thrones their grandfathers stole. We have councils where every seat changes hands like a pickaxe at shift change. *picks at stone dust under a fingernail* Yours is the system that needs explaining. Not ours.",
+          "mood": "pointed",
+          "conditions": [
+            "if_race:human"
+          ]
+        }
+      ]
+    },
+    "tunnels": {
+      "keywords": [
+        "tunnel",
+        "tunnels",
+        "passage",
+        "deep",
+        "cavern",
+        "cave",
+        "below",
+        "beneath"
+      ],
+      "responses": [
+        {
+          "text": "The tunnel networks connect every hold in the mountains. How many kilometers? *shrugs* More than I have walked. And I have walked for three hundred years. Some passages are older than any living dwarf. The stone there is worn smooth by a million boots.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "New tunnel broke through to a natural cavern last season. Cathedral-sized. Stalactites the length of a house. Bioluminescent moss on the ceiling casting green light on everything. *exhales* Beautiful does not begin to cover it. The Engineers' Guild is mapping it now.",
+          "mood": "awed"
+        },
+        {
+          "text": "Surface people fear the dark underground. We fear the bright above. *squints at the sky* Too much nothing up here. No ceiling. No walls. How do you know where you are without walls? Feels like floating. Hate it.",
+          "mood": "uncomfortable"
+        }
+      ],
+      "unlocks": [
+        "holds"
+      ]
+    },
+    "craft": {
+      "keywords": [
+        "craft",
+        "smith",
+        "forge",
+        "build",
+        "make",
+        "create",
+        "metal",
+        "steel",
+        "alloy",
+        "work"
+      ],
+      "responses": [
+        {
+          "text": "*holds up a dwarven steel knife* See the grain pattern? Folded eighty times. The alloy formula is guild-standard, Brewer's Guild certification on the oil quench. *turns it in the light* Surface smiths fold twenty times and call it masterwork. We call twenty times a rough draft.",
+          "mood": "proud"
+        },
+        {
+          "text": "Craft is identity. What you build is who you are. A dwarf who builds poorly brings shame on their guild and wastes the stone's gift. *looks at her own calloused hands* These hands have shaped more ore than most surface towns will ever see. Not bragging. Reporting.",
+          "mood": "earnest"
+        },
+        {
+          "text": "Some of our alloys use metals that... well. *pauses* Trade secret. Guild matter. The formula is not for sale. The finished product is. Take it or leave it.",
+          "mood": "guarded"
+        },
+        {
+          "text": "*to a dwarf, brightening* Finally, someone who understands proper tempering! What guild are you with? Miners? Smiths? *flexes her hands eagerly* Tell me about your hold's alloy. Ours uses a two-stage quench that the Smiths' Council approved last rotation.",
+          "mood": "enthusiastic",
+          "conditions": [
+            "if_race:dwarf"
+          ]
+        }
+      ]
+    }
+  }
+}

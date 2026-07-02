@@ -1,0 +1,22 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Love2D runtime binaries (live in parent dir, not source)
+*.exe
+*.dll
+*.love
+
+# Source asset archives (extracted contents are tracked)
+assets/**/*.zip
+
+# Saves / logs / temp
+*.log
+*.bak
+saves/
+savegames/
+
+# Claude Code
+.claude/

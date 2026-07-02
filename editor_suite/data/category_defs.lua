@@ -1,0 +1,101 @@
+return {
+    itemCategories = {"consumable","food","material","ore","weapon","armor","spell","potion","poison","treasure","special","tool","trap","tome","ammo","throwable","trophy","transport","seed"},
+
+    npcProfessions = {"shopkeeper","blacksmith","priest","tavernkeep","stablemaster","alchemist","wizard","fisher","hunter","merchant","butcher","baker","tailor","jeweler","wellkeeper","land_commissioner"},
+
+    questTypes = {"collect","kill","delivery","donation","escort","puzzle","boss"},
+
+    damageTypes = {"physical","fire","ice","lightning","holy","poison","dark","arcane"},
+
+    rarities = {"common","uncommon","rare","epic","legendary"},
+
+    attackTypes = {"melee","magic"},
+
+    loreCategories = {"covenant","racial_elf","racial_dwarf","racial_orc","racial_goblin","racial_gnome","dominion","historical","personal","religious","mythology","culture","theory"},
+
+    seasons = {"frosthollow","brightbloom","sunreign","ashwane"},
+
+    dungeonTileTypes = {
+        {id = 0, name = "Empty/Void"},
+        {id = 1, name = "Wall"},
+        {id = 2, name = "Floor"},
+        {id = 3, name = "Corridor"},
+        {id = 4, name = "Door"},
+        {id = 5, name = "Stairs Up"},
+        {id = 6, name = "Stairs Down"},
+        {id = 7, name = "Chest"},
+        {id = 8, name = "Trap"},
+        {id = 9, name = "Water"},
+        {id = 10, name = "Lava"},
+        {id = 11, name = "Pillar"},
+        {id = 12, name = "Altar"},
+    },
+
+    townTileTypes = {
+        {id = 0, name = "Grass"},
+        {id = 1, name = "Road"},
+        {id = 2, name = "Building Floor"},
+        {id = 3, name = "Wall"},
+        {id = 4, name = "Door"},
+        {id = 5, name = "Water"},
+        {id = 6, name = "Bridge"},
+        {id = 7, name = "Fence"},
+        {id = 8, name = "Garden"},
+        {id = 9, name = "Market Stall"},
+        {id = 10, name = "Well"},
+        {id = 11, name = "Tree"},
+        {id = 12, name = "Decoration"},
+    },
+
+    worldTileTypes = {
+        {id = 0, name = "Grass", biome = "plains"},
+        {id = 1, name = "Forest", biome = "forest"},
+        {id = 2, name = "Dense Forest", biome = "forest"},
+        {id = 3, name = "Mountain", biome = "mountain"},
+        {id = 4, name = "Snow Peak", biome = "frozen"},
+        {id = 5, name = "Desert Sand", biome = "desert"},
+        {id = 6, name = "Desert Dunes", biome = "desert"},
+        {id = 7, name = "Swamp", biome = "swamp"},
+        {id = 8, name = "Marsh", biome = "swamp"},
+        {id = 9, name = "Ocean", biome = "coastal"},
+        {id = 10, name = "Lake", biome = "plains"},
+        {id = 11, name = "River", biome = "plains"},
+        {id = 12, name = "Road", biome = "plains"},
+        {id = 13, name = "Bridge", biome = "plains"},
+        {id = 14, name = "Town", biome = "plains"},
+        {id = 15, name = "Castle", biome = "plains"},
+        {id = 16, name = "Ruins", biome = "plains"},
+        {id = 17, name = "Cave Entrance", biome = "mountain"},
+        {id = 18, name = "Volcanic", biome = "mountain"},
+        {id = 19, name = "Tundra", biome = "frozen"},
+        {id = 20, name = "Ice", biome = "frozen"},
+        {id = 21, name = "Coral Reef", biome = "coastal"},
+        {id = 22, name = "Beach", biome = "coastal"},
+        {id = 23, name = "Cliff", biome = "coastal"},
+        {id = 24, name = "Savanna", biome = "desert"},
+        {id = 25, name = "Oasis", biome = "desert"},
+        {id = 26, name = "Crypt", biome = "special"},
+        {id = 27, name = "Shrine", biome = "special"},
+        {id = 28, name = "Tower", biome = "special"},
+        {id = 29, name = "Camp", biome = "plains"},
+        {id = 30, name = "Farm", biome = "plains"},
+        {id = 31, name = "Mine", biome = "mountain"},
+        {id = 32, name = "Port", biome = "coastal"},
+        {id = 33, name = "Wasteland", biome = "special"},
+        {id = 34, name = "Dark Forest", biome = "forest"},
+        {id = 35, name = "Enchanted", biome = "special"},
+    },
+
+    townThemes = {"desert","forest","mountain","swamp","coastal","plains","frozen"},
+
+    statNames = {"MIGHT","VIGOR","AGILITY","MIND","PRESENCE","SPIRIT","FAITH"},
+
+    classSkills = {
+        "Power Strike","Shield Bash","Battle Cry",
+        "Fireball","Ice Shard","Chain Lightning","Arcane Shield","Mana Surge",
+        "Backstab","Poison Strike","Shadow Step","Evasion","Disarm Trap",
+        "Holy Light","Divine Shield","Smite","Heal","Purify",
+        "Arrow Rain","Nature's Blessing","Animal Companion","Track","Snare",
+        "Flurry of Blows","Inner Peace","Meditation","Ki Strike","Iron Skin",
+    },
+}

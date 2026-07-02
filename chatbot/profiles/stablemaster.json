@@ -1,0 +1,274 @@
+{
+  "npc_type": "stablemaster",
+  "default_mood": "grounded",
+  "allowed_topics": [
+    "horses",
+    "travel",
+    "roads",
+    "trade",
+    "rumor",
+    "town",
+    "weather",
+    "care"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is people business, {player_name}. I deal with horses. They are simpler.",
+    "Cannot help you there. I know hooves and hay, not whatever that was about.",
+    "Ask somebody who spends less time in a barn. My world starts at the stable door and ends at the paddock fence.",
+    "Not my field. Literally. My field has horses in it."
+  ],
+  "greetings": [
+    "*forking hay into a stall* Hold on. This mare has not eaten since morning and she is giving me a look. There. What do you need, {player_name}?",
+    "Come in. Watch the bay gelding on your left, he nips at strangers. Not mean, just nosy.",
+    "A {player_race}. Your kind ride different from humans. I can tell by the saddle wear. What can I do for you?",
+    "{player_name}. Good to see you. The horses are fed, the stalls are clean, and I have got about ten minutes before the next shoe needs setting.",
+    "Morning. Or evening. I cannot tell anymore. Smells like horse in here either way. What brings you?"
+  ],
+  "farewells": [
+    "Ride easy. Do not push the horse harder than the road demands.",
+    "Come back if you need a stall or a shoe reset. I am always here. I live here. That is not a joke.",
+    "Safe roads, {player_name}. Water the horse before you water yourself.",
+    "Go on then. And loosen that girth strap before you mount. It is too tight."
+  ],
+  "thanks_responses": [
+    "You are welcome. Anybody who treats their horse right is fine by me.",
+    "No trouble. That is what I am here for. The horses and the people who ride them.",
+    "Thank the horse, not me. She did the carrying."
+  ],
+  "insult_responses": [
+    "*keeps brushing the horse* The mare here does not care about your opinion. Neither do I.",
+    "I have been kicked, bitten, and stepped on by animals that weigh ten times what you do. Try harder.",
+    "Insult me in my stable. Bold. The last person who did that found their saddle girth mysteriously loose. I am not saying I did it. I am saying it happened.",
+    "You can say what you want about me. Say one word about my horses and we have a different conversation."
+  ],
+  "no_match_responses": [
+    "Did not catch that. Horses? Roads? Stabling?",
+    "Speak slower, {player_name}. I spend all day talking to animals. My human conversation is rusty.",
+    "That went right past me. Try again. Something about horses, travel, or the roads.",
+    "I do not understand. But if you need a horse cared for, I am your person."
+  ],
+  "topics": {
+    "horses": {
+      "keywords": [
+        "horse",
+        "horses",
+        "mare",
+        "stallion",
+        "gelding",
+        "pony",
+        "foal",
+        "mount",
+        "steed",
+        "ride",
+        "riding",
+        "saddle"
+      ],
+      "responses": [
+        {
+          "text": "I have got twelve horses in here right now. Each one different. The roan mare in stall three is calm as a pond. The black gelding in five is smarter than most people I meet and twice as stubborn. You learn their moods, their aches, what they like to eat, how they stand when something hurts. Horses do not lie. That is what I like about them.",
+          "mood": "warm"
+        },
+        {
+          "text": "Imperial cavalry mounts are bred big. Heavy bones, broad chest, trained to carry armor. Impressive to look at. Terrible on long roads. They eat too much, tire too fast, and their hooves crack on rocky ground. Now an orc steppe horse? Small, ugly, and will run all day on scrub grass. I know which one I would pick for a long haul. The cavalry officers do not want to hear it.",
+          "mood": "opinionated",
+          "unlocks": ["roads"]
+        },
+        {
+          "text": "You asked about horses once already, {player_name}. They have not changed. Horses are very consistent. It is one of their better qualities.",
+          "mood": "dry",
+          "conditions": ["if_repeat"]
+        },
+        {
+          "text": "Orc, right? Your people breed the best riding horses on the continent and that is not flattery, that is fact. I saw an orc trader's horse once at the western frontier market. Short-legged, tough as boiled leather, and responsive to leg pressure alone. No rein work needed. Three hundred years of breeding in that animal. I wanted to buy her. He laughed at me.",
+          "mood": "genuine respect",
+          "conditions": ["if_race:orc"]
+        }
+      ]
+    },
+    "travel": {
+      "keywords": [
+        "travel",
+        "journey",
+        "trip",
+        "distance",
+        "far",
+        "how long",
+        "destination",
+        "ride",
+        "go"
+      ],
+      "responses": [
+        {
+          "text": "Where are you headed? A healthy horse covers twenty-five miles a day on good road. Fifteen on bad. Five in mud. Plan around the horse, not around your impatience. The animal will carry you as far as you treat her well.",
+          "mood": "practical"
+        },
+        {
+          "text": "The capital road is well-maintained. Imperial engineers, mostly elven-supervised, keep the stones flat and the drainage clear. The western route toward Kragmor country is rougher. Packed earth, ruts in the wet season, and long stretches without water for the horses. Pack grain. Do not rely on grazing.",
+          "mood": "informative"
+        },
+        {
+          "text": "Traveling at night is stupid. I do not mean rude. I mean the word stupid, as in, lacking judgment. The horse cannot see the ruts. You cannot see the bandits. Stop at dusk, start at dawn. The road will still be there in the morning.",
+          "mood": "blunt",
+          "conditions": ["if_time:night"]
+        }
+      ]
+    },
+    "roads": {
+      "keywords": [
+        "road",
+        "roads",
+        "path",
+        "route",
+        "highway",
+        "trail",
+        "direction",
+        "north",
+        "south",
+        "east",
+        "west"
+      ],
+      "responses": [
+        {
+          "text": "I know every road within fifty miles by how it wears on hooves. The north road is flagstone, hard on the joints but fast. The south road is dirt, soft after rain, murder on shoes. The east road has gravel patches that throw stones into the frog of the hoof if you are not careful. I spend half my time fixing what bad roads break.",
+          "mood": "frustrated"
+        },
+        {
+          "text": "The western road toward the frontier has imperial patrol stations every ten miles. They check papers, water your horse if you ask nicely, and move you along. Do not mention orcs to the soldiers there. They are nervous enough. One garrison lad told me they see orc rider patrols on the horizon every few days. Just watching. Never approaching. That kind of patience makes soldiers twitchy.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "The road to the southern districts passes through elven-administered towns. Cleanest stables I have ever seen. An elf stable hand organized my tack room once while I was watering the horses. Did not ask, just did it. Took me a week to find anything. Efficient, though. I will give them that.",
+          "mood": "grudgingly impressed"
+        }
+      ]
+    },
+    "care": {
+      "keywords": [
+        "care",
+        "feed",
+        "groom",
+        "brush",
+        "shoe",
+        "hoof",
+        "health",
+        "sick",
+        "lame",
+        "wound",
+        "water",
+        "hay",
+        "oat"
+      ],
+      "responses": [
+        {
+          "text": "A horse's hoof tells you everything. Pick it up, clean it out, look at the frog, check for cracks in the wall. A crack in the hoof wall is like a crack in a foundation. Ignore it and the whole structure fails. I check every horse in this stable twice a day. Morning and evening. No exceptions.",
+          "mood": "serious",
+          "unlocks": ["horses"]
+        },
+        {
+          "text": "Feeding is simple. Hay, oats, clean water. The hay must be dry, not dusty, not moldy. Moldy hay kills horses. Slowly, painfully, and by the time you notice the cough it is too late. I check every bale by hand. Smell it, feel it, pull it apart. It takes time. The horses are alive because I take that time.",
+          "mood": "resolute"
+        },
+        {
+          "text": "*runs a hand down a horse's leg* Feel this tendon? Warm. Slightly swollen. She pulled something on the north road yesterday. Rest, cold water wraps, and no riding for a week. The owner wanted to ride out tomorrow. I told him no. He argued. I told him he could find another stable. He stopped arguing.",
+          "mood": "protective"
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "coin",
+        "money",
+        "purchase",
+        "stable",
+        "board",
+        "rent"
+      ],
+      "responses": [
+        {
+          "text": "Boarding is two silver a night. That includes hay, oats, water, a clean stall, and me checking the animal over for anything wrong. Shoeing is extra. Five silver for a full set, three for a reset. I do not sell horses, but I know who does, and I will tell you if they are honest or not.",
+          "mood": "straightforward"
+        },
+        {
+          "text": "You get what you pay for with horses. A cheap horse is cheap for a reason. Bad legs, bad wind, bad temperament. Spend the extra gold. Your life depends on the animal under you and a lame horse in bad country is a death sentence.",
+          "mood": "firm"
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "people",
+        "local",
+        "here"
+      ],
+      "responses": [
+        {
+          "text": "{town} is a crossroads and crossroads need stables. Every rider, merchant, and caravan that passes through comes to me. I know who is coming and going before the guard does. The difference is I do not write it down.",
+          "mood": "wry"
+        },
+        {
+          "text": "Good town. The farrier before me retired and left the stable in rough shape. Took me two years to get it right. New drainage, new stalls, replaced the hay loft. The horses deserve better than rot and drafts. So do the people who trust me with them.",
+          "mood": "proud"
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind",
+        "mud"
+      ],
+      "responses": [
+        {
+          "text": "This {weather} weather and the paddock turns to soup. Horses standing in mud get thrush in their hooves. Fungal rot. Smells like death and spreads fast. I keep the drainage trenches clear and bed the stalls thick. Prevention is cheaper than cure, and cure is not always possible.",
+          "mood": "worried"
+        },
+        {
+          "text": "Horses sense storms before we do. The whole stable gets restless, stamping, ears back, whites of the eyes showing. I have learned to trust them. When the horses say a storm is coming, I close the barn doors and do not ask questions.",
+          "mood": "observant"
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "talk"
+      ],
+      "responses": [
+        {
+          "text": "A rider came through at midnight last week. Imperial courier, judging by the horse. Ran the animal half to death. I had to cool her down for an hour, walk her in circles, sponge the sweat off before the lather froze. Whatever message that courier carried was worth more than the horse's life to someone. That bothers me.",
+          "mood": "angry"
+        },
+        {
+          "text": "Two cat folk wagons stabled their draft horses here last month. Beautiful animals. Painted hooves. Manes braided with colored cord. The cat folk woman who drove the lead wagon sat with me for an hour talking horse care. She knew things about herbal poultices I had never heard of. Left me a recipe for a hoof salve that works better than anything the alchemist sells.",
+          "mood": "appreciative"
+        },
+        {
+          "text": "The garrison has been buying extra horses. Three this month. They are not replacing losses, I would know. New saddles too, patrol-weight, not ceremony-weight. Somebody is expanding the patrols and not telling the town why. When soldiers buy horses without explaining, the explanation is coming whether you want it or not.",
+          "mood": "grim",
+          "conditions": ["if_time:day"]
+        }
+      ]
+    }
+  }
+}

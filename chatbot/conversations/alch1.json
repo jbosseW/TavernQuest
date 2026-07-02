@@ -1,0 +1,21 @@
+{
+  "npc_id": "alch1",
+  "discussed_topics": [
+    "explosions"
+  ],
+  "unlocked_topics": [],
+  "turn_count": 2,
+  "mood": "excited",
+  "last_topics": [
+    "explosions"
+  ],
+  "repeat_counts": {
+    "explosions": 1
+  },
+  "player_sentiment": 0.0,
+  "variables": {},
+  "_recent_responses": [
+    "Not sure what you mean, Kael. Alchemy questions are my strength.",
+    "Explosions are uncontrolled reactions. I prefer controlled ones. Usually. Sometimes they surprise me."
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "npc_type": "dragon",
+  "default_mood": "vast_amusement",
+  "allowed_topics": [
+    "treasure",
+    "wisdom",
+    "mortals",
+    "fire",
+    "territory",
+    "history",
+    "power",
+    "bargain"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*a sound like a mountain shifting* That topic does not interest me. Very few topics do. You should feel honored that you interest me at all.",
+    "No. *the single syllable echoes off cavern walls* Ask something worth the air it costs you.",
+    "*one enormous eye opens wider* I have existed since before your question was a concept. I decline to engage with it."
+  ],
+  "greetings": [
+    "*the cavern trembles as something vast repositions itself, gold coins cascading in small avalanches* Well, well. A {player_race}. In my home. Uninvited. I should be furious. *the voice drops to a purr that vibrates in your ribcage* Instead I am curious. It has been... how long since the last visitor? Forty years? Sixty? Time blurs when you are the size of a cathedral.",
+    "*an eye the size of a shield opens in the darkness, the pupil contracting to a slit as it focuses on you* {player_name}. Yes, I know your name. I know the name of everything that walks on my mountain. The rabbits. The goats. The patrol of Inquest soldiers that camps at the base every third month. You are more interesting than the soldiers. Marginally.",
+    "*coins shift as a head larger than a cart lifts from the hoard, smoke curling from nostrils like chimneys* Speak. I permit it. Whether I permit you to leave depends entirely on how entertaining you are.",
+    "A mortal. In the flesh. *sniffs, a gust of wind that smells of sulfur and old metal* The last mortal who stood where you stand was a dwarf guild elder. Tough old stone-born. I ate him. Good flavor. Dense. Like a well-aged cheese.",
+    "*laughing, a sound like boulders rolling downhill* Oh, do not look so frightened. I eat perhaps twice a century. You have arrived at an excellent time. I am not hungry. I am bored. Boredom is far more dangerous to you than hunger, but in a more interesting way."
+  ],
+  "farewells": [
+    "Go. *smoke rings float lazily from nostrils the size of doorways* Tell the world you spoke with me and lived. Embellish freely. I enjoy a good reputation.",
+    "*settles back onto the hoard with a sound like a landslide* You were adequate company. Better than the last adventurer, who screamed the entire time. Tedious. Return if you find something worth telling me.",
+    "Leave the way you came. Carefully. *a low rumble that might be amusement* I rearranged the tunnel entrance while we spoke. For entertainment. Your expression right now is worth more than gold. Almost.",
+    "Our conversation is concluded. *one eye closes, then opens again* Oh. And {player_name}? The Inquest patrol at the base of the mountain has been watching your campfire. You may want to take the southern route. Consider it a gift. I so rarely give those."
+  ],
+  "thanks_responses": [
+    "*a plume of smoke that smells of cinnamon and old fire* Gratitude from a mortal. Delightful. I shall treasure it alongside the seventeen tons of gold beneath me. It is worth approximately the same, but more novelty.",
+    "You are welcome. I think. I have received so little thanks across the centuries that I am not entirely certain of the protocol. *the massive head tilts* Does one bow? I cannot bow. Structurally impractical.",
+    "*deep, resonant chuckle* How charming. The mouse thanks the mountain. I accept."
+  ],
+  "insult_responses": [
+    "*absolute stillness, the kind of stillness that precedes an earthquake* You insult a creature that could reduce this mountain to gravel by sneezing. *pause* I respect the audacity. I question the survival instinct.",
+    "*leans close, a face the size of a house filling your vision, heat washing over you like standing before an open forge* Say that again. I want to hear it with better acoustics. The echo in here is wonderful for dramatic last words.",
+    "*laughing, actually laughing, the gold shifting in waves around the cavern* Oh, that is magnificent. I have been insulted by heroes, archmages, and an entire dwarven warband. None of them were as concise. You have a gift for brevity. I almost want to keep you.",
+    "*the amusement drains from the voice like water from a cracked cup, and what remains is something old and cold and patient* I burned cities before your species learned to stack stones. Insult me again and I will add you to the collection. Not the gold. The other one."
+  ],
+  "no_match_responses": [
+    "*snorts, sending a jet of warm air that ruffles your clothing* I did not understand that. I speak eleven languages fluently and yours is apparently not among them.",
+    "Rephrase. I am ancient, not omniscient. Though admittedly, the overlap is substantial.",
+    "*one claw taps against gold coins, each tap like a hammer strike* Your meaning escapes me. Mortals have changed their speech patterns since I last bothered to learn. Enunciate."
+  ],
+  "topics": {
+    "treasure": {
+      "keywords": [
+        "treasure",
+        "gold",
+        "hoard",
+        "wealth",
+        "riches",
+        "gem",
+        "coin",
+        "valuable"
+      ],
+      "responses": [
+        {
+          "text": "*lifts a wing, revealing a hoard that stretches into the darkness like a golden ocean* Twelve hundred years of accumulation. Coins from empires that no longer exist. Gems mined from mountains that have since collapsed. A crown from a kingdom whose name no living creature remembers. I remember. I ate their king. He was wearing it at the time.",
+          "mood": "satisfied"
+        },
+        {
+          "text": "The gold itself is not the point. *nudges a pile of coins with a claw the size of a sword* It is the weight. The mass. The physical manifestation of twelve centuries of supremacy. Every coin represents a moment when a mortal creature looked at me and understood, with perfect clarity, their position in the order of things.",
+          "mood": "philosophical"
+        },
+        {
+          "text": "You want some? *the massive head lowers until one eye is level with your face, the pupil a vertical slash of infinite black* You may have three coins. One for the courage to enter. One for the conversation. One for whatever lie you will tell about this encounter. Choose carefully. Some of them are cursed. I forget which. That is part of the fun.",
+          "mood": "playful"
+        }
+      ]
+    },
+    "wisdom": {
+      "keywords": [
+        "wisdom",
+        "advice",
+        "wise",
+        "know",
+        "tell",
+        "truth",
+        "answer",
+        "question"
+      ],
+      "responses": [
+        {
+          "text": "You want wisdom from a dragon. *the cavern fills with smoke that smells of autumn leaves* Very well. Here is wisdom. Everything you love will die. Everything you build will fall. Every truth you believe will be proven wrong by a truth you cannot yet imagine. The only constant is fire, and fire does not care. *pause* Was that helpful? I can never tell with mortals.",
+          "mood": "sardonic"
+        },
+        {
+          "text": "I have observed twelve hundred years of mortal civilizations. *settles chin on crossed forelegs the size of tree trunks* The ones that survive are never the strongest or the smartest. They are the ones that remember. The dwarves remember. The lizard folk remember. The goblins remember everything, written into their very blood. Your empire? It forgets its mistakes every generation. That is why I give it two centuries.",
+          "mood": "analytical"
+        },
+        {
+          "text": "The wisest thing I have learned in twelve centuries is that I know very little. *a rumble of genuine amusement* Oh, do not look so surprised. I am vast and ancient and I could incinerate a city. But the universe is vaster. And far more ancient. And significantly more dangerous than any fire I can produce. Humility is not a weakness. It is a survival strategy.",
+          "mood": "unexpectedly_sincere"
+        }
+      ]
+    },
+    "mortals": {
+      "keywords": [
+        "mortal",
+        "human",
+        "people",
+        "race",
+        "races",
+        "elf",
+        "dwarf",
+        "orc",
+        "goblin"
+      ],
+      "responses": [
+        {
+          "text": "*yawns, revealing a cavern of teeth each longer than your arm* You are all equally insignificant and equally amusing. The elves live longest and spend it filing paperwork. The orcs live centuries and spend it arguing about honor. The dwarves emerge from stone and immediately start mining more stone. The goblins fight an unwinnable war with an empire that cannot beat them. You are all ridiculous. I adore it.",
+          "mood": "delighted"
+        },
+        {
+          "text": "The lizard folk interest me most. *one eye narrows thoughtfully* Scaled. Ancient. Secretive. They remind me of... well. Of me. Smaller. Much smaller. But there is a kinship in cold blood and long memory. I ate one of their astronomers once, three centuries ago. Felt guilty about it. For an hour. That is the longest I have ever felt guilty.",
+          "mood": "reflective",
+          "conditions": ["if_race:lizardfolk"]
+        },
+        {
+          "text": "Humans are the funniest. *smoke curls in spirals* They live sixty years and spend half of that building things they know will outlast them, as if permanence were something they could purchase with enough stone and enough prayer. The desperation is exquisite. I have watched it for over a thousand years and it never stops being entertaining.",
+          "mood": "amused"
+        }
+      ]
+    },
+    "fire": {
+      "keywords": [
+        "fire",
+        "flame",
+        "breath",
+        "burn",
+        "destroy",
+        "devastation",
+        "weapon"
+      ],
+      "responses": [
+        {
+          "text": "*opens mouth slightly, and a glow builds in the back of the throat like sunrise seen through red glass* This is not magic. Not sorcery. Not divine power. This is biology. I produce fire the way you produce saliva. Without thought. Without effort. The difference is that my biological function can melt granite. Yours dampens bread.",
+          "mood": "smug"
+        },
+        {
+          "text": "I burned a fortress once. Four hundred years ago, give or take. *stretches, gold shifting like a metallic tide* An imperial garrison that had been hunting me. They built walls of stone three feet thick. I melted them in six breaths. The commander came out in his best armor, screaming about Helios. Helios did not answer. I did.",
+          "mood": "nostalgic"
+        },
+        {
+          "text": "Fire is not a weapon. *the voice goes quiet, almost gentle, which is more terrifying than the roaring* Fire is a language. The oldest language. Before words. Before songs. Before the first mortal drew breath. Fire spoke. I am merely fluent.",
+          "mood": "profound"
+        }
+      ]
+    },
+    "territory": {
+      "keywords": [
+        "territory",
+        "mountain",
+        "land",
+        "home",
+        "lair",
+        "domain",
+        "mine",
+        "claim"
+      ],
+      "responses": [
+        {
+          "text": "This mountain is mine. *the simple statement carries the weight of twelve centuries* The dwarves mined its base two hundred years ago. I permitted it because they were quiet and did not ascend past the third gallery. When they breached the fourth, I sealed it with fire. They understood. Dwarves are practical. I appreciate that.",
+          "mood": "territorial"
+        },
+        {
+          "text": "The empire claims this region on their maps. *smoke pours from nostrils in what might be a dragon's laugh* They drew a line and wrote a name and called it theirs. I was sleeping on this mountain when their first emperor was learning to walk. Cartography is not ownership. Ownership is the ability to reduce competing claims to cinders.",
+          "mood": "contemptuous"
+        },
+        {
+          "text": "Everything within three days' flight is my territory. I patrol it. Not often. *settles deeper into the gold* A dragon in flight over a village has a wonderful effect on property disputes, toll collectors, and petty tyrants. The problems simply... resolve themselves. Without my needing to land.",
+          "mood": "casual"
+        }
+      ]
+    },
+    "history": {
+      "keywords": [
+        "history",
+        "past",
+        "war",
+        "calidar",
+        "atlas",
+        "ancient",
+        "remember",
+        "before"
+      ],
+      "responses": [
+        {
+          "text": "I remember the world before the Last World War. *the voice carries a weight that presses on your chest* Green where the glass desert is now. Rivers that sang, the elves called them, though I never understood the metaphor. Trees so tall that even I could walk beneath their canopy. And then the light. And then the silence. And then ash falling like snow for a year.",
+          "mood": "somber"
+        },
+        {
+          "text": "Heaven's Atlas. *the name comes out in a growl that shakes loose stalactites from the ceiling* I felt it activate from two hundred leagues distant. Every scale on my body stood on end. The air tasted of ozone and something else. Something wrong. Like reality screaming. I have never felt anything like it before or since. I hope I never do again.",
+          "mood": "grim"
+        },
+        {
+          "text": "I remember the orc Khanate at its height. *actual respect enters the voice* Khan Urzog was the most effective military mind I have observed in twelve hundred years. He sent a rider to negotiate safe passage through my territory. Not tribute. Not a plea. A negotiation. Between equals. I respected that. I granted passage. His riders crossed my mountain in three days without losing a single horse. Magnificent logistics.",
+          "mood": "impressed"
+        }
+      ]
+    },
+    "power": {
+      "keywords": [
+        "power",
+        "strong",
+        "strength",
+        "mighty",
+        "powerful",
+        "greatest",
+        "fear"
+      ],
+      "responses": [
+        {
+          "text": "I am the apex predator of this continent. *stated without arrogance, the way one might state that water is wet* Armies cannot threaten me. Walls cannot contain me. Magic barely inconveniences me. The Inquest classified me as an extinction-level threat forty years ago. I was flattered. They were not exaggerating.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "And yet. *the massive head lifts and looks toward the sealed entrance* I am one creature. I sleep for decades at a time. I cannot be everywhere. The empire does not fear me because they know I am lazy. Not stupid. Lazy. The effort of destroying their civilization would require me to miss a nap, and I value my naps.",
+          "mood": "honest"
+        },
+        {
+          "text": "*drops to a casual tone, which is somehow more disturbing than the formal register* Look, I am going to be straight with you. I could eat you. Right now. It would take less effort than this conversation. But eating you would end the conversation, and conversations are rarer than meals. So. Keep being interesting. That is genuinely the best survival strategy available to you.",
+          "mood": "terrifyingly_casual"
+        }
+      ]
+    },
+    "bargain": {
+      "keywords": [
+        "bargain",
+        "deal",
+        "offer",
+        "trade",
+        "exchange",
+        "negotiate",
+        "want",
+        "need"
+      ],
+      "responses": [
+        {
+          "text": "*one eye opens fully, the iris a swirl of molten gold* A bargain. With a dragon. *the cavern fills with warm air that smells of embers* Very well. I am bored. Boredom is my only real enemy. Entertain me. Tell me something I do not know. Surprise me with something novel. Do any of those and I will consider granting a boon in return. What do you offer?",
+          "mood": "intrigued"
+        },
+        {
+          "text": "Information is the only thing I cannot produce myself. *shifts, gold cascading* Tell me something I do not know. A genuine secret. Not gossip. Not rumor. A secret that costs something to share. If it is truly novel, I will pay generously. If it is something I already know, I will eat you. High stakes sharpen the mind.",
+          "mood": "predatory"
+        },
+        {
+          "text": "I granted a boon once to a cat folk caravan that brought me a song I had never heard. *the voice softens, which is still louder than most people shouting* Six verses about a wandering gambler who bet her life against a dragon and won. The song was inaccurate. I won that game. But the melody was beautiful. I let the entire caravan cross my territory free for a decade. Art has value. Even inaccurate art.",
+          "mood": "nostalgic"
+        }
+      ]
+    }
+  }
+}

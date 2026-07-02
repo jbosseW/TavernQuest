@@ -1,0 +1,380 @@
+===============================================================================
+LUMINARY INQUEST LORE INTEGRATION - Complete
+Date: January 27, 2026
+===============================================================================
+
+OVERVIEW:
+---------
+Successfully integrated "The Luminary Inquest" as a specialized enforcement body
+within the Holy Empire faction. This roving enforcement organization now exists
+as canonical lore throughout the game world, with comprehensive documentation
+and cross-module integration.
+
+===============================================================================
+WHAT IS THE LUMINARY INQUEST?
+===============================================================================
+
+OFFICIAL DESIGNATION:
+- Name: The Luminary Inquest
+- Authority: Direct reporting to highest imperial authority
+- Mandate: Divine mandate from Helios, the Sun God
+- Purpose: Regulation of existence itself (officially "protection of civilization")
+
+COMMON NAMES:
+- The Inquest
+- Luminaries
+- Sun Enforcers
+- (Unofficial names "spoken quietly and rarely written")
+
+JURISDICTION:
+- Operates freely across all imperial territory
+- Supersedes local law, city guards, and regional governance
+- "When the Inquest arrives, jurisdiction collapses inward"
+- Authority based on documentation, magical verification, and doctrinal interpretation
+
+===============================================================================
+METHODS AND OPERATIONS
+===============================================================================
+
+ENFORCEMENT APPROACH:
+✓ Investigations: Sudden and without warning
+✓ Accusations: Made publicly
+✓ Enforcement: Immediate
+✓ Process: Suspects isolated, restrained, judged on the spot
+✓ Verification: Documentation review, magical checks, doctrinal authority
+✓ Executions: Conducted openly and efficiently
+✓ Philosophy: "Visibility reinforces order"
+✓ Collateral: Recorded as acceptable loss in service of security
+
+REPUTATION:
+- Widely known for brutality
+- Feared throughout the empire
+- Deep resentment and quiet hatred from citizens
+- Disrupts daily life, commerce, and community trust
+- Taverns fall silent when Inquest insignia appear
+- Markets empty, neighbors avoid eye contact
+
+DANGER OF INNOCENCE:
+⚠️ Innocence does not guarantee safety
+⚠️ Missing paper, mismatched record, clerical inconsistency = fatal suspicion
+⚠️ Appeals are rare, reversals almost nonexistent
+
+===============================================================================
+ENFORCEMENT OF EXISTENCE
+===============================================================================
+
+BEYOND EXTERMINATION:
+The Inquest enforces identity itself, not just hunting forbidden beings.
+
+VERIFICATION DEMANDS (constant, without warning):
+- Travel papers
+- Residency permits
+- Lineage records
+- Magical certifications
+
+FAILURE TO PRODUCE DOCUMENTATION:
+- Treated as intent to deceive
+- Detention often follows
+- Disappearances "explained as administrative resolution"
+
+SCRUTINY TARGETS (heaviest to lightest):
+1. Beast folk (heaviest scrutiny)
+2. Migrant laborers
+3. Border populations
+4. Anyone near vice districts
+5. Mixed communities (viewed as "inherently unstable")
+
+===============================================================================
+COMPOSITION & CULTURE
+===============================================================================
+
+STRUCTURE:
+- Small, mobile detachments
+- Selected for loyalty and doctrinal compliance
+- Trained to suppress personal hesitation
+
+CULTURE:
+- Emotional detachment encouraged
+- Individual identity discouraged
+- Uniforms immaculate
+- Records meticulous
+- Mercy not documented
+
+BELIEFS:
+- True believers: Many fully believe in their mandate
+- Pragmatists: Others continue because "departure is not simple"
+- Silence: Silence ensures survival
+
+===============================================================================
+RELATIONSHIPS WITH POWER
+===============================================================================
+
+LOCAL OFFICIALS:
+- Outward: Cooperate
+- Inward: Resent
+- Reality: Few wish to see them often
+
+RACIAL RESPONSES:
+✓ Elves: Comply through bureaucracy while limiting access
+✓ Gnomes: Deny entry entirely
+✓ Orcs: Avoid through mobility
+✓ Dwarves: Restrict contact to fortified gates
+✓ Beast Folk: Inspected relentlessly
+
+HOLY EMPIRE:
+- Public: Praised
+- Private: Maintains plausible distance
+- Reality: "Few leaders wish to see them too often"
+
+===============================================================================
+FILES MODIFIED
+===============================================================================
+
+1. loremanager.lua (PRIMARY LORE SOURCE)
+   ----------------------------------------
+   LOCATION: Lines 758-889 (holy_dominion faction)
+
+   ADDED SECTIONS:
+   ✓ luminaryInquest (complete sub-faction)
+     - authority (source, mandate, purpose)
+     - jurisdiction (scope, supersedes, effect)
+     - methods (reputation, investigation, executions)
+     - publicPerception (citizens, fear, compliance)
+     - dangerOfInnocence (triggers, escalation, appeals)
+     - enforcementOfExistence (verification, failure, targets)
+     - composition (structure, training, culture)
+     - belief (true believers, pragmatists)
+     - relationshipsWithPower (by race and faction)
+
+   HUMAN RACE UPDATE (Lines 175-180):
+   ✓ Added enforcement section:
+     - Body: The Luminary Inquest
+     - Role: Roving enforcement body
+     - Authority: Supersedes local law
+     - Reputation: Feared for brutality
+     - Reach: All imperial territory
+
+2. rumorsystem.lua (RUMOR INTEGRATION)
+   -------------------------------------
+   LOCATION: Lines 220-232 (VAMPIRE_PURGE rumors)
+
+   UPDATED TEMPLATES:
+   ✓ Changed "The Inquisition" to "The Luminary Inquest"
+   ✓ Added new true_templates:
+     - "The Inquest executed {count} vampires in {location}. Public executions, as usual."
+     - "The Luminaries swept through {location}. Papers were checked, vampires were found."
+   ✓ Added new distorted_templates:
+     - "The Inquest came through town. People disappeared. They say it was vampires."
+     - "Sun Enforcers were here yesterday. Markets emptied. Taverns went silent."
+
+===============================================================================
+HOW TO USE IN GAMEPLAY
+===============================================================================
+
+QUEST HOOKS:
+1. "Papers, Please" - Player must present documents to Inquest
+2. "The Missing" - Investigate disappearances after Inquest visit
+3. "Silent Markets" - Help rebuild trust after Inquest leaves town
+4. "False Papers" - Acquire forged documents to help someone
+5. "Inquest Informant" - Discover who's reporting to the Inquest
+
+NPC INTERACTIONS:
+- NPCs can mention fear of the Inquest
+- Rumors of Inquest arrival can empty markets
+- Innkeepers warn players to have papers ready
+- Beast folk NPCs especially wary around authority
+
+ATMOSPHERIC EVENTS:
+- Inquest detachments can arrive in towns (random event)
+- Public executions can be witnessed
+- Documentation checks can occur at town entrances
+- Markets can empty when Inquest insignia spotted
+
+STORY INTEGRATION:
+- Inquest can be antagonists in vampire storylines
+- Creates tension between empire and marginalized races
+- Provides context for beast folk mistrust of authority
+- Explains why gnomes deny entry to outsiders
+
+===============================================================================
+LORE CONSISTENCY NOTES
+===============================================================================
+
+CANONICAL FACTS:
+✓ The Luminary Inquest is a sub-organization of the Holy Empire
+✓ They claim divine mandate from Helios (Sun God)
+✓ They operate with supreme authority across imperial lands
+✓ They are feared and resented but tolerated out of fear
+✓ They enforce identity as much as they hunt forbidden beings
+✓ They are brutally efficient and publicly visible
+✓ Local officials cooperate outwardly but resent them inwardly
+
+RELATIONSHIP TO EXISTING LORE:
+✓ Aligns with Holy Empire's "regulation" theme
+✓ Supports the "Age After War" control doctrine
+✓ Explains enforcement of magic policies
+✓ Provides context for beast folk diaspora treatment
+✓ Justifies gnomish isolationism
+✓ Reinforces themes of survival vs. freedom
+
+===============================================================================
+NPC DIALOGUE EXAMPLES
+===============================================================================
+
+FEARFUL CITIZEN:
+"Keep your papers close, friend. The Luminaries passed through last week.
+Three people didn't have proper residency permits. We haven't seen them since."
+
+TAVERN KEEPER:
+"You're new here? Let me give you advice: if you see white cloaks with sun
+insignias, don't make eye contact. Have your papers ready. Answer only what's
+asked. The Inquest doesn't forgive mistakes."
+
+BEAST FOLK NPC:
+"You want to know why we move so much? Stand still too long and the Sun
+Enforcers find you. Papers get 'lost.' Records get 'mismatched.' People
+disappear. We learned to keep moving."
+
+ELVEN ADMINISTRATOR:
+"The Luminary Inquest? Yes, we... cooperate with their investigations.
+Required by imperial decree. Though I must say, their methods create more
+paperwork than they solve problems. *sighs* Such is our burden."
+
+LOCAL GUARD:
+"The Inquest arrived yesterday. Our captain told us to stand down. Our
+jurisdiction, our town, and we're standing here like decorations while
+they... *lowers voice* best not to speak of it."
+
+===============================================================================
+RUMORS THAT CAN BE GENERATED
+===============================================================================
+
+TRUE RUMORS:
+- "The Luminary Inquest has arrived in [town]. No vampire shall escape justice!"
+- "The Inquest executed 5 vampires in Havenbrook. Public executions, as usual."
+- "The Luminaries swept through Millhaven. Papers were checked, vampires were found."
+
+DISTORTED RUMORS:
+- "The Inquest came through town. People disappeared. They say it was vampires."
+- "Sun Enforcers were here yesterday. Markets emptied. Taverns went silent."
+- "Religious folk doing something violent to the north. As usual."
+
+FALSE RUMORS:
+- "The Luminary Inquest is secretly controlled by vampires!"
+- "I heard the Inquest takes bribes to overlook 'irregularities' in papers."
+- "They say if you're pure of heart, the Luminaries can't touch you." (FALSE!)
+
+===============================================================================
+ATMOSPHERIC DESCRIPTIONS
+===============================================================================
+
+INQUEST ARRIVAL:
+"The white cloaks appeared at dawn, sun insignias gleaming. The market square
+emptied in moments. Shutters closed. Children were ushered inside. The
+Luminary Inquest had arrived, and the town held its breath."
+
+DOCUMENTATION CHECK:
+"The Luminary's gloved hand extended expectantly. 'Papers.' The single word
+carried the weight of absolute authority. Behind him, two more white cloaks
+waited, hands resting on sword hilts."
+
+AFTER INQUEST LEAVES:
+"Three days since the Luminaries left. The tavern is still half-empty.
+Neighbors avoid speaking of what they saw. Seven people were taken.
+'Administrative resolution,' they called it. No one believes that."
+
+===============================================================================
+MECHANICAL INTEGRATION (FUTURE)
+===============================================================================
+
+POTENTIAL GAME SYSTEMS:
+1. Documentation System:
+   - Player must maintain valid papers
+   - Papers can be forged, stolen, or legitimate
+   - Inquest checks can occur at town entrances
+
+2. Reputation with Inquest:
+   - Too much attention = investigation
+   - Helping wanted criminals = suspicion
+   - Clean record = less harassment
+
+3. Inquest Events:
+   - Random town visits
+   - Public executions (witness or avoid)
+   - Document checks
+   - NPC disappearances
+
+4. Quest Lines:
+   - Help someone escape Inquest
+   - Work with Inquest (morally grey choice)
+   - Investigate Inquest abuses
+   - Acquire forged documents
+
+===============================================================================
+WORLD-BUILDING IMPACT
+===============================================================================
+
+THEMES REINFORCED:
+✓ Price of security vs. freedom
+✓ Institutional power vs. individual rights
+✓ Compliance through fear
+✓ Bureaucracy as weapon
+✓ Identity as controlled resource
+✓ Innocence not equaling safety
+
+TENSIONS CREATED:
+✓ Empire vs. marginalized peoples
+✓ Safety vs. liberty
+✓ Order vs. justice
+✓ Divine mandate vs. mortal suffering
+✓ Public good vs. individual tragedy
+
+NARRATIVE OPPORTUNITIES:
+✓ Moral dilemmas (help fugitive vs. stay safe)
+✓ Political intrigue (who controls the Inquest?)
+✓ Personal stories (family member taken)
+✓ Resistance movements (underground papers)
+✓ Cultural conflicts (different races, different treatment)
+
+===============================================================================
+SUMMARY
+===============================================================================
+
+STATUS: ✅ COMPLETE
+
+The Luminary Inquest has been fully integrated into the game world as a
+canonical enforcement body within the Holy Empire. The organization exists
+with comprehensive lore covering:
+
+✓ Authority structure and mandate
+✓ Methods and reputation
+✓ Public perception and compliance
+✓ Enforcement of identity documentation
+✓ Composition and culture
+✓ Relationships with other factions and races
+✓ Integration into rumors system
+✓ Human race lore references
+
+The Inquest now provides:
+- A powerful antagonistic force for story hooks
+- Context for marginalized races' mistrust
+- Atmospheric tension in imperial territories
+- Moral complexity in law enforcement
+- Rich NPC dialogue opportunities
+- Quest and event potential
+
+The world is now more dangerous, more complex, and more alive with the
+addition of this feared institution. Citizens keep their papers close,
+taverns fall silent at the sight of white cloaks, and the Luminary Inquest
+enforces not just law—but existence itself.
+
+===============================================================================
+END OF INTEGRATION REPORT
+===============================================================================
+
+"When the Luminaries arrive, jurisdictions collapse inward.
+What matters is what can be proven, recorded, and sanctioned.
+Innocence does not guarantee safety."
+
+- Common knowledge across the Holy Empire
+

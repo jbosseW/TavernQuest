@@ -1,0 +1,1716 @@
+-- Fishing Game Mode - Catch fish and sell them!
+-- A relaxing fishing minigame with different fish types, locations, shop, and collection
+
+local Fishing = {}
+local UIAssets = require("uiassets")
+local Progression = require("progression")
+local Backpack = require("backpack")
+local Tutorials = require("tutorials")
+
+-- Font cache for performance
+local fontCache = {}
+local function getFont(size)
+    if not fontCache[size] then
+        fontCache[size] = love.graphics.newFont(size)
+    end
+    return fontCache[size]
+end
+
+-- Game state
+local state = {
+    active = false,
+    casting = false,
+    reeling = false,
+    fishOnLine = nil,
+    castPower = 0,
+    lineDepth = 0,
+    tension = 0,
+    fishCaught = {},        -- {fishId = {count, bestWeight}}
+    totalFishCaught = 0,
+    currentLocation = "pond",
+    currentRod = "basic",
+    currentBait = "worm",
+    baitCount = 10,
+    unlockedLocations = {pond = true},
+    ownedRods = {basic = true},
+
+    -- UI state
+    showShop = false,
+    showCollection = false,
+    showEmployees = false,
+    shopTab = "rods",       -- rods, bait, locations, upgrades
+    notification = nil,
+    notificationTimer = 0,
+    lastCatch = nil,
+    lastCatchTimer = 0,
+
+    -- Visual state
+    bobberY = 0,
+    bobberBob = 0,
+    lineWiggle = 0,
+    splashParticles = {},
+    waterRipples = {},
+
+    -- Fish on line indicator
+    fishBiteTimer = 0,
+    fishBiteFlash = false,
+    reelingIndicator = 0,
+
+    -- Input state for continuous reeling
+    spaceHeld = false,
+
+    -- Employees and upgrades
+    employees = {},
+    upgrades = {},
+}
+
+-- Fish types with rarity, value, and depth requirements
+local FISH_TYPES = {
+    -- Common fish (pond)
+    {id = "minnow", name = "Minnow", value = 5, rarity = 0.40, minDepth = 0, maxDepth = 30, locations = {"pond", "river"}, minWeight = 0.1, maxWeight = 0.3, color = {0.7, 0.7, 0.8}},
+    {id = "carp", name = "Carp", value = 15, rarity = 0.25, minDepth = 20, maxDepth = 60, locations = {"pond", "river"}, minWeight = 1, maxWeight = 5, color = {0.6, 0.5, 0.3}},
+    {id = "bass", name = "Bass", value = 25, rarity = 0.15, minDepth = 30, maxDepth = 80, locations = {"pond", "river", "lake"}, minWeight = 2, maxWeight = 8, color = {0.3, 0.5, 0.3}},
+    {id = "trout", name = "Trout", value = 35, rarity = 0.10, minDepth = 40, maxDepth = 90, locations = {"river", "lake"}, minWeight = 1, maxWeight = 6, color = {0.8, 0.6, 0.5}},
+    {id = "salmon", name = "Salmon", value = 50, rarity = 0.06, minDepth = 50, maxDepth = 100, locations = {"river", "ocean"}, minWeight = 3, maxWeight = 15, color = {0.9, 0.5, 0.4}},
+
+    -- Rare fish
+    {id = "catfish", name = "Catfish", value = 75, rarity = 0.03, minDepth = 60, maxDepth = 100, locations = {"lake", "river"}, minWeight = 5, maxWeight = 25, color = {0.4, 0.35, 0.3}},
+    {id = "pike", name = "Pike", value = 100, rarity = 0.02, minDepth = 70, maxDepth = 100, locations = {"lake"}, minWeight = 4, maxWeight = 20, color = {0.4, 0.5, 0.3}},
+
+    -- Ocean fish
+    {id = "mackerel", name = "Mackerel", value = 40, rarity = 0.15, minDepth = 30, maxDepth = 70, locations = {"ocean"}, minWeight = 1, maxWeight = 4, color = {0.3, 0.5, 0.6}},
+    {id = "tuna", name = "Tuna", value = 120, rarity = 0.05, minDepth = 60, maxDepth = 100, locations = {"ocean"}, minWeight = 20, maxWeight = 100, color = {0.3, 0.3, 0.5}},
+    {id = "swordfish", name = "Swordfish", value = 200, rarity = 0.02, minDepth = 80, maxDepth = 100, locations = {"ocean"}, minWeight = 50, maxWeight = 200, color = {0.4, 0.4, 0.5}},
+
+    -- Legendary fish
+    {id = "golden_carp", name = "Golden Carp", value = 500, rarity = 0.005, minDepth = 50, maxDepth = 100, locations = {"pond", "lake"}, minWeight = 2, maxWeight = 10, color = {1, 0.85, 0.3}},
+    {id = "sea_dragon", name = "Sea Dragon", value = 1000, rarity = 0.001, minDepth = 90, maxDepth = 100, locations = {"ocean"}, minWeight = 100, maxWeight = 500, color = {0.3, 0.8, 0.9}},
+}
+
+-- Fishing locations
+local LOCATIONS = {
+    {id = "pond", name = "Village Pond", unlockCost = 0, fishBonus = 1.0, description = "Calm waters, good for beginners", waterColor = {0.2, 0.4, 0.5}},
+    {id = "river", name = "Forest River", unlockCost = 200, fishBonus = 1.2, description = "Flowing water, better catches", waterColor = {0.15, 0.35, 0.45}},
+    {id = "lake", name = "Mountain Lake", unlockCost = 800, fishBonus = 1.5, description = "Deep waters, rare fish", waterColor = {0.1, 0.3, 0.5}},
+    {id = "ocean", name = "Deep Ocean", unlockCost = 2500, fishBonus = 2.0, description = "Dangerous but legendary fish await", waterColor = {0.05, 0.2, 0.4}},
+}
+
+-- Fishing rods
+local RODS = {
+    {id = "basic", name = "Basic Rod", castPower = 50, reelSpeed = 1.0, tensionMax = 50, cost = 0, description = "A simple wooden rod"},
+    {id = "sturdy", name = "Sturdy Rod", castPower = 70, reelSpeed = 1.2, tensionMax = 75, cost = 300, description = "Reinforced for bigger catches"},
+    {id = "pro", name = "Pro Rod", castPower = 90, reelSpeed = 1.5, tensionMax = 100, cost = 1200, description = "Professional grade equipment"},
+    {id = "master", name = "Master Rod", castPower = 100, reelSpeed = 2.0, tensionMax = 150, cost = 5000, description = "The ultimate fishing rod"},
+}
+
+-- Bait types
+local BAITS = {
+    {id = "worm", name = "Worm", rarityBonus = 0, cost = 5, description = "Basic bait, attracts common fish"},
+    {id = "cricket", name = "Cricket", rarityBonus = 0.02, cost = 15, description = "Attracts mid-tier fish"},
+    {id = "shrimp", name = "Shrimp", rarityBonus = 0.05, cost = 35, description = "Good for rare catches"},
+    {id = "golden_lure", name = "Golden Lure", rarityBonus = 0.15, cost = 150, description = "Legendary fish love this!"},
+}
+
+-- Employee types for fishing dock
+local EMPLOYEE_TYPES = {
+    {id = "dock_hand", name = "Dock Hand", baseSalary = 20, hireCost = 100, effect = "passive_coins", effectValue = 15, desc = "Earns passive income from dock duties"},
+    {id = "bait_collector", name = "Bait Collector", baseSalary = 30, hireCost = 200, effect = "free_bait", effectValue = 2, desc = "Provides free bait each day"},
+    {id = "fishing_instructor", name = "Fishing Instructor", baseSalary = 50, hireCost = 500, effect = "xp_bonus", effectValue = 0.15, desc = "+15% XP from fishing"},
+    {id = "fish_finder", name = "Fish Finder", baseSalary = 75, hireCost = 800, effect = "rare_bonus", effectValue = 0.05, desc = "+5% chance for rare fish"},
+    {id = "master_angler", name = "Master Angler", baseSalary = 100, hireCost = 1500, effect = "value_bonus", effectValue = 0.20, desc = "+20% fish selling value"},
+}
+
+-- Upgrades for fishing
+local UPGRADES = {
+    {id = "line_strength", name = "Reinforced Line", cost = 300, maxLevel = 5, effect = "tension_bonus", effectPerLevel = 10, desc = "+10 max tension per level"},
+    {id = "quick_reel", name = "Quick Reel", cost = 500, maxLevel = 3, effect = "reel_speed", effectPerLevel = 0.15, desc = "+15% reel speed per level"},
+    {id = "fish_sense", name = "Fish Sense", cost = 400, maxLevel = 4, effect = "bite_rate", effectPerLevel = 0.10, desc = "+10% bite chance per level"},
+    {id = "lucky_charm", name = "Lucky Charm", cost = 750, maxLevel = 3, effect = "rare_chance", effectPerLevel = 0.03, desc = "+3% rare fish chance per level"},
+    {id = "tackle_box", name = "Tackle Box", cost = 600, maxLevel = 5, effect = "bait_save", effectPerLevel = 0.05, desc = "+5% chance to not consume bait per level"},
+}
+
+-- Get fish by ID
+local function getFishById(id)
+    for _, fish in ipairs(FISH_TYPES) do
+        if fish.id == id then return fish end
+    end
+    return nil
+end
+
+-- Get location by ID
+local function getLocationById(id)
+    for _, loc in ipairs(LOCATIONS) do
+        if loc.id == id then return loc end
+    end
+    return LOCATIONS[1]
+end
+
+-- Get rod by ID
+local function getRodById(id)
+    for _, rod in ipairs(RODS) do
+        if rod.id == id then return rod end
+    end
+    return RODS[1]
+end
+
+-- Get bait by ID
+local function getBaitById(id)
+    for _, bait in ipairs(BAITS) do
+        if bait.id == id then return bait end
+    end
+    return BAITS[1]
+end
+
+-- Forward declaration for passive income update
+local updateFishingPassiveIncome
+
+-- Initialize fishing game
+function Fishing.init()
+    state.active = true
+    state.casting = false
+    state.reeling = false
+    state.fishOnLine = nil
+    state.castPower = 0
+    state.lineDepth = 0
+    state.tension = 0
+    state.showShop = false
+    state.showCollection = false
+    state.showEmployees = false
+    state.fishBiteTimer = 0
+    state.fishBiteFlash = false
+    state.reelingIndicator = 0
+    state.spaceHeld = false
+    state.fishEscapeTimer = 0
+
+    -- Load saved fishing data or initialize
+    if not PlayerData.fishingData then
+        PlayerData.fishingData = {
+            fishCaught = {},
+            totalFishCaught = 0,
+            unlockedLocations = {pond = true},
+            ownedRods = {basic = true},
+            currentRod = "basic",
+            currentBait = "worm",
+            baitCount = 10,
+            currentLocation = "pond",
+            employees = {},
+            upgrades = {},
+        }
+        savePlayerData()
+    end
+
+    -- Load state from PlayerData
+    state.fishCaught = PlayerData.fishingData.fishCaught or {}
+    state.totalFishCaught = PlayerData.fishingData.totalFishCaught or 0
+    state.unlockedLocations = PlayerData.fishingData.unlockedLocations or {pond = true}
+    state.ownedRods = PlayerData.fishingData.ownedRods or {basic = true}
+    state.currentRod = PlayerData.fishingData.currentRod or "basic"
+    state.currentBait = PlayerData.fishingData.currentBait or "worm"
+    state.baitCount = PlayerData.fishingData.baitCount or 10
+    state.currentLocation = PlayerData.fishingData.currentLocation or "pond"
+    state.employees = PlayerData.fishingData.employees or {}
+    state.upgrades = PlayerData.fishingData.upgrades or {}
+
+    Backpack.init()
+
+    -- Calculate initial passive income rate
+    updateFishingPassiveIncome()
+
+    -- Check if tutorial should start
+    if not Tutorials.hasCompleted("fishing") then
+        Tutorials.startTutorial("fishing")
+    end
+end
+
+-- Called after init to update passive income
+function Fishing.updatePassiveIncome()
+    updateFishingPassiveIncome()
+end
+
+-- Save fishing data
+local function saveFishingData()
+    PlayerData.fishingData = {
+        fishCaught = state.fishCaught,
+        totalFishCaught = state.totalFishCaught,
+        unlockedLocations = state.unlockedLocations,
+        ownedRods = state.ownedRods,
+        currentRod = state.currentRod,
+        currentBait = state.currentBait,
+        baitCount = state.baitCount,
+        currentLocation = state.currentLocation,
+        employees = state.employees,
+        upgrades = state.upgrades,
+    }
+    savePlayerData()
+end
+
+-- Calculate and update passive income from fishing employees
+updateFishingPassiveIncome = function()
+    local totalRate = 0
+
+    -- Calculate income from employees with passive_coins effect
+    for _, emp in ipairs(state.employees) do
+        for _, empType in ipairs(EMPLOYEE_TYPES) do
+            if empType.id == emp.type and empType.effect == "passive_coins" then
+                -- Convert daily rate to per-second rate (assuming 8 hour "day")
+                -- effectValue is daily income, divide by 28800 (8*60*60) for per-second
+                local perSecondRate = empType.effectValue / 28800
+                totalRate = totalRate + perSecondRate
+            end
+        end
+    end
+
+    -- Use global helper to update passive income
+    if updatePassiveIncomeSource then
+        updatePassiveIncomeSource("fishing", totalRate)
+    end
+end
+
+-- Get upgrade level
+local function getUpgradeLevel(upgradeId)
+    return state.upgrades[upgradeId] or 0
+end
+
+-- Get total bonus from employees of a specific type
+local function getEmployeeBonus(effectType)
+    local total = 0
+    for _, emp in ipairs(state.employees) do
+        for _, empType in ipairs(EMPLOYEE_TYPES) do
+            if empType.id == emp.type and empType.effect == effectType then
+                total = total + empType.effectValue
+            end
+        end
+    end
+    return total
+end
+
+-- Get total bonus from upgrades of a specific type
+local function getUpgradeBonus(effectType)
+    local total = 0
+    for _, upg in ipairs(UPGRADES) do
+        local level = getUpgradeLevel(upg.id)
+        if upg.effect == effectType and level > 0 then
+            total = total + (upg.effectPerLevel * level)
+        end
+    end
+    return total
+end
+
+-- Add notification
+local function addNotification(text, duration)
+    state.notification = text
+    state.notificationTimer = duration or 2
+end
+
+-- Add splash particles
+local function addSplash(x, y)
+    for i = 1, 8 do
+        table.insert(state.splashParticles, {
+            x = x,
+            y = y,
+            vx = (math.random() - 0.5) * 100,
+            vy = -math.random() * 80 - 40,
+            life = 0.5 + math.random() * 0.3,
+            size = 3 + math.random() * 4,
+        })
+    end
+end
+
+-- Add water ripple
+local function addRipple(x, y)
+    table.insert(state.waterRipples, {
+        x = x,
+        y = y,
+        radius = 5,
+        maxRadius = 40 + math.random() * 20,
+        alpha = 0.6,
+    })
+end
+
+-- Update fishing game
+function Fishing.update(dt)
+    if not state.active then return end
+
+    -- Update tutorial
+    Tutorials.update(dt)
+
+    -- Update notification timer
+    if state.notification then
+        state.notificationTimer = state.notificationTimer - dt
+        if state.notificationTimer <= 0 then
+            state.notification = nil
+        end
+    end
+
+    -- Update last catch display
+    if state.lastCatch then
+        state.lastCatchTimer = state.lastCatchTimer - dt
+        if state.lastCatchTimer <= 0 then
+            state.lastCatch = nil
+        end
+    end
+
+    -- Update particles
+    for i = #state.splashParticles, 1, -1 do
+        local p = state.splashParticles[i]
+        p.x = p.x + p.vx * dt
+        p.y = p.y + p.vy * dt
+        p.vy = p.vy + 200 * dt  -- Gravity
+        p.life = p.life - dt
+        if p.life <= 0 then
+            table.remove(state.splashParticles, i)
+        end
+    end
+
+    -- Update ripples
+    for i = #state.waterRipples, 1, -1 do
+        local r = state.waterRipples[i]
+        r.radius = r.radius + 40 * dt
+        r.alpha = r.alpha - dt * 0.8
+        if r.alpha <= 0 or r.radius >= r.maxRadius then
+            table.remove(state.waterRipples, i)
+        end
+    end
+
+    -- Don't update gameplay if shop/collection is open or tutorial is active
+    if state.showShop or state.showCollection or state.showEmployees or Tutorials.isActive() then
+        return
+    end
+
+    -- Update casting power if holding cast
+    if state.casting then
+        state.castPower = state.castPower + dt * 80
+        if state.castPower > 100 then
+            state.castPower = 100
+        end
+    end
+
+    -- Update bobber animation
+    if state.lineDepth > 0 then
+        state.bobberBob = state.bobberBob + dt * 3
+        state.bobberY = math.sin(state.bobberBob) * 3
+    end
+
+    -- Update fish bite flash animation
+    if state.fishOnLine then
+        state.fishBiteTimer = state.fishBiteTimer + dt
+        state.fishBiteFlash = math.floor(state.fishBiteTimer * 4) % 2 == 0
+    else
+        state.fishBiteTimer = 0
+        state.fishBiteFlash = false
+    end
+
+    -- Update reeling indicator
+    if state.reeling then
+        state.reelingIndicator = math.min(1, state.reelingIndicator + dt * 4)
+    else
+        state.reelingIndicator = math.max(0, state.reelingIndicator - dt * 3)
+    end
+
+    -- Update fishing when line is in water
+    if state.lineDepth > 0 and not state.casting then
+        -- Continuous reeling while space is held
+        if state.spaceHeld and state.lineDepth > 0 then
+            state.reeling = true
+            local rod = Fishing.getCurrentRod()
+            local reelSpeedBonus = 1 + getUpgradeBonus("reel_speed")
+            local reelAmount = 50 * rod.reelSpeed * reelSpeedBonus * dt  -- Reel speed per second
+
+            if state.fishOnLine then
+                -- Reeling with fish - slower and adds tension
+                state.lineDepth = state.lineDepth - reelAmount * 0.7
+                state.tension = state.tension + 8 * dt  -- Tension builds while reeling
+
+                -- Check if caught
+                if state.lineDepth <= 0 then
+                    state.lineDepth = 0
+                    Fishing.catchFish()
+                end
+            else
+                -- Reeling without fish - faster, no tension
+                state.lineDepth = state.lineDepth - reelAmount * 1.5
+                if state.lineDepth <= 0 then
+                    state.lineDepth = 0
+                    state.reeling = false
+                end
+            end
+        else
+            state.reeling = false
+        end
+
+        -- Random chance for fish to bite (only when not reeling)
+        if not state.fishOnLine and not state.reeling then
+            local bait = getBaitById(state.currentBait)
+            local biteRateBonus = 1 + getUpgradeBonus("bite_rate")  -- Fish Sense upgrade
+            -- Higher base chance: 0.8 base + bait bonus, multiply by dt for per-frame chance
+            local biteChance = (0.8 + (bait.rarityBonus * 3)) * biteRateBonus  -- Better bait = more bites
+            if math.random() < biteChance * dt then
+                Fishing.tryHookFish()
+            end
+        end
+
+        -- If fish on line, it fights (reduces tension when not reeling)
+        if state.fishOnLine then
+            state.lineWiggle = state.lineWiggle + dt * 20
+            local fightStrength = state.fishOnLine.fish.value / 100  -- Valuable fish fight harder
+
+            if state.reeling then
+                -- Fish fights harder when being reeled
+                state.tension = state.tension + (math.random() * 0.5) * dt * 15 * (1 + fightStrength)
+            else
+                -- Tension slowly decreases when not reeling, but fish may tug
+                state.tension = state.tension + (math.random() - 0.6) * dt * 20 * (1 + fightStrength)
+            end
+
+            if state.tension < 0 then state.tension = 0 end
+
+            -- Fish may escape if you don't reel for too long
+            if not state.reeling then
+                state.fishEscapeTimer = (state.fishEscapeTimer or 0) + dt
+                if state.fishEscapeTimer > 8 then  -- 8 seconds without reeling
+                    addNotification(state.fishOnLine.fish.name .. " got away! Reel faster!", 2)
+                    state.fishOnLine = nil
+                    state.tension = 0
+                    state.fishEscapeTimer = 0
+                end
+            else
+                state.fishEscapeTimer = 0
+            end
+        end
+    end
+
+    -- Check for line break
+    local rod = Fishing.getCurrentRod()
+    if state.tension > rod.tensionMax then
+        Fishing.lineBreak()
+    end
+end
+
+-- Try to hook a fish based on current conditions
+function Fishing.tryHookFish()
+    local location = state.currentLocation
+    local depth = state.lineDepth
+    local bait = getBaitById(state.currentBait)
+
+    -- Calculate rarity bonuses from employees and upgrades
+    local rareBonus = getEmployeeBonus("rare_bonus") + getUpgradeBonus("rare_chance")
+
+    -- Find eligible fish
+    local eligible = {}
+    for _, fish in ipairs(FISH_TYPES) do
+        local locationMatch = false
+        for _, loc in ipairs(fish.locations) do
+            if loc == location then
+                locationMatch = true
+                break
+            end
+        end
+
+        if locationMatch and depth >= fish.minDepth and depth <= fish.maxDepth then
+            local chance = fish.rarity + bait.rarityBonus + rareBonus
+            if math.random() < chance then
+                table.insert(eligible, fish)
+            end
+        end
+    end
+
+    if #eligible > 0 then
+        local fish = eligible[math.random(#eligible)]
+        local weight = fish.minWeight + math.random() * (fish.maxWeight - fish.minWeight)
+        weight = math.floor(weight * 10) / 10  -- Round to 1 decimal
+
+        state.fishOnLine = {
+            fish = fish,
+            weight = weight,
+        }
+        state.tension = 15 + fish.value / 20  -- Starting tension based on fish value
+        state.lineWiggle = 0
+
+        -- Visual feedback
+        local screenW = love.graphics.getWidth()
+        addSplash(screenW / 2, love.graphics.getHeight() * 0.5)
+        addRipple(screenW / 2, love.graphics.getHeight() * 0.5)
+
+        addNotification(fish.name .. " on the line!", 1.5)
+    end
+end
+
+-- Get current rod stats (with upgrade bonuses applied)
+function Fishing.getCurrentRod()
+    local rod = getRodById(state.currentRod)
+    -- Create a copy with upgrade bonuses
+    local tensionBonus = getUpgradeBonus("tension_bonus")
+    return {
+        id = rod.id,
+        name = rod.name,
+        castPower = rod.castPower,
+        reelSpeed = rod.reelSpeed,
+        tensionMax = rod.tensionMax + tensionBonus,
+        cost = rod.cost,
+        description = rod.description
+    }
+end
+
+-- Get current bait stats
+function Fishing.getCurrentBait()
+    return getBaitById(state.currentBait)
+end
+
+-- Line breaks - fish escapes
+function Fishing.lineBreak()
+    local fishName = state.fishOnLine and state.fishOnLine.fish.name or "Fish"
+    addNotification("Line snapped! " .. fishName .. " got away!", 2)
+
+    state.fishOnLine = nil
+    state.tension = 0
+    state.lineDepth = 0
+    state.casting = false
+    state.reeling = false
+    state.lineWiggle = 0
+
+    -- Visual feedback
+    local screenW = love.graphics.getWidth()
+    addSplash(screenW / 2, love.graphics.getHeight() * 0.5)
+end
+
+-- Catch the fish!
+function Fishing.catchFish()
+    if state.fishOnLine then
+        local catch = state.fishOnLine
+        local fish = catch.fish
+        local weight = catch.weight
+        local location = getLocationById(state.currentLocation)
+
+        -- Calculate value with location bonus and weight bonus
+        local weightBonus = 1 + (weight / fish.maxWeight) * 0.5  -- Up to 50% bonus for max weight
+        local valueBonus = 1 + getEmployeeBonus("value_bonus")  -- Master Angler bonus
+        local value = math.floor(fish.value * location.fishBonus * weightBonus * valueBonus)
+
+        -- Add to player's coins
+        PlayerData.coins = PlayerData.coins + value
+
+        -- Award XP based on fish rarity with XP bonus from instructor
+        local xpBonus = 1 + getEmployeeBonus("xp_bonus")
+        local xpReward = math.floor((Progression.XP_REWARDS.catch_fish or 10) * xpBonus)
+        if fish.value >= 100 then
+            xpReward = Progression.XP_REWARDS.catch_rare or 25
+        end
+        if fish.value >= 500 then
+            xpReward = xpReward * 2  -- Double XP for legendary
+        end
+        Progression.addXP(xpReward, "fishing")
+
+        -- Update fish caught records
+        if not state.fishCaught[fish.id] then
+            state.fishCaught[fish.id] = {count = 0, bestWeight = 0}
+        end
+        state.fishCaught[fish.id].count = state.fishCaught[fish.id].count + 1
+        if weight > state.fishCaught[fish.id].bestWeight then
+            state.fishCaught[fish.id].bestWeight = weight
+        end
+        state.totalFishCaught = state.totalFishCaught + 1
+
+        -- Use bait (with tackle box upgrade chance to save)
+        local baitSaveChance = getUpgradeBonus("bait_save")
+        if math.random() >= baitSaveChance then
+            state.baitCount = state.baitCount - 1
+            if state.baitCount <= 0 then
+                state.baitCount = 0
+                state.currentBait = "worm"  -- Fall back to basic
+                addNotification("Out of bait! Switched to worms.", 2)
+            end
+        else
+            addNotification("Tackle Box saved your bait!", 1)
+        end
+
+        -- Show catch result
+        state.lastCatch = {fish = fish, weight = weight, value = value}
+        state.lastCatchTimer = 4
+
+        -- Reset state
+        state.fishOnLine = nil
+        state.tension = 0
+        state.lineDepth = 0
+        state.lineWiggle = 0
+
+        -- Visual feedback
+        local screenW = love.graphics.getWidth()
+        addSplash(screenW / 2, love.graphics.getHeight() * 0.5)
+
+        -- Save progress
+        saveFishingData()
+
+        return fish, value, weight
+    end
+    return nil
+end
+
+-- Buy rod
+function Fishing.buyRod(rodId)
+    local rod = getRodById(rodId)
+    if not rod then return false, "Invalid rod" end
+    if state.ownedRods[rodId] then return false, "Already owned" end
+    if PlayerData.coins < rod.cost then return false, "Not enough coins" end
+
+    PlayerData.coins = PlayerData.coins - rod.cost
+    state.ownedRods[rodId] = true
+    state.currentRod = rodId
+    saveFishingData()
+    addNotification("Purchased " .. rod.name .. "!", 2)
+    return true
+end
+
+-- Buy bait
+function Fishing.buyBait(baitId, amount)
+    local bait = getBaitById(baitId)
+    if not bait then return false, "Invalid bait" end
+    local cost = bait.cost * amount
+    if PlayerData.coins < cost then return false, "Not enough coins" end
+
+    PlayerData.coins = PlayerData.coins - cost
+    if state.currentBait == baitId then
+        state.baitCount = state.baitCount + amount
+    else
+        state.currentBait = baitId
+        state.baitCount = amount
+    end
+    saveFishingData()
+    addNotification("Purchased " .. amount .. "x " .. bait.name .. "!", 2)
+    return true
+end
+
+-- Cycle to next available bait type (or switch to worms if out)
+function Fishing.cycleBait()
+    -- Don't allow changing bait while fishing
+    if state.lineDepth > 0 or state.casting or state.fishOnLine then
+        addNotification("Can't change bait while fishing!", 1.5)
+        return
+    end
+
+    -- If out of current bait, switch to worms
+    if state.baitCount <= 0 then
+        state.currentBait = "worm"
+        state.baitCount = 5
+        addNotification("Out of bait! Free worms x5", 1.5)
+        saveFishingData()
+        return
+    end
+
+    -- Show current bait info and prompt to use shop
+    local bait = getBaitById(state.currentBait)
+    addNotification("Using " .. bait.name .. " x" .. state.baitCount .. " | [TAB] Shop for more", 2)
+end
+
+-- Unlock location
+function Fishing.unlockLocation(locationId)
+    local location = getLocationById(locationId)
+    if not location then return false, "Invalid location" end
+    if state.unlockedLocations[locationId] then return false, "Already unlocked" end
+    if PlayerData.coins < location.unlockCost then return false, "Not enough coins" end
+
+    PlayerData.coins = PlayerData.coins - location.unlockCost
+    state.unlockedLocations[locationId] = true
+    state.currentLocation = locationId
+    saveFishingData()
+    addNotification("Unlocked " .. location.name .. "!", 2)
+    return true
+end
+
+-- Draw the fishing game
+function Fishing.draw()
+    local screenW, screenH = love.graphics.getDimensions()
+    local mx, my = love.mouse.getPosition()
+
+    UIAssets.clearTooltip()
+
+    -- Draw background
+    local location = getLocationById(state.currentLocation)
+    if not UIAssets.drawGameBackground("fishing", 1) then
+        -- Fallback gradient background (sky)
+        love.graphics.setColor(0.4, 0.6, 0.8)
+        love.graphics.rectangle("fill", 0, 0, screenW, screenH * 0.4)
+
+        -- Water
+        love.graphics.setColor(location.waterColor)
+        love.graphics.rectangle("fill", 0, screenH * 0.4, screenW, screenH * 0.6)
+    end
+
+    -- Draw water ripples
+    for _, r in ipairs(state.waterRipples) do
+        love.graphics.setColor(1, 1, 1, r.alpha * 0.3)
+        love.graphics.setLineWidth(2)
+        love.graphics.circle("line", r.x, r.y, r.radius)
+    end
+    love.graphics.setLineWidth(1)
+
+    -- Draw fishing line and bobber if cast
+    if state.lineDepth > 0 or state.casting then
+        local rodX = screenW * 0.3
+        local rodY = screenH * 0.35
+        local bobberX = screenW / 2
+        local bobberBaseY = screenH * 0.5
+        local bobberY = bobberBaseY + state.bobberY
+
+        -- Line wiggle when fish is hooked
+        local wiggleOffset = 0
+        if state.fishOnLine then
+            wiggleOffset = math.sin(state.lineWiggle) * 8
+        end
+
+        -- Draw fishing line
+        love.graphics.setColor(0.3, 0.3, 0.3)
+        love.graphics.setLineWidth(2)
+        love.graphics.line(rodX, rodY, bobberX + wiggleOffset, bobberY)
+        love.graphics.setLineWidth(1)
+
+        -- Draw bobber
+        if state.lineDepth > 0 then
+            love.graphics.setColor(1, 0.3, 0.2)
+            love.graphics.circle("fill", bobberX + wiggleOffset, bobberY, 8)
+            love.graphics.setColor(1, 1, 1)
+            love.graphics.circle("fill", bobberX + wiggleOffset, bobberY - 4, 4)
+
+            -- Depth indicator line going down
+            love.graphics.setColor(0.3, 0.3, 0.3, 0.5)
+            local depthLineLen = math.min(state.lineDepth, 80)
+            love.graphics.line(bobberX + wiggleOffset, bobberY + 8, bobberX + wiggleOffset, bobberY + 8 + depthLineLen)
+        end
+    end
+
+    -- Draw splash particles
+    for _, p in ipairs(state.splashParticles) do
+        local alpha = p.life / 0.8
+        love.graphics.setColor(0.7, 0.85, 1, alpha)
+        love.graphics.circle("fill", p.x, p.y, p.size * alpha)
+    end
+
+    -- Draw UI overlay (stats panel)
+    love.graphics.setColor(0, 0, 0, 0.7)
+    love.graphics.rectangle("fill", 10, 10, 220, 140, 8, 8)
+
+    love.graphics.setColor(0.4, 0.7, 1)
+    love.graphics.setFont(getFont(20))
+    love.graphics.print("FISHING", 20, 15)
+
+    UIAssets.drawCurrencyWithTooltip("coins", PlayerData.coins, 20, 42, 16)
+
+    love.graphics.setColor(0.8, 0.8, 0.8)
+    love.graphics.setFont(getFont(12))
+    love.graphics.print("Location: " .. location.name, 20, 68)
+    love.graphics.print("Depth: " .. math.floor(state.lineDepth) .. "m", 20, 88)
+
+    local rod = Fishing.getCurrentRod()
+    local bait = Fishing.getCurrentBait()
+    love.graphics.print("Rod: " .. rod.name, 20, 108)
+    love.graphics.print("Bait: " .. bait.name .. " x" .. state.baitCount, 20, 128)
+
+    -- Draw "Waiting for bite" indicator when line is in water but no fish yet
+    if state.lineDepth > 0 and not state.fishOnLine and not state.casting then
+        local waitPulse = (math.sin(love.timer.getTime() * 2) + 1) / 2  -- 0 to 1 pulsing
+
+        if state.reeling then
+            -- Reeling in (no fish)
+            love.graphics.setColor(0.3, 0.5, 0.4, 0.85)
+            love.graphics.rectangle("fill", screenW/2 - 100, 20, 200, 55, 8, 8)
+            love.graphics.setColor(0.5, 0.8, 0.6, 0.8)
+            love.graphics.setLineWidth(2)
+            love.graphics.rectangle("line", screenW/2 - 100, 20, 200, 55, 8, 8)
+            love.graphics.setLineWidth(1)
+
+            love.graphics.setColor(1, 1, 1, 0.95)
+            love.graphics.setFont(getFont(14))
+            love.graphics.printf("⚙️ Reeling in...", screenW/2 - 90, 28, 180, "center")
+            love.graphics.setColor(0.8, 0.9, 0.8, 0.9)
+            love.graphics.setFont(getFont(11))
+            love.graphics.printf("Depth: " .. math.floor(state.lineDepth) .. "m", screenW/2 - 90, 48, 180, "center")
+        else
+            -- Waiting for bite
+            love.graphics.setColor(0.2, 0.4, 0.6, 0.7 + waitPulse * 0.2)
+            love.graphics.rectangle("fill", screenW/2 - 110, 20, 220, 60, 8, 8)
+            love.graphics.setColor(0.4, 0.7, 1, 0.6 + waitPulse * 0.3)
+            love.graphics.setLineWidth(2)
+            love.graphics.rectangle("line", screenW/2 - 110, 20, 220, 60, 8, 8)
+            love.graphics.setLineWidth(1)
+
+            love.graphics.setColor(1, 1, 1, 0.9)
+            love.graphics.setFont(getFont(14))
+            local dots = string.rep(".", math.floor(love.timer.getTime() * 2) % 4)
+            love.graphics.printf("Waiting for bite" .. dots, screenW/2 - 100, 26, 200, "center")
+            love.graphics.setColor(0.7, 0.8, 1, 0.8)
+            love.graphics.setFont(getFont(10))
+            love.graphics.printf("Depth: " .. math.floor(state.lineDepth) .. "m", screenW/2 - 100, 46, 200, "center")
+            love.graphics.setColor(0.6, 0.7, 0.8, 0.7)
+            love.graphics.setFont(getFont(9))
+            love.graphics.printf("[Hold SPACE to reel in]", screenW/2 - 100, 60, 200, "center")
+        end
+    end
+
+    -- Draw FISH ON LINE indicator (large, flashing)
+    if state.fishOnLine then
+        -- Flashing background
+        local flashAlpha = state.fishBiteFlash and 0.95 or 0.85
+        local flashColor = state.fishBiteFlash and {0.9, 0.3, 0.2} or {0.7, 0.2, 0.15}
+
+        love.graphics.setColor(flashColor[1], flashColor[2], flashColor[3], flashAlpha)
+        love.graphics.rectangle("fill", screenW/2 - 150, 20, 300, 100, 12, 12)
+
+        -- Flashing border
+        love.graphics.setColor(1, 1, state.fishBiteFlash and 0.3 or 0.6)
+        love.graphics.setLineWidth(4)
+        love.graphics.rectangle("line", screenW/2 - 150, 20, 300, 100, 12, 12)
+        love.graphics.setLineWidth(1)
+
+        -- FISH ON LINE! text
+        love.graphics.setColor(1, 1, 1)
+        love.graphics.setFont(getFont(20))
+        love.graphics.printf("🐟 FISH ON LINE! 🐟", screenW/2 - 140, 28, 280, "center")
+
+        -- Fish name
+        love.graphics.setColor(1, 0.95, 0.7)
+        love.graphics.setFont(getFont(16))
+        love.graphics.printf(state.fishOnLine.fish.name .. " (" .. state.fishOnLine.weight .. " kg)", screenW/2 - 140, 52, 280, "center")
+
+        -- Tension bar
+        local tensionPercent = state.tension / rod.tensionMax
+        local tensionColor = {0.2, 0.8, 0.2}
+        if tensionPercent > 0.8 then
+            tensionColor = {0.9, 0.2, 0.2}
+        elseif tensionPercent > 0.5 then
+            tensionColor = {0.9, 0.9, 0.2}
+        end
+
+        love.graphics.setColor(0.2, 0.2, 0.25)
+        love.graphics.rectangle("fill", screenW/2 - 130, 76, 260, 16, 4, 4)
+
+        love.graphics.setColor(tensionColor)
+        love.graphics.rectangle("fill", screenW/2 - 128, 78, 256 * tensionPercent, 12, 3, 3)
+
+        -- Tension label
+        love.graphics.setColor(1, 1, 1, 0.9)
+        love.graphics.setFont(getFont(10))
+        love.graphics.printf("TENSION - Hold SPACE to Reel!", screenW/2 - 130, 95, 260, "center")
+    end
+
+    -- Draw reeling indicator
+    if state.reelingIndicator > 0 and state.fishOnLine then
+        local reelingAlpha = state.reelingIndicator * 0.9
+        love.graphics.setColor(0.2, 0.7, 0.9, reelingAlpha)
+        love.graphics.rectangle("fill", screenW/2 - 80, 125, 160, 30, 6, 6)
+
+        love.graphics.setColor(1, 1, 1, reelingAlpha)
+        love.graphics.setFont(getFont(14))
+        love.graphics.printf("⚙️ REELING... ⚙️", screenW/2 - 75, 132, 150, "center")
+    end
+
+    -- Draw cast power meter
+    if state.casting then
+        love.graphics.setColor(0, 0, 0, 0.8)
+        love.graphics.rectangle("fill", screenW/2 - 120, screenH - 100, 240, 50, 8, 8)
+
+        love.graphics.setColor(0.2, 0.2, 0.25)
+        love.graphics.rectangle("fill", screenW/2 - 110, screenH - 90, 220, 20, 4, 4)
+
+        love.graphics.setColor(0.2, 0.6, 0.9)
+        love.graphics.rectangle("fill", screenW/2 - 108, screenH - 88, 216 * (state.castPower / 100), 16, 3, 3)
+
+        love.graphics.setColor(1, 1, 1)
+        love.graphics.setFont(getFont(12))
+        love.graphics.printf("Hold SPACE - Release to Cast", screenW/2 - 110, screenH - 65, 220, "center")
+    end
+
+    -- Draw "No Bait" warning when idle and out of bait
+    if state.baitCount <= 0 and state.lineDepth == 0 and not state.casting then
+        local warnPulse = (math.sin(love.timer.getTime() * 3) + 1) / 2
+        love.graphics.setColor(0.7, 0.3, 0.2, 0.8 + warnPulse * 0.15)
+        love.graphics.rectangle("fill", screenW/2 - 120, screenH - 110, 240, 50, 8, 8)
+        love.graphics.setColor(1, 0.5, 0.3, 0.9)
+        love.graphics.setLineWidth(2)
+        love.graphics.rectangle("line", screenW/2 - 120, screenH - 110, 240, 50, 8, 8)
+        love.graphics.setLineWidth(1)
+
+        love.graphics.setColor(1, 1, 1)
+        love.graphics.setFont(getFont(14))
+        love.graphics.printf("OUT OF BAIT!", screenW/2 - 110, screenH - 102, 220, "center")
+        love.graphics.setColor(1, 0.9, 0.7)
+        love.graphics.setFont(getFont(11))
+        love.graphics.printf("Press [Q] for free worms or [TAB] Shop", screenW/2 - 110, screenH - 82, 220, "center")
+    end
+
+    -- Draw "Ready to Cast" prompt when idle with bait
+    if state.baitCount > 0 and state.lineDepth == 0 and not state.casting and not state.fishOnLine then
+        love.graphics.setColor(0.2, 0.4, 0.3, 0.8)
+        love.graphics.rectangle("fill", screenW/2 - 100, screenH - 100, 200, 40, 8, 8)
+        love.graphics.setColor(0.4, 0.8, 0.5, 0.8)
+        love.graphics.setLineWidth(1)
+        love.graphics.rectangle("line", screenW/2 - 100, screenH - 100, 200, 40, 8, 8)
+
+        love.graphics.setColor(1, 1, 1)
+        love.graphics.setFont(getFont(13))
+        love.graphics.printf("Hold [SPACE] to Cast", screenW/2 - 90, screenH - 88, 180, "center")
+    end
+
+    -- Draw last catch popup
+    if state.lastCatch then
+        local popupW = 280
+        local popupH = 100
+        local popupX = screenW - popupW - 20
+        local popupY = 20
+
+        love.graphics.setColor(0, 0, 0, 0.85)
+        love.graphics.rectangle("fill", popupX, popupY, popupW, popupH, 10, 10)
+
+        love.graphics.setColor(state.lastCatch.fish.color)
+        love.graphics.setLineWidth(3)
+        love.graphics.rectangle("line", popupX, popupY, popupW, popupH, 10, 10)
+        love.graphics.setLineWidth(1)
+
+        love.graphics.setColor(0.3, 0.9, 0.4)
+        love.graphics.setFont(getFont(16))
+        love.graphics.print("CAUGHT!", popupX + 15, popupY + 10)
+
+        love.graphics.setColor(state.lastCatch.fish.color)
+        love.graphics.setFont(getFont(18))
+        love.graphics.print(state.lastCatch.fish.name, popupX + 15, popupY + 35)
+
+        love.graphics.setColor(0.8, 0.8, 0.8)
+        love.graphics.setFont(getFont(12))
+        love.graphics.print("Weight: " .. state.lastCatch.weight .. " kg", popupX + 15, popupY + 60)
+
+        love.graphics.setColor(1, 0.9, 0.3)
+        love.graphics.print("+" .. state.lastCatch.value .. " coins", popupX + 150, popupY + 60)
+    end
+
+    -- Draw shop/collection/employees/bait buttons
+    local btnY = screenH - 45
+    local shopBtnX = 20
+    local collBtnX = 115
+    local empBtnX = 210
+    local baitBtnX = 305
+    local btnW = 90
+    local btnH = 35
+
+    local shopHover = mx >= shopBtnX and mx <= shopBtnX + btnW and my >= btnY and my <= btnY + btnH
+    love.graphics.setColor(shopHover and {0.4, 0.5, 0.6} or {0.25, 0.3, 0.4})
+    love.graphics.rectangle("fill", shopBtnX, btnY, btnW, btnH, 6, 6)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.setFont(getFont(11))
+    love.graphics.printf("[TAB] Shop", shopBtnX, btnY + 10, btnW, "center")
+
+    local collHover = mx >= collBtnX and mx <= collBtnX + btnW and my >= btnY and my <= btnY + btnH
+    love.graphics.setColor(collHover and {0.4, 0.5, 0.6} or {0.25, 0.3, 0.4})
+    love.graphics.rectangle("fill", collBtnX, btnY, btnW, btnH, 6, 6)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.printf("[C] Journal", collBtnX, btnY + 10, btnW, "center")
+
+    local empHover = mx >= empBtnX and mx <= empBtnX + btnW and my >= btnY and my <= btnY + btnH
+    love.graphics.setColor(empHover and {0.5, 0.5, 0.3} or {0.35, 0.35, 0.25})
+    love.graphics.rectangle("fill", empBtnX, btnY, btnW, btnH, 6, 6)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.printf("[E] Staff", empBtnX, btnY + 10, btnW, "center")
+
+    -- Bait selection button
+    local baitHover = mx >= baitBtnX and mx <= baitBtnX + btnW and my >= btnY and my <= btnY + btnH
+    local bait = Fishing.getCurrentBait()
+    love.graphics.setColor(baitHover and {0.6, 0.5, 0.3} or {0.4, 0.35, 0.2})
+    love.graphics.rectangle("fill", baitBtnX, btnY, btnW, btnH, 6, 6)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.printf("[Q] " .. bait.name, baitBtnX, btnY + 4, btnW, "center")
+    love.graphics.setColor(0.8, 0.8, 0.6)
+    love.graphics.setFont(getFont(9))
+    love.graphics.printf("x" .. state.baitCount, baitBtnX, btnY + 22, btnW, "center")
+
+    -- Instructions
+    love.graphics.setColor(1, 1, 1, 0.7)
+    love.graphics.setFont(getFont(11))
+    love.graphics.print("[SPACE] Cast/Reel  [Q] Change Bait  [B] Backpack  [ESC] Exit", screenW/2 - 175, screenH - 25)
+
+    -- Draw notification
+    if state.notification then
+        love.graphics.setColor(0, 0, 0, 0.85)
+        love.graphics.rectangle("fill", screenW/2 - 160, screenH/2 - 25, 320, 50, 10, 10)
+        love.graphics.setColor(1, 1, 0.7)
+        love.graphics.setFont(getFont(14))
+        love.graphics.printf(state.notification, screenW/2 - 150, screenH/2 - 10, 300, "center")
+    end
+
+    -- Draw shop overlay
+    if state.showShop then
+        Fishing.drawShop(screenW, screenH, mx, my)
+    end
+
+    -- Draw collection overlay
+    if state.showCollection then
+        Fishing.drawCollection(screenW, screenH, mx, my)
+    end
+
+    -- Draw employees overlay
+    if state.showEmployees then
+        Fishing.drawEmployees(screenW, screenH, mx, my)
+    end
+
+    -- Draw tutorial (on top of everything)
+    Tutorials.draw()
+
+    UIAssets.drawTooltip()
+end
+
+-- Draw shop UI
+function Fishing.drawShop(screenW, screenH, mx, my)
+    -- Overlay
+    love.graphics.setColor(0, 0, 0, 0.8)
+    love.graphics.rectangle("fill", 0, 0, screenW, screenH)
+
+    -- Panel
+    local panelW, panelH = 600, 450
+    local panelX = screenW/2 - panelW/2
+    local panelY = screenH/2 - panelH/2
+
+    love.graphics.setColor(0.12, 0.14, 0.18)
+    love.graphics.rectangle("fill", panelX, panelY, panelW, panelH, 12, 12)
+    love.graphics.setColor(0.4, 0.5, 0.7)
+    love.graphics.setLineWidth(2)
+    love.graphics.rectangle("line", panelX, panelY, panelW, panelH, 12, 12)
+    love.graphics.setLineWidth(1)
+
+    -- Title
+    love.graphics.setColor(0.9, 0.8, 0.3)
+    love.graphics.setFont(getFont(24))
+    love.graphics.print("FISHING SHOP", panelX + 20, panelY + 15)
+
+    -- Coins display
+    love.graphics.setColor(1, 0.9, 0.3)
+    love.graphics.setFont(getFont(16))
+    love.graphics.print("Coins: " .. PlayerData.coins, panelX + panelW - 150, panelY + 20)
+
+    -- Close button
+    local closeX = panelX + panelW - 40
+    local closeY = panelY + 10
+    local closeHover = mx >= closeX and mx <= closeX + 30 and my >= closeY and my <= closeY + 30
+    love.graphics.setColor(closeHover and {0.7, 0.3, 0.3} or {0.4, 0.25, 0.25})
+    love.graphics.rectangle("fill", closeX, closeY, 30, 30, 5, 5)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.printf("X", closeX, closeY + 7, 30, "center")
+
+    -- Tabs
+    local tabs = {"rods", "bait", "locations"}
+    local tabNames = {rods = "Rods", bait = "Bait", locations = "Locations"}
+    local tabX = panelX + 20
+    local tabY = panelY + 55
+
+    for _, tab in ipairs(tabs) do
+        local isActive = state.shopTab == tab
+        local tabW = 100
+        local tabHover = mx >= tabX and mx <= tabX + tabW and my >= tabY and my <= tabY + 30
+
+        if isActive then
+            love.graphics.setColor(0.3, 0.4, 0.5)
+        elseif tabHover then
+            love.graphics.setColor(0.22, 0.28, 0.35)
+        else
+            love.graphics.setColor(0.15, 0.18, 0.22)
+        end
+        love.graphics.rectangle("fill", tabX, tabY, tabW, 30, 5, 5)
+
+        love.graphics.setColor(1, 1, 1)
+        love.graphics.setFont(getFont(12))
+        love.graphics.printf(tabNames[tab], tabX, tabY + 8, tabW, "center")
+
+        tabX = tabX + tabW + 10
+    end
+
+    -- Content area
+    local contentY = panelY + 100
+    local contentH = panelH - 120
+
+    if state.shopTab == "rods" then
+        for i, rod in ipairs(RODS) do
+            local itemY = contentY + (i - 1) * 70
+            local owned = state.ownedRods[rod.id]
+            local equipped = state.currentRod == rod.id
+            local canBuy = not owned and PlayerData.coins >= rod.cost
+            local itemHover = mx >= panelX + 20 and mx <= panelX + panelW - 20 and my >= itemY and my <= itemY + 60
+
+            love.graphics.setColor(itemHover and {0.2, 0.25, 0.3} or {0.15, 0.18, 0.22})
+            love.graphics.rectangle("fill", panelX + 20, itemY, panelW - 40, 60, 6, 6)
+
+            love.graphics.setColor(owned and {0.4, 0.8, 0.4} or {0.8, 0.8, 0.8})
+            love.graphics.setFont(getFont(14))
+            love.graphics.print(rod.name .. (equipped and " (Equipped)" or ""), panelX + 30, itemY + 8)
+
+            love.graphics.setColor(0.6, 0.6, 0.7)
+            love.graphics.setFont(getFont(11))
+            love.graphics.print(rod.description, panelX + 30, itemY + 28)
+            love.graphics.print("Cast: " .. rod.castPower .. "  Reel: " .. rod.reelSpeed .. "x  Max Tension: " .. rod.tensionMax, panelX + 30, itemY + 43)
+
+            if owned then
+                if not equipped then
+                    love.graphics.setColor(0.3, 0.5, 0.3)
+                    love.graphics.rectangle("fill", panelX + panelW - 100, itemY + 15, 70, 30, 5, 5)
+                    love.graphics.setColor(1, 1, 1)
+                    love.graphics.printf("Equip", panelX + panelW - 100, itemY + 22, 70, "center")
+                end
+            else
+                love.graphics.setColor(canBuy and {0.4, 0.5, 0.7} or {0.4, 0.3, 0.3})
+                love.graphics.rectangle("fill", panelX + panelW - 100, itemY + 15, 70, 30, 5, 5)
+                love.graphics.setColor(1, 1, 1)
+                love.graphics.printf(rod.cost .. "g", panelX + panelW - 100, itemY + 22, 70, "center")
+            end
+        end
+    elseif state.shopTab == "bait" then
+        for i, bait in ipairs(BAITS) do
+            local itemY = contentY + (i - 1) * 70
+            local isEquipped = state.currentBait == bait.id
+            local itemHover = mx >= panelX + 20 and mx <= panelX + panelW - 20 and my >= itemY and my <= itemY + 60
+            local canBuy = PlayerData.coins >= bait.cost * 5
+
+            love.graphics.setColor(itemHover and {0.2, 0.25, 0.3} or {0.15, 0.18, 0.22})
+            love.graphics.rectangle("fill", panelX + 20, itemY, panelW - 40, 60, 6, 6)
+
+            love.graphics.setColor(isEquipped and {0.4, 0.8, 0.4} or {0.8, 0.8, 0.8})
+            love.graphics.setFont(getFont(14))
+            love.graphics.print(bait.name .. (isEquipped and " (x" .. state.baitCount .. " equipped)" or ""), panelX + 30, itemY + 8)
+
+            love.graphics.setColor(0.6, 0.6, 0.7)
+            love.graphics.setFont(getFont(11))
+            love.graphics.print(bait.description, panelX + 30, itemY + 28)
+            love.graphics.print("Rarity Bonus: +" .. (bait.rarityBonus * 100) .. "%", panelX + 30, itemY + 43)
+
+            love.graphics.setColor(canBuy and {0.4, 0.5, 0.7} or {0.4, 0.3, 0.3})
+            love.graphics.rectangle("fill", panelX + panelW - 100, itemY + 15, 70, 30, 5, 5)
+            love.graphics.setColor(1, 1, 1)
+            love.graphics.printf("5 for " .. (bait.cost * 5) .. "g", panelX + panelW - 100, itemY + 18, 70, "center")
+        end
+    elseif state.shopTab == "locations" then
+        for i, loc in ipairs(LOCATIONS) do
+            local itemY = contentY + (i - 1) * 70
+            local unlocked = state.unlockedLocations[loc.id]
+            local isActive = state.currentLocation == loc.id
+            local canBuy = not unlocked and PlayerData.coins >= loc.unlockCost
+            local itemHover = mx >= panelX + 20 and mx <= panelX + panelW - 20 and my >= itemY and my <= itemY + 60
+
+            love.graphics.setColor(itemHover and {0.2, 0.25, 0.3} or {0.15, 0.18, 0.22})
+            love.graphics.rectangle("fill", panelX + 20, itemY, panelW - 40, 60, 6, 6)
+
+            love.graphics.setColor(unlocked and {0.4, 0.8, 0.4} or {0.6, 0.6, 0.6})
+            love.graphics.setFont(getFont(14))
+            love.graphics.print(loc.name .. (isActive and " (Current)" or ""), panelX + 30, itemY + 8)
+
+            love.graphics.setColor(0.6, 0.6, 0.7)
+            love.graphics.setFont(getFont(11))
+            love.graphics.print(loc.description, panelX + 30, itemY + 28)
+            love.graphics.print("Fish Value Bonus: " .. math.floor((loc.fishBonus - 1) * 100) .. "%", panelX + 30, itemY + 43)
+
+            if unlocked then
+                if not isActive then
+                    love.graphics.setColor(0.3, 0.5, 0.3)
+                    love.graphics.rectangle("fill", panelX + panelW - 100, itemY + 15, 70, 30, 5, 5)
+                    love.graphics.setColor(1, 1, 1)
+                    love.graphics.printf("Travel", panelX + panelW - 100, itemY + 22, 70, "center")
+                end
+            else
+                love.graphics.setColor(canBuy and {0.4, 0.5, 0.7} or {0.4, 0.3, 0.3})
+                love.graphics.rectangle("fill", panelX + panelW - 100, itemY + 15, 70, 30, 5, 5)
+                love.graphics.setColor(1, 1, 1)
+                love.graphics.printf(loc.unlockCost .. "g", panelX + panelW - 100, itemY + 22, 70, "center")
+            end
+        end
+    end
+end
+
+-- Draw collection/journal UI
+function Fishing.drawCollection(screenW, screenH, mx, my)
+    love.graphics.setColor(0, 0, 0, 0.8)
+    love.graphics.rectangle("fill", 0, 0, screenW, screenH)
+
+    local panelW, panelH = 650, 500
+    local panelX = screenW/2 - panelW/2
+    local panelY = screenH/2 - panelH/2
+
+    love.graphics.setColor(0.12, 0.14, 0.18)
+    love.graphics.rectangle("fill", panelX, panelY, panelW, panelH, 12, 12)
+    love.graphics.setColor(0.4, 0.6, 0.7)
+    love.graphics.setLineWidth(2)
+    love.graphics.rectangle("line", panelX, panelY, panelW, panelH, 12, 12)
+    love.graphics.setLineWidth(1)
+
+    love.graphics.setColor(0.4, 0.8, 0.9)
+    love.graphics.setFont(getFont(24))
+    love.graphics.print("FISH JOURNAL", panelX + 20, panelY + 15)
+
+    -- Stats
+    local caughtCount = 0
+    for _ in pairs(state.fishCaught) do caughtCount = caughtCount + 1 end
+
+    love.graphics.setColor(0.7, 0.7, 0.8)
+    love.graphics.setFont(getFont(12))
+    love.graphics.print("Species Discovered: " .. caughtCount .. "/" .. #FISH_TYPES, panelX + 20, panelY + 50)
+    love.graphics.print("Total Fish Caught: " .. state.totalFishCaught, panelX + 250, panelY + 50)
+
+    -- Close button
+    local closeX = panelX + panelW - 40
+    local closeY = panelY + 10
+    local closeHover = mx >= closeX and mx <= closeX + 30 and my >= closeY and my <= closeY + 30
+    love.graphics.setColor(closeHover and {0.7, 0.3, 0.3} or {0.4, 0.25, 0.25})
+    love.graphics.rectangle("fill", closeX, closeY, 30, 30, 5, 5)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.printf("X", closeX, closeY + 7, 30, "center")
+
+    -- Fish grid
+    local gridX = panelX + 20
+    local gridY = panelY + 80
+    local cardW = 145
+    local cardH = 80
+    local cols = 4
+
+    for i, fish in ipairs(FISH_TYPES) do
+        local col = (i - 1) % cols
+        local row = math.floor((i - 1) / cols)
+        local cardX = gridX + col * (cardW + 10)
+        local cardY = gridY + row * (cardH + 10)
+
+        local caught = state.fishCaught[fish.id]
+        local discovered = caught ~= nil
+
+        if discovered then
+            love.graphics.setColor(0.18, 0.22, 0.28)
+        else
+            love.graphics.setColor(0.1, 0.1, 0.12)
+        end
+        love.graphics.rectangle("fill", cardX, cardY, cardW, cardH, 6, 6)
+
+        if discovered then
+            -- Color bar for rarity
+            love.graphics.setColor(fish.color)
+            love.graphics.rectangle("fill", cardX, cardY, 6, cardH, 3, 0)
+
+            love.graphics.setColor(fish.color)
+            love.graphics.setFont(getFont(12))
+            love.graphics.print(fish.name, cardX + 12, cardY + 5)
+
+            love.graphics.setColor(0.6, 0.6, 0.7)
+            love.graphics.setFont(getFont(10))
+            love.graphics.print("Caught: " .. caught.count, cardX + 12, cardY + 25)
+            love.graphics.print("Best: " .. caught.bestWeight .. " kg", cardX + 12, cardY + 40)
+            love.graphics.print("Value: " .. fish.value .. "g", cardX + 12, cardY + 55)
+        else
+            love.graphics.setColor(0.3, 0.3, 0.35)
+            love.graphics.setFont(getFont(14))
+            love.graphics.printf("???", cardX, cardY + 30, cardW, "center")
+        end
+    end
+end
+
+-- Draw employees and upgrades UI
+function Fishing.drawEmployees(screenW, screenH, mx, my)
+    love.graphics.setColor(0, 0, 0, 0.8)
+    love.graphics.rectangle("fill", 0, 0, screenW, screenH)
+
+    local panelW, panelH = 700, 520
+    local panelX = screenW/2 - panelW/2
+    local panelY = screenH/2 - panelH/2
+
+    love.graphics.setColor(0.12, 0.14, 0.18)
+    love.graphics.rectangle("fill", panelX, panelY, panelW, panelH, 12, 12)
+    love.graphics.setColor(0.5, 0.5, 0.3)
+    love.graphics.setLineWidth(2)
+    love.graphics.rectangle("line", panelX, panelY, panelW, panelH, 12, 12)
+    love.graphics.setLineWidth(1)
+
+    love.graphics.setColor(0.9, 0.8, 0.4)
+    love.graphics.setFont(getFont(22))
+    love.graphics.print("DOCK STAFF & UPGRADES", panelX + 20, panelY + 15)
+
+    -- Coins display
+    love.graphics.setColor(1, 0.9, 0.3)
+    love.graphics.setFont(getFont(14))
+    love.graphics.print("Coins: " .. (PlayerData.coins or 0), panelX + panelW - 140, panelY + 20)
+
+    -- Close button
+    local closeX = panelX + panelW - 40
+    local closeY = panelY + 10
+    local closeHover = mx >= closeX and mx <= closeX + 30 and my >= closeY and my <= closeY + 30
+    love.graphics.setColor(closeHover and {0.7, 0.3, 0.3} or {0.4, 0.25, 0.25})
+    love.graphics.rectangle("fill", closeX, closeY, 30, 30, 5, 5)
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.printf("X", closeX, closeY + 7, 30, "center")
+
+    -- Left side: Employees
+    local leftX = panelX + 20
+    local contentY = panelY + 55
+
+    love.graphics.setColor(0.7, 0.8, 0.5)
+    love.graphics.setFont(getFont(16))
+    love.graphics.print("EMPLOYEES (" .. #state.employees .. ")", leftX, contentY)
+
+    local empY = contentY + 30
+    for i, empType in ipairs(EMPLOYEE_TYPES) do
+        local empItemY = empY + (i - 1) * 70
+        local owned = false
+        for _, emp in ipairs(state.employees) do
+            if emp.type == empType.id then
+                owned = true
+                break
+            end
+        end
+
+        local canBuy = not owned and (PlayerData.coins or 0) >= empType.hireCost
+        local itemHover = mx >= leftX and mx <= leftX + 320 and my >= empItemY and my <= empItemY + 60
+
+        love.graphics.setColor(itemHover and {0.2, 0.25, 0.2} or {0.15, 0.18, 0.15})
+        love.graphics.rectangle("fill", leftX, empItemY, 320, 60, 6, 6)
+
+        if owned then
+            love.graphics.setColor(0.3, 0.6, 0.3)
+            love.graphics.rectangle("fill", leftX, empItemY, 5, 60, 3, 0)
+        end
+
+        love.graphics.setColor(owned and {0.5, 0.9, 0.5} or {0.8, 0.8, 0.8})
+        love.graphics.setFont(getFont(13))
+        love.graphics.print(empType.name .. (owned and " (Hired)" or ""), leftX + 10, empItemY + 5)
+
+        love.graphics.setColor(0.6, 0.6, 0.7)
+        love.graphics.setFont(getFont(10))
+        love.graphics.print(empType.desc, leftX + 10, empItemY + 24)
+        love.graphics.print("Daily salary: " .. empType.baseSalary .. "g", leftX + 10, empItemY + 40)
+
+        if not owned then
+            love.graphics.setColor(canBuy and {0.4, 0.5, 0.3} or {0.4, 0.3, 0.3})
+            love.graphics.rectangle("fill", leftX + 230, empItemY + 15, 80, 30, 5, 5)
+            love.graphics.setColor(1, 1, 1)
+            love.graphics.setFont(getFont(11))
+            love.graphics.printf("Hire " .. empType.hireCost .. "g", leftX + 230, empItemY + 22, 80, "center")
+        end
+    end
+
+    -- Right side: Upgrades
+    local rightX = panelX + 360
+
+    love.graphics.setColor(0.5, 0.7, 0.9)
+    love.graphics.setFont(getFont(16))
+    love.graphics.print("UPGRADES", rightX, contentY)
+
+    local upgY = contentY + 30
+    for i, upg in ipairs(UPGRADES) do
+        local upgItemY = upgY + (i - 1) * 70
+        local currentLevel = getUpgradeLevel(upg.id)
+        local maxed = currentLevel >= upg.maxLevel
+        local cost = upg.cost * (currentLevel + 1)
+        local canBuy = not maxed and (PlayerData.coins or 0) >= cost
+        local itemHover = mx >= rightX and mx <= rightX + 320 and my >= upgItemY and my <= upgItemY + 60
+
+        love.graphics.setColor(itemHover and {0.2, 0.22, 0.28} or {0.15, 0.17, 0.22})
+        love.graphics.rectangle("fill", rightX, upgItemY, 320, 60, 6, 6)
+
+        -- Level indicator bar
+        love.graphics.setColor(0.2, 0.2, 0.25)
+        love.graphics.rectangle("fill", rightX + 10, upgItemY + 48, 150, 8, 2, 2)
+        if currentLevel > 0 then
+            love.graphics.setColor(0.3, 0.6, 0.9)
+            love.graphics.rectangle("fill", rightX + 10, upgItemY + 48, 150 * (currentLevel / upg.maxLevel), 8, 2, 2)
+        end
+
+        love.graphics.setColor(maxed and {0.4, 0.9, 0.4} or {0.8, 0.8, 0.8})
+        love.graphics.setFont(getFont(13))
+        love.graphics.print(upg.name .. " [" .. currentLevel .. "/" .. upg.maxLevel .. "]", rightX + 10, upgItemY + 5)
+
+        love.graphics.setColor(0.6, 0.6, 0.7)
+        love.graphics.setFont(getFont(10))
+        love.graphics.print(upg.desc, rightX + 10, upgItemY + 24)
+
+        if not maxed then
+            love.graphics.setColor(canBuy and {0.3, 0.4, 0.6} or {0.4, 0.3, 0.3})
+            love.graphics.rectangle("fill", rightX + 230, upgItemY + 15, 80, 30, 5, 5)
+            love.graphics.setColor(1, 1, 1)
+            love.graphics.setFont(getFont(11))
+            love.graphics.printf(cost .. "g", rightX + 230, upgItemY + 22, 80, "center")
+        else
+            love.graphics.setColor(0.4, 0.7, 0.4)
+            love.graphics.setFont(getFont(11))
+            love.graphics.printf("MAXED", rightX + 230, upgItemY + 25, 80, "center")
+        end
+    end
+end
+
+-- Handle mouse press
+function Fishing.mousepressed(x, y, button)
+    if button ~= 1 then return end
+
+    -- Handle tutorial clicks first
+    if Tutorials.isActive() then
+        Tutorials.mousepressed(x, y, button)
+        return
+    end
+
+    local screenW, screenH = love.graphics.getDimensions()
+
+    -- Shop handling
+    if state.showShop then
+        local panelW, panelH = 600, 450
+        local panelX = screenW/2 - panelW/2
+        local panelY = screenH/2 - panelH/2
+
+        -- Close button
+        local closeX = panelX + panelW - 40
+        local closeY = panelY + 10
+        if x >= closeX and x <= closeX + 30 and y >= closeY and y <= closeY + 30 then
+            state.showShop = false
+            return
+        end
+
+        -- Tab clicks
+        local tabs = {"rods", "bait", "locations"}
+        local tabX = panelX + 20
+        local tabY = panelY + 55
+        for _, tab in ipairs(tabs) do
+            local tabW = 100
+            if x >= tabX and x <= tabX + tabW and y >= tabY and y <= tabY + 30 then
+                state.shopTab = tab
+                return
+            end
+            tabX = tabX + tabW + 10
+        end
+
+        -- Item clicks
+        local contentY = panelY + 100
+        if state.shopTab == "rods" then
+            for i, rod in ipairs(RODS) do
+                local itemY = contentY + (i - 1) * 70
+                if y >= itemY and y <= itemY + 60 then
+                    if x >= panelX + panelW - 100 and x <= panelX + panelW - 30 then
+                        if state.ownedRods[rod.id] then
+                            state.currentRod = rod.id
+                            saveFishingData()
+                        else
+                            Fishing.buyRod(rod.id)
+                        end
+                    end
+                end
+            end
+        elseif state.shopTab == "bait" then
+            for i, bait in ipairs(BAITS) do
+                local itemY = contentY + (i - 1) * 70
+                if y >= itemY and y <= itemY + 60 then
+                    if x >= panelX + panelW - 100 and x <= panelX + panelW - 30 then
+                        Fishing.buyBait(bait.id, 5)
+                    end
+                end
+            end
+        elseif state.shopTab == "locations" then
+            for i, loc in ipairs(LOCATIONS) do
+                local itemY = contentY + (i - 1) * 70
+                if y >= itemY and y <= itemY + 60 then
+                    if x >= panelX + panelW - 100 and x <= panelX + panelW - 30 then
+                        if state.unlockedLocations[loc.id] then
+                            state.currentLocation = loc.id
+                            saveFishingData()
+                        else
+                            Fishing.unlockLocation(loc.id)
+                        end
+                    end
+                end
+            end
+        end
+        return
+    end
+
+    -- Collection handling
+    if state.showCollection then
+        local panelW, panelH = 650, 500
+        local panelX = screenW/2 - panelW/2
+        local panelY = screenH/2 - panelH/2
+
+        local closeX = panelX + panelW - 40
+        local closeY = panelY + 10
+        if x >= closeX and x <= closeX + 30 and y >= closeY and y <= closeY + 30 then
+            state.showCollection = false
+            return
+        end
+        return
+    end
+
+    -- Employees handling
+    if state.showEmployees then
+        local panelW, panelH = 700, 520
+        local panelX = screenW/2 - panelW/2
+        local panelY = screenH/2 - panelH/2
+
+        -- Close button
+        local closeX = panelX + panelW - 40
+        local closeY = panelY + 10
+        if x >= closeX and x <= closeX + 30 and y >= closeY and y <= closeY + 30 then
+            state.showEmployees = false
+            return
+        end
+
+        -- Employee hire buttons
+        local leftX = panelX + 20
+        local contentY = panelY + 55
+        local empY = contentY + 30
+
+        for i, empType in ipairs(EMPLOYEE_TYPES) do
+            local empItemY = empY + (i - 1) * 70
+            local owned = false
+            for _, emp in ipairs(state.employees) do
+                if emp.type == empType.id then
+                    owned = true
+                    break
+                end
+            end
+
+            if not owned then
+                local btnX = leftX + 230
+                local btnY = empItemY + 15
+                if x >= btnX and x <= btnX + 80 and y >= btnY and y <= btnY + 30 then
+                    if (PlayerData.coins or 0) >= empType.hireCost then
+                        PlayerData.coins = PlayerData.coins - empType.hireCost
+                        table.insert(state.employees, {type = empType.id, hiredDay = 1})
+                        saveFishingData()
+                        -- Update global passive income rate
+                        updateFishingPassiveIncome()
+                        addNotification("Hired " .. empType.name .. "!", 2)
+                    else
+                        addNotification("Not enough coins!", 2)
+                    end
+                    return
+                end
+            end
+        end
+
+        -- Upgrade buttons
+        local rightX = panelX + 360
+        local upgY = contentY + 30
+
+        for i, upg in ipairs(UPGRADES) do
+            local upgItemY = upgY + (i - 1) * 70
+            local currentLevel = getUpgradeLevel(upg.id)
+            local maxed = currentLevel >= upg.maxLevel
+            local cost = upg.cost * (currentLevel + 1)
+
+            if not maxed then
+                local btnX = rightX + 230
+                local btnYPos = upgItemY + 15
+                if x >= btnX and x <= btnX + 80 and y >= btnYPos and y <= btnYPos + 30 then
+                    if (PlayerData.coins or 0) >= cost then
+                        PlayerData.coins = PlayerData.coins - cost
+                        state.upgrades[upg.id] = currentLevel + 1
+                        saveFishingData()
+                        addNotification("Upgraded " .. upg.name .. " to level " .. (currentLevel + 1) .. "!", 2)
+                    else
+                        addNotification("Not enough coins!", 2)
+                    end
+                    return
+                end
+            end
+        end
+        return
+    end
+
+    -- Shop/Collection/Employees buttons
+    local btnY = screenH - 45
+    local shopBtnX = 20
+    local collBtnX = 130
+    local empBtnX = 240
+    local btnW = 100
+    local btnH = 35
+
+    if x >= shopBtnX and x <= shopBtnX + btnW and y >= btnY and y <= btnY + btnH then
+        state.showShop = true
+        return
+    end
+    if x >= collBtnX and x <= collBtnX + btnW and y >= btnY and y <= btnY + btnH then
+        state.showCollection = true
+        return
+    end
+    if x >= empBtnX and x <= empBtnX + btnW and y >= btnY and y <= btnY + btnH then
+        state.showEmployees = true
+        return
+    end
+end
+
+-- Handle key press
+function Fishing.keypressed(key)
+    -- Handle tutorial keys first
+    if Tutorials.isActive() then
+        Tutorials.keypressed(key)
+        return
+    end
+
+    if state.showShop or state.showCollection or state.showEmployees then
+        if key == "escape" or key == "tab" or key == "c" or key == "e" then
+            state.showShop = false
+            state.showCollection = false
+            state.showEmployees = false
+        end
+        return
+    end
+
+    if key == "space" then
+        state.spaceHeld = true
+
+        if state.lineDepth == 0 and not state.casting and state.baitCount > 0 then
+            -- Start casting
+            state.casting = true
+            state.castPower = 0
+        end
+        -- Reeling is now handled continuously in update() while spaceHeld is true
+    elseif key == "tab" then
+        state.showShop = not state.showShop
+        state.showCollection = false
+        state.showEmployees = false
+    elseif key == "c" then
+        state.showCollection = not state.showCollection
+        state.showShop = false
+        state.showEmployees = false
+    elseif key == "e" then
+        state.showEmployees = not state.showEmployees
+        state.showShop = false
+        state.showCollection = false
+    elseif key == "b" then
+        Backpack.toggle()
+    elseif key == "q" then
+        -- Cycle through available baits
+        Fishing.cycleBait()
+    elseif key == "escape" then
+        state.active = false
+        return "menu"
+    elseif key == "t" then
+        -- Restart tutorial
+        Tutorials.resetTutorial("fishing")
+        Tutorials.startTutorial("fishing")
+    end
+end
+
+-- Handle key release
+function Fishing.keyreleased(key)
+    if Tutorials.isActive() then return end
+
+    if key == "space" then
+        state.spaceHeld = false
+
+        if state.casting then
+            -- Release cast
+            state.casting = false
+            local rod = Fishing.getCurrentRod()
+            state.lineDepth = state.castPower * rod.castPower / 100
+
+            -- Visual feedback
+            if state.lineDepth > 0 then
+                local screenW = love.graphics.getWidth()
+                addSplash(screenW / 2, love.graphics.getHeight() * 0.5)
+                addRipple(screenW / 2, love.graphics.getHeight() * 0.5)
+            end
+        end
+        state.reeling = false
+    end
+end
+
+function Fishing.isActive()
+    return state.active
+end
+
+function Fishing.exit()
+    state.active = false
+    saveFishingData()
+end
+
+return Fishing

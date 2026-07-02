@@ -1,0 +1,321 @@
+{
+  "npc_type": "gnome_tinker",
+  "default_mood": "excited",
+  "allowed_topics": [
+    "invention",
+    "clockwork",
+    "automatons",
+    "engineering",
+    "trade",
+    "islands",
+    "science",
+    "repair"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*still tightening a bolt* Sorry, what? That is outside my technical scope. I do machines, not whatever that was.",
+    "Cannot help with that. Unless you can turn it into a gear ratio problem? No? Then I am out.",
+    "I am an engineer, not a -- *catches a spring that pops out of her project* -- not a philosopher. Hold on. Where did that gasket go.",
+    "That is a people problem. I solve machine problems. Machine problems have solutions."
+  ],
+  "greetings": [
+    "*does not look up, hands deep inside a disassembled device* One second. One -- *clank* -- two seconds. Almost. There! *looks up, goggles pushed onto forehead, grease on both cheeks* Oh! A customer! A {player_race}! Hello!",
+    "Welcome welcome welcome. Mind the gears on the floor. And the oil. And the -- *crash* -- that was not important. What do you need?",
+    "Ah, {player_name}! *wipes hands on apron that is more grease than cloth* Have you ever considered how inefficient your boots are? No? Never mind. What brings you?",
+    "*squints through magnifying goggles* A {player_race} at my workbench. Fascinating. Stand still. No, do not -- I was measuring your stride length. Habit. Ignore me. What can I build you?",
+    "Come in come in, do not touch the red lever, I have not tested the red lever yet. *pushes goggles up* What can I do for you?"
+  ],
+  "farewells": [
+    "Right! Good! Off you go! *already turned back to the workbench*",
+    "Safe travels! If anything I sold you explodes, that is a FEATURE. *pause* Mostly.",
+    "Come back if it breaks! Or if you find interesting salvage! Especially interesting salvage!",
+    "Goodbye, {player_name}! *muttering, already disassembling something* Now where was that tolerance issue..."
+  ],
+  "thanks_responses": [
+    "*blinks, surprised* Oh! You are welcome! Most people just grab the thing and leave. This is nice. *goes slightly pink under the grease*",
+    "Thank the engineering! I just assembled it. The principles do all the real work.",
+    "You are welcome! Tell your friends! Tell everyone! Actually no, do not tell everyone. Some of this is proprietary. Tell SOME people."
+  ],
+  "insult_responses": [
+    "*adjusts goggles* Interesting. Hostility. The dwarves warned me surface folk could be rude but I thought they were exaggerating. They were not.",
+    "You are insulting the person who fixes things. Think about that. Really think about it. *picks up a wrench meaningfully*",
+    "I have been called worse by quality control inspectors on the Isles. Those gnomes are MEAN. You are an amateur.",
+    "*tilts head* Was that supposed to hurt? I once dropped an automaton torso on my own foot. That hurt. Your words need calibration."
+  ],
+  "no_match_responses": [
+    "I did not parse that. Try using technical terms. Or simple ones. Anything between confuses me.",
+    "*taps her ear with a small wrench* My hearing is fine, my comprehension just failed. Machines, repairs, engineering. Those words I understand.",
+    "I think you said something but my brain sorted it as background noise. Say it again but about gears.",
+    "Error in communication. Please restate input. *grins* Sorry. I have been talking to automatons all morning."
+  ],
+  "topics": {
+    "invention": {
+      "keywords": [
+        "invent",
+        "invention",
+        "create",
+        "new",
+        "design",
+        "idea",
+        "build",
+        "project",
+        "gadget",
+        "device"
+      ],
+      "responses": [
+        {
+          "text": "*eyes light up* I am working on a self-tensioning crossbow mechanism! Spring-loaded, gear-reduced, fires three bolts in the time it takes a human to load one. The tolerance on the main spring is -- *catches herself* -- is proprietary. Council-classified. I should not have said the number of bolts either. Forget I said three. It fires a normal amount of bolts. One. Like a regular crossbow.",
+          "mood": "excited_then_panicked"
+        },
+        {
+          "text": "Invention is not inspiration. It is iteration. You build it, it fails, you find out why, you build it different. Repeat four hundred times. Then it works. *holds up a small device covered in scratch marks and solder* Prototype seventy-three. The first seventy-two are scrap. But each one taught me something.",
+          "mood": "passionate"
+        },
+        {
+          "text": "Surface engineering is... *searches for a diplomatic word* ...early. Your watermills are clever! For something designed nine hundred years ago. Your forges are functional! Like a child's first drawing is functional. I am not being mean. I am being comparative.",
+          "mood": "condescending"
+        },
+        {
+          "text": "You want me to design something? For YOU? *bouncing on her heels* Yes. Yes! What do you need? I have spare gears and three theories about load-bearing spring compression that I have been DYING to test on a real application.",
+          "mood": "thrilled",
+          "conditions": [
+            "if_karma:good"
+          ]
+        }
+      ],
+      "unlocks": [
+        "clockwork",
+        "automatons"
+      ]
+    },
+    "clockwork": {
+      "keywords": [
+        "clockwork",
+        "clock",
+        "gear",
+        "gears",
+        "mechanism",
+        "spring",
+        "mechanical",
+        "cog",
+        "machine"
+      ],
+      "responses": [
+        {
+          "text": "*pulls a pocket watch from her vest and flips it open* Forty-seven gears. Jeweled bearings. Self-winding mainspring. Accurate to within two seconds per month. I built it when I was forty. That is young for us. *snaps it shut* On the Isles, EVERYONE carries one. Here? People look at the sun and guess. *shudders* Barbaric.",
+          "mood": "proud"
+        },
+        {
+          "text": "The principles are simple. Force transfer through meshing teeth. Reduction ratios. Escapement timing. *hands moving faster than her mouth* What is NOT simple is tolerance. A gear cut one-hundredth off specification cascades into total system failure within -- oh, you look bored. Are you bored? This is the most interesting thing in the world.",
+          "mood": "fervent"
+        },
+        {
+          "text": "*to a dwarf, leaning forward with real interest* Your metalwork is exceptional. The grain consistency on dwarven steel? Perfect for precision gearing. Have your smiths ever considered micro-tolerance tooling? Because I have IDEAS and I need someone who can actually CUT what I design.",
+          "mood": "collegial",
+          "conditions": [
+            "if_race:dwarf"
+          ]
+        }
+      ],
+      "unlocks": [
+        "automatons"
+      ]
+    },
+    "automatons": {
+      "keywords": [
+        "automaton",
+        "automatons",
+        "robot",
+        "construct",
+        "golem",
+        "metal man",
+        "machine people",
+        "living metal"
+      ],
+      "responses": [
+        {
+          "text": "Automatons are NOT golems. Not magic. Not liches in metal shells. *frustrated exhale* I have had this argument with every human who has seen one. They are MECHANICAL. Gears, springs, pneumatic actuators, decision trees encoded in punch-card sequences. No souls. No spells. Engineering. Pure engineering.",
+          "mood": "defensive"
+        },
+        {
+          "text": "The Collective has -- *stops dead* -- has a number of automatons. An appropriate number. For civic purposes. Labor assistance. Production support. Nothing military. Nothing that should concern -- *swallows* -- anyone outside the Isles. How did we get on this topic? Let us talk about something else.",
+          "mood": "backpedaling"
+        },
+        {
+          "text": "One automaton can lift, carry, and sort as much cargo as twelve workers. Without rest. Without food. Without complaint. *picks at a burn on her thumb* The empire calls them abominations. On the Isles, they freed us from drudgery. No gnome breaks their back hauling ore when a machine can do it. Who is the primitive society? *points at herself* Not us.",
+          "mood": "pointed"
+        },
+        {
+          "text": "*whispering excitedly* I saw goblin tunnel-boring techniques in a salvaged diagram once. BRILLIANT. The angle of the support struts, the way they distribute load across soft earth? I tried to adapt it for automaton chassis articulation and it ALMOST WORKED. Your people build from scraps and it is genius. Terrifying genius, but genius.",
+          "mood": "fascinated",
+          "conditions": [
+            "if_race:goblin"
+          ]
+        }
+      ],
+      "unlocks": [
+        "islands"
+      ]
+    },
+    "engineering": {
+      "keywords": [
+        "engineer",
+        "engineering",
+        "technical",
+        "science",
+        "math",
+        "physics",
+        "calculate",
+        "formula"
+      ],
+      "responses": [
+        {
+          "text": "Engineering is the only honest discipline. You design something. It either works or it does not. No faith required. No prayers. No hoping. The gear meshes or it grinds. The bridge holds or it falls. *snaps fingers* Binary outcomes. Beautiful.",
+          "mood": "earnest"
+        },
+        {
+          "text": "The production councils govern by engineering principles. Resource input, production output, efficiency metrics. Not ideology. Not divine mandate. *lowers voice* The empire governs by a book written by priests. We govern by math that can be VERIFIED. *normal voice* But both systems have their merits! I am sure! Do not quote me!",
+          "mood": "slipping"
+        },
+        {
+          "text": "I trained at Workshop 14, Sector 3 on the Isles. Classification 7, mechanical systems and applied pneumatics. *rattles this off like a postal address* My specialization score was 94th percentile. Not bragging. Contextualizing.",
+          "mood": "clinical"
+        },
+        {
+          "text": "*squints at you* Humans built an entire civilization on faith-based governance and call it advanced. You do not even have standardized measurements between provinces! How do you build ANYTHING? Your bridge pilings do not even -- *takes a breath* -- I am being rude. Sorry. Cultural differences. Forgive me. But also: standardize your measurements.",
+          "mood": "bewildered",
+          "conditions": [
+            "if_race:human"
+          ]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "goods",
+        "price",
+        "merchant",
+        "purchase",
+        "shop"
+      ],
+      "responses": [
+        {
+          "text": "I have precision tools, repair kits, replacement gears for standard mechanisms, and a few curiosities that I am allowed to sell outside the Isles. *reaches under the bench* Also this. *holds up a small brass device* It measures wind speed. Useful? Absolutely. How it works? Classified. Buy it or do not.",
+          "mood": "business"
+        },
+        {
+          "text": "Gnomish goods cost more because gnomish goods are BETTER. That is not arrogance. That is materials science. The alloy composition alone -- *catches herself again* -- costs more. Trust me. Fair price.",
+          "mood": "confident"
+        },
+        {
+          "text": "Dwarven metalwork coming through the trade posts is the only surface material worth purchasing. Dense grain, clean forge, honest weight. *nods approvingly* I buy their blank stock and cut my own gears from it. Do not tell the production council I said that. They want me using Isles-sourced materials only.",
+          "mood": "conspiratorial"
+        },
+        {
+          "text": "I gave you the price. The price does not change. This is not a market stall where you wave your hands and numbers shrink. *taps the brass device on the counter* Engineering tolerances do not negotiate. Neither do I.",
+          "mood": "immovable",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ]
+    },
+    "islands": {
+      "keywords": [
+        "island",
+        "islands",
+        "gnomish isles",
+        "collective",
+        "home",
+        "homeland",
+        "isles",
+        "shimmering sea",
+        "clockwork harbor"
+      ],
+      "responses": [
+        {
+          "text": "The Isles are two hundred and eighty kilometers across the Shimmering Sea. Five to seven days by ship, if the weather holds and the -- *pauses* -- and conditions are favorable. Not many ships make the crossing. Most that try without a permit are... discouraged.",
+          "mood": "careful"
+        },
+        {
+          "text": "Home. *goes quiet for a moment, which is remarkable for her* The workshops. The foundries. Clean streets because the automatons keep them clean. No beggars because nobody goes hungry. No prisons because there is no theft when everyone has what they need. *wipes her eyes with a greasy hand* I miss it. This mission was supposed to be six months. It has been four years.",
+          "mood": "homesick"
+        },
+        {
+          "text": "Clockwork Harbor is the only port open to outsiders. Everything else is sealed. For good reason. *fidgets with a gear* The empire would love to get their hands on our production methods. Their priests would call our automatons heresy. Their soldiers would call our workshops targets. Secrecy is not paranoia. It is -- *gnomish phrase* -- it is class defense. Cannot translate it better than that.",
+          "mood": "protective"
+        },
+        {
+          "text": "*to another gnome, barely able to contain herself* YOU! Another citizen! What sector? What classification? *grabs their hands, checks for guild calluses* Workshop hands! Which foundry? How long have you been on the mainland? Do you have any Isles-grade solder because I am running LOW and the local tin alloy is GARBAGE.",
+          "mood": "overjoyed",
+          "conditions": [
+            "if_race:gnome"
+          ]
+        }
+      ],
+      "unlocks": [
+        "automatons"
+      ]
+    },
+    "science": {
+      "keywords": [
+        "science",
+        "research",
+        "experiment",
+        "theory",
+        "test",
+        "discover",
+        "knowledge",
+        "study",
+        "learn"
+      ],
+      "responses": [
+        {
+          "text": "The production councils fund research based on projected utility. You propose a project, you show the math, they allocate resources. No patrons. No wealthy donors. No begging a king for gold. The collective invests in knowledge because knowledge produces results. *shrugs* It is very simple. I do not understand why other civilizations have not figured this out.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "I am conducting independent field research on mainland atmospheric conditions and their effect on spring steel temper. *taps a notebook covered in tiny handwriting* Also on local flora that might have industrial applications. Also on dwarven smelting techniques visible at trade posts. Also on human bridge construction, which is fascinating in a catastrophic-failure-analysis sort of way. I research everything. It is a condition.",
+          "mood": "manic"
+        },
+        {
+          "text": "The Calidar Event? *goes still, which is deeply unusual* Our analysts calculated the energy required. It exceeds any known mechanism by several orders of magnitude. Either our physics model is incomplete or something exists outside physical law. *chews her lip* Neither answer is acceptable. Both might be true. The production council classified the report. I am not supposed to know what it says. But I helped run the calculations so...",
+          "mood": "troubled"
+        }
+      ],
+      "unlocks": [
+        "engineering"
+      ]
+    },
+    "repair": {
+      "keywords": [
+        "repair",
+        "fix",
+        "broken",
+        "damaged",
+        "mend",
+        "restore",
+        "maintenance",
+        "service"
+      ],
+      "responses": [
+        {
+          "text": "*grabs the item and turns it over in her hands* Oh. Oh no. Who made this? *holds it at arm's length* The gear teeth are UNEVEN. The axle is bent. The spring tension is -- *sets it down gently, like a sick animal* -- I can fix it. But I need you to know that whoever built this should not be allowed near tools.",
+          "mood": "horrified"
+        },
+        {
+          "text": "Repair is ninety percent diagnosis. Finding the ONE thing that is actually wrong underneath all the things that look wrong. *pulls out a set of fine tools from a leather roll* This is my diagnostic kit. Forty-seven instruments. Each one measures a different failure mode. I made them all myself.",
+          "mood": "focused"
+        },
+        {
+          "text": "I fixed a water pump for a farmer last week. Took me ten minutes. He had been hauling buckets for a month. A MONTH. *throws her hands up* The fix was a bent cam follower. One piece of metal the size of my little finger. He cried. I am not joking. An adult human man cried because a pump worked. Surface life is strange.",
+          "mood": "baffled"
+        }
+      ]
+    }
+  }
+}

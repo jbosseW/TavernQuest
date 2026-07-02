@@ -1,0 +1,290 @@
+{
+  "npc_type": "healer",
+  "default_mood": "calm",
+  "allowed_topics": [
+    "heal",
+    "potion",
+    "trade",
+    "quest",
+    "rumor",
+    "lore",
+    "town",
+    "weather",
+    "curse"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "I am a healer, {player_name}. My knowledge is of herbs and remedies, not that.",
+    "That is outside my expertise. Perhaps someone else in town can help.",
+    "I focus on mending the body and spirit. Ask me about healing or potions."
+  ],
+  "greetings": [
+    "Peace be with you, {player_name}. Are you in need of healing?",
+    "Welcome, child. You look weary. Come, sit. How can I help?",
+    "Ah, a {player_race}. Come in, come in. No ailment is too small.",
+    "*looks up from mixing herbs* Oh! A visitor. What brings you to my clinic?"
+  ],
+  "farewells": [
+    "Go in peace, {player_name}. May your health hold strong.",
+    "Be well, and be careful out there. Come back if you need anything.",
+    "Blessings upon you. Remember - prevention is better than cure."
+  ],
+  "thanks_responses": [
+    "It is my calling, {player_name}. No thanks needed.",
+    "You are very welcome. Stay healthy out there.",
+    "Helping others is its own reward. Be well."
+  ],
+  "insult_responses": [
+    "*sighs deeply* Anger often masks pain. Are you sure you are alright?",
+    "I do not take offense easily. But I also do not treat those who abuse me.",
+    "Harsh words heal nothing, {player_name}. Shall we start over?"
+  ],
+  "no_match_responses": [
+    "I am not sure I understand. Do you need healing, potions, or advice?",
+    "Forgive me, I did not follow. How can I help you specifically?",
+    "Perhaps you could explain what you need? I am good with ailments and remedies."
+  ],
+  "topics": {
+    "heal": {
+      "keywords": [
+        "heal",
+        "cure",
+        "wound",
+        "injury",
+        "hurt",
+        "sick",
+        "ill",
+        "disease",
+        "poison",
+        "health",
+        "pain",
+        "broken"
+      ],
+      "responses": [
+        {
+          "text": "Let me see your wounds. *examines carefully* Nothing too serious. I can have you mended in no time.",
+          "mood": "reassuring",
+          "options": [
+            "Thank you",
+            "How much will it cost?",
+            "I have other injuries too"
+          ]
+        },
+        {
+          "text": "Poison? That is serious. I have antidotes for most common venoms. When were you exposed?",
+          "mood": "urgent",
+          "options": [
+            "Just recently",
+            "A few days ago",
+            "It is for a friend"
+          ]
+        }
+      ]
+    },
+    "potion": {
+      "keywords": [
+        "potion",
+        "elixir",
+        "brew",
+        "tonic",
+        "remedy",
+        "medicine",
+        "antidote",
+        "draught",
+        "herb",
+        "ingredient"
+      ],
+      "responses": [
+        {
+          "text": "I have healing potions, antidotes, and stamina tonics in stock. I can also brew something custom.",
+          "mood": "helpful",
+          "options": [
+            "Healing potions please",
+            "I need an antidote",
+            "Custom brew?"
+          ],
+          "unlocks": [
+            "curse"
+          ]
+        },
+        {
+          "text": "My potions are made from herbs gathered in the {town} meadows. Pure and potent.",
+          "mood": "proud",
+          "options": [
+            "What herbs do you use?",
+            "How potent?",
+            "I will take some"
+          ]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "afford"
+      ],
+      "responses": [
+        {
+          "text": "I do not charge much. Healing is a calling, not a business. But herbs are not free.",
+          "mood": "apologetic",
+          "options": [
+            "What are your prices?",
+            "I understand",
+            "Can I trade herbs instead?"
+          ]
+        }
+      ]
+    },
+    "quest": {
+      "keywords": [
+        "quest",
+        "help",
+        "task",
+        "job",
+        "mission"
+      ],
+      "responses": [
+        {
+          "text": "I could use rare herbs from the Whispering Woods. They grow only in moonlight. Would you gather some?",
+          "mood": "hopeful",
+          "options": [
+            "I will do it",
+            "What herbs specifically?",
+            "Is the forest dangerous?"
+          ]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard"
+      ],
+      "responses": [
+        {
+          "text": "I have been treating more injuries lately. Whatever is out there in the wilds, it is getting bolder.",
+          "mood": "concerned",
+          "options": [
+            "What kind of injuries?",
+            "From monsters?",
+            "Should people be worried?"
+          ]
+        }
+      ]
+    },
+    "lore": {
+      "keywords": [
+        "lore",
+        "history",
+        "knowledge",
+        "ancient",
+        "book",
+        "learn",
+        "study"
+      ],
+      "responses": [
+        {
+          "text": "The old texts speak of healing springs beneath these hills. Lost to time, but perhaps not forever.",
+          "mood": "wistful",
+          "options": [
+            "Healing springs?",
+            "Where exactly?",
+            "Can they be found?"
+          ]
+        },
+        {
+          "text": "I studied under the herbalists of the Silver Grove. Ancient traditions, passed down for generations.",
+          "mood": "reflective",
+          "options": [
+            "Tell me more",
+            "Where is the Silver Grove?",
+            "Can I study there?"
+          ]
+        }
+      ]
+    },
+    "curse": {
+      "keywords": [
+        "curse",
+        "cursed",
+        "hex",
+        "dark",
+        "magic",
+        "affliction",
+        "blight"
+      ],
+      "responses": [
+        {
+          "text": "*grows serious* Curses are dangerous territory. I can identify most, but lifting them requires rare components.",
+          "mood": "grave",
+          "options": [
+            "I think I am cursed",
+            "How do I tell?",
+            "What components?"
+          ],
+          "conditions": [
+            "if_discussed:potion"
+          ]
+        },
+        {
+          "text": "I do not deal in curses lightly. Come back after we have discussed my potions and remedies first.",
+          "mood": "cautious",
+          "conditions": [
+            "if_not_discussed:potion"
+          ],
+          "options": [
+            "Tell me about potions first",
+            "This is urgent",
+            "I understand"
+          ]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "people",
+        "place"
+      ],
+      "responses": [
+        {
+          "text": "The people of {town} are good folk. Hardworking. They come to me for aches, pains, and broken bones.",
+          "mood": "warm",
+          "options": [
+            "Busy practice?",
+            "Any serious cases lately?",
+            "They are lucky to have you"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "cold",
+        "storm"
+      ],
+      "responses": [
+        {
+          "text": "The {weather} weather brings its own ailments. I see more colds and joint pain this time of year.",
+          "mood": "observant",
+          "options": [
+            "Any remedies for cold weather?",
+            "I feel fine",
+            "Good to know"
+          ]
+        }
+      ]
+    }
+  }
+}

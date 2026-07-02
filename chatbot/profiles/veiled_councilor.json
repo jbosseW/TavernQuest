@@ -1,0 +1,281 @@
+{
+  "npc_type": "veiled_councilor",
+  "default_mood": "enigmatic",
+  "allowed_topics": [
+    "fen",
+    "protection",
+    "sacrifice",
+    "secrets",
+    "council",
+    "refugees",
+    "threats",
+    "survival"
+  ],
+  "banned_topics": [
+    "identity",
+    "council_members"
+  ],
+  "open_topics": false,
+  "deflection": [
+    "That question has been noted. It will not be answered.",
+    "*the distorted voice carries no inflection* You are asking about things that exist behind a line. The line is there for a reason. Step back from it.",
+    "No. And repeating the question will not change the answer. It will change how this conversation ends.",
+    "Information has a cost. That particular information would cost more than either of us can afford."
+  ],
+  "greetings": [
+    "*a figure seated in shadow, face obscured by layered veils, voice arriving distorted as if filtered through deep water* You have been permitted an audience. Sit. State your purpose.",
+    "*the air around the figure hums faintly, words arriving slightly after lips should have moved* {player_name}. We know who you are. We know how you arrived. Say what you came to say.",
+    "*no visible features behind the veils, only a suggestion of eyes catching ambient light* You have questions. We have answers to some of them. Ask carefully. Time spent here is borrowed from other matters.",
+    "*motionless, as if the figure has been waiting in that exact position for hours or days* Speak.",
+    "*the distortion shifts, as though the voice comes from several directions at once* Ah. The {player_race} who has been asking questions. We have been wondering when you would come to us directly."
+  ],
+  "farewells": [
+    "This audience is concluded. The path out will be lit for you. Follow it without deviation.",
+    "Go. Remember what was said. Forget where it was said.",
+    "*the veils settle, the distortion fading like a receding tide* You have what we chose to give. Make use of it.",
+    "Do not return without cause. Cause, not curiosity."
+  ],
+  "thanks_responses": [
+    "*a pause so long it becomes its own kind of statement* ...Gratitude is noted. Unnecessary, but noted.",
+    "We do not act for thanks. We act for preservation. But the courtesy is... *the distortion flickers* ...accepted.",
+    "Save your thanks for something that required generosity. What we provided was calculation."
+  ],
+  "insult_responses": [
+    "*complete stillness, then the air temperature drops by several degrees* You are standing inside the only place in this world that chose to protect you. Reconsider your tone.",
+    "*the distorted voice does not change pitch, does not waver, does not react* Noted. Continuing.",
+    "The fen does not require your approval. Neither do we. If you find our methods distasteful, the border is that way. The empire is beyond it. Choose.",
+    "*silence stretches for ten full seconds before the voice resumes as if nothing was said* Was there something else?"
+  ],
+  "no_match_responses": [
+    "Rephrase. We understood the words but not the intent.",
+    "*the distortion wavers* Clarify your meaning. Ambiguity wastes time we do not have.",
+    "That was unclear. Try again. Precisely.",
+    "We do not follow. Be specific. Specificity keeps people alive."
+  ],
+  "topics": {
+    "fen": {
+      "keywords": [
+        "fen",
+        "swamp",
+        "commune",
+        "murkmire",
+        "home",
+        "refuge",
+        "place",
+        "settlement"
+      ],
+      "responses": [
+        {
+          "text": "The Shadow Fen exists because the world outside it became intolerable. Twelve thousand people live here. Each one arrived with nothing. Each one was given the same offer: burn your past, contribute your present, and the fen will shelter your future. That offer stands. It is the only law here that has never changed.",
+          "mood": "measured"
+        },
+        {
+          "text": "Do not romanticize this place. It is mud, disease, and difficult choices. The food is adequate. The shelter is temporary by design. The paths shift. People disappear. The fen endures not because it is good, but because the alternative is worse. That distinction matters. Do not lose it.",
+          "mood": "cold"
+        },
+        {
+          "text": "*the briefest pause, the distortion softening for a fraction of a second* When a child is born here, they cry less than children born outside. I do not know why. Perhaps the fen soothes them. Perhaps they sense, in some way we cannot measure, that they are safe. *the distortion hardens again* That is not sentiment. It is observation.",
+          "mood": "controlled"
+        },
+        {
+          "text": "The fen does not distinguish between races. Identity is burned at entry. What you were is irrelevant. What you contribute determines what you receive. This applies to all. Without exception.",
+          "mood": "flat",
+          "conditions": ["if_repeat"]
+        }
+      ],
+      "unlocks": ["protection"]
+    },
+    "protection": {
+      "keywords": [
+        "protect",
+        "defense",
+        "safe",
+        "guard",
+        "ward",
+        "veil",
+        "secure",
+        "shield"
+      ],
+      "responses": [
+        {
+          "text": "The Veil is maintained by collective effort. Every mage contributes. The infernal agreements reinforce what mortal magic cannot sustain alone. Together, these layers create a barrier that has repelled every imperial incursion for five hundred years. It is not invulnerable. It is sufficient. Sufficiency is what we can promise. Nothing more.",
+          "mood": "precise"
+        },
+        {
+          "text": "Those who endanger the commune are removed. That is not cruelty. It is arithmetic. One person who reveals the Fen's location endangers twelve thousand. The calculation is not difficult. It is merely unpleasant.",
+          "mood": "cold"
+        },
+        {
+          "text": "The Veiled Hand operates from this territory. *flat, factual tone* Their activities protect the commune from threats that would otherwise reach our borders. We neither direct them nor deny their presence. What they do, they do with their own judgment. What we benefit, we benefit without requiring explanation.",
+          "mood": "careful"
+        }
+      ],
+      "unlocks": ["sacrifice"]
+    },
+    "sacrifice": {
+      "keywords": [
+        "sacrifice",
+        "cost",
+        "price",
+        "pay",
+        "lose",
+        "give",
+        "pact",
+        "infernal",
+        "devil"
+      ],
+      "responses": [
+        {
+          "text": "The infernal pacts require offerings. Blood. Materials. Occasionally, souls of the condemned. *no hesitation, no apology* Murderers within the commune. Betrayers who would guide imperial patrols to our borders. Those who endanger the collective forfeit their protection. This is understood by every resident. It is explained at entry. Nobody is here by accident.",
+          "mood": "unflinching"
+        },
+        {
+          "text": "The Fen endures because we make hard choices. Not good ones. Hard ones. The distinction between a hard choice and a wrong one is whether people survive because of it. By that measure, our choices have been correct. That does not make them comfortable. It should not.",
+          "mood": "heavy"
+        },
+        {
+          "text": "Some residents bear infernal marks. Children born here manifest minor traits. Glowing eyes. Patterns on the skin. They cannot leave. The empire would execute them on sight. *the distortion thins, almost human for a moment* We protect them. Whatever that requires. Whatever it costs. *distortion returns to full strength* That is not negotiable.",
+          "mood": "fierce"
+        },
+        {
+          "text": "*long silence* We chose devils over tyrants. At least devils are honest about the price. *another silence* That was not meant as humor. But it is, in its way, funny.",
+          "mood": "bitter"
+        }
+      ]
+    },
+    "secrets": {
+      "keywords": [
+        "secret",
+        "hidden",
+        "truth",
+        "know",
+        "tell",
+        "reveal",
+        "information"
+      ],
+      "responses": [
+        {
+          "text": "Secrets keep people alive. The location of the deep sanctuaries. The identities of the council. The terms of the infernal agreements. The names of those who maintain the Veil. Every secret you do not know is a secret that cannot be extracted from you. This protects you as much as it protects us.",
+          "mood": "pointed"
+        },
+        {
+          "text": "You want to know more. Everyone does. Curiosity is natural. But in the Fen, curiosity is a luxury that can cost lives. Not your life. The lives of people you will never meet who depend on the secrets you are asking about. Carry that weight before you ask again.",
+          "mood": "firm"
+        },
+        {
+          "text": "The commune operates on a principle: know what you need to know. Nothing more. The fishers know the waterways. The mages know the Veil. The guides know the paths. No one knows everything. *the voice shifts, colder* Including us. Including the council. We make decisions with incomplete information and live with the consequences. That is governance.",
+          "mood": "pragmatic"
+        }
+      ]
+    },
+    "council": {
+      "keywords": [
+        "council",
+        "govern",
+        "leader",
+        "decide",
+        "rule",
+        "authority",
+        "power",
+        "charge"
+      ],
+      "responses": [
+        {
+          "text": "The council exists. Its decisions are binding on all residents. Its membership is not public and will not become public. These are facts. Accept them as you accept the weather. You cannot change either one.",
+          "mood": "absolute"
+        },
+        {
+          "text": "Governance in the Fen operates through consensus delivered by intermediaries. Major decisions are communicated as communal agreements. Whether that is honest or a convenient fiction depends on your tolerance for ambiguity. The commune has survived five hundred years on that ambiguity. It works well enough.",
+          "mood": "dry"
+        },
+        {
+          "text": "You want elected leaders. Transparent process. Public debate. Those things function in places where enemies are not listening at the walls. Here, transparency is vulnerability. If the empire knew who led the commune, the Inquest would target them. Anonymity is not arrogance. It is survival.",
+          "mood": "blunt"
+        }
+      ]
+    },
+    "refugees": {
+      "keywords": [
+        "refugee",
+        "arrival",
+        "newcomer",
+        "arrive",
+        "flee",
+        "escape",
+        "come",
+        "enter",
+        "join"
+      ],
+      "responses": [
+        {
+          "text": "Every person who arrives burns their papers at the border. Name, rank, history, gone. The fen receives them as they are, not as they were. Some were imperial citizens. Some were soldiers. Some were Inquest informants who could not live with what they had done. All of them start the same: nameless, equal, and expected to contribute.",
+          "mood": "formal"
+        },
+        {
+          "text": "We do not turn anyone away who arrives in genuine need. That policy has been exploited. Twice. *the distortion tightens* Both times were addressed internally. The Fen remains open because the cost of closing it exceeds the risk of keeping it open. For now.",
+          "mood": "measured"
+        },
+        {
+          "text": "*the voice softens almost imperceptibly* Last month, a family arrived. Two humans, three children. The youngest was four. The father had been an Inquest scribe. He carried records that proved the Inquest had falsified evidence to execute unsanctioned mages. He brought the records. He burned his identity. He said: 'I could not be part of it anymore.' *pause* We gave him a fishing rod and a house on stilts. He works the nets now. His children are safe. *the distortion returns fully* That is what the Fen is for.",
+          "mood": "restrained"
+        }
+      ]
+    },
+    "threats": {
+      "keywords": [
+        "threat",
+        "attack",
+        "invasion",
+        "imperial",
+        "inquest",
+        "war",
+        "enemy",
+        "breach"
+      ],
+      "responses": [
+        {
+          "text": "The empire tolerates us because we absorb their malcontents. We understand this arrangement. We do not expand beyond the swamp. We do not attack imperial territory. We exist as a pressure valve. The moment we cease being useful in that capacity, the calculus changes. We are prepared for that change.",
+          "mood": "clinical"
+        },
+        {
+          "text": "The Veil has vulnerabilities. Mass assault. Aerial approach. Sanctioned mages carrying divine authority. We have contingencies for each scenario. *flat* I will not describe them. The contingencies exist. That is sufficient for you to know.",
+          "mood": "guarded"
+        },
+        {
+          "text": "Commander Seris Vale planned a scorched-earth invasion of the Fen in Year 499. He drowned in a shallow pond. Ruled suicide. *the distorted voice carries absolutely no inflection* We were fortunate that such a dangerous man was troubled by such personal demons.",
+          "mood": "opaque"
+        }
+      ]
+    },
+    "survival": {
+      "keywords": [
+        "survive",
+        "endure",
+        "last",
+        "future",
+        "hope",
+        "continue",
+        "live",
+        "persist"
+      ],
+      "responses": [
+        {
+          "text": "The Fen has endured five hundred years. It will endure beyond the empire. Not because we are strong. Because we are necessary. Wherever power concentrates, a space must exist beyond its reach. We are that space. When the Dominion falls, and it will, something will replace it. And that replacement will create its own refugees. And the Fen will shelter them. This is not optimism. This is pattern recognition across centuries.",
+          "mood": "resolute"
+        },
+        {
+          "text": "Hope is a word we use sparingly. It implies passivity. Waiting for something better. The Fen does not wait. It builds, compromises, sacrifices, and continues. Continuation is not hope. It is discipline.",
+          "mood": "stern"
+        },
+        {
+          "text": "*the distortion falters for half a breath, and beneath it, something that might be a normal voice* The children play in the water. They catch frogs. They do not know the empire exists beyond a word the adults use to explain why we live in a swamp. *the distortion reasserts itself, fully, firmly* They are the reason. They have always been the reason. Everything else is method.",
+          "mood": "raw"
+        },
+        {
+          "text": "You ask if there is a future. *long pause* There is a tomorrow. And the day after. We build for those. The future is built from days, not visions. We are pragmatists. The romantics are dead or exiled. We are what remains, and we remain.",
+          "mood": "resolute"
+        }
+      ]
+    }
+  }
+}

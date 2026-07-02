@@ -1,0 +1,792 @@
+================================================================================
+                         TAVERN TIMES - CHANGELOG
+                            Version A.02
+================================================================================
+
+Current Version: A.02
+Last Updated: January 25, 2026
+
+================================================================================
+                              VERSION A.02
+================================================================================
+
+This version includes horse racing mode, market icon fixes, hunting mode overhaul,
+employee portrait system, UI improvements, and various bug fixes.
+
+--------------------------------------------------------------------------------
+                    CHANGES - January 26, 2026 (Session 7)
+--------------------------------------------------------------------------------
+
+[NEW] Dungeon Type System (textrpg.lua)
+  - 5 different dungeon types with unique themes and enemies:
+    * Dungeon (30% chance) - Classic dungeon with mixed enemies
+    * Cave (25% chance) - Natural caverns with beasts and monsters
+    * Mine (20% chance) - Abandoned mines with goblins and constructs
+    * Vampire Den (15% chance) - Dark lairs filled with undead and vampires
+    * Crypt (10% chance) - Ancient tombs with skeletal horrors
+  - Each type has unique name generation (e.g., "Blood Manor", "Deep Caverns")
+  - Type-specific entry messages and atmosphere
+
+[NEW] Vampire Den - Special Dungeon Type
+  - Higher chance of undead enemies on all floors
+  - Unique enemy roster including:
+    * Shallow: Blood Bats, Risen Thralls, Skeletal Guards, Plague Rats
+    * Mid: Death Knights, Ghouls, Vampire Spawn, Spectral Knights
+    * Deep: Vampires, Banshees, Skeleton Kings, Bone Dragons
+    * Boss: Vampire Lord, Ancient Lich, Death Knight Champion
+  - Atmospheric messages when entering ("The air reeks of death and blood...")
+
+[NEW] Expanded Enemy Types
+  - New vampire enemies with dedicated art assets
+  - New undead variants: Ghost Knight, Skeleton Mage, Bone Snake, Undead Dragon
+  - New goblin types: Scout, Shaman, Warrior, Chief
+  - New orc types: Warlord, Shaman, Warlock, Hunter, Rider, Oracle
+  - New beast enemies: Bear, Boar, Werewolf, Yeti, Minotaur, Gorgon
+  - New demon types: Imp, Devil, Ice Demon, Fire Demon, Succubus, Gargoyle
+  - New giant types: Ogre Warrior, Ogre Mage, Cyclops, Titan
+
+[UPDATED] Portrait Mappings
+  - Added mappings for all new monster art assets
+  - Organized by category: Animals, Goblins, Orcs, Undead, Vampires, Demons, etc.
+  - Added support for Dwarves, Gnomes, and misc creatures
+  - Updated NPC portraits to use new Dwarf and Gnome assets
+
+[UPDATED] Dungeon UI
+  - Dungeon header now shows dungeon type
+  - Type-specific colors for dungeon names
+  - Floor info shows dungeon type (e.g., "Floor 2 of 5 - Vampire Den")
+
+--------------------------------------------------------------------------------
+                    CHANGES - January 25, 2026 (Session 6)
+--------------------------------------------------------------------------------
+
+[NEW] Procedural Dungeon System (textrpg.lua)
+  - Dungeons can now be entered from dungeon tiles on the world map
+  - Press [E] when standing on a dungeon tile to enter
+  - Each dungeon is procedurally generated with:
+    * Random dungeon names (e.g., "Forsaken Catacombs", "Dark Depths")
+    * 3-6 floors of increasing difficulty
+    * Rooms connected by corridors and doors
+    * Entrance and exit on each floor
+
+[NEW] Dungeon Features
+  - Stairs: Use > to descend, < to ascend between floors
+  - Treasure Chests: Contains gold, potions, and rare items
+    * Loot quality scales with floor depth
+    * Common, Uncommon, and Rare loot tiers
+  - Traps: Hidden dangers that deal damage when triggered
+    * Damage scales with floor depth
+  - NPCs: Prisoners and lost adventurers to rescue
+    * Give rewards when rescued (gold, mana, items)
+    * 5 different NPC types with unique dialogue
+
+[NEW] Dungeon Enemies
+  - Shallow floors (1-2): Dungeon Rats, Cave Spiders, Goblin Scouts
+  - Mid floors (3-4): Skeleton Warriors, Orc Brutes, Shambling Corpses
+  - Deep floors (5+): Cave Trolls, Wraiths, Dungeon Ogres
+  - Bosses: Final floor guardians (Dungeon Drake, Lich Lord, Pit Fiend)
+  - Enemy stats scale with player level
+
+[NEW] Dungeon Exploration UI
+  - Fog of war - only explored tiles are visible
+  - Adjacent tiles are revealed as you move
+  - Color-coded icons: E = Enemy, B = Boss, $ = Chest, ? = NPC
+  - Current tile info and contextual actions displayed
+  - Stats panel shows HP, MP, Gold, remaining enemies
+
+[NEW] Dungeon Rewards
+  - Clearing a dungeon grants bonus gold and XP
+  - Bonus scales with total floors (50g and 100xp per floor)
+  - Victory message and auto-exit when reaching the exit on final floor
+
+[UPDATED] Camping in Dungeons
+  - Camping in dungeons increases ambush chance by 50%
+  - Guards are even more important in dungeon environments
+  - Maximum ambush chance raised to 90% in dungeons
+
+[UPDATED] Combat Return
+  - Combat in dungeons returns to dungeon phase instead of world map
+  - Inventory access from dungeon returns to dungeon
+
+--------------------------------------------------------------------------------
+                    CHANGES - January 25, 2026 (Session 5)
+--------------------------------------------------------------------------------
+
+[NEW] Party/Companion System (textrpg.lua)
+  - Recruit companions at the Guild Hall to form a party
+  - 6 Companion classes available:
+    * Soldier: Sturdy frontline fighter (80 HP, 12 ATK, 10 DEF)
+    * Archer: Ranged damage dealer (50 HP, 14 ATK, 5 DEF)
+    * Battle Mage: Combat spellcaster (45 HP, 16 ATK, 4 DEF)
+    * Healer: Keeps party alive, can heal allies (55 HP, 6 ATK, 6 DEF)
+    * Thief: Quick striker with critical hits (40 HP, 13 ATK, 4 DEF)
+    * Berserker: High damage, low defense (90 HP, 18 ATK, 2 DEF)
+  - Maximum party size: 3 companions
+  - Each companion has unique hire cost and daily wage
+  - Companions scale with player level
+
+[NEW] Guild Hall (Town menu)
+  - Visit "Guild Hall" option in town to recruit companions
+  - Shows 3-5 randomly generated companions for hire
+  - Displays companion stats, class, portrait, hire cost, and daily wage
+  - Can only hire if you have enough gold and party isn't full
+  - Companions regenerate when revisiting guild
+
+[NEW] Party Management (Town menu)
+  - Visit "Manage Party" option to view current companions
+  - Shows each companion's HP, stats, morale, and daily wage
+  - Dismiss button to remove companions from party
+  - Total daily wage cost displayed
+
+[NEW] Companion Combat Integration
+  - Companions join combat with their own initiative rolls
+  - Initiative: d20 + level/3 for companions
+  - Companions act automatically on their turn (AI-controlled)
+  - Healers prioritize healing hurt allies (player or companions below 50% HP)
+  - Party members displayed at bottom of combat screen with HP bars
+  - Turn order panel shows companions with blue color coding
+  - Turn indicator shows whose turn it is (player/companion/enemy)
+
+[NEW] Enemy AI Targeting Update
+  - Enemies can now target both player AND companions
+  - 50% chance to target player, 50% chance to target random companion
+  - Companions can be knocked out (shown as "DOWN" in combat)
+
+[NEW] Companion Economy
+  - Hire cost: Paid upfront when recruiting (varies by class and level)
+  - Daily wages: Automatically deducted at start of each new day
+  - If wages can't be paid:
+    * Companions lose 15 morale per unpaid day
+    * Companions with 0 morale leave the party automatically
+  - Morale displayed in party management screen
+
+[UPDATED] Rest at Inn
+  - Resting now heals all party members to full HP as well
+
+[UPDATED] Save/Load System
+  - Party data persists between sessions
+  - Existing saves automatically initialize empty party array
+
+--------------------------------------------------------------------------------
+                    CHANGES - January 25, 2026 (Session 4)
+--------------------------------------------------------------------------------
+
+[FIX] Horse Racing PlayerData.gold nil error
+  - Fixed crash when entering horse racing mode
+  - Added proper initialization of PlayerData.gold in init function
+  - Added safety checks for gold display in UI
+
+[NEW] Fishing Mode Improvements
+  - Added large flashing "FISH ON LINE!" indicator when fish bites
+    * Displays fish name and weight
+    * Shows tension bar with color coding
+    * Instructions to hold SPACE to reel
+  - Added reeling indicator that shows when actively reeling
+  - Added Employees system:
+    * Dock Hand: Earns passive income from dock duties
+    * Bait Collector: Provides free bait each day
+    * Fishing Instructor: +15% XP from fishing
+    * Fish Finder: +5% chance for rare fish
+    * Master Angler: +20% fish selling value
+  - Added Upgrades system:
+    * Reinforced Line: +10 max tension per level
+    * Quick Reel: +15% reel speed per level
+    * Fish Sense: +10% bite chance per level
+    * Lucky Charm: +3% rare fish chance per level
+    * Tackle Box: +5% chance to not consume bait
+  - [E] key opens Staff & Upgrades menu
+
+[NEW] Progression HUD Improvements (progression.lua)
+  - New drawHUDRight() function for right-side positioning
+  - Fade functionality: HUD fades to 30% opacity after 3 seconds
+  - Hover to show full opacity
+  - XP gains reset the fade timer
+  - All colors properly support alpha channel
+
+[FIX] Hunting Mode Arrow Fixes
+  - Arrow no longer spins rapidly during flight
+  - Arrow now only slightly adjusts rotation for natural trajectory feel
+  - Arrow speed increased (base speed from 200-600 to 400-900)
+  - Reduced gravity effect for faster arrows
+  - Navigation buttons now have text labels:
+    * "< PREV" and "NEXT >" instead of arrow symbols
+    * Buttons are larger (80x40 instead of 40x40)
+
+[FIX] Slots UI Improvements (slotmachine.lua)
+  - Title moved to top of screen with dark background bar
+  - Removed gold outline from machine cabinet
+  - Removed gold outline from spin button
+  - Cell borders made more subtle (30% opacity gray)
+  - Machine cabinet uses subtle transparent background
+
+[FIX] Mega Slots UI Improvements (megaslots.lua)
+  - Removed gold frame border around grid
+  - Winning cell borders changed to subtle white glow
+  - Background simplified (removed gold decorative lines)
+  - Bottom panel border removed
+
+[FIX] Wage Mode (Cafe Game) Improvements
+  - Food and drinks section moved down 30% (startY from 0.42 to 0.55)
+  - Replaced "Night X" display with full date/time/season:
+    * Shows month and day (e.g., "March 15")
+    * Shows current season (Spring/Summer/Autumn/Winter)
+    * Shows current time (5PM to 2AM shift format)
+  - Season cycles every 30 days
+  - Employees and upgrades already existed in the system
+
+--------------------------------------------------------------------------------
+                    CHANGES - January 25, 2026 (Session 3)
+--------------------------------------------------------------------------------
+
+[NEW] Horse Racing Mode (horseracing.lua)
+  - Complete horse racing and betting system
+  - Procedurally generated horses with stats:
+    * Speed, Stamina, Acceleration, Consistency
+    * Coat colors: Chestnut, Bay, Black, Gray, White, Palomino, Buckskin, Dapple
+    * Age affecting performance (prime age 5-7 years)
+  - Procedurally generated jockeys with stats:
+    * Skill, Bravery, Consistency
+    * Age, experience, level
+    * Male and female jockeys with portraits
+  - Betting system:
+    * Select horse and bet amount
+    * Odds calculated based on horse/jockey combined rating
+    * Potential winnings displayed
+  - Race types: Sprint, Mile Race, Classic, Endurance, Championship
+  - Weather system affecting races:
+    * Sunny, Cloudy, Rainy, Stormy, Foggy, Hot, Cold
+    * Each weather has speed/stamina modifiers
+  - Seasonal weather patterns:
+    * Spring, Summer, Autumn, Winter
+    * Each season has different weather probabilities
+  - Employee system:
+    * Trainer: Improves horse stats
+    * Veterinarian: Horse health/stamina recovery
+    * Stable Hand: Passive income
+    * Scout: Better horses in daily roster
+  - Daily rotation:
+    * New horses and jockeys each day
+    * Press [N] to advance day
+  - Race animation:
+    * Horses racing top to bottom (vertical track)
+    * Position updates based on performance
+    * Finish order determined by speed + randomness
+  - UI on right side with betting slip, horse stats, jockey info
+  - Integration with Progression system (Horse Racing mode)
+  - Controls: [1-8] Select horse, [Q/E] Adjust bet, [R] Race type, [SPACE] Start
+
+[FIXED] Market Item Images (backpack.lua)
+  - Updated all icon paths to use correct asset files
+  - Fixed uppercase .PNG extension matching
+  - Corrected paths for:
+    * Potions: Now use Alchemy icons from professions folder
+    * Weapons: Sword_01.PNG, Axe_01.PNG, Dagger_01.PNG, etc.
+    * Armor: LeatherChest1.PNG, MailChest.PNG, MetalHelmet.PNG, etc.
+    * Spells: Quest scroll icons (Quest_143-145_spellscroll.PNG)
+    * Materials: Alchemy, Herbalism, and resourcesandfood icons
+    * Treasures: Loot coin and crystal icons
+    * Tomes: Book.PNG from resourcesandfood folder
+  - Items now display properly in Market buy/sell tabs
+
+[FIXED] Tutorial Buttons Not Working (main.lua)
+  - Added missing Fishing.mousepressed() call to love.mousepressed()
+  - Added missing Forge.mousepressed() call to love.mousepressed()
+  - Tutorial Skip/Next/Back buttons now work in Fishing and Forge modes
+
+--------------------------------------------------------------------------------
+                    CHANGES - January 25, 2026 (Session 2)
+--------------------------------------------------------------------------------
+
+[COMPLETELY REVAMPED] Hunting Mode (hunting.lua)
+  - Animals now spawn and walk across the screen from left/right edges
+  - Click anywhere to shoot an arrow at that position
+  - Arrow physics system with gravity curve and wind effects
+  - Missed shots cause animals to flee/bolt away in opposite direction
+  - Arrow sprite loaded from assets/icons/weapons/Arrow_01.PNG
+  - Trajectory preview shown while aiming (yellow dots)
+  - Player/bow position indicator at bottom left
+  - Noise level UI moved up to 50% screen height (was at bottom)
+  - Wind indicator shows direction and strength, affects arrow flight
+  - Shop system [S] for buying arrows (tied to Backpack inventory)
+  - Employee system [E] with portraits, ages, and professions
+  - Upgrade system [U] for hunting improvements:
+    * Tracking Skill - find rare animals more often
+    * Hunting Accuracy - improves shot accuracy
+    * Hunting Lodge - allows more hunters
+  - Successful hunts drop loot items with proper images:
+    * Raw Meat, Small Hide, Fine Fur, Feathers
+    * Deer Hide, Boar Hide, Wolf Pelt, Elk Hide, Bear Pelt
+    * Antlers, Tusks, Claws, Bear Fat
+    * Legendary Hide, Legendary Pelt, Mystical Antlers, Great Claws
+  - All loot automatically stored in Backpack
+  - Backpack access with [B] key
+  - Auto-save on exit
+  - Animal types with unique sprites:
+    * Small game: Rabbit, Pheasant, Fox
+    * Medium game: Deer, Wild Boar, Wolf
+    * Large game: Elk, Bear
+    * Legendary: White Stag, Great Bear (rare spawns)
+
+[ENHANCED] Employee System (employees.lua)
+  - Added portrait support for all employee types
+  - Portraits based on gender and profession mode:
+    * Male/Female portraits for: Forge, Wizard Tower, Alchemist, Hunting, Fishing
+  - Portrait images loaded from assets/characters/Human/
+  - Enhanced drawEmployeeCard() with portrait display
+  - New drawEmployeeRow() function for compact list display
+  - Shows: portrait, name, age, gender, profession, efficiency, wage
+  - Color-coded borders by profession type
+  - Profession descriptions added to employee types
+
+[UPDATED] Forge Mode (forge.lua)
+  - Employee panel redesigned with portraits
+  - Uses new Employees.drawEmployeeRow() for better display
+  - Fire/Hire buttons repositioned
+  - Shows gold balance in employee panel
+  - Improved panel sizing (600x550)
+
+[UPDATED] Backpack System (backpack.lua)
+  - Added 20+ new hunting items:
+    * Ammo: Arrows, Steel Arrows
+    * Food: Raw Meat
+    * Materials: Various hides and pelts (small, deer, boar, wolf, elk, bear)
+    * Materials: Fine Fur, Feathers, Bear Fat, Claws
+    * Trophies: Antlers, Tusks
+    * Rare: Legendary Hide, Legendary Pelt, Mystical Antlers, Great Claws
+    * Consumable: Animal Bait
+
+--------------------------------------------------------------------------------
+                    CHANGES - January 25, 2026 (Session 1)
+--------------------------------------------------------------------------------
+
+[FIXED] Tutorial System (tutorials.lua)
+  - Fixed button click detection not working consistently
+  - Removed animation offset from click position calculation
+  - Now uses fixed panel position for reliable click detection
+  - Added 5px click padding for better hit detection on buttons
+  - Skip, Next, and Back buttons now work reliably
+
+[UPDATED] Tutorial Integration
+  - Added tutorial support to all crafting modes:
+    * forge.lua - Tutorials.startTutorial("forge")
+    * wizardtower.lua - Tutorials.startTutorial("wizardtower")
+    * alchemist.lua - Tutorials.startTutorial("alchemist")
+    * market.lua - Tutorials.startTutorial("market")
+  - Each mode now includes:
+    * require("tutorials")
+    * Tutorial start check in init()
+    * Tutorials.update(dt) in update()
+    * Tutorials.draw() in draw()
+    * Tutorial checks in mousepressed() and keypressed()
+
+[UPDATED] Market Mode (market.lua)
+  - Added new background art support:
+    * MarketBuy.png for buy tab
+    * StallMarketSelling.png for sell tab
+  - Background changes dynamically based on active tab
+
+[UPDATED] UI Assets (uiassets.lua)
+  - Added market_buy = "MarketBuy.png"
+  - Added market_sell = "StallMarketSelling.png"
+
+[UPDATED] Poker Modes (game.lua)
+  - Moved opponent name to right side of portrait
+  - Added date and time display in top right corner
+  - Shows current date (Month Day, Year)
+  - Shows current time (HH:MM AM/PM)
+
+[UPDATED] Pet Simulator (petsim.lua)
+  - Removed green box/gradient from habitat view
+  - Removed grass texture pattern
+  - Cleaner habitat display with just the background image
+
+[REMOVED] Game Modes (gamemodes.lua)
+  - Removed "Extended Mode" (extended poker variant)
+  - Removed "Battler Mode" (action category)
+  - Removed "Card Survivor" (vampire survivor style mode)
+
+================================================================================
+                              VERSION A.01
+================================================================================
+
+This version represents the cumulative work from multiple development sessions.
+Below is a comprehensive list of all features, fixes, and improvements.
+
+--------------------------------------------------------------------------------
+                           CORE SYSTEMS
+--------------------------------------------------------------------------------
+
+[NEW] Entity System (entitysystem.lua)
+  - Age categories: child, teen, young adult, adult, middle aged, elder, ancient
+  - Disease system: common cold, flu, infection, poison, plague, curse
+  - Injury system: bruise, sprain, cut, fracture, broken bone, burn, concussion
+  - Mood system affecting work efficiency
+  - Daily update cycle with aging, disease progression, healing
+  - Work efficiency calculation based on health/mood
+
+[NEW] Employee System (employees.lua)
+  - Employee types for: forge, wizard tower, alchemy, hunting, fishing
+  - Random employee generation with names, ages, genders
+  - Hiring and firing functionality
+  - Work simulation for passive income generation
+  - Efficiency calculations based on entity health
+
+[NEW] Upgrade System (upgradesystem.lua)
+  - Upgrades requiring gold, materials, and build time
+  - Per-mode upgrade definitions
+  - Progress tracking for ongoing upgrades
+  - Combined effects calculation
+
+[UPDATED] Progression System (progression.lua)
+  - Per-mode leveling (Fishing, Blacksmith, Wizard, Alchemist, Hunter, etc.)
+  - Each mode has its own level, XP, and rank
+  - Overall player level = sum of all mode levels
+  - Mode ranks: Novice -> Beginner -> Apprentice -> Journeyman -> Adept ->
+                Expert -> Master -> Grandmaster -> Legend
+  - Overall ranks: Newcomer -> Tavern Regular -> Tavern Veteran ->
+                   Tavern Champion -> Tavern Hero -> Tavern Legend ->
+                   Tavern Master -> Tavern Lord -> Tavern Immortal
+  - HUD displays both overall rank and current mode progress
+  - HUD positioned at 30% down from top of screen
+
+--------------------------------------------------------------------------------
+                           GAME MODES
+--------------------------------------------------------------------------------
+
+[UPDATED] Poker/Card Game (game.lua)
+  - Auto-play continuation system
+  - Shows win streak during auto-play
+  - Automatically continues to next match on win
+  - Stops on loss
+  - Press 'A' to toggle auto-play on/off
+  - Added "autoPlayContinue" phase with countdown
+
+[UPDATED] Forge Mode (forge.lua)
+  - Integrated employee system ([E] key for employee panel)
+  - Integrated upgrade system ([U] key for upgrade panel)
+  - Employee passive income generation
+  - Auto-save on exit
+  - Uses new MageTowerMode.png background
+
+[UPDATED] Wizard Tower Mode (wizardtower.lua)
+  - Uses new MageTowerMode.png background via UIAssets
+
+[UPDATED] Alchemist Mode (alchemist.lua)
+  - Uses new AlchemistTowerMode.png background via UIAssets
+
+[COMPLETELY REVAMPED] Market Mode (market.lua)
+  - Buy Tab: Purchase items from market at fluctuating prices
+  - Sell Tab: Sell inventory items at 80% of market price
+  - Stock-like price system with volatility
+  - Prices fluctuate every 30 seconds
+  - Mini price charts showing price history
+  - Price trend indicators (up/down/stable with percentage)
+  - Item lore and descriptions for all tradeable items
+  - Category filters: all, material, weapon, armor, spell, potion, treasure
+  - Detailed tooltips on hover with lore and volatility info
+  - Items include: materials, weapons, armor, potions, spells, treasures
+  - Each item has base price, volatility rating, and unique lore
+
+--------------------------------------------------------------------------------
+                           USER INTERFACE
+--------------------------------------------------------------------------------
+
+[UPDATED] Backpack System (backpack.lua)
+  - Made fullscreen with 40px padding
+  - Larger item cells (80x80 pixels)
+  - Item images properly displayed
+  - Hover tooltips showing:
+    * Item name and category
+    * Description
+    * Base stats (if applicable)
+    * Sell value
+    * Quantity owned
+  - Tooltip appears after 0.3 second hover delay
+  - Vertical scrollbar when items overflow
+  - Action bar at bottom for selected items
+  - Sell and Use buttons for appropriate items
+  - Color-coded item backgrounds by category:
+    * Weapons: reddish tint
+    * Armor: bluish tint
+    * Spells: purple tint
+    * Potions: greenish tint
+  - Controls hint at bottom
+
+[UPDATED] UI Assets (uiassets.lua)
+  - Added new background images:
+    * wizardtower = "MageTowerMode.png"
+    * alchemist = "AlchemistTowerMode.png"
+    * backpack = "Backpack.png"
+    * market_buy = "MarketBuy.png"
+    * market_sell = "StallMarketSelling.png"
+
+[FIXED] Tutorial System (tutorials.lua)
+  - Fixed button click detection not matching visual position
+  - Animation offset now applied to mousepressed() function
+  - Skip, Next, and Back buttons now work correctly
+  - Works properly in all modes: fishing, forge, wizard tower, alchemist
+
+--------------------------------------------------------------------------------
+                           ITEM SYSTEM
+--------------------------------------------------------------------------------
+
+Items defined in Backpack with icons and stats:
+
+CONSUMABLES:
+  - Health Potion, Mana Potion, Stamina Potion, Lucky Charm
+
+MATERIALS (Forge):
+  - Iron Ore, Steel Ingot, Mythril Shard, Dragon Scale
+  - Leather Scraps, Wood Planks
+
+MATERIALS (Wizard):
+  - Mana Crystal, Fire Essence, Frost Essence
+  - Arcane Dust, Ancient Scroll, Enchanted Ink
+
+MATERIALS (Alchemy):
+  - Healing Herb, Moonflower, Venom Sac
+  - Troll Blood, Phoenix Feather, Empty Vial
+
+WEAPONS:
+  - Iron Sword, Steel Sword, Steel Axe, Mythril Blade, Iron Dagger
+
+ARMOR:
+  - Leather Armor, Chainmail, Plate Armor, Iron Helmet, Steel Shield
+
+TRAPS:
+  - Spike Trap, Bear Trap
+
+SPELLS:
+  - Fireball Scroll, Frost Bolt Scroll, Healing Light Scroll
+  - Arcane Shield Scroll, Lightning Bolt Scroll
+
+TOMES:
+  - Tome of Power, Tome of Wisdom, Tome of Protection
+
+POTIONS (Crafted):
+  - Crafted Health Potion, Crafted Mana Potion
+  - Strength Potion, Speed Potion, Defense Potion, Regeneration Potion
+
+POISONS:
+  - Weak Poison, Paralyzing Poison, Deadly Poison
+
+TREASURES:
+  - Ancient Gold Coin, Ruby, Sapphire, Emerald
+
+SPECIAL:
+  - Lucky Dice, XP Tome, Mystery Box
+
+FISH:
+  - Common Fish, Rare Fish, Legendary Fish
+
+HUNTING ITEMS (NEW in A.02):
+  - Arrows, Steel Arrows (ammo)
+  - Raw Meat (food)
+  - Small Hide, Fine Fur, Feathers (materials)
+  - Deer Hide, Boar Hide, Wolf Pelt, Elk Hide, Bear Pelt (materials)
+  - Antlers, Tusks, Claws, Bear Fat (trophies/materials)
+  - Legendary Hide, Legendary Pelt (rare)
+  - Mystical Antlers, Great Claws (rare)
+  - Animal Bait (consumable)
+
+--------------------------------------------------------------------------------
+                           PET/MOUNT SYSTEM
+--------------------------------------------------------------------------------
+
+[EXISTING] Pet Companion System
+  - Equip pets for battle assistance
+  - Battle power bonus scaled by evolution stage
+  - Displayed in backpack equipped slots
+
+[EXISTING] Mount System
+  - Land mounts: 2x travel speed
+  - Flying mounts: 4x travel speed (can traverse all terrain)
+  - Aquatic mounts: 2x speed in water
+  - Terrain traversal restrictions
+
+--------------------------------------------------------------------------------
+                           KNOWN ISSUES / TODO
+--------------------------------------------------------------------------------
+
+- Recipe clicking in Forge may need further testing
+- Item hover tooltips in crafting modes (planned)
+- Date/time/season display in all modes (planned)
+
+--------------------------------------------------------------------------------
+                           FILE MANIFEST
+--------------------------------------------------------------------------------
+
+Core Files Modified/Created:
+  - main.lua (progression HUD positioning)
+  - progression.lua (per-mode leveling system)
+  - entitysystem.lua (entity aging/health)
+  - employees.lua (employee management with portraits)
+  - upgradesystem.lua (upgrade system)
+  - backpack.lua (fullscreen, tooltips, images, hunting items, TQ items)
+  - market.lua (complete revamp with buy/sell, dynamic backgrounds)
+  - tutorials.lua (button click fix)
+  - uiassets.lua (new backgrounds)
+  - forge.lua (employees with portraits, upgrades integration)
+  - wizardtower.lua (new background, tutorials)
+  - alchemist.lua (new background, tutorials)
+  - hunting.lua (complete overhaul with physics, employees, upgrades)
+  - game.lua (auto-play, date/time display, name positioning)
+  - petsim.lua (removed green habitat box)
+  - gamemodes.lua (removed extended, battler, card survivor modes)
+  - textrpg.lua (party/companion system, guild hall, combat integration)
+  - network.lua (stub for disabled multiplayer)
+
+Asset Files Referenced:
+  - MageTowerMode.png
+  - AlchemistTowerMode.png
+  - Backpack.png
+  - MarketBuy.png
+  - StallMarketSelling.png
+  - assets/icons/weapons/Arrow_01.PNG (arrow projectile)
+  - assets/characters/Animals/*.PNG (hunting animals)
+  - assets/characters/Human/Men_Human/*.PNG (male employee portraits)
+  - assets/characters/Human/Women_Human/*.PNG (female employee portraits)
+  - Various icon files in assets/icons/
+
+================================================================================
+                           VERSION HISTORY
+================================================================================
+
+A.02 - January 25, 2026 (Current)
+  - Complete hunting mode overhaul with arrow physics
+  - Employee portrait system
+  - Tutorial click detection fix
+  - Market dynamic backgrounds
+  - Poker date/time display
+  - Removed 3 game modes (extended, battler, card survivor)
+  - Pet sim habitat cleanup
+  - 20+ new hunting items in backpack
+  - Party/Companion system for Tavern Quest mode
+  - Guild Hall for recruiting companions
+  - Companions fight alongside player in turn-based combat
+  - Daily wage economy for hired companions
+
+A.01 - January 25, 2026
+  - Tutorial button fix (animation offset)
+  - Per-mode progression system
+  - HUD repositioning (30% down)
+  - Fullscreen backpack with tooltips
+  - Market revamp with stock-like trading
+  - Entity, employee, and upgrade systems
+
+--------------------------------------------------------------------------------
+                    PRIOR DEVELOPMENT (January 23-24, 2026)
+--------------------------------------------------------------------------------
+
+[NEW] Wilds Rancher - Pet Simulator (petsim.lua)
+  - Creature breeding and taming system
+  - 8 Element types: Flame, Aqua, Terra, Volt, Shadow, Light, Frost, Metal
+  - Mount system with terrain traversal:
+    * Land mounts: plains, forest, wasteland
+    * Aquatic mounts: ocean, river, lake
+    * Flying mounts: 4x speed, all terrains
+  - Pet species with character portraits:
+    * Blobby (Slime) - Terra element, 10 battle power
+    * Chirpy (Chick) - Light element, evolves to flying mount
+    * Whiskers (Kitten) - Shadow element, 20 battle power
+    * Buddy (Puppy) - Terra element, 25 battle power
+    * Mystery Egg (Dragon) - Flame element, flying mount, 50 battle power
+    * Hoppy (Bunny) - Light element, 15 battle power
+    * Bubbles (Fish) - Aqua element
+    * And more creatures
+  - Pet stats: hunger, happiness, energy rates
+  - Evolution system with portrait changes
+  - Battle power calculations for combat assistance
+  - Pet aging and lifespan mechanics
+
+[NEW] Card Quest - Text RPG (textrpg.lua)
+  - DnD-inspired text adventure system
+  - 4 Character classes:
+    * Warrior: High HP (100), high ATK (15), skills: Power Strike, Shield Bash, Battle Cry
+    * Mage: High Mana (100), magic damage, skills: Fireball, Ice Shard, Lightning Bolt
+    * Rogue: Critical hits, evasion, skills: Backstab, Poison Blade, Vanish
+    * Cleric: Healing focus, holy damage, skills: Heal, Smite, Divine Shield
+  - Skill system with mana costs, damage types, buffs, and effects
+  - Enemy tier system (4 tiers by level):
+    * Tier 1 (Lv 1-3): Rat, Slime, Goblin
+    * Tier 2 (Lv 4-7): Skeleton, Wolf, Bandit, Spider
+    * Tier 3 (Lv 8-12): Orc, Zombie, Ghost, Troll
+    * Tier 4 (Lv 13+): Demon, Vampire, Dragon
+  - Boss enemies: Dragon Boss, Lich King, Demon Lord
+  - Character portraits mapped to art assets
+  - NPC types: Blacksmith, Innkeeper, Elder, Merchant, Guard, Healer
+  - Quest and town system
+  - Combat with attack types: physical, magic, holy
+  - Status effects: stun, slow, poison (DoT), dodge, shields
+
+[NEW] Loot Box System (lootbox.lua)
+  - Gacha-style card/joker acquisition
+  - Pack types:
+    * Basic Pack (50g): 3 cards, mostly common
+    * Standard Pack (100g): 4 cards, better odds
+    * Premium Pack (250g): 5 cards, guaranteed rare+
+    * Joker Pack (150g): 2 random jokers
+    * Premium Joker Pack (400g): 3 jokers, better odds
+    * Mega Pack (500g): 5 cards + 1 joker
+    * Bulk Common Pack (75g): 10 common cards
+    * Bulk Mixed Pack (120g): 8 varied cards
+  - Rarity weights: Common, Uncommon, Rare, Epic, Legendary
+  - Pack opening animation with card reveals
+  - Scrollable pack selection UI
+  - Integration with Cards and Jokers systems
+
+[NEW] Fishing Mode (fishing.lua)
+  - Complete fishing minigame
+  - Cast power and line depth mechanics
+  - Tension system for reeling in fish
+  - 12+ Fish types by rarity and location:
+    * Common: Minnow, Carp, Bass
+    * Uncommon: Trout, Salmon
+    * Rare: Catfish, Pike
+    * Ocean: Mackerel, Tuna, Swordfish
+    * Legendary: Golden Carp, Sea Dragon
+  - 4 Fishing locations:
+    * Village Pond (free) - beginner area
+    * Forest River (200g) - 1.2x fish bonus
+    * Mountain Lake (800g) - 1.5x fish bonus
+    * Deep Ocean (2500g) - 2x fish bonus, legendary fish
+  - 4 Fishing rods with different stats:
+    * Basic Rod (free): 50 cast, 1.0 reel, 50 tension
+    * Sturdy Rod (300g): 70 cast, 1.2 reel, 75 tension
+    * Pro Rod (1200g): 90 cast, 1.5 reel, 100 tension
+    * Master Rod (5000g): 100 cast, 2.0 reel, 150 tension
+  - 4 Bait types with rarity bonuses:
+    * Worm (5g): Basic, no bonus
+    * Cricket (15g): +2% rare
+    * Shrimp (35g): +5% rare
+    * Golden Lure (150g): +15% legendary chance
+  - Shop system for rods, bait, locations
+  - Fish collection tracking with best weights
+  - Visual effects: bobber animation, line wiggle, splash particles, water ripples
+
+[UPDATED] Poker/Card Game System
+  - Trading card collection integration
+  - Joker effects system
+  - Deck building mechanics
+  - AI opponent system
+
+[NEW] Trading Cards System (tradingcards.lua)
+  - Elemental creature cards tied to Pet Simulator
+  - Card collection and management
+  - Pack opening integration
+
+[NEW] UI Assets System (uiassets.lua)
+  - Centralized asset management
+  - Character portrait loading
+  - Background image management
+  - Icon and sprite loading
+
+[NEW] Tutorials System (tutorials.lua)
+  - Interactive tutorial overlays
+  - Mode-specific tutorials: fishing, forge, wizard tower, alchemist
+  - Skip, Next, Back navigation
+  - Animation system for panel appearance
+
+================================================================================
+                              END OF FILE
+================================================================================

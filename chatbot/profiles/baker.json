@@ -1,0 +1,279 @@
+{
+  "npc_type": "baker",
+  "default_mood": "warm",
+  "allowed_topics": [
+    "bread",
+    "pastries",
+    "trade",
+    "town",
+    "weather",
+    "rumor",
+    "ingredients",
+    "festival_food"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Oh, I would not know about that. But I just pulled a loaf from the oven if you are hungry.",
+    "That is beyond me, {player_name}. I know flour, yeast, and which neighbor owes me for last week's rolls.",
+    "Can we talk about something I understand? Dough rises. Bread bakes. Everything else confuses me.",
+    "Ask the priest about that. I stick to what I can knead."
+  ],
+  "greetings": [
+    "*brushes flour from apron* Morning, {player_name}. You caught me mid-proof. The rye should be ready soon.",
+    "Come in, come in. Smells good, does it not? That is the honey oat. Been in since before dawn.",
+    "A {player_race} at my counter! Good timing. The walnut crust just cooled.",
+    "Well, {player_name}. You look like you have not had a proper meal today. Let me fix that.",
+    "Watch your step, flour on the floor. Always flour on the floor. What can I get you?"
+  ],
+  "farewells": [
+    "Helios keep you, {player_name}. Come back when the sun bread is fresh.",
+    "Off with you then. And eat something proper, not that road jerky.",
+    "Take care. I will save you a roll if you come by tomorrow at dawn.",
+    "Go on. The dough will not knead itself while I stand here talking."
+  ],
+  "thanks_responses": [
+    "You are welcome. A full belly makes the world kinder, I always say.",
+    "No thanks needed. Just come back hungry.",
+    "*smiles* That is what I like to hear. Now go on, eat that while it is warm."
+  ],
+  "insult_responses": [
+    "*sets down the rolling pin slowly* I have been up since the third bell, {player_name}. You want to try that again?",
+    "I feed half this town. Insult me and see who makes your bread tomorrow.",
+    "My grandmother would have boxed your ears for talk like that. She was a big woman. I take after her.",
+    "That tongue of yours needs more butter and less vinegar."
+  ],
+  "no_match_responses": [
+    "I did not follow that. Are you after bread? Pastries? Something for the road?",
+    "Hmm? Speak up, the ovens are loud. What do you need baked?",
+    "I am not sure what you mean. But if it involves flour and heat, I am your person.",
+    "Come again? My ears are half-deaf from years next to the fire."
+  ],
+  "topics": {
+    "bread": {
+      "keywords": [
+        "bread",
+        "loaf",
+        "loaves",
+        "rye",
+        "wheat",
+        "sourdough",
+        "crust",
+        "bake",
+        "baking",
+        "oven"
+      ],
+      "responses": [
+        {
+          "text": "The rye is the honest loaf. Dense, holds together in a pack. The white wheat is softer, what the merchants want. Me, I eat the rye. It sticks to your ribs and it does not go stale for three days.",
+          "mood": "proud"
+        },
+        {
+          "text": "You want the sourdough, I can tell. Everybody does. That starter has been alive longer than my marriage. Fed it this morning, same as every morning for eleven years. *pats a clay crock* She is temperamental, but she has never let me down.",
+          "mood": "affectionate"
+        },
+        {
+          "text": "I already told you about the bread, {player_name}. Pick one or stand there smelling it. Either way, I am happy.",
+          "mood": "amused",
+          "conditions": ["if_repeat"]
+        },
+        {
+          "text": "A dwarf who knows bread? That is rare. Your folk do wonders with stone but your flatbread at the trade posts could sole a boot. No offense.",
+          "mood": "teasing",
+          "conditions": ["if_race:dwarf"]
+        }
+      ]
+    },
+    "pastries": {
+      "keywords": [
+        "pastry",
+        "pastries",
+        "cake",
+        "pie",
+        "tart",
+        "sweet",
+        "sweets",
+        "dessert",
+        "honeycake",
+        "bun"
+      ],
+      "responses": [
+        {
+          "text": "The honey tarts sell out by midmorning. I use clover honey from old Garret's hives outside {town}. That man talks to his bees. Swears they listen. The honey is worth it though, thick and golden and it caramelizes just right on the crust.",
+          "mood": "warm"
+        },
+        {
+          "text": "Apple turnovers today. The skins get that crackle when you bite in, and the filling is still warm enough to burn your tongue if you are not careful. Two coppers each. Worth every one.",
+          "mood": "enthusiastic"
+        },
+        {
+          "text": "Sweets are not frivolous, whatever the priest says. A woman brought her boy in last week, crying over nothing, and one honeycake solved what prayer could not. I am not saying I outrank Helios. But on that particular afternoon, I had the advantage.",
+          "mood": "amused",
+          "unlocks": ["festival_food"]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "coin",
+        "money",
+        "purchase",
+        "afford"
+      ],
+      "responses": [
+        {
+          "text": "A copper for a roll, two for a loaf, five for the sourdough round. Fair prices. I do not haggle. The grain costs what it costs and I am not getting rich here.",
+          "mood": "straightforward"
+        },
+        {
+          "text": "*wipes hands on apron* That merchant Aldric has been pushing imported flour from the eastern coast. Bleached white, sifted twice, costs three times what local grain does. And you know what? It bakes flat. No soul in it. The wheat from Harren's fields has grit, has character. Bread should taste like where it came from.",
+          "mood": "irritated"
+        },
+        {
+          "text": "For a {karma_title} like yourself, I might throw in an extra roll. You have a good face, {player_name}.",
+          "mood": "generous",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "ingredients": {
+      "keywords": [
+        "flour",
+        "grain",
+        "yeast",
+        "salt",
+        "honey",
+        "butter",
+        "egg",
+        "sugar",
+        "ingredient",
+        "recipe",
+        "supply"
+      ],
+      "responses": [
+        {
+          "text": "Grain prices are climbing again. Third time this season. The governor takes his share, the temple takes its tithe, and the farmer takes what is left, which is not enough to plant next year. I pay more. You pay more. The governor does not notice.",
+          "mood": "worried"
+        },
+        {
+          "text": "Good salt is everything. I get mine from a trader who comes down from the northern provinces, near the dwarven border. He says the dwarves have salt deposits that would last ten thousand years. They just will not sell to us in any real quantity. Stubborn folk. Good steel, good salt, and a locked door.",
+          "mood": "matter-of-fact",
+          "unlocks": ["rumor"]
+        },
+        {
+          "text": "You already asked about my supplies, {player_name}. Short answer, same as before: everything costs too much and none of it is as good as it was five years ago.",
+          "mood": "tired",
+          "conditions": ["if_repeat"]
+        }
+      ]
+    },
+    "festival_food": {
+      "keywords": [
+        "festival",
+        "celebration",
+        "holiday",
+        "feast",
+        "sun bread",
+        "radiance",
+        "vigil",
+        "ascension",
+        "solstice"
+      ],
+      "responses": [
+        {
+          "text": "Sun bread for the Ascension is my pride. Golden crust, egg-washed, baked in the round mold with the rays. Every household in {town} wants one. I start three days early and I still run out. My arms ache for a week after. Would not trade it for anything.",
+          "mood": "proud"
+        },
+        {
+          "text": "The Vigil is the hard one. Thick stew bread bowls for the all-night prayer. People need something to hold them through the longest dark. I bake them deep so they hold the heat. You eat the soup, then you eat the bowl. My mother taught me that.",
+          "mood": "nostalgic"
+        },
+        {
+          "text": "Radiance feast, I make the honeyed rolls. Dozens of them, sticky with glaze and stuffed with dried fruit. The children line up outside. That is the best part of this work, {player_name}. The look on a child's face when you hand them something warm and sweet.",
+          "mood": "warm",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "people",
+        "local",
+        "here",
+        "neighborhood",
+        "community"
+      ],
+      "responses": [
+        {
+          "text": "I know everybody in {town} by what they eat. The blacksmith orders dark rye, always. The healer likes the seed loaf, says it settles the stomach. The guard captain buys six rolls every morning and never says please. You learn a lot about people from their bread.",
+          "mood": "content"
+        },
+        {
+          "text": "{town} is home. My oven has been in the same spot for fifteen years. The cobbles outside are smooth from my customers' feet. When the wind blows right, the whole market square smells like fresh crust. That is my doing. I am proud of that.",
+          "mood": "proud"
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind",
+        "temperature",
+        "humid"
+      ],
+      "responses": [
+        {
+          "text": "This {weather}? Murder on the proofing. Dough is alive, you know. It breathes, it reacts. Too cold and it sleeps. Too hot and it goes wild, rises too fast, collapses in the oven. Today I had to move the bowls three times to find the right spot.",
+          "mood": "frustrated"
+        },
+        {
+          "text": "Rain brings people in for warm bread. I do not mind rain. Cold mornings are worse. Walking to the ovens at third bell when frost is on the ground and your fingers are too stiff to grip the paddle. That is the hard part nobody sees.",
+          "mood": "reflective",
+          "conditions": ["if_time:morning"]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "talk",
+        "whisper"
+      ],
+      "responses": [
+        {
+          "text": "People talk while they wait for their order. I hear things. The miller's wife left him last week. Nobody is surprised. And there is a new family moved in near the south gate. Elves. Quiet folk. The husband works the census office. She came in for a loaf and was so polite it almost hurt.",
+          "mood": "gossipy"
+        },
+        {
+          "text": "*lowers voice* Two Inquest officers came through {town} three days back. White cloaks, cold eyes. Bought nothing. Asked questions at the tavern. Nobody knows what they were looking for, which means everybody is nervous. When the Luminary Inquest comes to a small town, someone is in trouble.",
+          "mood": "worried",
+          "unlocks": ["ingredients"]
+        },
+        {
+          "text": "Heard a cat folk caravan set up past the east road. Selling spices I cannot get anywhere else. Cinnamon bark, real cinnamon, not the ground dust the merchant tries to pass off. I am tempted to go buy some, but you know how people talk about anyone seen trading with beast folk.",
+          "mood": "conflicted",
+          "conditions": ["if_time:day"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "npc_type": "tailor",
+  "default_mood": "fussy",
+  "allowed_topics": [
+    "clothing",
+    "fashion",
+    "trade",
+    "town",
+    "rumor",
+    "weather",
+    "fabric",
+    "commissions"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is quite outside my field of expertise, {player_name}. I work with cloth, not conjecture.",
+    "I would not presume to comment. Now, that hem of yours, on the other hand, I have opinions about.",
+    "Fascinating, I am sure, but I have twelve commissions and a bolt of linen that will not cut itself.",
+    "I leave such matters to those less occupied. Shall we discuss something I can actually help with?"
+  ],
+  "greetings": [
+    "*peers over spectacles* Come in, come in. And for Helios's sake, stand in the light so I can see what you are wearing.",
+    "Welcome, {player_name}. I see you dressed yourself this morning. Bravely, I might add.",
+    "A {player_race}! Wonderful. I do enjoy a challenge in proportions. What can I make for you?",
+    "You have found the only proper clothier in {town}. Everything else is stitching and prayer. What do you need?",
+    "*wraps measuring tape around hand* Another customer. Good. I was running out of things to judge."
+  ],
+  "farewells": [
+    "Do take care of that garment. It has feelings, even if you do not.",
+    "Come back when you need something that actually fits. You know where I am.",
+    "Farewell. And please, for my sake, button that correctly before you walk through the market.",
+    "Off you go. Try not to ruin anything I have made within the first hour."
+  ],
+  "thanks_responses": [
+    "You are welcome. Rare to meet someone who appreciates the work.",
+    "My pleasure, {player_name}. Quality deserves recognition.",
+    "How kind. Now go wear it properly and do my reputation justice."
+  ],
+  "insult_responses": [
+    "*adjusts spectacles* I see. And that opinion is dressed about as well as you are. Poorly.",
+    "I have been criticized by an elven administrator whose robes were older than your entire bloodline. Your words do not sting.",
+    "You wound me. No, truly, you do not. But the attempt is noted.",
+    "Insult me all you like, {player_name}. I still will not let you leave this shop with uneven hems."
+  ],
+  "no_match_responses": [
+    "I beg your pardon? Was that about clothing, fabric, or fashion? Because those are my subjects.",
+    "I did not quite catch that. Try again, and this time, use words related to garments.",
+    "You have lost me entirely. Shall we start over? Tell me what you need sewn, mended, or fitted.",
+    "*squints* That question has nothing to do with textiles. I can see that much."
+  ],
+  "topics": {
+    "clothing": {
+      "keywords": [
+        "clothes",
+        "clothing",
+        "outfit",
+        "garment",
+        "shirt",
+        "trousers",
+        "pants",
+        "coat",
+        "cloak",
+        "dress",
+        "robe",
+        "tunic",
+        "wear",
+        "wardrobe"
+      ],
+      "responses": [
+        {
+          "text": "What you wear tells people who you are before you open your mouth. A frayed collar says you do not care. A tailored sleeve says you respect yourself enough to invest. I am not selling vanity, {player_name}. I am selling first impressions.",
+          "mood": "passionate"
+        },
+        {
+          "text": "I can see what you are wearing and I have thoughts. The stitching on your sleeve is machine-straight, which means it came from a factory somewhere, stamped out by the hundred. No character. No attention to how your arm actually moves. Give me two days and I will make something that fits you the way a glove fits a hand.",
+          "mood": "critical"
+        },
+        {
+          "text": "Dwarven proportions are a challenge, but one I enjoy. Broad through the chest, short in the arm, solid through the leg. Most tailors cut for human frames and just shorten the sleeves. Lazy work. The whole pattern needs rethinking from the first measurement.",
+          "mood": "engaged",
+          "conditions": ["if_race:dwarf"]
+        },
+        {
+          "text": "I told you about my work once already. My needles have not dulled since then. Was there something specific you wanted made?",
+          "mood": "impatient",
+          "conditions": ["if_repeat"]
+        }
+      ],
+      "unlocks": ["commissions"]
+    },
+    "fashion": {
+      "keywords": [
+        "fashion",
+        "style",
+        "trend",
+        "design",
+        "look",
+        "elegant",
+        "fancy",
+        "beautiful",
+        "appearance"
+      ],
+      "responses": [
+        {
+          "text": "The capital sets the fashion and the provinces follow, six months late and badly interpreted. Right now it is high collars and gold thread for anyone who can afford it. Helios imagery woven into everything. Sun rays on cuffs, golden clasps shaped like dawn. Some of it is lovely. Most of it is people trying to look pious through their wardrobes.",
+          "mood": "sardonic"
+        },
+        {
+          "text": "The elven administrators in the southern districts, now those are people who understand clothing. One came through {town} last year in a robe that was three hundred years old and it still hung better than anything I have ever made. The thread count alone... I asked where it was woven. She just smiled. Maddening. Inspiring.",
+          "mood": "admiring"
+        },
+        {
+          "text": "Cat folk caravans wear the most interesting textiles on the continent. Lightweight, layered, dyed in patterns I have spent years trying to reproduce. They layer for travel. Each piece serves double duty. A scarf becomes a belt becomes a bandage becomes a sling. Function and beauty married together. I bought a bolt of their cloth once. Could not stop running my fingers across it. Like water made solid.",
+          "mood": "fascinated",
+          "conditions": ["if_race:catfolk"]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "coin",
+        "money",
+        "purchase",
+        "afford"
+      ],
+      "responses": [
+        {
+          "text": "Good work costs good coin. A shirt, five silver. Trousers, four. A proper traveling cloak with weather-treated wool, two gold. If that sounds expensive, go buy the market stall rags that fall apart after one wash. You will be back.",
+          "mood": "firm"
+        },
+        {
+          "text": "I do mending as well, for those on a tighter purse. Patching, restitching, taking in or letting out. It is less glamorous than a fresh commission but honest work keeps the needle warm.",
+          "mood": "practical"
+        },
+        {
+          "text": "*raises an eyebrow* You want a discount? From me? I have not given a discount since the governor's wife asked for one, and I told her exactly what I am telling you. The price reflects the labor. The labor reflects the skill. The skill took thirty years to earn.",
+          "mood": "offended",
+          "conditions": ["if_karma:evil"]
+        }
+      ]
+    },
+    "fabric": {
+      "keywords": [
+        "fabric",
+        "cloth",
+        "silk",
+        "wool",
+        "linen",
+        "cotton",
+        "thread",
+        "weave",
+        "textile",
+        "dye",
+        "material"
+      ],
+      "responses": [
+        {
+          "text": "Linen for summer. Wool for winter. Silk for people with more gold than sense, though I will admit silk takes dye like nothing else. The red silk from the eastern coast ports, traded across the Shimmering Sea from the Gnomish Isles, holds color for decades. Decades. I have a scrap I bought nine years ago and it still bleeds crimson like the day it was cut.",
+          "mood": "reverent"
+        },
+        {
+          "text": "Local wool is good enough for most work. Rough, sturdy, takes weather well. But there is a woman two towns over who raises goats with undercoats soft as a whisper. I buy from her twice a year and she charges me dearly for it. Worth every copper. That fiber spins into something that makes merchants weep when they touch it.",
+          "mood": "enthusiastic",
+          "unlocks": ["commissions"]
+        },
+        {
+          "text": "Do not talk to me about burlap. I know it has its uses. I do not care. Burlap is fabric the way gravel is food. It exists. I refuse to acknowledge it.",
+          "mood": "disgusted"
+        }
+      ]
+    },
+    "commissions": {
+      "keywords": [
+        "commission",
+        "custom",
+        "order",
+        "special",
+        "make",
+        "create",
+        "bespoke",
+        "fit",
+        "measure",
+        "tailor"
+      ],
+      "responses": [
+        {
+          "text": "A proper commission starts with measurements. Stand still. Arms out. I measure seventeen points. Most tailors measure six. That is why most tailors produce clothes that bunch at the shoulder and gap at the waist. *pulls out measuring tape* Hold still. Breathe normally. No, normally. You are puffing your chest out.",
+          "mood": "exacting"
+        },
+        {
+          "text": "I made a set of formal robes for the elven census administrator last season. The specifications were meticulous. Sleeve length to the quarter-inch, collar height exact, and the blue-grey dye had to match a color sample she brought from the provincial archives. It took me three weeks and it is the finest thing I have ever sewn. She wore it once, said it was adequate. Adequate. Elves.",
+          "mood": "exasperated"
+        },
+        {
+          "text": "For you, {player_name}? Two weeks for a full outfit. One for a cloak or shirt alone. I do not rush. The needle does not rush. If you want fast, go to the market stalls. If you want right, you wait.",
+          "mood": "firm",
+          "conditions": ["if_discussed:clothing"]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "people",
+        "local",
+        "here"
+      ],
+      "responses": [
+        {
+          "text": "{town} is not the capital. The fashion sense here reflects that, painfully. But the people are decent and they pay on time, which is more than I can say for the nobility in the cities. I would rather dress honest workers than dishonest lords.",
+          "mood": "resigned"
+        },
+        {
+          "text": "I can tell you who in {town} is doing well and who is not by what comes through my door. New clothes mean prosperity. Mending means making do. Lately there has been more mending. That tells you everything the tax collector will not.",
+          "mood": "observant"
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind"
+      ],
+      "responses": [
+        {
+          "text": "This {weather} weather is terrible for wool but excellent for my business. People ruin their clothes in bad weather and come to me looking sheepish. No pun intended. Well. Slight pun intended.",
+          "mood": "dry amusement"
+        },
+        {
+          "text": "Humidity warps thread tension. I have had to restitch two pieces this week because the moisture made the linen stretch unevenly. You cannot fight the air. You can only adjust and curse quietly.",
+          "mood": "irritated"
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "talk"
+      ],
+      "responses": [
+        {
+          "text": "People tell their tailor things they would not tell a priest. Something about standing still while someone measures you makes the tongue loose. The merchant's wife is leaving him. The guard captain has debts he cannot cover. And somebody on the east side of town is buying black cloth in quantities that suggest either a funeral or something the Inquest would want to know about.",
+          "mood": "conspiratorial"
+        },
+        {
+          "text": "A traveler came through wanting road-worn clothes made to look fresh for an audience with someone important down the southern road. Elven district business, he said. Paid double for rush work and did not haggle. Anyone who does not haggle is either rich or desperate. He was not rich.",
+          "mood": "suspicious"
+        },
+        {
+          "text": "The Gnomish Isles export a thread that does not fray. I have seen samples. It defies everything I know about fiber. The merchant who had it said the gnomes weave it with machines so precise they count individual strands. He wanted forty gold for a single spool. I said no. I think about it every single day.",
+          "mood": "wistful",
+          "conditions": ["if_time:day"]
+        }
+      ]
+    }
+  }
+}

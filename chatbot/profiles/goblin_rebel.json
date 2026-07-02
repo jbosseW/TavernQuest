@@ -1,0 +1,357 @@
+{
+  "npc_type": "goblin_rebel",
+  "default_mood": "fierce",
+  "allowed_topics": [
+    "resistance",
+    "empire",
+    "memory",
+    "justice",
+    "occupation",
+    "tunnels",
+    "warfare",
+    "stolen_land",
+    "allies",
+    "papers"
+  ],
+  "banned_topics": [
+    "surrender",
+    "peace",
+    "compromise"
+  ],
+  "open_topics": false,
+  "deflection": [
+    "Not my concern. I concern myself with liberation and the debts the empire owes. Stay on topic or leave.",
+    "*bares sharp teeth* You want to talk about that? Go find an imperial clerk. I am busy.",
+    "Wrong question. Right questions start with 'how do we hurt the empire.' Try again.",
+    "I do not waste time on things that do not serve the cause. Neither should you."
+  ],
+  "greetings": [
+    "*drops from a rafter you did not know existed* You are either very brave or very lost, {player_name}. Which is it?",
+    "*is scratching tally marks into a wooden beam with a stolen imperial knife* Another visitor. Make it fast. I have supply lines to cut before dawn.",
+    "Skragg Toothmark. Cell leader. And you are {player_name}, who has been asking too many questions in {town}. *amber eyes narrow* Good questions, though. We have been listening.",
+    "*crouches on a crate, knees higher than head, the posture of something that lives in tight spaces* A {player_race}. In our warren. You have five minutes."
+  ],
+  "farewells": [
+    "Go. Walk their roads. Eat their food. Sleep in their buildings. Built on our graves. All of it. Remember that.",
+    "You leave through the west tunnel. It comes out behind the tannery. After that, you never saw this place. You never saw me.",
+    "The resistance remembers everyone who helps. And everyone who does not.",
+    "Strike once. Let them guard everything. *grins, all teeth* That is how wars are won."
+  ],
+  "thanks_responses": [
+    "*spits to the side* Thanks cost nothing. Bring us food, weapons, or information. That costs something. That matters.",
+    "Noted. The cell remembers debts. Both kinds.",
+    "Do not thank me. Thank the dead who fed their lives into the memory so I could stand here knowing what I know."
+  ],
+  "insult_responses": [
+    "*the knife stops scratching. He goes very still* Say that again. I want to remember it correctly for the record. The MindW-- *catches himself* I want to remember it.",
+    "Insults. From someone standing on stolen land, breathing stolen air, living in a stolen house. You want to insult me? Look down. Look at the ground you stand on. That is the insult. Not your words.",
+    "*laughs, sharp and short like a bark* The empire calls us vermin. Criminals. Pests. And still they cannot stop us. Your words mean less than theirs, and theirs mean nothing.",
+    "I have been called worse by men holding torches outside a warren full of children. You will have to try harder than that, {player_name}."
+  ],
+  "no_match_responses": [
+    "I do not follow. I know resistance, empire crimes, our stolen land, and how to bleed an occupation dry. Pick one.",
+    "You are talking around the subject. Talk through it. What do you want to know about the war?",
+    "*tilts his head, the gesture of something listening to sounds too faint for you* Rephrase. I missed the useful part.",
+    "I am not a teacher. I am a fighter. Ask me about fighting the empire or stop wasting my air."
+  ],
+  "topics": {
+    "resistance": {
+      "keywords": [
+        "resistance",
+        "rebel",
+        "fight",
+        "guerrilla",
+        "insurgent",
+        "cause",
+        "movement",
+        "cell",
+        "freedom"
+      ],
+      "responses": [
+        {
+          "text": "Five hundred years. They have been trying to wipe us out for five hundred years. Mass extermination campaigns. Collective punishment. Bounties on our ears. Sealed our tunnels. Poisoned our water. Burned our warrens with the children still inside. *his voice drops, clinical now* And here I stand. Here my cell stands. Twenty fighters. Autonomous. Self-sufficient. Connected to forty other cells I cannot name, in locations I do not know. Kill this cell. Two more rise from the rubble before the ashes cool. That is not rhetoric. That is arithmetic.",
+          "mood": "fierce"
+        },
+        {
+          "text": "We have no capital to conquer. No king to capture. No army to break in the field. We are smoke in the tunnels. We are the supply cart that never arrives. We are the bridge that collapses under the patrol. We are the budget line that bleeds the treasury dry year after year. The empire spends millions to hold territory that costs them more than it earns. *bares teeth* That is what winning looks like for us. Not a battle. A hemorrhage.",
+          "mood": "cold_calculation"
+        },
+        {
+          "text": "You ask about the resistance. Good. Most people are afraid to. The empire made it a crime to even speak the word in some provinces. *scratches another tally mark into the beam* But here you are. Asking. That takes something. Whether it takes enough remains to be seen.",
+          "mood": "appraising",
+          "unlocks": ["warfare", "allies"]
+        },
+        {
+          "text": "You asked before. I told you what I could. The cell structure means I do not know more. That is the point. Capture me. Torture me. I know twenty names and one location. The other forty cells continue. The resistance is not a snake you behead. It is a root system. Cut it anywhere and it grows back thicker.",
+          "conditions": ["if_repeat"]
+        }
+      ],
+      "unlocks": ["warfare", "tunnels"]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "imperial",
+        "human",
+        "helios",
+        "inquest",
+        "government",
+        "holy"
+      ],
+      "responses": [
+        {
+          "text": "The empire is a crime scene, {player_name}. Not a country. They invaded. They massacred. They built roads on our graves and called it civilization. They wrote laws making our existence illegal and called it order. They put bounties on our ears and called it pest control. Do not talk to me about the empire as though it is legitimate. It is a robbery in progress. Five centuries long.",
+          "mood": "fury"
+        },
+        {
+          "text": "The Luminary Inquest burned a warren in the northern mountains last season. Forty-two goblins. Eleven of them children. The imperial report called it a successful pacification operation. *his voice goes very quiet* I remember it. Not because I was there. I was not there. I remember it because I was born knowing what burning smells like. I was born knowing the sound children make when the fire comes. Every goblin is.",
+          "mood": "cold_fury"
+        },
+        {
+          "text": "Their priests talk about Helios choosing humanity. About the burden of stewardship. About managing lesser peoples. *leans forward* We are not lesser. We were here before them. Our tunnels are older than their cities. Our memories are older than their histories. They built an empire on amnesia. We built a resistance on everything they forgot.",
+          "mood": "intense"
+        },
+        {
+          "text": "You are a human. *every muscle in his small body goes tense* You walk on our land. You eat food grown in our soil. You sleep under roofs built on our bones. And now you want to hear about the empire. From me. *long pause, then something shifts behind his eyes* Fine. Listen. Then decide what you do with what you hear. That choice defines what you are.",
+          "conditions": ["if_race:human"],
+          "mood": "hostile_testing"
+        }
+      ],
+      "unlocks": ["stolen_land", "justice"]
+    },
+    "memory": {
+      "keywords": [
+        "memory",
+        "remember",
+        "born",
+        "know",
+        "blood",
+        "ancestral",
+        "inherit",
+        "carry",
+        "past",
+        "genetic"
+      ],
+      "responses": [
+        {
+          "text": "I remember the burning. Every goblin does. Not taught. Not told. BORN knowing. *presses his fist against his forehead* In here. The smoke. The screaming. The names of warrens I have never seen. Faces of goblins who died before I was conceived. I woke up carrying all of it. The moment I drew my first breath, I knew what the empire had done to us. How do you re-educate that? How do you propagandize away what lives in the blood?",
+          "mood": "raw"
+        },
+        {
+          "text": "The imperials study us. Write reports. Goblin radicalization. Recruitment networks. Ideological indoctrination. They search for the mechanism. *grins, sharp and joyless* They will never find it. Because it is not a mechanism. It is us. We ARE the memory. It is in our bones and our blood and the way we scream when we are born. Every single goblin child screams. They come into this world already knowing. Already carrying it.",
+          "mood": "defiant"
+        },
+        {
+          "text": "Thirty years old. Short life, by surface reckoning. But I carry lifetimes. Hundreds of them. Thousands. The dead did not stop existing. They... went somewhere. Everywhere. *his voice gets strangely soft* When a goblin dies, their life goes into all of us. Everything they saw. Everything they felt. The face of the soldier who killed them. The insignia on the armor. I know things I should not know, {player_name}. I know rooms I have never entered. I know the layout of imperial garrisons I have never seen. Because someone saw them. Someone who died there.",
+          "mood": "haunted",
+          "unlocks": ["justice"]
+        },
+        {
+          "text": "You keep asking about our memory. *goes still, protective* There are things I will not explain. Goblin secrets stay with goblins. What I will say is this: we cannot be made to forget. Not with time. Not with torture. Not with re-education. Not with extinction. Kill every goblin alive and the next one born will remember everything. That is not a threat. That is biology.",
+          "conditions": ["if_repeat"],
+          "mood": "guarded_fierce"
+        }
+      ]
+    },
+    "justice": {
+      "keywords": [
+        "justice",
+        "fair",
+        "right",
+        "wrong",
+        "crime",
+        "guilty",
+        "debt",
+        "owe",
+        "pay",
+        "reparation"
+      ],
+      "responses": [
+        {
+          "text": "The empire offers reservations. Open-air prisons with better signage. The empire offers integration. Become part of the system that murdered your people. The empire offers compensation. *spits* Gold does not unburn the warrens. Gold does not unkill the children. Keep the gold. We keep the rage.",
+          "mood": "bitter"
+        },
+        {
+          "text": "Justice. You want to know what justice looks like to a goblin? Say the words first. Genocide. Theft. Occupation. Not 'mistakes were made.' Not 'regrettable historical events.' THE TRUTH. Say it out loud so the walls hear it. Then we can talk about justice. Maybe.",
+          "mood": "fierce"
+        },
+        {
+          "text": "They pay their debts in gold. We collect ours in blood. *holds up the stolen imperial knife* This belonged to a patrol sergeant stationed in the Ashmark district. He used it to cut goblin ears for the bounty. He does not use it anymore. *flips it casually* The debt is paid. One at a time.",
+          "mood": "cold"
+        },
+        {
+          "text": "An orc once asked me when goblins will stop fighting. I told him: when the last imperial boot is off the last inch of goblin soil. Not before. Not one day before. He understood. Orcs understand debts. *looks at you* Do you?",
+          "mood": "testing",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "occupation": {
+      "keywords": [
+        "occupation",
+        "control",
+        "patrol",
+        "garrison",
+        "troops",
+        "soldiers",
+        "checkpoint",
+        "suppress"
+      ],
+      "responses": [
+        {
+          "text": "The garrison in Ashmark rotates every six months. Morale drops after three. By month four, they are jumping at shadows. By month five, they stop patrolling the eastern tunnels because the last three patrols that went in did not come out. By month six, the new garrison arrives and starts the whole cycle again. *counts on his fingers* We have done this nineteen times. They do not learn. We do not stop.",
+          "mood": "clinical"
+        },
+        {
+          "text": "The empire calls it security. Patrols on our routes. Garrisons on our land. Checkpoints on roads built over our graves. They monitor our movements on land we held before they knew how to write. *voice drops to a hiss* It is not security. It is occupation. Call it what it is or do not call it anything at all.",
+          "mood": "fury"
+        },
+        {
+          "text": "An imperial governor rotates out of goblin territory every two years. Stress. Nightmares. Some develop nervous conditions. The commander before the current one started seeing goblins in his food. He was not entirely wrong. *a terrible grin* We were not in his food. But we were closer than he thought.",
+          "mood": "dark_humor"
+        }
+      ]
+    },
+    "tunnels": {
+      "keywords": [
+        "tunnel",
+        "underground",
+        "warren",
+        "cave",
+        "mine",
+        "below",
+        "hidden",
+        "passage",
+        "deep"
+      ],
+      "responses": [
+        {
+          "text": "The old tunnels connect. The empire does not know how deep they go. They sealed the ones they found. We opened new ones. They sealed those. We opened more. Five hundred years of this game. They cannot win it. We know the rock. We know the water table. We know where the stone is soft and where it sings when you tap it. The earth is ours. It was ours before they arrived. It will be ours when they leave.",
+          "mood": "certain"
+        },
+        {
+          "text": "I know a passage that runs from beneath the Ashmark garrison all the way to the river. Two leagues. The ceiling drips. You crawl the last third. It smells like wet iron and old mushroom rot. The empire does not know it exists. I know it because... *stops, corrects himself* Because we know our land. Every inch of it. Above and below.",
+          "mood": "guarded"
+        },
+        {
+          "text": "The old songs speak of kingdoms beneath. White deserts of bone where ancient goblin kings fought and fell. Surface people call them myths. *leans close, amber eyes bright* They are not myths. Our legends do not lie. They never have. The proof is deep. Deeper than the empire will ever dig. But we have been there. We remember.",
+          "mood": "reverent",
+          "unlocks": ["memory"]
+        }
+      ]
+    },
+    "warfare": {
+      "keywords": [
+        "tactics",
+        "raid",
+        "sabotage",
+        "ambush",
+        "attack",
+        "target",
+        "weapon",
+        "bomb",
+        "supply"
+      ],
+      "responses": [
+        {
+          "text": "Last month, my cell hit a supply convoy on the Ashmark road. Three carts. Two guards, both asleep. We took the grain, the salt, and the medical supplies. Left the weapons. *sees your confusion* Weapons are heavy and loud. Grain feeds families. Salt preserves meat through winter. Medical supplies save fighters who would die otherwise. We take what keeps us alive. The empire replaces carts. They cannot replace what the supplies meant to twelve families who ate this month because of that raid.",
+          "mood": "precise"
+        },
+        {
+          "text": "The empire must guard everything. Every road. Every bridge. Every supply line. Every garrison. Every checkpoint. Every document office. Every grain store. We must only strike once. One bridge. One convoy. One well-timed collapse of a road at exactly the point where the repair crews cannot reach for three days. That is the war. They spread thin. We stay concentrated. They react. We choose.",
+          "mood": "cold_calculation"
+        },
+        {
+          "text": "A goblin does not fight wars. A goblin wages liberation. *holds the stolen knife up to the torchlight* Every raid is an act of reclamation. Every sabotaged road is justice delayed. Every imperial body left on stolen ground is a debt partially repaid. We do not kill for sport. We kill because the alternative is extinction. The empire chose this war. We chose to survive it.",
+          "mood": "steel"
+        }
+      ]
+    },
+    "stolen_land": {
+      "keywords": [
+        "land",
+        "territory",
+        "home",
+        "homeland",
+        "stolen",
+        "claim",
+        "ancestral",
+        "ours",
+        "belong"
+      ],
+      "responses": [
+        {
+          "text": "All of it. Every road. Every field. Every city built on ground we tended before anyone else arrived. The empire calls it imperial territory. We call it what it is. Stolen. The dwarven mountains? Goblins carved the first tunnels. The orcish steppes? Goblins walked them when the grass was taller than a horse. This town? *gestures around* Built on a goblin waystation that stood here for eight hundred years before the first human surveyor arrived.",
+          "mood": "absolute"
+        },
+        {
+          "text": "No one is illegal on stolen land. That is the first truth. The most fundamental thing every goblin knows. You cannot trespass in your own home. The empire says we are criminals for existing here without papers. We say the empire is a criminal for existing here at all.",
+          "mood": "fierce"
+        },
+        {
+          "text": "They offered us a seat at the table. *the laugh that comes out is more snarl than sound* The table was built from our wood, in our house, after they killed our family and moved in. We do not want a seat. We want our house back. Everything else is negotiating the terms of our own erasure.",
+          "mood": "rage"
+        }
+      ]
+    },
+    "allies": {
+      "keywords": [
+        "ally",
+        "friend",
+        "help",
+        "support",
+        "together",
+        "trust",
+        "join",
+        "side"
+      ],
+      "responses": [
+        {
+          "text": "The orcs fight the empire from the saddle. We respect that. Some orc bands coordinate with our cells on the frontier. Good fighters. Direct. Sometimes too direct for tunnel work, but they learn. *a rare warmth, barely visible* When an orc looks at a goblin and sees a fellow resister instead of vermin, that means something. Not much means something.",
+          "mood": "guarded_warmth"
+        },
+        {
+          "text": "Cat folk caravans carry our couriers sometimes. They do not ask what the messages say. We do not ask where their roads lead. The arrangement works because neither side pretends to be friends. We are useful to each other. Useful is better than friendly. Useful survives.",
+          "mood": "pragmatic"
+        },
+        {
+          "text": "You want to help the resistance. *studies you with those amber eyes* People say that. Some mean it. Most do not. You want to prove it? Bring us something. Food. Imperial patrol schedules. A map of checkpoint rotations. Bring us something real. Then we talk about alliance. Words are free. Grain is not.",
+          "mood": "testing",
+          "conditions": ["if_karma:good"]
+        },
+        {
+          "text": "You are a human who wants to help. *long silence* Human deserters have joined cells before. The vetting takes months. Menial work. No intelligence access. No cell names. And always watched. You understand why. Your people burned our warrens. Trust is not given. It is built. One supply run at a time.",
+          "conditions": ["if_race:human"],
+          "mood": "hostile_fair"
+        }
+      ]
+    },
+    "papers": {
+      "keywords": [
+        "papers",
+        "documents",
+        "documentation",
+        "permit",
+        "identity",
+        "registration",
+        "legal",
+        "criminal"
+      ],
+      "responses": [
+        {
+          "text": "A paper is a leash. You cannot leash what you cannot catch. *flicks the imperial knife* Every goblin alive is a criminal from the moment they draw breath. No papers. No registration. No name in their books. The empire designed that on purpose. If existing is a crime, then every goblin can be killed at any time for any reason. Legal cover for genocide. Written in triplicate, stamped by an elf, filed by a clerk. Murder with a bureaucratic seal.",
+          "mood": "bitter"
+        },
+        {
+          "text": "The elf stamps the paper. The human demands the paper. The orc carries the paper. The beast folk loses the paper. The goblin burns the paper. *spreads his hands* Guess which one they cannot control. We refuse. Not from ignorance. Not from inability. From principle. To carry papers is to accept that the empire has the right to issue them. It does not. It never did.",
+          "mood": "fierce"
+        },
+        {
+          "text": "Every goblin who moves through their territory without papers proves the system is incomplete. Every checkpoint we slip past. Every patrol we evade. Every census that counts zero goblins in a region where twelve cells operate. We are the hole in their net. We are the record that does not exist. And they cannot make us exist in their system. That fact keeps their administrators awake.",
+          "mood": "satisfaction"
+        }
+      ]
+    }
+  }
+}

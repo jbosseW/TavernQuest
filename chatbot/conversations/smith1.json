@@ -1,0 +1,23 @@
+{
+  "npc_id": "smith1",
+  "discussed_topics": [
+    "weapons"
+  ],
+  "unlocked_topics": [
+    "special_weapons"
+  ],
+  "turn_count": 2,
+  "mood": "gruff",
+  "last_topics": [
+    "weapons"
+  ],
+  "repeat_counts": {
+    "weapons": 1
+  },
+  "player_sentiment": 0.0,
+  "variables": {},
+  "_recent_responses": [
+    "I did not catch that. Weapons? Armor? Repairs?",
+    "Aye, I have got blades aplenty. Swords, axes, maces - you name it. What interests you?"
+  ]
+}

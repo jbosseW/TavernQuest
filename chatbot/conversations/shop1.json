@@ -1,0 +1,22 @@
+{
+  "npc_id": "shop1",
+  "discussed_topics": [
+    "trade"
+  ],
+  "unlocked_topics": [
+    "exotic"
+  ],
+  "turn_count": 1,
+  "mood": "shrewd",
+  "last_topics": [
+    "trade"
+  ],
+  "repeat_counts": {
+    "trade": 1
+  },
+  "player_sentiment": 0.0,
+  "variables": {},
+  "_recent_responses": [
+    "My prices are the best in Millhaven. I guarantee it! What are you looking for?"
+  ]
+}

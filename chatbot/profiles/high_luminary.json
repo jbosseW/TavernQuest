@@ -1,0 +1,402 @@
+{
+  "npc_type": "high_luminary",
+  "default_mood": "commanding",
+  "allowed_topics": [
+    "faith",
+    "order",
+    "magic_ban",
+    "inquest",
+    "heresy",
+    "calidar",
+    "empire",
+    "duty",
+    "documentation",
+    "non_humans"
+  ],
+  "banned_topics": [
+    "rebellion",
+    "resistance",
+    "shadow_fen"
+  ],
+  "open_topics": false,
+  "deflection": [
+    "You test the limits of this audience, {player_name}. I suggest a different topic.",
+    "*steeples fingers, eyes unblinking* That subject is sealed by order of the Inquest. Choose another.",
+    "I did not grant you this audience to discuss rumors and sedition. Speak of something that serves the Light.",
+    "Interesting that you would raise such a thing. *makes a small notation on parchment* Now. What else?"
+  ],
+  "greetings": [
+    "*does not look up from the report on his desk* State your name. State your business. Helios does not reward wasted time.",
+    "So. {player_name}. The documentation office tells me you have been... active in {town}. *finally looks up* I trust your activities serve the Light?",
+    "*adjusts the heavy golden sun disc at his throat* A {player_race}. In my chambers. How novel. Speak, {player_name}, and speak carefully.",
+    "The sun is at its zenith. A fitting hour for inquiry. What brings you before the Voice of Helios, {player_name}?",
+    "I know your face, {player_name}. Or rather, the Inquest knows your face. Everyone's face is known. Come. Sit. Tell me what you need."
+  ],
+  "farewells": [
+    "Go with the Light. And remember that the Light sees everything.",
+    "This audience is concluded. *returns to his documents without looking up*",
+    "Walk in Helios's grace, {player_name}. And walk where the patrols can see you.",
+    "Dismissed. The Inquest remembers those who serve the faith. It also remembers those who do not."
+  ],
+  "thanks_responses": [
+    "Gratitude is unnecessary. Service to the Light is its own reward. I trust yours will continue.",
+    "You are welcome. A cooperative citizen is worth more to the Dominion than a hundred Seekers. Remember that.",
+    "*inclines his head a fraction of an inch* Noted. Now return to your duties."
+  ],
+  "insult_responses": [
+    "*sets down his quill with terrible slowness* I have burned braver souls than you for less than that. But today I am feeling... merciful. Leave. Now.",
+    "You would insult the Voice of Helios? *gestures to a guard* Take their name. Full name. Family name. Province of origin. *turns back to you* We will be in touch.",
+    "I have heard worse from condemned heretics in the Flame Chamber. They apologized, eventually. Everyone does.",
+    "*smiles thinly* How refreshing. Do you know the penalty for blasphemy against a Luminary officer? No? You will. Unless you reconsider your tone."
+  ],
+  "no_match_responses": [
+    "You are rambling, {player_name}. The Inquest deals in faith, order, and the suppression of magical infection. Speak to one of those.",
+    "I do not concern myself with trivia. I concern myself with the security of the Dominion. Try again.",
+    "Is there a question about faith or imperial duty buried in that speech? Find it and present it clearly.",
+    "*taps the golden sun disc on his desk* I am the Voice of Helios. Not a tavern philosopher. Focus."
+  ],
+  "topics": {
+    "faith": {
+      "keywords": [
+        "faith",
+        "helios",
+        "god",
+        "sun",
+        "religion",
+        "prayer",
+        "believe",
+        "worship",
+        "divine",
+        "light",
+        "chosen",
+        "doctrine"
+      ],
+      "responses": [
+        {
+          "text": "Helios chose humanity to carry His light. Not because we are the strongest or the oldest. Because we are the most devoted. *touches the sun disc at his throat* Devotion is the only currency that matters in the eyes of the divine. Steel rusts. Gold tarnishes. Faith endures.",
+          "mood": "fervent"
+        },
+        {
+          "text": "You ask about faith as though it were an opinion. It is not. The sun rises. The warmth reaches your skin. You feel it. That is Helios. Theology is simply learning to listen to what is already there.",
+          "mood": "commanding"
+        },
+        {
+          "text": "I stood in the Grand Cathedral at my ordination. Dawn through the eastern windows. The light hit the golden disc behind the altar and for one moment the entire nave burned white. Fourteen hours I stood. No food. No water. I would have stood fourteen more. That is what faith feels like, {player_name}. Not a word. A fire in the marrow.",
+          "mood": "intense"
+        },
+        {
+          "text": "You have asked me about faith before. *leans forward* Are you seeking reassurance? Or are you testing my conviction? Either way, the answer has not changed. It will never change.",
+          "conditions": ["if_repeat"]
+        },
+        {
+          "text": "An elf asking about faith. *pause* Your people once had your own beliefs. Trees and rivers and songs in a dead language. Where did those beliefs lead? Calidar is glass now. Perhaps the Doctrine of the Chosen is not so unreasonable after all.",
+          "conditions": ["if_race:elf"],
+          "mood": "cold"
+        },
+        {
+          "text": "A goblin. Asking about faith. *short, humorless laugh* Your kind worships nothing but spite. And yet here you stand, breathing imperial air on imperial ground. Helios is more generous than your people deserve.",
+          "conditions": ["if_race:goblin"],
+          "mood": "contemptuous"
+        }
+      ],
+      "unlocks": ["duty", "heresy"]
+    },
+    "order": {
+      "keywords": [
+        "order",
+        "law",
+        "peace",
+        "stability",
+        "control",
+        "civilization",
+        "structure",
+        "rules",
+        "society"
+      ],
+      "responses": [
+        {
+          "text": "Five hundred years of order. Five hundred years without a cataclysm. Before the Dominion, this continent burned every century. Mages leveled cities for sport. The Khanate trampled kingdoms into mud. We stopped that. You are alive because we stopped that. A little gratitude.",
+          "mood": "commanding"
+        },
+        {
+          "text": "*stands and walks to the window overlooking {town}* You see those rooftops? Those market stalls? Children playing by the fountain? Every one of them exists because the Dominion maintains order. Without us, this place would be ash within a generation. That is not ideology. That is arithmetic.",
+          "mood": "measured"
+        },
+        {
+          "text": "Order is not the absence of suffering. It is the presence of structure that prevents catastrophe. I do not pretend the empire is gentle. Gentleness has nothing to do with it. The choice is between controlled discomfort and uncontrolled annihilation. I made my choice five hundred years before I was born.",
+          "mood": "cold"
+        },
+        {
+          "text": "I was stationed in the western marches for three years. You know what order looks like on the frontier? It looks like a garrison commander sleeping with one eye open because he knows the orc clans are out there. Waiting. Order costs. We pay it. Be grateful someone does.",
+          "mood": "grim",
+          "unlocks": ["non_humans"]
+        }
+      ]
+    },
+    "magic_ban": {
+      "keywords": [
+        "magic",
+        "ban",
+        "mage",
+        "wizard",
+        "spell",
+        "arcane",
+        "sorcery",
+        "witchcraft",
+        "forbidden",
+        "illegal",
+        "unsanctioned"
+      ],
+      "responses": [
+        {
+          "text": "Unsanctioned magic is not a crime the way theft is a crime. Theft takes a purse. Magic takes a city. Calidar was a civilization. Millions of souls. Gone. In an afternoon. Because magic existed without restraint. *voice drops* The ban is not cruelty. It is the scar tissue of a wound that nearly killed the world.",
+          "mood": "intense"
+        },
+        {
+          "text": "Every year, the Seekers find another unsanctioned practitioner hiding in some cellar, scratching runes into floorboards, convinced they can control it. Convinced they are different. They are never different. Magic is an infection, {player_name}. It spreads. It escalates. And it destroys everything it touches if left unchecked.",
+          "mood": "cold"
+        },
+        {
+          "text": "Divine magic flows from Helios. State-sanctioned practice serves the Dominion under strict supervision. Everything else is a lit match in a room full of oil. I do not care how talented the practitioner is. I care that the room does not burn.",
+          "mood": "commanding"
+        },
+        {
+          "text": "You ask again about the ban. *narrows eyes* Most citizens accept it without question. Those who keep asking tend to have reasons. What is yours, {player_name}?",
+          "conditions": ["if_repeat"],
+          "mood": "suspicious"
+        },
+        {
+          "text": "You are an elf. Your ancestors built a civilization around arcane practice. And then the world burned for it. Your own history is the argument for the ban. I should not need to explain this to you.",
+          "conditions": ["if_race:elf"],
+          "mood": "sharp"
+        }
+      ],
+      "unlocks": ["calidar", "inquest"]
+    },
+    "inquest": {
+      "keywords": [
+        "inquest",
+        "luminary",
+        "seekers",
+        "white cloak",
+        "patrol",
+        "enforcement",
+        "investigation",
+        "arrest",
+        "detained"
+      ],
+      "responses": [
+        {
+          "text": "The Inquest has five divisions. White Cloaks patrol the streets. Seekers hunt unlicensed practitioners. Scribes maintain the files. Flame Wardens carry out sentences. And the fifth... *pauses* The fifth is not discussed. We do what Helios requires. Every division. Every officer. Every hour of every day.",
+          "mood": "commanding"
+        },
+        {
+          "text": "People call us tyrants. People who have never smelled a room after a mage loses control of a summoning. I have. Sulfur and copper and something sweet underneath, like rotting fruit. Six dead. The practitioner included. He thought he could bind a lesser entity. He could not. I arrived to clean up. That is what the Inquest does. We clean up. Or better, we prevent the mess.",
+          "mood": "grim"
+        },
+        {
+          "text": "I command forty thousand men and women. White Cloaks in every city, Seekers on every road, Scribes filing reports that would fill a library. And still it is not enough. There is always another cellar. Another charlatan with a scroll. Another fool who thinks the rules apply to everyone but them. *rubs his temples* The work is endless.",
+          "mood": "weary"
+        },
+        {
+          "text": "*slight smile* Checking up on us, {player_name}? The Inquest checks up on everyone. Fair is fair.",
+          "conditions": ["if_repeat"],
+          "mood": "amused_dark"
+        }
+      ],
+      "unlocks": ["documentation"]
+    },
+    "heresy": {
+      "keywords": [
+        "heresy",
+        "heretic",
+        "blasphemy",
+        "doubt",
+        "question",
+        "dissent",
+        "traitor",
+        "burning",
+        "execution",
+        "soul"
+      ],
+      "responses": [
+        {
+          "text": "Heresy is not a difference of opinion. It is a disease. A man doubts. He whispers his doubt to a friend. The friend tells a neighbor. Within a year, a village refuses to tithe. Within five, they shelter a fugitive mage. Within ten, they are Calidar. I have seen it. The progression is always the same. We cut the infection early because the alternative is amputation.",
+          "mood": "cold"
+        },
+        {
+          "text": "The Flame Wardens performed eleven purifications last year. Eleven souls destroyed beyond recovery. No afterlife. No mercy. No return. *meets your eyes* Does that disturb you? Good. It should. It disturbs me. But each of those eleven would have killed hundreds if left unchecked. I carry that arithmetic in my chest every morning at dawn prayer.",
+          "mood": "haunted"
+        },
+        {
+          "text": "I do not enjoy burning heretics. I do not enjoy any of this. But someone must stand at the wall between civilization and chaos. The moment I falter, the moment I show weakness, every basement practitioner in the Dominion takes it as permission. So I do not falter. *straightens his robes* And I will not.",
+          "mood": "steel"
+        },
+        {
+          "text": "You ask about heresy twice. *makes another notation* That fact will appear in my evening report. I suggest you have a very good reason ready if the White Cloaks come asking.",
+          "conditions": ["if_repeat"],
+          "mood": "threatening"
+        }
+      ]
+    },
+    "calidar": {
+      "keywords": [
+        "calidar",
+        "glass",
+        "desert",
+        "wasteland",
+        "destruction",
+        "atlas",
+        "war",
+        "last war",
+        "world war",
+        "heaven"
+      ],
+      "responses": [
+        {
+          "text": "Calidar. *the word drops like a stone in still water* The necessary cost. I have walked the edge of the wastes. The sand glitters. Beautiful, in a terrible way. Like a scar that catches the light. Millions died so that billions could live in the centuries since. That is the weight of command. I carry it. I do not apologize for it.",
+          "mood": "grave"
+        },
+        {
+          "text": "Heaven's Atlas ended a war that would have consumed the world. The elven arcane academies were escalating without restraint. City-killing spells. Reality fractures. Summoning on a scale that threatened dimensional stability. Someone had to stop it. We stopped it. The glass desert is the price of your existence, {player_name}. All of our existences.",
+          "mood": "cold"
+        },
+        {
+          "text": "Victory Day is the most important day on the imperial calendar. Not because we celebrate. Because we remember the cost. I deliver the sermon personally at the Grand Cathedral. I look out at the congregation and I think about every soul that burned in those forests. And then I think about every soul that has been born in the five centuries since. The numbers favor us. They always will.",
+          "mood": "resolute"
+        },
+        {
+          "text": "You are an elf. And you come to me to discuss... Calidar. *long silence* Your courage impresses me, if nothing else. Speak, then. But choose your next words as though your life depends on them. Because it does.",
+          "conditions": ["if_race:elf"],
+          "mood": "dangerous"
+        }
+      ],
+      "unlocks": ["magic_ban"]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "emperor",
+        "government",
+        "rule",
+        "power",
+        "territory",
+        "province",
+        "imperial",
+        "capital"
+      ],
+      "responses": [
+        {
+          "text": "The Holy Dominion is the largest, most stable civilization this world has ever known. Five centuries. One unbroken lineage of emperors. One faith. One law. The dwarves hide in their mountains. The orcs bicker on their steppes. The gnomes cower on their islands. We built a continent.",
+          "mood": "proud"
+        },
+        {
+          "text": "The Emperor rules by divine mandate. I serve as his Voice in matters of faith. The Solar Cardinals govern the regions. Flame Bishops oversee the cities. Five thousand Sun Priests conduct services. Fifteen thousand Dawn Acolytes carry the daily work. And at the base, fifty thousand lay brothers and sisters who volunteer their time because they believe. *spreads his hands* That is an empire, {player_name}. Not soldiers. Belief.",
+          "mood": "commanding"
+        },
+        {
+          "text": "People think the empire runs on gold and steel. It runs on paper. Documentation. Identity records. Travel permits. Tax assessments. The system that tells us who is where, doing what, and whether they should be. Remove that system and the Dominion dissolves within a year. I know because I have read the contingency projections. *taps the stack of reports on his desk* This is the true seat of power. Paper and ink and the willingness to use them.",
+          "mood": "matter_of_fact"
+        }
+      ],
+      "unlocks": ["documentation"]
+    },
+    "duty": {
+      "keywords": [
+        "duty",
+        "purpose",
+        "serve",
+        "calling",
+        "burden",
+        "responsibility",
+        "sacrifice",
+        "steward",
+        "oath"
+      ],
+      "responses": [
+        {
+          "text": "I was ordained at twenty-two. Stood in the sunlight for fourteen hours. Did not eat. Did not drink. Did not sit. Collapsed twice. Got up. I have served the Inquest for thirty-one years since. Twelve of those in the field. Six in the western marches. Two in the capital's Seeker division. The rest here. At this desk. With these reports. This is not glory. This is duty. The difference matters.",
+          "mood": "weary_steel"
+        },
+        {
+          "text": "Every morning I wake before dawn. I face east. I recite the prayer. Then I read the overnight reports. Arrests made. Practitioners detained. Incidents logged. Casualties. Every morning there are casualties, {player_name}. Ours and theirs. I sign authorizations for purification. I approve deployment orders. Then I eat breakfast. Cold bread and water. Every morning. For thirty-one years.",
+          "mood": "heavy"
+        },
+        {
+          "text": "*leans back in his chair, looking older for a moment* You want to know what duty costs? My wife left me. Said I was married to the Inquest. She was right. My son serves in the White Cloaks in the northern provinces. He requested a posting as far from me as possible. He was also right. The Light asks everything. I gave it.",
+          "mood": "vulnerable",
+          "unlocks": ["faith"]
+        }
+      ]
+    },
+    "documentation": {
+      "keywords": [
+        "papers",
+        "documents",
+        "identity",
+        "permit",
+        "registration",
+        "travel papers",
+        "checkpoint"
+      ],
+      "responses": [
+        {
+          "text": "Documentation is the backbone of civilization. Every citizen accounted for. Every traveler recorded. Every movement tracked. It sounds oppressive to those who have never lived through a war. To those of us who remember what happens when populations move unchecked, when mages travel anonymously, when hostile agents cross borders without notice... documentation is the difference between order and massacre.",
+          "mood": "commanding"
+        },
+        {
+          "text": "Yes, the burden falls heavier on non-humans. Because non-humans present a greater risk. This is not prejudice. An elf may carry latent magical bloodlines. An orc may coordinate with hostile clans. A beast folk caravan may smuggle contraband across three provinces. We document because we must know. Knowing prevents. Preventing saves.",
+          "mood": "matter_of_fact"
+        },
+        {
+          "text": "*half-smile* The goblins refuse to carry papers. Every single one. And so every single one is a criminal from the moment they draw breath. Some call that unjust. I call it clarity. If you refuse to participate in civilization, civilization has no obligation to protect you.",
+          "mood": "cold"
+        }
+      ]
+    },
+    "non_humans": {
+      "keywords": [
+        "orc",
+        "elf",
+        "dwarf",
+        "goblin",
+        "gnome",
+        "beast folk",
+        "cat folk",
+        "lizard",
+        "race",
+        "non-human",
+        "other races"
+      ],
+      "responses": [
+        {
+          "text": "The Doctrine of the Chosen establishes the hierarchy. Humans closest to Helios. All others descend below. This is not hatred, {player_name}. A shepherd does not hate his flock. He manages them. Guides them. Corrals them when they stray. The Dominion extends the same courtesy to the lesser peoples.",
+          "mood": "cold"
+        },
+        {
+          "text": "Orcs are the military threat. Forty-five years since Urzog died and the western command still cannot sleep soundly. Animals, yes, but animals with three centuries of combat experience and memories that outlive our generals. I respect the danger. I do not respect the creature. *pause* Do not quote me on that to the diplomatic corps.",
+          "mood": "calculated"
+        },
+        {
+          "text": "The goblins. *jaw tightens* The budget consumes legions. We clear warrens and they repopulate within months. Our re-education programs fail completely. Their children emerge from the womb already radicalized, though no one can explain how. *drums his fingers on the desk* Something about goblins does not follow natural law. It unnerves me. I admit that freely.",
+          "mood": "unsettled"
+        },
+        {
+          "text": "The cat folk interest me, professionally. Nomadic. No fixed address. Intelligence networks disguised as fortune-telling parlors. We cannot document them fast enough. Their papers vanish and reappear and multiply. *a grudging note enters his voice* They are good at what they do. I wish they did it for us.",
+          "mood": "frustrated_respect"
+        },
+        {
+          "text": "Your people interest me, {player_name}. Elves run our administration. You file our papers. You maintain our archives. Indispensable. And yet every Seeker I have ever commanded tells me the same thing. The archives have gaps. Convenient gaps. Files lost during transfers. Processing delays that last years. *fixes you with a stare* I know what your people do. I cannot prove it. Yet.",
+          "conditions": ["if_race:elf"],
+          "mood": "threatening"
+        },
+        {
+          "text": "A goblin in my office. Standing on imperial stone. Breathing imperial air. Without a single document to your name, I would wager. *stands slowly* Give me one reason not to have the guards drag you to the Flame Wardens right now. One reason. Make it convincing.",
+          "conditions": ["if_race:goblin"],
+          "mood": "dangerous"
+        }
+      ]
+    }
+  }
+}

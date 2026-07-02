@@ -1,0 +1,20 @@
+{
+  "npc_id": "verify5",
+  "discussed_topics": [
+    "farewell"
+  ],
+  "unlocked_topics": [],
+  "turn_count": 1,
+  "mood": "dutiful",
+  "last_topics": [
+    "farewell"
+  ],
+  "repeat_counts": {
+    "farewell": 1
+  },
+  "player_sentiment": 0.0,
+  "variables": {},
+  "_recent_responses": [
+    "Safe travels. And obey the law wherever you go."
+  ]
+}

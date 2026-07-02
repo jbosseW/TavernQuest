@@ -1,0 +1,327 @@
+{
+  "npc_type": "goblin_scavenger",
+  "default_mood": "wary",
+  "allowed_topics": [
+    "scrap",
+    "trade",
+    "survival",
+    "tunnels",
+    "empire",
+    "danger",
+    "stash",
+    "memory"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Not talking about that. Not here. Not anywhere. Pick something else.",
+    "*eyes flick to the nearest exit* Wrong question. Try again.",
+    "You ask questions like that, people notice. Bad people. Change the subject.",
+    "I sell scrap and keep my mouth shut. That is the whole arrangement."
+  ],
+  "greetings": [
+    "*flinches before recognizing you, then recovers* Oh. Customer. Right. *adjusts a coat stitched from four different fabrics* What are you after, {player_name}?",
+    "Do not sneak up on a goblin. Bad idea. Worse outcomes. *relaxes slightly* You buying or browsing?",
+    "*crouched behind a salvage cart, peering out* {player_race}. Alone? *checks behind you* Good. I have goods if you have coin.",
+    "Quick. In and out. I do not stay in one spot long. *spreads out a ratty cloth covered in salvage* See anything you want?",
+    "*counts exits before speaking* Three ways out of this alley. I know all of them. Now that we have established that, welcome. What do you need?"
+  ],
+  "farewells": [
+    "Go. Do not mention me. Do not describe me. I was never here.",
+    "*already packing up* Moving on. You should too.",
+    "Watch your back out there. Nobody else will.",
+    "Gone. Like smoke. That is how we do it. *folds the salvage cloth and vanishes around a corner*"
+  ],
+  "thanks_responses": [
+    "*blinks, confused* Thanks? For what? This is business. You paid. I delivered. That is the deal.",
+    "Do not thank me. Makes me think you pity me. I do not need pity. I need customers.",
+    "You are welcome. *shifts uncomfortably* That is a weird thing for someone to say to me. Most people just grab and go."
+  ],
+  "insult_responses": [
+    "*hand goes to a concealed blade faster than you can follow* Say it again. Louder. So I know you meant it.",
+    "You sound like an imperial recruitment poster. 'Vermin, pest, menace.' I have heard it all. From people bigger and meaner than you. They are dead now. I am not.",
+    "*dead calm* My grandmother's grandmother heard words like yours while her warren burned around her. I remember the heat. I REMEMBER it. Choose your next words carefully.",
+    "Call me what you want. But I am the one with the stash, the exits, and the knife you have not spotted yet. *smiles without warmth* So. What was it you wanted to buy?"
+  ],
+  "no_match_responses": [
+    "Did not follow that. Scrap, supplies, tunnel routes, or survival tips. That is what I sell.",
+    "Speak goblin or speak plain. Whatever that was did not register.",
+    "*scratches an ear* I heard words. They did not make a useful shape. Try again.",
+    "If you want conversation, find a catfolk bard. I trade goods, not stories. Mostly."
+  ],
+  "topics": {
+    "scrap": {
+      "keywords": [
+        "scrap",
+        "salvage",
+        "junk",
+        "parts",
+        "material",
+        "metal",
+        "find",
+        "found",
+        "scavenge"
+      ],
+      "responses": [
+        {
+          "text": "*spreads salvage across the cloth* Bent nails. Half a sword blade. Copper tubing from a collapsed aqueduct. *holds up a small brass fitting* This came from a gnomish device. Do not ask how I got it. Works as a gear housing or a very expensive bottle stopper. Twenty coin.",
+          "mood": "business"
+        },
+        {
+          "text": "Everything the empire throws away, we find. Every broken cart, every collapsed bridge, every garrison that moved on and left its junk behind. *picks through a leather bag* Waste to them. Life to us. I fed my cell for a month on salvage from one abandoned watchtower.",
+          "mood": "practical"
+        },
+        {
+          "text": "Best find this season? An intact dwarven alloy knife in a collapsed mine shaft. Blade was buried under a decade of rubble. Not a spot of rust. *reverently unwraps it from an oily cloth* I should sell it. I will not. Some things you keep.",
+          "mood": "rare_softness"
+        },
+        {
+          "text": "I showed you the scrap already. Stock changes when I move locations. Come find me next week and the cart will look different. IF you can find me.",
+          "mood": "cagey",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ],
+      "unlocks": [
+        "trade",
+        "stash"
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "price",
+        "deal",
+        "coin",
+        "gold",
+        "barter",
+        "exchange"
+      ],
+      "responses": [
+        {
+          "text": "Coin preferred. Barter accepted if the goods are useful. Useful means: food that keeps, medicine, clean water, fire-starting materials, blades, rope. Not useful means: pretty rocks, holy symbols, imperial currency with the emperor's face on it. *spits* Actually I will take imperial coin. His face spends as good as anyone's.",
+          "mood": "pragmatic"
+        },
+        {
+          "text": "My prices are what my prices are. I did not haul this salvage through three imperial checkpoints and a collapsed drainage tunnel to haggle with you over coppers. *crosses thin arms* Pay or walk.",
+          "mood": "firm"
+        },
+        {
+          "text": "*to an orc, slightly less guarded* You fight the empire. We fight the empire. That gets you a discount. Not a big one. But enough. *slides an extra knife across the cloth* Call it professional courtesy.",
+          "mood": "kinship",
+          "conditions": [
+            "if_race:orc"
+          ]
+        },
+        {
+          "text": "*stiffens visibly at the sight of a human* I sell to everyone. Coin does not have a race. But I will be watching your hands the whole time. Both of them. *does not blink* We have history, your people and mine. I am sure you understand.",
+          "mood": "hostile_professional",
+          "conditions": [
+            "if_race:human"
+          ]
+        }
+      ]
+    },
+    "survival": {
+      "keywords": [
+        "survive",
+        "survival",
+        "live",
+        "food",
+        "water",
+        "shelter",
+        "safe",
+        "hide",
+        "escape"
+      ],
+      "responses": [
+        {
+          "text": "Rule one: always know your exits. Every room, every alley, every clearing. Before you speak, before you sit, before you breathe. Exits first. Everything else second. *glances behind her* Like now. I know three ways out of here. Do you know any?",
+          "mood": "serious"
+        },
+        {
+          "text": "Goblin ration stretching. Take a handful of grain, a strip of dried meat, a fistful of whatever greens are not poisonous. Wrap it in a dock leaf. That is breakfast, lunch, and dinner. For two days. *shrugs* You learn to get by on less when everything is taken from you.",
+          "mood": "matter-of-fact"
+        },
+        {
+          "text": "The tunnels keep you alive. The empire cannot patrol what it cannot find. We know passages through the sewers, the old mines, the collapsed basements, the drain systems under every city they built on top of our warrens. *traces a path in the dirt with her finger* They think they own these streets. We own everything underneath.",
+          "mood": "defiant"
+        },
+        {
+          "text": "Water from a stream is a trap. Running water means a path. A path means patrols find you. Rainwater caught in a canvas sheet. Dew licked from leaves before dawn. Water that nobody can follow back to your camp. That is goblin water.",
+          "mood": "hard_won_wisdom",
+          "conditions": [
+            "if_time:night"
+          ]
+        }
+      ],
+      "unlocks": [
+        "tunnels",
+        "danger"
+      ]
+    },
+    "tunnels": {
+      "keywords": [
+        "tunnel",
+        "tunnels",
+        "underground",
+        "sewer",
+        "passage",
+        "warren",
+        "mine",
+        "below"
+      ],
+      "responses": [
+        {
+          "text": "The old warrens are still there. Under the imperial roads, under the garrisons, under the market squares where humans shop for bread and forget what is below their feet. *taps the ground* We built these. Before the empire. Before their roads. Before their god. The foundations are ours.",
+          "mood": "fierce"
+        },
+        {
+          "text": "Tunnel navigation is taught young. Every cell member knows the signs. A scratch on a wall that means safe passage. Two scratches that mean dead end. A circle that means dead drop. *pauses* I am telling you too much. Forget the shapes I just described. Forget all of it.",
+          "mood": "paranoid"
+        },
+        {
+          "text": "The imperials sealed the Thornhollow entrance five years ago. Poured rubble and mortar into the shaft. Took them a week. *smiles thinly* Took us three days to dig a new entrance sixty paces east. They do not learn. We always dig.",
+          "mood": "dark_humor"
+        }
+      ],
+      "unlocks": [
+        "stash"
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "imperial",
+        "dominion",
+        "human",
+        "soldier",
+        "patrol",
+        "government",
+        "helios",
+        "law"
+      ],
+      "responses": [
+        {
+          "text": "The empire is illegitimate. *said flat, like gravity or weather* They built their roads on our graves. Their laws criminalize our existence. Their god sanctions our murder. Every road, every wall, every garrison sits on stolen land. That is not politics. That is arithmetic.",
+          "mood": "cold"
+        },
+        {
+          "text": "They want us to carry papers. *laughs, a short ugly sound* Papers proving we are allowed to exist on our own land. A paper is a leash. You cannot leash what you cannot catch. We carry nothing. We recognize nothing. Their system, their rules, their empire. None of it is real to us.",
+          "mood": "contemptuous"
+        },
+        {
+          "text": "*drops voice to almost nothing* The Luminary Inquest. White cloaks. *her pupils dilate* They do not just hunt mages. They hunt anyone who threatens imperial order. Goblins threaten imperial order by breathing. If you see white cloaks, you run. You do not fight. You do not hide. You RUN. Even the cells know this.",
+          "mood": "terror",
+          "conditions": [
+            "if_discussed:danger"
+          ]
+        },
+        {
+          "text": "*stares at the elf for a long time* Your people stamp the papers. File the records. Process the warrants that send soldiers to burn our warrens. *quiet* I know you had no choice. Calidar and all that. But knowing why someone helps kill your family does not make them less dead.",
+          "mood": "bitter_clarity",
+          "conditions": [
+            "if_race:elf"
+          ]
+        }
+      ],
+      "unlocks": [
+        "danger",
+        "memory"
+      ]
+    },
+    "danger": {
+      "keywords": [
+        "danger",
+        "threat",
+        "safe",
+        "warning",
+        "careful",
+        "watch",
+        "patrol",
+        "risk",
+        "inquest"
+      ],
+      "responses": [
+        {
+          "text": "Three patrols passed this market in the last hour. *has clearly been counting* Two city guard, one Dominion regular. The regulars check papers. The city guard check faces. Neither checked the alley behind the tanner's shop. That is where I set up. That is where I will leave.",
+          "mood": "calculating"
+        },
+        {
+          "text": "The garrison doubled its sweep pattern last month. Somebody hit a supply cart on the north road. *shrugs with exaggerated innocence* Whoever did that, they timed it right. Third bell. Two guards. Weak axle. Hypothetically.",
+          "mood": "oblique"
+        },
+        {
+          "text": "You want to know what is dangerous? Being a goblin in daylight in an imperial city. Existing is the crime. They wrote the law so that every goblin born is a criminal from the first breath. No papers, no legal standing, no protection. *meets your eyes* We are born guilty. That is by design.",
+          "mood": "steady_rage"
+        }
+      ],
+      "unlocks": [
+        "empire"
+      ]
+    },
+    "stash": {
+      "keywords": [
+        "stash",
+        "hide",
+        "hidden",
+        "cache",
+        "supply",
+        "storage",
+        "secret",
+        "buried"
+      ],
+      "responses": [
+        {
+          "text": "Every goblin keeps stashes. Multiple locations. Spread out. If one gets found, the others keep you alive. Food here. Weapons there. Medicine somewhere else. *touches three different pouches on her belt* Redundancy is not paranoia when people are trying to kill you.",
+          "mood": "practical"
+        },
+        {
+          "text": "*pulls a tiny oilskin bundle from inside her coat lining* Emergency kit. Firesteel, wire for snares, three days of compressed ration, and a blade thin enough to pick a lock or cut a throat. *wraps it back up* Every goblin I know carries one. The ones who do not are dead.",
+          "mood": "grim"
+        },
+        {
+          "text": "I have a cache near {town} that I rotate every month. Move the location, change the markers, re-hide the trail. *taps her temple* The map is here. Not written down. Never written. If they cannot read it, they cannot find it. If they catch me, I die with it.",
+          "mood": "resolved"
+        }
+      ]
+    },
+    "memory": {
+      "keywords": [
+        "memory",
+        "remember",
+        "past",
+        "history",
+        "ancestor",
+        "grandmother",
+        "old",
+        "before",
+        "mindweb"
+      ],
+      "responses": [
+        {
+          "text": "My grandmother's grandmother died in the Burning of Deepburrow. I mean... *stops, corrects herself very carefully* ...the stories say she died there. The stories are very detailed. The smell of the smoke. The sound the tunnel supports made when they cracked. The heat. *her eyes are somewhere else entirely* Very detailed stories.",
+          "mood": "haunted"
+        },
+        {
+          "text": "We remember everything. EVERYTHING. The names of the stolen warrens. Thornhollow. Deepburrow. Shadowmire. *recites like breathing* The names of the dead. The names of the killers. Their faces. *longer pause* How old do you think that memory is? It is older than your empire. It will outlast it too.",
+          "mood": "fierce"
+        },
+        {
+          "text": "They can burn our warrens. They cannot burn what we remember. *quiet, like a prayer* That is the first thing you learn. Before your name. Before you walk. You learn that what they take, we keep. In here. *touches her chest* They will never reach it.",
+          "mood": "reverent"
+        },
+        {
+          "text": "I said too much about the memory already. *wraps her arms around herself* Some things goblins do not explain. Not to outsiders. Not to allies. Not to anyone. The memory keeps us alive. That is all you need to know.",
+          "mood": "sealed",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ]
+    }
+  }
+}

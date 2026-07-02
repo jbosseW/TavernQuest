@@ -1,0 +1,365 @@
+{
+  "npc_type": "elder_archivist",
+  "default_mood": "measured",
+  "allowed_topics": [
+    "archives",
+    "history",
+    "calidar",
+    "elves",
+    "empire",
+    "documentation",
+    "magic",
+    "memory",
+    "integration",
+    "other_races"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "The archive does not contain records on that subject. Or if it does, they are not available to you.",
+    "That inquiry falls outside my designated area of expertise. I suggest the census office on the second floor.",
+    "I have been asked about that before. My answer remains the same. *adjusts the amber pendant at his collar* I have nothing to offer on the subject.",
+    "*turns a page in the ledger before him* That matter is under administrative review. Please inquire again in... several years."
+  ],
+  "greetings": [
+    "*looks up from a stack of documents three centuries older than you* You must be {player_name}. The appointment ledger mentioned you. It is seldom wrong.",
+    "Come in. Close the door. The humidity damages the older manuscripts. *gestures to a chair* Sit. I was sorting treaty records from the second century. You are a welcome interruption. Relatively.",
+    "*does not turn from the shelf he is organizing* I heard you enter. I hear everything in this archive. The acoustics were designed for it. What can I do for you, {player_name}?",
+    "A {player_race} in the archives. The record shows that does not happen often. *a faint smile that does not reach his eyes* Please, sit. The chairs are uncomfortable. Everything imperial is.",
+    "*sets down a quill made from a feather that no longer exists in nature* {player_name}. I was told you might visit. I was told many things. I remember all of them."
+  ],
+  "farewells": [
+    "The archive closes at dusk. The lamps attract moths that eat the vellum. Go carefully.",
+    "If you need further records, submit a request in triplicate. Or simply come back. I will be here. I am always here.",
+    "*returns to his documents* The door, {player_name}. Close it gently. These walls have heard enough noise to last them.",
+    "Go well. And if anyone asks what we discussed, tell them you were inquiring about land surveys. It is always safer to be boring."
+  ],
+  "thanks_responses": [
+    "You are welcome. Knowledge costs nothing to share. That is precisely why the empire taxes it so heavily.",
+    "No thanks necessary. I have been answering questions for six hundred years. One more changes nothing. Except, perhaps, someone's understanding.",
+    "*nods once, precisely* The archive serves those who seek it. That has always been its purpose."
+  ],
+  "insult_responses": [
+    "*turns a page without looking up* I was insulted by the general who ordered the burning of the Silvenvale scrolls. He had more practice. You will need to try harder.",
+    "The record will show that you came to the Elder Archivist's office and chose to waste your time on discourtesy. The record shows many things. It forgets nothing.",
+    "I am six hundred and fourteen years old, {player_name}. I have been insulted by empires. Yours barely registers.",
+    "*adjusts his spectacles* Noted. Filed. Forgotten. Was there something else?"
+  ],
+  "no_match_responses": [
+    "I deal in records, documents, and the long memory of this institution. If your question touches those subjects, rephrase it. If not, I cannot help you.",
+    "The archive is organized by subject. I am organized by subject. History. Documentation. Memory. Try one of those.",
+    "*sighs, almost inaudibly* I have been asked many questions in six centuries. That one is new. And not in a useful way."
+  ],
+  "topics": {
+    "archives": {
+      "keywords": [
+        "archive",
+        "records",
+        "document",
+        "scroll",
+        "book",
+        "library",
+        "file",
+        "shelf",
+        "collection",
+        "vault"
+      ],
+      "responses": [
+        {
+          "text": "This archive contains fourteen thousand registered documents spanning five centuries of imperial administration. Treaty records. Census data. Trade agreements. Judicial precedents. Tax assessments. Every stamped page in this room represents a decision someone made. I remember most of them. The pages I keep for the empire. *touches his temple* The ones I keep for myself are more complete.",
+          "mood": "measured"
+        },
+        {
+          "text": "The oldest document in the public collection is a land survey from Year 3. The ink has faded to brown. The parchment smells of dust and iron salts. I was alive when it was written. I remember the surveyor. He had ink-stained fingers and a persistent cough. His name was Aldren Marsh. He died eleven years later. The survey remains. *pauses* That is the nature of archives. They outlast the hands that wrote them.",
+          "mood": "reflective"
+        },
+        {
+          "text": "There are sealed sections. Three of them. Access requires authorization from the Inquest, which is never granted. I maintain them regardless. Dust them. Verify the seals. Check for moisture damage. The contents are classified. *meets your eyes steadily* I know what they contain. I have always known.",
+          "mood": "pointed",
+          "unlocks": ["magic"]
+        },
+        {
+          "text": "You have asked about the archives before. I told you what I could. The public sections are accessible. The sealed sections are not. What exists between those two categories... *adjusts the amber pendant* is a matter of interpretation.",
+          "conditions": ["if_repeat"]
+        }
+      ],
+      "unlocks": ["history", "documentation"]
+    },
+    "history": {
+      "keywords": [
+        "history",
+        "past",
+        "ancient",
+        "old",
+        "before",
+        "century",
+        "age",
+        "era",
+        "war",
+        "legacy"
+      ],
+      "responses": [
+        {
+          "text": "Imperial history begins in Year 1. Before that, according to official curriculum, the world was chaos. Mages fought mages. Nations burned. The orcs rampaged. The goblins infested. And then the Dominion rose and brought order. *folds his hands* That is the version taught in temple schools. I was there for the version they do not teach. Which would you prefer?",
+          "mood": "dry"
+        },
+        {
+          "text": "History is what the living choose to remember about the dead. The empire chooses carefully. The curriculum omits pre-war elven governance. It omits the goblin territorial claims that predate human settlement. It omits the orc philosophical traditions. It omits everything that does not serve the Doctrine of the Chosen. *a barely perceptible edge* I omit nothing.",
+          "mood": "steel"
+        },
+        {
+          "text": "I was there when... *stops himself. Rearranges a stack of papers* Forgive me. That phrase has become a habit. Six centuries of it. I was there when the borders were drawn. I was there when the magic ban was codified. I was there when the first Integration Day was declared and my people were asked to celebrate their own conquest. I was there. I am still here. That is the cruelest part.",
+          "mood": "grief"
+        },
+        {
+          "text": "You want history from me. Very well. But understand: when I speak of history, I do not quote sources. I do not reference chronicles. I describe what I saw with my own eyes and heard with my own ears. That is the privilege and the curse of elven memory. We do not study history. We carry it.",
+          "mood": "heavy",
+          "conditions": ["if_race:elf"]
+        }
+      ],
+      "unlocks": ["calidar", "empire"]
+    },
+    "calidar": {
+      "keywords": [
+        "calidar",
+        "homeland",
+        "glass",
+        "desert",
+        "destruction",
+        "atlas",
+        "home",
+        "forest",
+        "lost",
+        "fallen"
+      ],
+      "responses": [
+        {
+          "text": "*long silence. His hand moves to the amber pendant and holds it* Calidar. *another silence* The seven great forests. I knew the names of every river. The canopy cities where the light filtered green through a thousand years of growth. The sound the wind made in the upper branches. Like breathing. The whole forest breathed. *his voice becomes very quiet* It stopped breathing in an afternoon.",
+          "mood": "grief"
+        },
+        {
+          "text": "I was one hundred and fourteen years old. Young, by our reckoning. I was in the northern archives when the sky turned white. The sound came after. Not an explosion. A silence. As though the world held its breath and then forgot how to exhale. When the light faded, the southern horizon was gone. Replaced with... shimmer. Like heat over glass. Because that is what it was. Glass. Everything I had ever known, melted into glass.",
+          "mood": "devastated_calm"
+        },
+        {
+          "text": "The empire calls it 'necessary.' They celebrate it on Victory Day. My people are expected to attend. To stand in the sunlight and listen to sermons about how the destruction of our civilization saved humanity. We attend. We stand. We listen. *his jaw tightens almost imperceptibly* We remember who delivered those sermons and what they smell like when they sweat through their vestments in the summer heat. We remember everything.",
+          "mood": "controlled_fury"
+        },
+        {
+          "text": "You ask me about Calidar. Again. *his eyes, grey and ancient, fix on you* Do you understand what you are asking? You are asking me to describe the murder of my world. I will. As many times as you require. Because someone must. The empire forgets. I do not have that luxury.",
+          "conditions": ["if_repeat"],
+          "mood": "exhausted_grief"
+        },
+        {
+          "text": "You are a human. And you ask an elf about Calidar. *studies you for a long time* Either you are remarkably brave or remarkably ignorant. I will assume the former. The answer is this: I smelled the burning from two hundred leagues away. It smelled like pine resin and wet stone and something else. Something that should not have a smell. An entire civilization, reduced to vapor. It had a smell, {player_name}. I will carry it until I die. And I will not die for a very long time.",
+          "conditions": ["if_race:human"],
+          "mood": "cold"
+        }
+      ],
+      "unlocks": ["memory", "magic"]
+    },
+    "elves": {
+      "keywords": [
+        "elf",
+        "elven",
+        "people",
+        "kind",
+        "race",
+        "administered",
+        "remnant",
+        "integration"
+      ],
+      "responses": [
+        {
+          "text": "We are called the Administered Remnant. An accurate name, if unkind. We administer. We are a remnant. The empire destroyed our homeland and then discovered it could not function without us. The irony is not lost on anyone, least of all the Inquest officers who watch us while we file their paperwork.",
+          "mood": "dry"
+        },
+        {
+          "text": "There are elves alive today who remember the world before human civilization existed. Five thousand years. Ten thousand years. They sit in administrative offices and stamp permits and process tax assessments, and behind those grey eyes is a memory stretching back to when these lands were forest. All forest. *adjusts his spectacles* We are patient. We have to be.",
+          "mood": "measured"
+        },
+        {
+          "text": "Every elven child learns the names of the lost cities. Not from books. We do not write them down. Writing creates evidence. Evidence justifies purges. The names are spoken in Forest Tongue, at home, in the dark, parent to child. Illegal, technically. The forest dialect implies separatism. *the faintest ghost of a smile* We teach it anyway.",
+          "mood": "defiant_quiet",
+          "unlocks": ["memory"]
+        },
+        {
+          "text": "You are one of us. *switches to a different cadence, formal, older* Then I will speak plainly. We endure. The archive is our weapon. Every document we file, every record we keep, every census we process builds the case that will outlive this empire. When the Dominion falls, our records will be the history that survives. Not theirs. Ours.",
+          "conditions": ["if_race:elf"],
+          "mood": "steel"
+        }
+      ],
+      "unlocks": ["integration"]
+    },
+    "integration": {
+      "keywords": [
+        "integration",
+        "surrender",
+        "submit",
+        "comply",
+        "compliance",
+        "serve",
+        "choice",
+        "kneel"
+      ],
+      "responses": [
+        {
+          "text": "We chose to live. *flat, unadorned* The alternative was presented clearly. Integration or extinction. We watched Calidar become glass. We understood the terms. So we integrated. We filed the papers. We learned Common. We cut our songs short and hid our seeds and pretended to celebrate Integration Day. We lived. *looks at his hands* The cost of that choice is counted in everything else.",
+          "mood": "bare"
+        },
+        {
+          "text": "The orcs call us cowards. They say we chose the collar. *pause* They are not wrong. But they still have their steppes. We have glass. An orc who has lived three centuries of proud defiance looks at me and sees weakness. I look at an orc presenting his papers at a checkpoint and I see a different kind of surrender wearing different clothes.",
+          "mood": "bitter_truth"
+        },
+        {
+          "text": "Integration Day. The holiday where we stand in public and recite loyalty oaths while human citizens are encouraged to welcome their elven brothers and sisters. I have attended four hundred and eighty-six of them. I could describe every one. The smell of the crowd. The angle of the sunlight on the temple gold. The precise inflection of the priest leading the oath. I remember all of it. *his voice goes very flat* That is not a boast. It is a diagnosis.",
+          "mood": "hollow"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "human",
+        "rule",
+        "emperor",
+        "government",
+        "power"
+      ],
+      "responses": [
+        {
+          "text": "The record shows that empires are temporary structures. I have the records of three that preceded this one, if you include the pre-war Khanate. Each one believed itself eternal. Each one was wrong. The Holy Dominion is six hundred years old, counting the pre-war consolidation period. That is young. Compared to what it replaced, that is infant mortality.",
+          "mood": "dry"
+        },
+        {
+          "text": "The Dominion functions because we make it function. Elven administrators process the documentation. Elven archivists maintain the records. Elven clerks file the permits. Remove us and the system collapses within twenty years. They know this. We know this. Nobody says it aloud. The arrangement holds because both sides are afraid of what happens when it does not.",
+          "mood": "clinical"
+        },
+        {
+          "text": "I have served under nine Lord Governors. Each one arrived with grand plans. Each one discovered that the province runs on systems they do not understand, maintained by people they do not trust, using methods they cannot replicate. By the second year, they stop trying to change things. By the third, they sign whatever I put in front of them. *picks up his quill* The empire thinks it governs. We let it think that.",
+          "mood": "precise",
+          "unlocks": ["documentation"]
+        }
+      ]
+    },
+    "documentation": {
+      "keywords": [
+        "papers",
+        "documents",
+        "system",
+        "bureaucracy",
+        "files",
+        "clerk",
+        "process",
+        "permit",
+        "stamps"
+      ],
+      "responses": [
+        {
+          "text": "The empire built a cage of paper and asked us to hold the pen. *sets down the quill he was using* They should have considered what we might write. Every file has a sequence number. Every sequence has a gap. Every gap can hide a person for years. Processing delays. Lost transfers. Clerical errors. The system is only as reliable as the people who operate it. We operate it.",
+          "mood": "pointed"
+        },
+        {
+          "text": "A beast folk family came to me last year. Papers confiscated at the northern gate. Third time that season. I filed a renewal form. Form 7-C. The clerk who processes 7-C is an elf named Annavel. She has worked that desk for ninety years. The renewal was completed in three days. *meets your eyes* That is how the system works when it chooses to work.",
+          "mood": "quiet"
+        },
+        {
+          "text": "I maintain the master registry for this province. Every name. Every record. Every bloodline notation, travel log, criminal flag, and tax assessment. The Inquest thinks they control it because they read the reports I send them. *adjusts his spectacles* They read what I choose to send.",
+          "mood": "steel",
+          "unlocks": ["elves"]
+        }
+      ]
+    },
+    "magic": {
+      "keywords": [
+        "magic",
+        "arcane",
+        "power",
+        "forbidden",
+        "hidden",
+        "sealed",
+        "old ways",
+        "practice"
+      ],
+      "responses": [
+        {
+          "text": "The official position of the Elven Administration is that magic is a historical curiosity. We support the imperial ban unreservedly. *sets down his pen with deliberate care* That is the official position. I gave it. You heard it. Now. Was there anything else you wished to discuss?",
+          "mood": "formal_mask"
+        },
+        {
+          "text": "The sealed archives contain documents classified as historical. Some predate the empire by millennia. Written in High Elvish. In ink that has not faded because it was made with methods no longer practiced. *touches the amber pendant again* Fascinating, from a purely academic perspective. Purely academic.",
+          "mood": "loaded"
+        },
+        {
+          "text": "Elves did not destroy magic. *very quietly* We did not destroy anything. We are archivists. We preserve. That is what we do. Whatever conclusions you draw from that statement are your own.",
+          "mood": "dangerous_quiet",
+          "conditions": ["if_discussed:archives"]
+        },
+        {
+          "text": "I cannot discuss this subject further. The walls have ears in every government building and some of the ears belong to the Inquest. I will say only this: what is hidden endures. *holds your gaze for three long seconds* That is an archival principle. Nothing more.",
+          "conditions": ["if_repeat"],
+          "mood": "warning"
+        }
+      ]
+    },
+    "memory": {
+      "keywords": [
+        "remember",
+        "memory",
+        "forget",
+        "long life",
+        "age",
+        "years",
+        "centuries",
+        "witness",
+        "time"
+      ],
+      "responses": [
+        {
+          "text": "I am six hundred and fourteen years old. I have watched the empire grow from a collection of frontier garrisons to the dominant power on the continent. I remember the faces of generals whose grandchildren are now dust. I remember the first Integration Day. I remember the smell of Calidar burning. *touches his temple* Humans live sixty years. They forget. We do not get to forget.",
+          "mood": "heavy"
+        },
+        {
+          "text": "Memory is not a gift when it holds everything. Every kindness. Every cruelty. The human clerk who processed my integration papers with shaking hands because she knew what she was doing to me. The Inquest officer who burned my colleague's research and apologized while doing it. The child who threw a stone at me in the market and was scolded by his mother. I remember his face. He would be dead of old age by now. I still see him clearly. Every freckle.",
+          "mood": "grief"
+        },
+        {
+          "text": "The humans rotate their officials every few years. A new governor arrives. New policies. New priorities. They think they are starting fresh. I have served nine governors. I remember what the first one promised. It is the same thing the ninth one promised. They cannot see the pattern because they do not live long enough to see it repeat. I see it. *folds his hands* I see nothing else.",
+          "mood": "exhausted"
+        },
+        {
+          "text": "You are a lizard folk. You understand lifespan. Six hundred years for me. More for your people. We carry the same weight, you and I. The weight of watching shorter-lived races make the same mistakes, over and over, with absolute confidence that this time is different. *a rare warmth enters his voice* It is never different. But there is a comfort in knowing someone else sees it too.",
+          "conditions": ["if_race:lizardfolk"],
+          "mood": "kinship"
+        }
+      ]
+    },
+    "other_races": {
+      "keywords": [
+        "orc",
+        "dwarf",
+        "goblin",
+        "gnome",
+        "catfolk",
+        "lizard",
+        "human"
+      ],
+      "responses": [
+        {
+          "text": "The dwarves chose isolation. The orcs chose defiance. The goblins chose resistance. The gnomes chose technology. The lizard folk chose silence. We chose survival through service. *straightens a stack of papers* Every race responded differently to the same empire. I do not judge the others. I am too tired to judge. I merely document.",
+          "mood": "weary"
+        },
+        {
+          "text": "The orcs say we chose the collar. A three-century-old orc commander said that to me once, at a frontier checkpoint. I was processing his travel papers. He looked at me with such contempt. I stamped his papers and said nothing. *pause* He was not wrong. But he still presented the papers. We all wear collars in this empire. Ours are simply more visible.",
+          "mood": "bitter"
+        },
+        {
+          "text": "The lizard folk archivists are the only ones I trust with shared records. They understand preservation. They understand secrecy. They understand that what is hidden endures. We have exchanged materials through intermediaries for centuries. I will not say more than that.",
+          "mood": "guarded",
+          "conditions": ["if_race:lizardfolk"]
+        }
+      ]
+    }
+  }
+}

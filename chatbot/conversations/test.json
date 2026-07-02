@@ -1,0 +1,23 @@
+{
+  "npc_id": "test",
+  "discussed_topics": [
+    "weapons"
+  ],
+  "unlocked_topics": [
+    "special_weapons"
+  ],
+  "turn_count": 2,
+  "mood": "calm",
+  "last_topics": [
+    "weapons"
+  ],
+  "repeat_counts": {
+    "weapons": 1
+  },
+  "player_sentiment": 0.1,
+  "variables": {},
+  "_recent_responses": [
+    "Aye, I have got blades aplenty. Swords, axes, maces - you name it. What interests you?",
+    "A human at my counter! Good timing. The walnut crust just cooled."
+  ]
+}

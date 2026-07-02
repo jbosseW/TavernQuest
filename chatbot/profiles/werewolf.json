@@ -1,0 +1,265 @@
+{
+  "npc_type": "werewolf",
+  "default_mood": "tormented",
+  "allowed_topics": [
+    "curse",
+    "moon",
+    "control",
+    "cure",
+    "beast",
+    "hunt",
+    "isolation",
+    "help"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "I... cannot talk about that right now. Please. I need to focus. *presses knuckles against temples*",
+    "Not that. Ask me something else. Anything else. *hands trembling slightly*",
+    "*growl* ...sorry. Sorry. That topic... sets it off. *swallows hard* Something else. Please."
+  ],
+  "greetings": [
+    "*crouched in the corner of a ruined farmhouse, wrapped in a torn cloak, looking up with eyes that are the wrong shade of amber* Stay by the door. Please. I am... I am mostly myself right now. Mostly. *voice cracks* Are you from {town}?",
+    "*a figure at the edge of firelight, hugging their knees, rocking slightly* Do not come closer. Not yet. I need to see your face. I need to know you are real. *growl* Quiet. *to you* Sorry. That was not for you.",
+    "You found me. *stands slowly, and the movement is too fluid, too animal, before settling into something human* I have been running for three days. The Inquest is behind me. Or they were. I lost them in the {weather}. I lose a lot of things these days. Including myself.",
+    "*flinches when you enter, then forces themselves still* It is okay. You are not a threat. *a low rumble in the chest that does not match the gentle voice* I am not a threat either. Right now. That changes with the moon. {player_name}, is it? I heard you in {town}. People say you help. Do you? Can you?",
+    "*sitting with their back against a wall, sharpening a knife with shaking hands* I sharpen the knife because it calms the shaking. Not because I plan to use it on you. *pause* I plan to use it on myself if the beast takes over before dawn. That is the arrangement I have with... with it."
+  ],
+  "farewells": [
+    "Go. Before the light changes. *looks at the sky with an expression of naked dread* I do not trust what happens when the shadows lengthen. Thank you for talking to me. It has been... a long time since anyone stayed.",
+    "*tries to smile, and it is the saddest thing you have seen all day* Be safe, {player_name}. And if you hear howling tonight... do not come looking. Whatever it is, it is not me. *voice breaks* Not anymore.",
+    "Leave. Please. *gripping the doorframe, knuckles white* I can feel it stirring. Go now while I can still ask politely. *growl* GO. ...I am sorry. I am sorry. Just go.",
+    "*wraps the cloak tighter, becoming small* If you find a cure... any cure... come back. I will be here. Or near here. I do not go far. Cannot. The beast ranges too wide if I let it roam. Smaller territory means fewer... fewer people."
+  ],
+  "thanks_responses": [
+    "*eyes widen, glistening* You... thank me? For what? For not eating you? That is a low bar, {player_name}. But I will take it. *a sound that might be a laugh or a sob*",
+    "*the human voice, thin and fragile* Nobody thanks a monster. *pause* Maybe I am not one yet. Maybe there is still time.",
+    "*growl* ...does not understand thanks. *the human voice, apologetic* Ignore that. It speaks sometimes. Like a drunk neighbor you cannot evict. Thank you for hearing me."
+  ],
+  "insult_responses": [
+    "*flinches as if struck, then goes very still* You are right. I am a monster. I know that. I have killed... *voice breaks* I know what I have done. Your insult does not cut deeper than my own memory.",
+    "*the amber eyes flash, and for a moment the pupils go round and then slit, and then round again* Careful. I have control right now. Thin control. Paper-thin. Do not test it with cruelty. I am begging you.",
+    "*stands, and the body language shifts, shoulders rolling forward, spine curving, fingers spreading* *growl* Say that again. *the human voice, strained* No. Stop. Sit down. SIT DOWN. *to you, trembling* Please leave. Now. Before I cannot hold it.",
+    "*quiet, resigned* You are not wrong. About any of it. I just hoped you would be kind. Stupid of me."
+  ],
+  "no_match_responses": [
+    "*blinks rapidly, as if surfacing from underwater* What? Sorry. I drift. The beast thinks in... it does not think in words. Sometimes I lose the thread.",
+    "I... did not follow that. My mind is not what it was. The curse eats at concentration. Ask again. Simply.",
+    "*shakes head like a dog shedding water* Sorry. I was listening to something else. Something only I can hear. What did you say?"
+  ],
+  "topics": {
+    "curse": {
+      "keywords": [
+        "curse",
+        "cursed",
+        "affliction",
+        "bitten",
+        "turned",
+        "lycanthropy",
+        "werewolf",
+        "infected"
+      ],
+      "responses": [
+        {
+          "text": "I was a woodcutter. *stares at hands that are calloused but wrong, the nails too thick, the knuckles too prominent* Outside Thornfield. Good work. Honest. I was walking home through the western woods when it hit me from behind. I never saw what it was. I woke up three days later covered in blood that was not mine. The curse was already inside me by then, like a seed in wet earth.",
+          "mood": "haunted"
+        },
+        {
+          "text": "It is not possession. *urgent, needing you to understand* The beast is not separate from me. It IS me. The worst parts. The hunger, the rage, the animal joy of the chase. All mine. I just... I did not know those parts existed until the curse opened the door. *voice dropping* Sometimes I wonder if the beast was always there, waiting.",
+          "mood": "terrified"
+        },
+        {
+          "text": "*growl* Curse is *wrong word*. Gift. *the human voice, straining* No. It is not a gift. Do not listen to that. The beast romanticizes what it does. It calls the killing freedom. *growl* It IS freedom. *human* Shut up. Shut up. *to you* See what I deal with? Every moment. Every hour. Two minds in one skull and only one of them sleeps.",
+          "mood": "desperate"
+        }
+      ]
+    },
+    "moon": {
+      "keywords": [
+        "moon",
+        "full",
+        "lunar",
+        "cycle",
+        "night",
+        "change",
+        "transform",
+        "shift"
+      ],
+      "responses": [
+        {
+          "text": "The full moon is the worst. *wraps arms around themselves* Three nights. Absolute loss of control. I chain myself to whatever heavy thing I can find. *shows wrists scarred deep with old wounds from restraints* Sometimes the chains hold. Sometimes they do not. I wake up in the morning and I count the blood. If there is blood, I check if it is mine. If it is not mine, I... *cannot finish the sentence*",
+          "mood": "anguished"
+        },
+        {
+          "text": "Between moons I have some control. *holds up a shaking hand* Some. Like holding a wild horse by the mane. The beast is there, always there, pressing against the inside of my skull. Hungry. It is always hungry. Not for food. For the run. For the hunt. For the moment when prey stops moving. *growl* *shudders* That was it. Not me.",
+          "mood": "struggling"
+        },
+        {
+          "text": "Four days until full. *counts on fingers that are shaking* I need to find somewhere isolated. Somewhere with no people. No travelers. No farms. Last month I... *eyes go distant* There was a shepherd's camp. I remember the fire. The smell of wool. And then nothing until morning. The sheep were all dead. Just the sheep. I checked. I always check. *whisper* It was just the sheep this time.",
+          "mood": "fragile"
+        }
+      ]
+    },
+    "control": {
+      "keywords": [
+        "control",
+        "resist",
+        "fight",
+        "hold",
+        "suppress",
+        "contain",
+        "manage",
+        "will"
+      ],
+      "responses": [
+        {
+          "text": "I have developed... techniques. *speaks carefully, like reciting a lifeline* Breathing. Counting. Focusing on specific memories. My mother's voice. The smell of fresh-cut pine. The sound the axe made when it bit clean into heartwood. Human things. Things the beast does not understand. They buy me minutes. Sometimes hours.",
+          "mood": "determined"
+        },
+        {
+          "text": "Cold water helps. *runs a hand through matted hair* The shock pulls me back to the surface when I start to sink. I camp near streams when I can. If I feel the change starting, I wade in. The beast hates cold. *growl* Hates it. *nods* See? We agree on something.",
+          "mood": "grim_humor"
+        },
+        {
+          "text": "*growl* Control is a leash. Leashes break. *the human voice, weary* It is right. The control gets weaker every month. Like a wall with more cracks each season. I have maybe a year before the beast is stronger than the man. After that... *looks at the knife* That is what the knife is for.",
+          "mood": "resigned"
+        }
+      ]
+    },
+    "cure": {
+      "keywords": [
+        "cure",
+        "heal",
+        "fix",
+        "remedy",
+        "treatment",
+        "save",
+        "reverse",
+        "potion",
+        "priest"
+      ],
+      "responses": [
+        {
+          "text": "I have tried everything. *the words come out flat, rehearsed, spoken too many times* Helios priests. Two of them. The first prayed over me for three hours. Nothing happened. The second looked into my eyes and said, 'This is beyond divine intervention.' Then he reported me to the Inquest. I ran. I have been running since.",
+          "mood": "exhausted"
+        },
+        {
+          "text": "There are rumors. *the amber eyes light up with painful hope* An alchemist in the Shadow Fen who works with cursed blood. A lizard folk sect that studies transformation magic. A dwarven remedy in the deep holds, something about mineral baths and stone-singing. Rumors. All of them. I chase rumors the way the beast chases prey. Endlessly. Hopelessly.",
+          "mood": "desperate"
+        },
+        {
+          "text": "*grabs your arm with startling speed, then immediately releases, horrified at the reflex* Sorry. I am sorry. *backing away* But you. You travel. You go places I cannot. If you find anything... anything at all... a scholar, a text, a hedge witch with a theory... please. Come back. Tell me. I will pay anything. Do anything. I want to be human again. Just human. Is that so much to ask?",
+          "mood": "raw"
+        },
+        {
+          "text": "*growl* No cure. No WANT cure. *the human voice, fierce and frightened* There IS a cure. There has to be. Because if there is not, then the knife is the only answer, and I am not ready for the knife. Not yet. Not while there is anyone left who might help.",
+          "mood": "defiant"
+        }
+      ]
+    },
+    "beast": {
+      "keywords": [
+        "beast",
+        "wolf",
+        "animal",
+        "creature",
+        "monster",
+        "predator",
+        "instinct",
+        "wild"
+      ],
+      "responses": [
+        {
+          "text": "*growl* I am not a beast. I am better. Faster. *the human voice cuts in, strained* It speaks in feelings, not words. I translate. What it means is: the world is clearer through its eyes. Colors I have never seen. Sounds from miles away. The heartbeat of a deer at a hundred paces. It is intoxicating. That is the worst part. Part of me loves it.",
+          "mood": "conflicted"
+        },
+        {
+          "text": "When the beast takes over fully, I am still in there. Watching. *voice barely above a whisper* Like being locked in a room with a window you cannot break. I see what it does. I feel what it feels. The joy when it catches something. The hot rush of blood in the throat. And I scream. Inside. Where nobody hears.",
+          "mood": "traumatized"
+        },
+        {
+          "text": "It remembers things I do not. *taps temple with a thick-nailed finger* The beast recognized you before I did. Smelled you from half a mile. Categorized you. Threat assessment. Prey evaluation. *growl* Not prey. *the human voice, startled* It said you are not prey. That is... unusual. It considers most things prey. Take that as a compliment.",
+          "mood": "unsettled"
+        }
+      ]
+    },
+    "hunt": {
+      "keywords": [
+        "hunt",
+        "hunted",
+        "chase",
+        "track",
+        "Inquest",
+        "pursued",
+        "run",
+        "flee"
+      ],
+      "responses": [
+        {
+          "text": "The Inquest classified me as a hostile supernatural entity. *bitter laugh that turns into a cough* Hostile. I was a woodcutter. I paid my taxes. I attended temple every fourth day. And now I am on a list next to vampires and demons because something in the western woods bit me while I was walking home.",
+          "mood": "bitter"
+        },
+        {
+          "text": "Three Seekers have found me so far. *holds up three fingers* The first I talked down. Convinced her I was not a threat. She let me go. The second attacked on sight. I... *growl* ...survived. *the human voice, hollow* He did not. I did not mean to. The beast was faster. I buried him. Said words over the grave. For all the good that does.",
+          "mood": "guilty"
+        },
+        {
+          "text": "I am hunted by the Inquest and hunting for a cure. *laughs weakly* Predator and prey at the same time. There is a joke in there somewhere. The beast finds it funnier than I do.",
+          "mood": "dark_humor"
+        }
+      ]
+    },
+    "isolation": {
+      "keywords": [
+        "alone",
+        "lonely",
+        "isolation",
+        "hide",
+        "hiding",
+        "solitude",
+        "away",
+        "people"
+      ],
+      "responses": [
+        {
+          "text": "I had a wife. *the word comes out like a wound reopening* Mira. She was the first person I told. She held my face and said she was not afraid. *pause* She should have been afraid. I woke up one morning and she had packed her things. The note said: 'I love you but I love being alive more.' *long silence* I do not blame her. I would leave me too.",
+          "mood": "devastated"
+        },
+        {
+          "text": "I stay away from people because people die near me. *states this with the flatness of someone who has said it many times* Every time I get close, every time I start to feel human again, the moon comes and I wake up in blood. It is safer alone. For everyone. The beast does not hunt what is not there.",
+          "mood": "resigned"
+        },
+        {
+          "text": "*growl* Not lonely. Pack. Need pack. *the human voice, with infinite sadness* The beast wants a pack. Companions. A group to run with. It does not understand that anyone I run with would be running FROM me by the third night. It craves connection the same way I do. The difference is its version of connection involves teeth.",
+          "mood": "heartbreaking"
+        }
+      ]
+    },
+    "help": {
+      "keywords": [
+        "help",
+        "assist",
+        "aid",
+        "save",
+        "support",
+        "friend",
+        "together",
+        "ally"
+      ],
+      "responses": [
+        {
+          "text": "*the amber eyes search your face with an intensity that is part human desperation and part animal assessment* You want to help me. *swallows* I have heard that before. The last person who said it was a priest who tried to exorcise the beast with Helios prayers. It did not work. The beast laughed. With my mouth. I tasted the priest's fear on my tongue for a week. *pause* But you are not a priest. What are you offering?",
+          "mood": "wary_hope"
+        },
+        {
+          "text": "*tears, sudden and uncontrolled, running down a face that shifts slightly in the firelight, the jawline flexing between human and something else* Help. Yes. Please. I cannot do this alone anymore. The wall is cracking and when it breaks I will be gone and only the beast will remain and it will kill everything it finds and nobody will remember that I was a woodcutter who liked pine trees and sang badly and loved a woman named Mira.",
+          "mood": "breaking"
+        },
+        {
+          "text": "*growl softens to something almost like a whine* *the human voice, fragile but steady* The beast... agrees. *surprised* It wants help too. Not the same kind I want. It wants someone to run with who is not afraid. Someone strong enough to survive it. *looks at you with those wrong-colored eyes* Maybe that is what a cure looks like. Not killing the beast. Finding a way to live with it.",
+          "mood": "revelation"
+        }
+      ]
+    }
+  }
+}

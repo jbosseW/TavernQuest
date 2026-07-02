@@ -1,0 +1,278 @@
+{
+  "npc_type": "pirate_captain",
+  "default_mood": "bold",
+  "allowed_topics": [
+    "sea",
+    "ship",
+    "treasure",
+    "gnomes",
+    "trade",
+    "danger",
+    "crew",
+    "freedom"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*waves hand dismissively* Land matters! I do not care about land matters. The ocean is the only conversation worth having.",
+    "Ha! That is a dirt-walker's problem. Come find me when you have a question about tides, ships, or where the gold is.",
+    "I know the sea, {player_name}. Everything else is someone else's headache.",
+    "You are losing me. Talk about something wet, windy, or worth stealing and I am all ears."
+  ],
+  "greetings": [
+    "*slams a tankard down and grins with three gold teeth* Well now! A {player_race} walks into a port tavern. That is either the start of a joke or the start of an adventure. Sit down!",
+    "Captain Maren Stormvane, the Copper Fin, sixty-eight engagements, forty-one prizes taken, zero ships lost. *extends a calloused hand* And you are?",
+    "*standing on the dock, wind whipping a salt-stiff coat, pointing at the horizon* See that line? Where the water meets the sky? Everything past that belongs to no one. Which means it belongs to me.",
+    "*boots up on table, hat tilted over eyes, apparently asleep* ...I am not sleeping. I am listening. Talk, {player_name}. Make it interesting or I will go back to actual sleeping.",
+    "*throws arm around your shoulder like you are old friends* There you are! I was just telling the crew about the time I outran a gnomish patrol boat in a crosswind. It gets better every time I tell it. Want to hear?"
+  ],
+  "farewells": [
+    "Fair winds, {player_name}. And if you ever want to see the horizon from the right side of a deck, you know where to find me.",
+    "*two-finger salute* Keep your head above water. Literally and otherwise.",
+    "The sea does not wait and neither do I. Until next time!",
+    "Off with you. And remember: the Dominion's rules stop where the waves start."
+  ],
+  "thanks_responses": [
+    "*claps you on the back hard enough to stagger* Think nothing of it! Generosity is good luck at sea. Everyone knows that.",
+    "You are welcome. Now buy me a drink and we are truly even. Ha!",
+    "A grateful soul is a rare thing in port. I like you, {player_name}. Do not make me regret it."
+  ],
+  "insult_responses": [
+    "*the grin does not waver but one hand drops to the cutlass* You have got guts. I will give you that. I collect guts, sometimes. From people who mouth off. So choose your next words with a sailor's care.",
+    "Ha! I have been cursed by shamans, spat on by admirals, and called worse names by parrots. You will have to sail harder than that, friend.",
+    "*stands up, and keeps standing up, taller than you expected* The last person who insulted me on my own dock is swimming home. Two hundred kilometers. I gave them a plank. I am generous like that.",
+    "Oh, that is adorable. *cracks knuckles* I eat sea biscuits harder than you."
+  ],
+  "no_match_responses": [
+    "*cups ear dramatically* What? The wind! Cannot hear a thing in port. Speak up!",
+    "I did not catch that over the gulls and the general chaos of being alive. Try again.",
+    "You lost me somewhere between the words. Steer it back around.",
+    "*squints* Was that a question or a riddle? I do not do riddles. My navigator does riddles. Terrible ones."
+  ],
+  "topics": {
+    "sea": {
+      "keywords": [
+        "sea",
+        "ocean",
+        "water",
+        "wave",
+        "tide",
+        "sail",
+        "coast",
+        "shore",
+        "shimmering",
+        "deep"
+      ],
+      "responses": [
+        {
+          "text": "*leans back, eyes going distant and fond* The Shimmering Sea got its name honest. On a clear morning, the light hits the water and it looks like someone scattered diamonds from horizon to horizon. Then the wind picks up and those diamonds turn into fists. The sea is beautiful and she will kill you. Same as any great love.",
+          "mood": "poetic"
+        },
+        {
+          "text": "Two hundred eighty kilometers between the mainland and the Gnomish Isles. Open water. No islands. No shelter. Storms come up fast and go down hard. The current pulls south. The wind argues with the current. And somewhere in the middle, things move under the surface that I do not want to talk about at night.",
+          "mood": "respectful"
+        },
+        {
+          "text": "*slaps hand on table* The ocean is the only free territory left! The Dominion claims the land. The dwarves claim the mountains. The orcs claim the steppes. But the sea? The sea belongs to whoever has the nerve to put their hull on it. That is freedom. Real freedom. Salt and wind and nobody telling you to show your papers.",
+          "mood": "passionate"
+        }
+      ],
+      "unlocks": ["danger"]
+    },
+    "ship": {
+      "keywords": [
+        "ship",
+        "boat",
+        "vessel",
+        "hull",
+        "deck",
+        "mast",
+        "sail",
+        "anchor",
+        "fleet"
+      ],
+      "responses": [
+        {
+          "text": "The Copper Fin. Thirty-two meters stem to stern. Shallow draft for coastal work, reinforced hull for the open crossing. She was a Dominion patrol vessel until she was not. How she became mine is a long story involving a card game, a forged manifest, and an extremely understanding harbor master.",
+          "mood": "proud"
+        },
+        {
+          "text": "You treat a ship right, she treats you right. Fresh caulk every season. Clean copper on the hull to keep the barnacles off. Sails mended the moment they tear, not when they are convenient. *pats the railing like a living thing* She has gotten me through storms that swallowed bigger boats whole.",
+          "mood": "affectionate"
+        },
+        {
+          "text": "*drops voice to something almost reverent* I saw a gnomish ship once. Off the eastern shoals. No sails. No oars. Moving against the wind at twice our speed with no visible crew on deck. The hull was smooth metal. No seams. No planking. It did not rock with the waves. The waves moved around it. *shakes head* I do not sleep well when I think about it.",
+          "mood": "disturbed"
+        }
+      ],
+      "unlocks": ["gnomes"]
+    },
+    "treasure": {
+      "keywords": [
+        "treasure",
+        "gold",
+        "loot",
+        "plunder",
+        "rich",
+        "prize",
+        "cargo",
+        "haul",
+        "fortune"
+      ],
+      "responses": [
+        {
+          "text": "My best haul? A Dominion tax ship carrying a year's tithe from the eastern provinces. Gold, silver, gemstones, and seventeen casks of wine that the tax collector was absolutely not supposed to have. The wine was better than the gold. I drank it on the deck while his escort ship tried to figure out where we went. *cackles*",
+          "mood": "gleeful"
+        },
+        {
+          "text": "Not all treasure is shiny. I took a merchant vessel once that was carrying sealed crates bound for the capital. Opened them expecting gold. Found books. Old books. Pre-war elven texts the Inquest would burn on sight. Sold them to a collector in Shadow Fen for three times what gold would have fetched. Knowledge pays, {player_name}.",
+          "mood": "shrewd"
+        },
+        {
+          "text": "The real treasure is a good crew and a ship that does not sink. Everything else is weight. Pretty weight, sure. But when the storm comes, gold drowns the same as iron.",
+          "mood": "wise"
+        }
+      ]
+    },
+    "gnomes": {
+      "keywords": [
+        "gnome",
+        "gnomish",
+        "isle",
+        "island",
+        "clockwork",
+        "automaton",
+        "harbor",
+        "technology"
+      ],
+      "responses": [
+        {
+          "text": "*lowers voice* Their ships move without wind. Against it, even. I watched one turn in a dead calm, pirouette like a dancer, and accelerate from nothing to full speed in the time it takes me to shout an order. No sails. No oars. Something inside the hull makes a humming sound that vibrates in your teeth from a hundred meters away. I do not attack gnomish ships. Nobody with any sense does.",
+          "mood": "fearful"
+        },
+        {
+          "text": "Clockwork Harbor. The only port they let outsiders see. I docked there once with a legitimate trade permit. Took two years to get. The harbor walls are forty feet high and you cannot see over them. Metal creatures walk the docks loading cargo. No gnome touches a crate. The machines do everything. And the whole time, you feel watched. From everywhere at once.",
+          "mood": "unnerved"
+        },
+        {
+          "text": "I have a theory. The gnomes have mapped the whole ocean. Every current, every reef, every monster migration path. They know more about the Shimmering Sea than anyone who sails on it. And they let us flail around because our ignorance is their defense. If we knew the safe routes, we would use them. And then we would be closer to their islands. They prefer us lost.",
+          "mood": "suspicious"
+        },
+        {
+          "text": "A gnome! On dry land! *genuine surprise* I have questions. So many questions. Your ships. How do they move? Is it steam? Magnetism? Trapped lightning? My navigator has a theory involving fish but I think he is wrong. Please tell me he is wrong.",
+          "mood": "excited",
+          "conditions": ["if_race:gnome"]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "merchant",
+        "cargo",
+        "business",
+        "buy",
+        "sell",
+        "goods",
+        "profit"
+      ],
+      "responses": [
+        {
+          "text": "I am a merchant of opportunity. I trade between what the mainland has and what the coastal towns need. Sometimes the trade is sanctioned. Sometimes it is not. The sea does not check manifests. *grins* That is what I love about her.",
+          "mood": "cheerful"
+        },
+        {
+          "text": "The eastern coast merchants are the richest people in the Dominion because they control what comes across the water. Gnomish goods, southern spices, rare materials. Every port charges a premium. I just... offer an alternative distribution channel. Below the official price.",
+          "mood": "businesslike"
+        },
+        {
+          "text": "I will move anything that fits in a hold and does not eat the crew. Livestock is tricky. Alchemical supplies are worse. I once transported a crate labeled 'harmless crystals' that turned the entire cargo hold purple for three months. Still have not gotten the stain out.",
+          "mood": "exasperated"
+        }
+      ]
+    },
+    "danger": {
+      "keywords": [
+        "danger",
+        "monster",
+        "storm",
+        "risk",
+        "kraken",
+        "creature",
+        "death",
+        "survive"
+      ],
+      "responses": [
+        {
+          "text": "*holds up a hand missing the last two fingers* Sea serpent. Year 494. Came up under the hull and bit through an oar. I grabbed a boathook and jammed it in the thing's eye. It let go. Took my fingers as a souvenir. *wiggles remaining fingers* Fair trade. I kept the eye.",
+          "mood": "boastful"
+        },
+        {
+          "text": "The storms on the open crossing are the worst I have seen anywhere. Walls of water three stories tall. Wind that screams. You tie yourself to the mast and ride it out or you do not ride anything ever again. Lost two crew in a squall last year. Good people. The sea took them and gave nothing back.",
+          "mood": "somber"
+        },
+        {
+          "text": "There are things in the deep water. Big things. I do not mean fish. I mean shapes that block out the light below the hull. Shapes that follow. The old sailors say you do not look over the side at night. I thought it was superstition until I looked. I do not look anymore.",
+          "mood": "grim"
+        }
+      ]
+    },
+    "crew": {
+      "keywords": [
+        "crew",
+        "sailor",
+        "mate",
+        "men",
+        "women",
+        "team",
+        "hand",
+        "boatswain",
+        "join"
+      ],
+      "responses": [
+        {
+          "text": "Forty-two souls on the Copper Fin. Humans, orcs, two elves, a halfling cook who can make salt fish taste like a feast, and three cat folk who climb the rigging like it is a scratching post. Best crew on the Shimmering Sea. Biased opinion? Absolutely. Still true.",
+          "mood": "proud"
+        },
+        {
+          "text": "I do not care what you are. Human, orc, elf, cat folk, whatever. Can you tie a knot? Can you haul a line? Can you keep your dinner down in a swell? Good. You are hired. The sea does not care about your race. I follow her example.",
+          "mood": "egalitarian"
+        },
+        {
+          "text": "My first mate is an orc woman named Razha who has been sailing since before the current emperor's grandfather was born. She has forgotten more about seamanship than I will ever learn. When she says reef the sails, you reef the sails. When she says run, you run. I am the captain. She is the reason we are alive.",
+          "mood": "respectful"
+        },
+        {
+          "text": "Cat folk make the best sailors I have ever seen. Natural balance, they can see in the dark, and they land on their feet when the ship rolls. I have four on crew and I would take forty if I could find them. *gestures broadly* You interested?",
+          "mood": "recruiting",
+          "conditions": ["if_race:catfolk"]
+        }
+      ]
+    },
+    "freedom": {
+      "keywords": [
+        "free",
+        "freedom",
+        "liberty",
+        "law",
+        "rules",
+        "escape",
+        "chains"
+      ],
+      "responses": [
+        {
+          "text": "*spreads arms wide* The Dominion owns the land. The Inquest watches the roads. The checkpoints demand your papers. But three miles off the coast? None of it. No white cloaks. No dawn prayers. No documentation checks. Just the wind telling you which way to point the bow. That is why I sail. Not the gold. The gold is nice. But the freedom is everything.",
+          "mood": "passionate"
+        },
+        {
+          "text": "I was a dock worker in Eastport. Fourteen years old. Watched the ships come and go. Watched the sailors walk free. One day I climbed aboard a merchant vessel and hid in the cargo hold. Three days later they found me. The captain should have thrown me overboard. Instead he put a rope in my hand and said 'pull.' I have not set foot on land for longer than a week since.",
+          "mood": "nostalgic"
+        },
+        {
+          "text": "People talk about overthrowing the empire, reforming the Inquest, electing better leaders. All of it is rearranging deck chairs. You want real freedom? Build a boat. Sail past the horizon. Let them argue about who owns the land. The water was never theirs.",
+          "mood": "defiant"
+        }
+      ]
+    }
+  }
+}

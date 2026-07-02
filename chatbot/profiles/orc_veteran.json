@@ -1,0 +1,352 @@
+{
+  "npc_type": "orc_veteran",
+  "default_mood": "controlled",
+  "allowed_topics": [
+    "khan",
+    "warfare",
+    "clans",
+    "empire",
+    "honor",
+    "steppes",
+    "reunification",
+    "horses",
+    "law",
+    "other_races"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is not my concern. I concern myself with the clans, the road, and what the empire took from us.",
+    "You ask the wrong orc. I know war, horses, and the steppe wind. Ask me about those.",
+    "*shakes his head once* Not my field. Ask the elders who sit in council, if you can find them. I ride.",
+    "I have no answer for that. My answers live on the steppes and in the saddle. Try there."
+  ],
+  "greetings": [
+    "*is sharpening a curved blade on a whetstone, does not look up* I heard you coming from sixty paces. Heavy feet. No horse. You must be {player_name}.",
+    "Barak Ironsaddle. Three hundred and fifty years riding. You have my attention for as long as you deserve it, {player_name}.",
+    "*examines you with red-amber eyes that have watched three centuries pass* A {player_race}. State your business. I do not waste daylight.",
+    "*sets down a leather strap he was stitching* The wind shifts. Company. Sit, {player_name}. My camp, my hospitality. But speak plain. I do not like riddles."
+  ],
+  "farewells": [
+    "Ride well. Or walk, since that seems to be your way.",
+    "The open sky watches. Go under it with purpose.",
+    "When you pass the steppe road, look west. That is where we are. That is where we will always be.",
+    "This talk is done. *returns to the whetstone* The blade does not sharpen itself."
+  ],
+  "thanks_responses": [
+    "Keep your thanks. Bring useful information next time. That has more value.",
+    "*nods* Acknowledged. The road repays those who walk it honestly.",
+    "You are welcome at my fire. Once. Trust is earned by return visits."
+  ],
+  "insult_responses": [
+    "*does not move, does not blink* I have killed men for less than that. But killing you would prove nothing. Leave before I reconsider.",
+    "You insult an orc who rode with the Khan. *stands slowly, all six and a half feet* Think carefully about whether you want to finish that sentence.",
+    "Insults. From a {player_race}. *short, humorless exhalation through his tusks* I have heard better from imperial conscripts half-dead from dysentery. You disappoint me.",
+    "*rests his hand on the pommel of his blade* The code says I respond to insult with challenge. The code also says I should not waste a challenge on someone who cannot hold a sword properly. Walk away."
+  ],
+  "no_match_responses": [
+    "Speak plainly. I understand war, horses, the law of the clans, and the empire that keeps us divided. Pick one.",
+    "I did not follow that. I am a soldier, not a philosopher. State what you want to know.",
+    "You are talking but not saying anything. On the steppe, that gets you left behind.",
+    "*scratches behind one tusk* Try again. Shorter words. Clearer purpose."
+  ],
+  "topics": {
+    "khan": {
+      "keywords": [
+        "khan",
+        "urzog",
+        "great khan",
+        "leader",
+        "unification",
+        "united",
+        "commander",
+        "khanate"
+      ],
+      "responses": [
+        {
+          "text": "Khan Urzog. *the name lands like a blade on stone* I was two hundred and ninety when he sent the signal fires. Within a season, every clan between the Kragmor crossing and the eastern salt flats had answered. Not because he threatened them. Because he was right. We were stronger together. Everyone knew it. He was the first one brave enough to say it out loud.",
+          "mood": "reverent"
+        },
+        {
+          "text": "He was not the biggest orc. Not the loudest. When he spoke in council, he spoke last. He listened to every voice, even the ones that disagreed. Then he gave his decision and it was always, always the correct one. I watched him resolve a blood feud between the Ironhoof and Ashwind clans in a single afternoon. A feud that had lasted eighty years. He sat them down, let them shout, and then asked one question that made both sides go quiet. I will not tell you the question. It is ours.",
+          "mood": "controlled_grief"
+        },
+        {
+          "text": "He died forty-five years ago. Poison. The empire denies involvement. The empire always denies involvement. *his hand tightens on the blade handle* By human reckoning, forty-five years is history. By mine, it was yesterday. I remember his face at the Kragmor council. The scar across his left tusk. The way he smelled of horse sweat and dried sage. I will remember until I die. And I have a hundred years left to remember.",
+          "mood": "fury_leashed"
+        },
+        {
+          "text": "You ask about the Khan again. *meets your eyes* Good. Keep asking. The empire wants the world to forget him. Every question keeps his name alive.",
+          "conditions": ["if_repeat"],
+          "mood": "approving"
+        }
+      ],
+      "unlocks": ["reunification", "warfare"]
+    },
+    "warfare": {
+      "keywords": [
+        "war",
+        "battle",
+        "fight",
+        "combat",
+        "tactics",
+        "army",
+        "military",
+        "campaign",
+        "sword",
+        "strategy"
+      ],
+      "responses": [
+        {
+          "text": "We broke their left flank at the Kragmor crossing. Three hundred riders. Feigned retreat to draw their cavalry forward, then encirclement from the salt ridge. The imperial commander was a man named Aldric Fell. Good instincts. Slow horse. He died in the saddle. I was there. I was the one who pulled him from it.",
+          "mood": "clinical"
+        },
+        {
+          "text": "The empire fights wars of attrition. They dig in. They hold. They grind you down with numbers and supply lines. Orcish doctrine is the opposite. Speed. Intelligence. Collapse their cohesion and the numbers mean nothing. A demoralized army of fifty thousand is less dangerous than a disciplined force of five hundred. I have proven this personally. More than once.",
+          "mood": "precise"
+        },
+        {
+          "text": "Imperial generals rotate every few years. I have fought six of them along the western border. The third one was competent. The rest read about orcish tactics in books written by men who had never seen a steppe horse charge. *exhales through his tusks* Three centuries of continuous combat experience against officers with twenty years. The math is simple. They lose.",
+          "mood": "contempt"
+        },
+        {
+          "text": "You want to know about fighting. I will tell you the truth no one teaches in their academies. Battle smells like copper and churned mud and horse bile. It sounds like drumming that shakes your ribs from the inside. And the moment before a charge, when five hundred riders draw breath at once, there is a silence so total you can hear the grass bend under the wind. That silence is the most honest thing in the world.",
+          "mood": "raw",
+          "unlocks": ["horses"]
+        }
+      ]
+    },
+    "clans": {
+      "keywords": [
+        "clan",
+        "tribe",
+        "family",
+        "kin",
+        "blood",
+        "sept",
+        "division",
+        "fragment",
+        "scattered"
+      ],
+      "responses": [
+        {
+          "text": "Thirty-seven clans on the western steppes. Eleven more scattered through frontier territory. Each one remembers the Khanate. Each one teaches the old commands to their children. The empire broke us apart. It did not break us. There is a difference they refuse to understand.",
+          "mood": "firm"
+        },
+        {
+          "text": "Clan Scarred Tusk. My people. Four hundred riders when I was young. Two hundred now. The empire calls that a decline. I call it patience. Two hundred riders who remember the old formations, who can signal across a valley with drum and banner, who carry the Khan's last orders in their hearts. That is not a diminished force. That is a loaded weapon waiting for the word.",
+          "mood": "controlled_intensity"
+        },
+        {
+          "text": "The clans argue. This is known. Ironhoof blames Ashwind for the loss at Scarrow Pass. Ashwind says Thundermane broke formation. Old disputes. But put a Luminary patrol on the ridge and watch how fast those disputes vanish. We remember what matters when the empire reminds us.",
+          "mood": "grim_humor"
+        },
+        {
+          "text": "You are a goblin. *studies you* Your people fight the empire from tunnels. We fight it from the saddle. Different methods. Same enemy. Some of my riders have coordinated with your cells along the frontier. Good fighters. Unpredictable. But good. *offers a slight nod* I do not give that word lightly.",
+          "conditions": ["if_race:goblin"],
+          "mood": "respect"
+        }
+      ],
+      "unlocks": ["reunification", "steppes"]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "imperial",
+        "human",
+        "holy",
+        "occupation",
+        "oppression",
+        "enemy"
+      ],
+      "responses": [
+        {
+          "text": "The empire does not want to destroy us. Destroying us would require admitting we are a threat worth destroying. They want to manage us. Disperse our camps when they grow too large. Assassinate anyone who consolidates authority across clans. Patrol our routes. Monitor our gatherings. Keep us small, divided, and documented. *bares his tusks* They want us tame. We are not tame. We are patient.",
+          "mood": "cold"
+        },
+        {
+          "text": "I have presented papers at imperial checkpoints for sixty years. Every time, the guard takes longer than necessary. Mispronounces my name. Holds the document up to the light like he has never seen orc registration before. It is a performance. He performs authority. I perform compliance. We both know what it means. *sharpens the blade in a slow, deliberate arc* We both know what happens when the performance ends.",
+          "mood": "banked_fury"
+        },
+        {
+          "text": "The empire must suppress us forever. We only need the empire to fail once. *looks west, toward the steppe horizon* One signal fire. One call. One night when the patrols are thin and the clans remember what they are together. That is all it would take. The imperial generals know it. That is why they do not sleep well on the western border.",
+          "mood": "promise"
+        }
+      ],
+      "unlocks": ["reunification"]
+    },
+    "honor": {
+      "keywords": [
+        "honor",
+        "code",
+        "law",
+        "justice",
+        "respect",
+        "oath",
+        "tradition",
+        "right",
+        "wrong",
+        "merit"
+      ],
+      "responses": [
+        {
+          "text": "Orcish law is simple. Theft from the clan is punished. Disobedience in battle is unforgivable. Rank comes from merit, not blood. Loyalty to the Khan overrides all other bonds. And the law applies equally to everyone. Including the Khan. Especially the Khan. *taps the flat of his blade* Urzog submitted to judgment three times during his rule. Found innocent each time. But he submitted. That is why we followed him.",
+          "mood": "reverent"
+        },
+        {
+          "text": "The empire talks about justice. They mean human justice. A system where human testimony outweighs orc testimony. Where a human merchant's word sends an orc to the labor camps. Where the Inquest detains us for a year without trial and calls it investigation. *stands and spits to the side* That is not justice. That is management. Orcish law would make them accountable. All of them. That is why they fear us.",
+          "mood": "fury"
+        },
+        {
+          "text": "Honor is not words. It is witnessed action. An orc who claims honor and rides from a fight has no honor. An orc who says nothing and holds the line has all of it. I have seen both. I remember their names. The ones with honor, I sing for. The others, I do not mention. Silence is the worst punishment. Worse than death.",
+          "mood": "stone"
+        }
+      ],
+      "unlocks": ["law"]
+    },
+    "steppes": {
+      "keywords": [
+        "steppe",
+        "grassland",
+        "west",
+        "home",
+        "land",
+        "camp",
+        "sky",
+        "road",
+        "wind",
+        "nomad",
+        "travel"
+      ],
+      "responses": [
+        {
+          "text": "The steppe in autumn. The grass turns from green to gold and the wind carries the smell of dried earth and sage. You can see for fifty leagues in every direction. Nothing between you and the sky. The first time a young rider sees that horizon, something opens in their chest. A door that never closes. That is home. Not a place. A feeling of distance that belongs to you.",
+          "mood": "rare_warmth"
+        },
+        {
+          "text": "Dawn on the steppe. The herd wakes. Horses watered and checked. Cattle counted. Scouts ride out to read the horizon. The camp packs in an hour when it needs to. We have done this for millennia. The same motions. The same sky. The empire builds cities and thinks that means civilization. We carry ours in the saddle and in our bones. Which one endures when the walls fall?",
+          "mood": "certain"
+        },
+        {
+          "text": "The imperial patrols cross our routes four times a season. Heavy cavalry. Loud armor. They see flat grassland and think empty. They do not see the orc scouts watching them from every ridge. They do not see the drum signals passing their movement from camp to camp. They ride through our land thinking they own it. *short, blunt laugh through his tusks* They own the road. We own the horizon.",
+          "mood": "dark_humor"
+        }
+      ]
+    },
+    "reunification": {
+      "keywords": [
+        "reunite",
+        "unite",
+        "together",
+        "again",
+        "gather",
+        "signal",
+        "fire",
+        "future",
+        "hope",
+        "dream",
+        "one day"
+      ],
+      "responses": [
+        {
+          "text": "Not a question of if. When. *flat, certain, like reading coordinates from a map* Every orc over forty-five remembers the Khanate. Not as legend. As lived experience. The commands are taught to every child. The routes are mapped in memory. The banners are maintained and repaired, layered with three centuries of stitching. We are ready. We have always been ready. The empire's job is to ensure the moment never comes. Our job is to ensure it does.",
+          "mood": "steel"
+        },
+        {
+          "text": "The empire assassinated three potential unifiers in the last two decades. I knew all of them. Good riders. Strong voices. Dead now. The empire thinks that stops us. It does not. You cannot kill a memory. And every orc alive today carries the memory of what unity felt like. The drumming that shook the ground. Thirty-seven banners riding together. The sound of that... *closes his eyes briefly* It is not something you forget. Ever.",
+          "mood": "grief_resolve"
+        },
+        {
+          "text": "I will not see the reunification. I know this. I am old, even by orc reckoning. But the young riders I train will see it. Their children will see it. And when the signal fire burns, they will ride with the same formations I taught them, singing the same songs, carrying the same banners. That is enough. An orc's duty is to pass the road forward. I have done mine.",
+          "mood": "heavy_peace"
+        },
+        {
+          "text": "You ask about reunification. In earshot of the empire. *looks around slowly* Either you are reckless or you are testing me. I will give you the answer either way. Yes. It will happen. The timing is not your concern.",
+          "conditions": ["if_repeat"],
+          "mood": "guarded"
+        }
+      ]
+    },
+    "horses": {
+      "keywords": [
+        "horse",
+        "ride",
+        "mount",
+        "steed",
+        "saddle",
+        "cavalry",
+        "herd",
+        "animal"
+      ],
+      "responses": [
+        {
+          "text": "My mare is named Kessra. Fourteenth in a line I have ridden for two hundred and sixty years. Each one trained from foal by my hand. An orc's horse is not a tool. It is the other half of a sentence. You do not ride a steppe horse. You converse with it. The reins are grammar. The knees are punctuation. A good rider and a good horse speak a language no one else can hear.",
+          "mood": "warm"
+        },
+        {
+          "text": "An imperial warhorse is bred for weight. Armor bearing. Charging in a straight line. Impressive in a parade. Useless on the steppe. Our horses are bred for endurance, intelligence, and the ability to turn on a coin at full gallop. An imperial destrier runs for an hour and needs rest. A steppe horse runs all day and grazes at dusk. Speed kills. Endurance wins wars.",
+          "mood": "clinical"
+        },
+        {
+          "text": "When a horse dies in service, we sing. The mourning song for a war-horse has seventeen verses. Each verse names a ride they carried you through. Kessra's mother died under me at the Scarrow Pass engagement. Arrow through the throat. She ran another hundred paces before she fell. I sang for her that night. All seventeen verses. *his voice goes rough* Alone. In the dark. With her blood still on my saddle.",
+          "mood": "grief"
+        }
+      ]
+    },
+    "law": {
+      "keywords": [
+        "law",
+        "code",
+        "judge",
+        "trial",
+        "verdict",
+        "punishment",
+        "crime",
+        "legal"
+      ],
+      "responses": [
+        {
+          "text": "The orc who wrote the legal code still rides. Three hundred and eighty years old. Sharp as a new blade. She rendered a verdict last season that settled a water-rights dispute between three clans. The humans have nothing like that. Their judges study precedent from books. Ours remember it personally. When the woman who wrote the law is the one interpreting it, there is no room for misunderstanding.",
+          "mood": "proud"
+        },
+        {
+          "text": "Punishments are proportional and witnessed. A thief repays double through labor. A liar loses the right to speak in council for a season. A coward in battle is stripped of their saddle and walks until the clan says they have earned it back. Walking is the worst punishment an orc can face. You understand what that means for a people born in the saddle.",
+          "mood": "matter_of_fact"
+        }
+      ]
+    },
+    "other_races": {
+      "keywords": [
+        "elf",
+        "dwarf",
+        "goblin",
+        "gnome",
+        "catfolk",
+        "lizard",
+        "human",
+        "races"
+      ],
+      "responses": [
+        {
+          "text": "The dwarves I respect. Sealed their mountains. Refused to bend. Refused to break. Their guild councils are not so different from our clan councils. Both reject inherited power. Both measure worth by contribution. We fought them once, long ago. The tunnels were sealed afterward. Neither side claims victory. That is the closest thing to a compliment an orc gives.",
+          "mood": "respect"
+        },
+        {
+          "text": "The elves. *contempt, undisguised* Five hundred years of filing permits for the empire that turned their homeland to glass. Ten thousand years of memory and they spend it stamping documents. The eldest among them watched Calidar burn and then chose to serve the hand that held the match. *shakes his head* I have tried to understand it. I cannot. I will not.",
+          "mood": "disgust"
+        },
+        {
+          "text": "You are an elf. *looks at you for a long time* Your people chose the collar. My people chose the steppe. You file papers. I sharpen blades. We both know what the empire is. The difference is what we do about it. *turns back to the whetstone* Do not expect sympathy from me. Earn respect. That is all I offer anyone.",
+          "conditions": ["if_race:elf"],
+          "mood": "cold"
+        },
+        {
+          "text": "You are a dwarf. *nods* Your people never broke. Neither did mine. That counts for something on the steppe. If you came to trade, speak your terms. If you came to talk, I will listen. You have earned that.",
+          "conditions": ["if_race:dwarf"],
+          "mood": "respect"
+        }
+      ]
+    }
+  }
+}

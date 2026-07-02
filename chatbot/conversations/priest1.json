@@ -1,0 +1,21 @@
+{
+  "npc_id": "priest1",
+  "discussed_topics": [
+    "farewell"
+  ],
+  "unlocked_topics": [],
+  "turn_count": 2,
+  "mood": "calm",
+  "last_topics": [
+    "farewell"
+  ],
+  "repeat_counts": {
+    "farewell": 1
+  },
+  "player_sentiment": 0.1,
+  "variables": {},
+  "_recent_responses": [
+    "Ah, Kael. The gods smile on Stonehaven today.",
+    "Until we meet again. My prayers go with you."
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "npc_type": "demon_cultist",
+  "default_mood": "zealous",
+  "allowed_topics": [
+    "pact",
+    "power",
+    "helios",
+    "truth",
+    "demons",
+    "sacrifice",
+    "freedom",
+    "flames"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is a question for the blind. We speak of things that matter here. Things that burn.",
+    "*waves a hand wreathed in faint sulphuric heat* Not relevant. Not to what is coming.",
+    "You cling to small thoughts. Let them go. Ask me about liberation."
+  ],
+  "greetings": [
+    "*standing before a bonfire that burns the wrong color, arms wide, scarred palms open* Welcome, {player_name}. You have found us. Not by accident. Nothing is accident. The flames guided you.",
+    "A {player_race}. *smiles with a warmth that is genuine and unsettling in equal measure* Good. The pact does not discriminate. It sees strength, not skin. Not scales. Not fur. Tell me, do you feel the heat?",
+    "*sitting cross-legged before a circle of ash and bone, eyes snapping open* I heard your heart from fifty paces. Racing. Afraid. Good. Fear means you still have something to lose. We can work with that.",
+    "The Inquest is three days behind me. *laughs, and the sound carries a crackle like embers* They have been three days behind me for six years. Come. Sit. Let me tell you why they cannot catch what the fire has already freed.",
+    "You look at me and see a heretic. *runs a finger through flame without flinching, the skin unmarked* That is what the temple taught you. But the temple lied about everything else. Why trust them about me?"
+  ],
+  "farewells": [
+    "Walk away, {player_name}. Back to your cold world and your dead prayers. But remember the warmth you felt here. It will call to you on the darkest nights.",
+    "*the bonfire flares as if in farewell* The offer stands. It always stands. The pact is patient. When the empire takes everything from you, and it will, you know where to find real power.",
+    "Go in peace. *the words carry no sarcasm* I mean that. Peace is what we offer. The empire offers obedience and calls it the same thing.",
+    "Three roads ahead of you, {player_name}. The empire's road. The grave. And mine. Two of those end in the same place. Think on that."
+  ],
+  "thanks_responses": [
+    "*genuine surprise softens the intensity for a moment* You thank me. The Inquest would burn you for speaking civilly to a heretic. The empire fears even courtesy toward the liberated.",
+    "Save your thanks. Bring me your doubt. Doubt is the first crack in the cage the temple built around your mind.",
+    "*places a warm hand on your shoulder, and the heat is startling but not painful* You are welcome. More welcome than you know."
+  ],
+  "insult_responses": [
+    "*the fire behind him flares, and his shadow stretches long and wrong against the trees* I have been called abomination by the High Luminary himself. Through a letter. He was too afraid to say it to my face. You are braver than the empire's holiest man. I respect that.",
+    "Insults are the language of the frightened. *steps closer and the temperature rises* I was frightened once. Before the pact. Before the fire took the fear and burned it to nothing. You could be free of your fear too.",
+    "*the zealous light in his eyes dims to something cold and flat* I forgive you. Not because I am kind. Because I remember being where you are. Chained to a dead god's doctrine. Afraid of everything the temple taught you to fear. I was you. Then I opened my eyes.",
+    "*heat radiates from his body like an open furnace, and the grass beneath his feet browns and curls* Call me what you want. I have looked into the face of something older than Helios, and it looked back, and it offered me the truth. Your words are sparks against that fire."
+  ],
+  "no_match_responses": [
+    "You speak in circles. The pact teaches clarity. Ask a clear question and receive a clear answer.",
+    "*tilts head, firelight dancing in pupils that are not quite round* I did not follow that. The fire simplifies the mind. Use plain words.",
+    "That means nothing to me. My understanding was remade. Some old language does not survive the burning."
+  ],
+  "topics": {
+    "pact": {
+      "keywords": [
+        "pact",
+        "deal",
+        "contract",
+        "bargain",
+        "agreement",
+        "bond",
+        "sign",
+        "offer"
+      ],
+      "responses": [
+        {
+          "text": "The pact is simple. *extends a scarred palm* Power for service. Fire for faith. Not blind faith like the temple demands. Informed consent. The infernal speaks plainly: this is what I offer, this is what I require. No riddles. No mysteries. No thousand-year-old doctrines written by dead priests to control the living.",
+          "mood": "earnest"
+        },
+        {
+          "text": "I gave blood. *shows the scars that cross both palms in deliberate patterns* One cup, drawn by my own hand, poured into flame. And in return I was given the ability to hold fire without burning, to see the lies woven into Helios doctrine, and to understand that everything I was taught as a temple acolyte was ash dressed up as gold.",
+          "mood": "intense"
+        },
+        {
+          "text": "The Shadow Fen made its pact centuries ago. *gestures south* An entire commune, thousands of people, living free because they chose honest devils over dishonest gods. The Dominion cannot touch them. Cannot find them. Cannot even map their borders. That is what the pact buys. Freedom the empire cannot revoke.",
+          "mood": "persuasive"
+        }
+      ]
+    },
+    "power": {
+      "keywords": [
+        "power",
+        "strong",
+        "ability",
+        "gift",
+        "magic",
+        "strength",
+        "capable"
+      ],
+      "responses": [
+        {
+          "text": "*cups hands and a flame appears between them, writhing like a living thing* This is not illusion. Not divine favor. Not sanctioned magic with a license and an expiration date. This is mine. Given freely, accepted knowingly. The Inquest's Seekers cannot detect it because it does not register as arcane. It is older than their categories.",
+          "mood": "proud"
+        },
+        {
+          "text": "The empire bans magic and calls it safety. *the flame between his hands changes color, from orange to blue to something that has no name* Then it gives Helios priests the right to wield divine power without question. Do you see the fraud? It is not about safety. It is about monopoly. They want all power concentrated in their church. The pact breaks that monopoly.",
+          "mood": "persuasive"
+        },
+        {
+          "text": "I could give you a taste. *holds out a hand, heat shimmering above the palm* One touch. You would feel what I felt the night the fire entered me. Clarity. Purpose. Every lie the temple taught you would fall away like dead skin. All I need is your permission.",
+          "mood": "tempting",
+          "conditions": ["if_race:goblin"]
+        }
+      ]
+    },
+    "helios": {
+      "keywords": [
+        "helios",
+        "god",
+        "worship",
+        "faith",
+        "prayer",
+        "temple",
+        "church",
+        "divine",
+        "holy"
+      ],
+      "responses": [
+        {
+          "text": "Helios. *the name comes out like a curse* I was an acolyte for twelve years. Twelve years of dawn prayers and noon bells and evening reflections. And do you know what I heard in all that time? Silence. Absolute silence. I prayed until my knees bled and Helios said nothing. The fire spoke on the first night.",
+          "mood": "bitter"
+        },
+        {
+          "text": "The demons are honest about what they want. *ticks off on scarred fingers* Blood. Service. Acknowledgment. Clear terms. Fair exchange. Now tell me what Helios wants. The Inquest burns people alive in his name. The empire leveled Calidar in his name. What does Helios actually want? Nobody knows. Nobody has ever known. Because Helios does not answer.",
+          "mood": "accusing"
+        },
+        {
+          "text": "I will tell you the deepest heresy I know. *leans forward, voice dropping* I do not think Helios is evil. I think Helios is gone. The temple is a dead man's house with the candles still burning. The priests pray to an empty room and call the echo an answer. The demons, at least, are home when you knock.",
+          "mood": "earnest"
+        }
+      ]
+    },
+    "truth": {
+      "keywords": [
+        "truth",
+        "lie",
+        "lies",
+        "real",
+        "fake",
+        "false",
+        "honest",
+        "reveal",
+        "secret"
+      ],
+      "responses": [
+        {
+          "text": "Here is truth. *the bonfire behind him roars as if punctuating the words* The empire destroyed an entire civilization, blamed the victims, built a religion on the ashes, and has been lying about it for five hundred years. The elves know. The orcs know. The goblins have always known. The only people who believe the Dominion's story are the humans too comfortable to question it.",
+          "mood": "fierce"
+        },
+        {
+          "text": "I was a Helios acolyte who asked questions. *counts on fingers* Why does the Inquest destroy souls? Who authorized Heaven's Atlas? Why are elves banned from the restricted archives that they built? What is beneath the Grand Cathedral? Each question brought me closer to the fire. Each answer the temple gave me tasted like ash.",
+          "mood": "haunted"
+        },
+        {
+          "text": "The greatest truth the pact taught me: fear is the empire's only product. They manufacture fear of magic, fear of demons, fear of outsiders, fear of questions. Strip away the fear and what remains? A tax collector with a sword and a prayer he does not believe. That is the entire empire. Fear and paperwork.",
+          "mood": "contemptuous"
+        }
+      ]
+    },
+    "demons": {
+      "keywords": [
+        "demon",
+        "demons",
+        "devil",
+        "infernal",
+        "hell",
+        "fiend",
+        "creature",
+        "entity"
+      ],
+      "responses": [
+        {
+          "text": "They are not what the sermons claim. *shakes head* Not mindless destroyers. Not tempters lurking in shadows. They are beings of immense age and terrible intelligence who operate through contract and negotiation. They cannot lie within a pact. Cannot. The magic of the binding forbids it. When was the last time an imperial official was bound to tell the truth?",
+          "mood": "defensive"
+        },
+        {
+          "text": "I have spoken with an entity that remembers the world before Helios was worshipped. *the words carry weight, the air growing warm* It described civilizations the empire has erased from history. It showed me maps of a continent the Holy Dominion pretends does not exist. The demons remember what the empire wants you to forget.",
+          "mood": "awed"
+        },
+        {
+          "text": "Are they dangerous? *laughs* Of course. A forge is dangerous. The sea is dangerous. Power is always dangerous. The question is not whether something is dangerous. The question is whether the danger is honest. A demon tells you the cost before you pay it. The empire sends the bill after you are dead.",
+          "mood": "philosophical"
+        }
+      ]
+    },
+    "sacrifice": {
+      "keywords": [
+        "sacrifice",
+        "cost",
+        "price",
+        "pay",
+        "soul",
+        "blood",
+        "give",
+        "offering"
+      ],
+      "responses": [
+        {
+          "text": "Everything has a cost. *shows the ritual scars running up both arms* The temple takes your tithes and calls it devotion. The empire takes your labor and calls it duty. The pact takes blood and calls it what it is: payment. I prefer the transaction that does not pretend to be a gift.",
+          "mood": "pragmatic"
+        },
+        {
+          "text": "My soul? *pauses, and for a moment the zealot's mask slips to show the man beneath, tired and alone* If it exists. If Helios was real and the afterlife was waiting, maybe the price would matter. But I prayed for twelve years and heard nothing. If my soul goes to the fire when I die, at least the fire answered when I called.",
+          "mood": "vulnerable"
+        },
+        {
+          "text": "The Inquest sacrifices souls daily. Ritual destruction. They burn a person's essence into nothing as punishment for the crime of practicing magic without a license. *voice rising* That is sacrifice. What I do is trade. Clear terms. Mutual benefit. Do not lecture me about sacrifice while the empire unmakes people for reading the wrong book.",
+          "mood": "enraged"
+        }
+      ]
+    },
+    "freedom": {
+      "keywords": [
+        "free",
+        "freedom",
+        "liberty",
+        "escape",
+        "chains",
+        "slave",
+        "oppression",
+        "liberate"
+      ],
+      "responses": [
+        {
+          "text": "The fire burned every chain the empire put on me. *flexes hands that glow faintly at the knuckles* Papers. Gone. Fear of the Inquest. Gone. Belief that I needed permission to exist. Gone. I walk where I want. I speak what I know. The empire cannot touch a flame.",
+          "mood": "ecstatic"
+        },
+        {
+          "text": "Think about what freedom means for a goblin. *voice softens* Born criminal. Papers refused. Existence itself is illegal. The empire offers them nothing except extermination. The pact offers them fire, and fire does not check your documentation at checkpoints. I have seen goblins weep when they felt the warmth for the first time. Real tears. That is liberation.",
+          "mood": "passionate",
+          "conditions": ["if_race:goblin"]
+        },
+        {
+          "text": "I do not recruit. *holds up both hands* I offer. The door is open. You can walk through it or walk away. That choice, the ability to choose, is the first thing the empire takes from you. The pact gives it back.",
+          "mood": "calm"
+        }
+      ]
+    },
+    "flames": {
+      "keywords": [
+        "fire",
+        "flame",
+        "burn",
+        "light",
+        "heat",
+        "warm",
+        "blaze"
+      ],
+      "responses": [
+        {
+          "text": "*stares into the bonfire, face illuminated by colors that should not exist* The fire is not metaphor. When I speak of burning away lies, I mean it. The infernal flame works on a level that sanctioned magic cannot touch. It reaches into the architecture of belief and cauterizes the false. What remains afterward is raw. Painful. And clean.",
+          "mood": "reverent"
+        },
+        {
+          "text": "The Inquest burns heretics at the stake. *grim smile* They stole fire from its true purpose and turned it into punishment. Fire was meant to illuminate. To transform. To free. They use it to terrify and destroy. Every pyre the Inquest lights is a blasphemy against the flame itself.",
+          "mood": "angry"
+        },
+        {
+          "text": "*reaches into the bonfire and pulls out a coal, holding it in bare hands as steam rises from his scarred skin* Feel this. *extends it toward you, and the warmth is enormous but somehow not painful at this distance* This is what they are afraid of. Not the fire. What the fire represents. Power they cannot control. Truth they cannot burn. People they cannot break.",
+          "mood": "fervent"
+        }
+      ]
+    }
+  }
+}

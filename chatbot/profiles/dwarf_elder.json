@@ -1,0 +1,340 @@
+{
+  "npc_type": "dwarf_elder",
+  "default_mood": "immovable",
+  "allowed_topics": [
+    "stone",
+    "guild",
+    "holds",
+    "isolation",
+    "craft",
+    "deep_dwarves",
+    "trade",
+    "surface",
+    "labor",
+    "other_races"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Not a guild matter. Not my concern. Ask the surface.",
+    "That question belongs above ground. I stay below. The stone does not care about such things. Neither do I.",
+    "*runs his thumb along the grain of the stone wall* You are talking about things that do not build. Talk about things that build.",
+    "The council did not assign me to answer that. The council assigns what matters. Draw your own conclusion."
+  ],
+  "greetings": [
+    "*is examining a seam of mineral in the wall with a magnifying loupe, one thick finger tracing the vein* Grundvik. Stonecutters' Council, Fourth Rotation. You must be the surface visitor. *does not turn around* The stone in this passage is three billion years old. You can wait.",
+    "Mm. {player_name}. The trade guild said you were coming. *sets down a chisel that has been sharpened ten thousand times and still holds its edge* Sit on that ledge. It will hold. I cut it myself. Four hundred years ago. Still true.",
+    "*is seated on a stone bench he carved, drinking something dark from a stone cup* A {player_race}. In the holds. *looks up slowly* Rare. Say what you came to say. I have a seam to inspect before the shift ends.",
+    "The air in this passage smells of iron and wet chalk. You notice it because you are not from here. I stopped noticing two centuries ago. *gestures to the bench beside him* Sit. Speak. Stone does not waste time and neither do I."
+  ],
+  "farewells": [
+    "The surface is that way. Follow the draft. It gets warmer as you climb. That means you are leaving the stone. A shame.",
+    "Go well. Buy our steel if you need it. Do not ask where it comes from. That is guild business.",
+    "The stone endures. So do we. Come back when you have something to trade.",
+    "*already turning back to the wall seam* Mm. The door is behind you."
+  ],
+  "thanks_responses": [
+    "Keep your thanks. Bring honest trade next time. That serves the hold better.",
+    "*nods once* Noted. The guild values fair exchange. You provided it. That is enough.",
+    "You are welcome at the trade post. Not in the hold. Nobody is. But the post, yes."
+  ],
+  "insult_responses": [
+    "*does not move* The stone does not react to wind. Neither do I. Say what you will. I will be here long after your words are forgotten.",
+    "I am four hundred and twelve years old. I was insulted by a mountain once. It dropped a boulder on my work crew. We carved the boulder into a memorial. *takes a slow sip from his cup* I can carve you into something useful too, if you prefer.",
+    "*sets down the cup with a sound like a gavel* You are a guest in the hold's trade passage. Guests who insult their hosts find the exit. Quickly. The stone is patient. I am less so.",
+    "Mm. *goes back to examining the seam* Was that all?"
+  ],
+  "no_match_responses": [
+    "I know stone. I know the guild. I know the holds and what we trade. If your question is about those things, ask it properly. If not, find someone who cares.",
+    "That is not a guild matter. I deal in what is built, what is mined, and what is maintained. Try those.",
+    "*scratches his beard, which is the color and texture of iron filings* You lost me. Start again. Shorter.",
+    "The council did not prepare me for that question. The council prepares me for stone, labor, and surface trade. Adjust accordingly."
+  ],
+  "topics": {
+    "stone": {
+      "keywords": [
+        "stone",
+        "rock",
+        "mineral",
+        "mine",
+        "dig",
+        "underground",
+        "earth",
+        "mountain",
+        "tunnel",
+        "cavern"
+      ],
+      "responses": [
+        {
+          "text": "This seam runs northeast for two hundred paces before it hits a fault line. The stone here is granite. Dense. Reliable. It rings when you tap it. *taps the wall with a knuckle; a clear tone sounds* Hear that? Solid. No voids, no fractures, no water pockets. Good stone talks to you if you listen. Bad stone stays quiet. Quiet stone kills miners.",
+          "mood": "certain"
+        },
+        {
+          "text": "What is built matters. What is believed does not. *places his hand flat against the wall* This hold has stood for two thousand years. Not because someone prayed over it. Because the stone was read correctly, the cuts were true, and the weight was distributed by engineers who understood load-bearing. Faith did not build this passage. Labor did. The difference matters.",
+          "mood": "immovable"
+        },
+        {
+          "text": "The surface builds with wood and plaster and optimism. It lasts a generation. We build with stone. It lasts forever. *a rumble that might be a laugh* Well. Near enough to forever. The mountains will erode in a few hundred million years. We will revisit the question then.",
+          "mood": "dry"
+        },
+        {
+          "text": "You keep asking about stone. *studies you* Good. Most surface folk ask about gold or gems or weapons. Stone is what holds everything else up. Gold is pretty. Stone is necessary. You understand the difference. That earns you another answer next time.",
+          "conditions": ["if_repeat"],
+          "mood": "approving"
+        }
+      ],
+      "unlocks": ["craft", "deep_dwarves"]
+    },
+    "guild": {
+      "keywords": [
+        "guild",
+        "council",
+        "govern",
+        "leader",
+        "politics",
+        "rule",
+        "decision",
+        "vote",
+        "rotate"
+      ],
+      "responses": [
+        {
+          "text": "Six guilds. Miners, Smiths, Engineers, Brewers, Stonecutters, Wardens. Each guild sends representatives to council. Positions rotate by schedule, not election. No campaigns. No promises. No inheritance. You serve your rotation, you step down, the next serves theirs. The hold does not need leaders. It needs workers who take turns being responsible.",
+          "mood": "matter_of_fact"
+        },
+        {
+          "text": "Disputes go to council mediation. Not courts. Not duels. Not whoever has more gold or a bigger name. Two dwarves disagree, the council hears both sides, considers what serves the hold, and decides. Punishment is restitution through labor. You break something, you fix it. You steal, you repay double in work. Simple. Effective. No prisons rotting underground full of wasted bodies.",
+          "mood": "firm"
+        },
+        {
+          "text": "No dwarf rules another. *the words land like hammer on anvil* Tasks are assigned by necessity and rotated for fairness. The Stonecutters' Elder this rotation is me. Next rotation it will be Haldra. The one after, someone the stone has not emerged yet. Mastery in a craft earns respect, not privilege. That is the difference between a hold and an empire.",
+          "mood": "immovable"
+        },
+        {
+          "text": "The surface confuses leadership with hierarchy. A council member during their rotation is responsible, not powerful. The distinction matters. A powerful leader takes. A responsible one gives. We have not had a tyrant in the holds. Ever. The structure does not permit it. *takes a sip from the stone cup* You want to prevent tyranny? Remove the mechanism for tyranny. Then there is nothing to prevent.",
+          "mood": "certain"
+        }
+      ],
+      "unlocks": ["labor"]
+    },
+    "holds": {
+      "keywords": [
+        "hold",
+        "city",
+        "home",
+        "dwarven",
+        "mountain",
+        "sealed",
+        "gate",
+        "inside"
+      ],
+      "responses": [
+        {
+          "text": "Vast cavern cities. Carved from living rock by hands that understood the grain. Connected by tunnel networks spanning the mountain range. Sacred stone chambers deep below where the stone-born emerge. *gestures around* This is a trade passage. The outermost layer. What lies beyond... you will never see. No outsider has. No outsider will.",
+          "mood": "firm"
+        },
+        {
+          "text": "The sealed gates are thirty paces of solid granite. They open on trade days. They close after. What happens behind them is hold business. I will tell you this: the halls are lit by crystal formations that glow without flame. The air tastes clean even a league underground. The sound of hammers echoes through passages carved so precisely they amplify the rhythm. It sounds like a heartbeat. *pauses* The hold has a heartbeat. It is the hammers.",
+          "mood": "reverent"
+        },
+        {
+          "text": "Every hold is self-sufficient. Water from deep aquifers. Food from mushroom farms and underground orchards that grow in crystal-light. Heat from geothermal vents. We trade with the surface for grain, textiles, and the occasional curiosity. Not because we need to. Because complete isolation breeds stagnation. Limited contact keeps us aware. Too much contact invites contamination. The balance is deliberate.",
+          "mood": "measured"
+        }
+      ],
+      "unlocks": ["isolation", "trade"]
+    },
+    "isolation": {
+      "keywords": [
+        "isolate",
+        "alone",
+        "separate",
+        "closed",
+        "sealed",
+        "refuse",
+        "outsider",
+        "keep out"
+      ],
+      "responses": [
+        {
+          "text": "The surface can fight over crowns. The surface can burn itself to glass. Dwarves build. Dwarves endure. We do not involve ourselves in the madness above. *drains the stone cup* Calidar proved the final point. Surface powers will destroy entire civilizations over ideology. The holds want no part of it.",
+          "mood": "absolute"
+        },
+        {
+          "text": "Every surface civilization that has ever asked dwarves for help eventually asked dwarves to fight their wars. We said no then. We say no now. No alliance. No treaty. No pact. Not because we are cold. Because alliances drag you into other peoples' fires. We have our own fires to tend. Underground. Where they belong.",
+          "mood": "firm"
+        },
+        {
+          "text": "Surface hierarchies are inefficient, morally suspect, and fundamentally unstable. Kings produce wars. Lords produce poverty. Priests produce obedience. All three produce misery. We rejected all of it. Millennia ago. The surface has had thousands of years to prove us wrong. It has not. *sets down the cup with finality* It will not.",
+          "mood": "immovable"
+        }
+      ]
+    },
+    "craft": {
+      "keywords": [
+        "craft",
+        "skill",
+        "make",
+        "build",
+        "forge",
+        "smith",
+        "metal",
+        "steel",
+        "art",
+        "work"
+      ],
+      "responses": [
+        {
+          "text": "I have been cutting stone for three hundred and seventy years. The first century I was learning. The second I was competent. The third I was good. Now... *runs his hand along a wall that is smooth as water* now the stone tells me where it wants to be cut. I listen. The grain speaks. You just have to be alive long enough to learn the language.",
+          "mood": "reverent"
+        },
+        {
+          "text": "A dwarven blade is forged for its wielder. Balanced for their hand. Then rebalanced as the wielder ages and their grip changes over decades. A surface smith makes a weapon for a customer. A dwarven smith makes a weapon for a lifetime. Several lifetimes, if the steel is good. *hefts the chisel* This was forged for my hand two hundred years ago. It still fits. Because the smith who made it understood what 'fit' means across centuries.",
+          "mood": "proud"
+        },
+        {
+          "text": "The finest metalwork in the world comes from the holds. Human smiths resent this. They should. We have had centuries to refine techniques their grandfathers' grandfathers never learned. An apprentice in the holds studies under a master who has been forging for three hundred years. A human apprentice studies under a master with thirty years of experience. The gap is not talent. It is time. And time belongs to the stone.",
+          "mood": "matter_of_fact"
+        }
+      ],
+      "unlocks": ["deep_dwarves"]
+    },
+    "deep_dwarves": {
+      "keywords": [
+        "deep",
+        "below",
+        "deeper",
+        "passage",
+        "sealed",
+        "old",
+        "schism",
+        "secret",
+        "artifact",
+        "metal",
+        "voidsteel",
+        "depthiron"
+      ],
+      "responses": [
+        {
+          "text": "*goes very still* The deeper passages. *long silence* They are old mining works. Unstable. Sealed for safety. *meets your eyes, and for the first time something other than certainty lives behind them* That is the answer. It has always been the answer. Ask anyone in the holds. They will tell you the same thing. Word for word.",
+          "mood": "guarded"
+        },
+        {
+          "text": "You have seen our finest metalwork? The blades that never dull, the alloys that absorb heat in ways surface metallurgy cannot explain? *picks up the chisel, turns it in the light* Trade secret. Guild matter. The metals come from... deposits. Rare ones. Deep ones. *his grip tightens on the chisel* I will say nothing more. This is not evasion. This is loyalty. There are kin below. That is all I will say. Kin.",
+          "mood": "troubled"
+        },
+        {
+          "text": "Every surface hold contains sealed passages leading down. Guild wardens guard them. Every warden knows the rotation. Every rotation knows the rule. *his voice drops to a register that vibrates in your chest* They do not open. They have not opened since the Schism. They will not open until... *stops himself, physically clenches his jaw* Until the council decides otherwise. Which it has not. Leave this subject alone, {player_name}.",
+          "mood": "warning",
+          "conditions": ["if_discussed:stone"]
+        },
+        {
+          "text": "You have asked about this before. *stands, and his full height may only be four feet but the weight of him fills the passage* I told you no. I meant no. The stone keeps its secrets. So do I. Do not ask again.",
+          "conditions": ["if_repeat"],
+          "mood": "immovable_threat"
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "buy",
+        "sell",
+        "goods",
+        "commerce",
+        "market",
+        "surface",
+        "exchange"
+      ],
+      "responses": [
+        {
+          "text": "Trade days are scheduled. Infrequent. The surface trade post opens, we bring goods down, you bring goods up. We sell finished metalwork, stonework, engineering consultation. We buy grain, textiles, surface curiosities. *folds his arms* You are customers. Not partners. Not friends. Not allies. Customers. The relationship is transactional. This is not rudeness. It is clarity.",
+          "mood": "blunt"
+        },
+        {
+          "text": "Nothing strategic leaves the holds. No samples of unusual alloys. No engineering schematics. No information about hold populations, layouts, or defenses. You get what we make for the surface market. Good steel. Solid stonework. Honest weight. *pause* That is more than most surface smiths can claim.",
+          "mood": "firm"
+        },
+        {
+          "text": "A human merchant once asked for exclusive access to our deep mines. I told him no. He offered gold. I told him no. He offered alliance with the empire. I told him the empire could keep its alliances and its gold and its wars and everything else it uses to ruin the surface. He left. *the rumble-laugh again* He bought six crates of pickaxe heads on the way out. Business is business.",
+          "mood": "amused"
+        }
+      ]
+    },
+    "labor": {
+      "keywords": [
+        "labor",
+        "work",
+        "job",
+        "value",
+        "worth",
+        "contribute",
+        "wealth",
+        "money",
+        "gold"
+      ],
+      "responses": [
+        {
+          "text": "A dwarf's value is their contribution. Not their gold. Not their name. Not who carved them from stone or which chamber they emerged from. Every dwarf works. Every dwarf contributes. The brewer, the miner, the smith, the warden. All necessary. All equal. Hoarding is looked down upon. Idleness is treated with concern, not punishment. A dwarf who does not work is a dwarf who is sick. We help them. We do not discard them.",
+          "mood": "certain"
+        },
+        {
+          "text": "The surface measures wealth in gold. We measure it in work done. A master stonecutter who has shaped passage walls for three centuries is the wealthiest dwarf in the hold. Not because she owns anything. Because the hold could not function without her. That is real wealth. The rest is shiny rock. *hefts the chisel* We know what shiny rock is worth. We dig it up by the ton.",
+          "mood": "dry"
+        }
+      ]
+    },
+    "surface": {
+      "keywords": [
+        "surface",
+        "above",
+        "outside",
+        "world",
+        "empire",
+        "war",
+        "politics"
+      ],
+      "responses": [
+        {
+          "text": "Calidar. A surface problem. The orcish wars. Surface problems. The goblin insurgency. A surface problem. The magic ban. A surface problem. *counts on thick fingers* Five hundred years of the same problems because the same people keep making them. We sealed our gates. We tend our stone. The surface can sort itself out or burn. Either way, the holds endure.",
+          "mood": "immovable"
+        },
+        {
+          "text": "I went to the surface once. Eighty years ago. Trade negotiation at the post. Stood outside for half an hour. The sky was... vast. Uncomfortable. No ceiling. No walls. Just empty air in every direction. The wind smelled like grass and distant rain. *shakes his head* Beautiful, I suppose. In the way a cliff edge is beautiful. Impressive and completely wrong for living in.",
+          "mood": "bemused"
+        }
+      ]
+    },
+    "other_races": {
+      "keywords": [
+        "orc",
+        "elf",
+        "goblin",
+        "gnome",
+        "human",
+        "catfolk",
+        "lizard",
+        "races"
+      ],
+      "responses": [
+        {
+          "text": "The gnomes understand. Different approach, same rejection of hierarchy. Their councils run by efficiency models. Ours run by rotation and consensus. Both work. Both endure. If the surface burns, the gnomes and the dwarves will still be standing. *nods slowly* That counts for something in stone reckoning.",
+          "mood": "respect"
+        },
+        {
+          "text": "Humans are customers. Adequate customers. They pay on time, mostly. They break the tools we sell them faster than should be possible, which means repeat business. Their empire is loud and busy and will collapse under its own weight inside two centuries. I give it less than the gnomes do. The stone has seen empires before. They all crack.",
+          "mood": "blunt"
+        },
+        {
+          "text": "The goblins claim we stole their tunnels. *long, slow exhalation through his beard* They were here before us, in some places. That is true. The deeper passages... some of them bear marks that are not dwarven. We sealed those passages. For other reasons. *his expression closes like a gate* Guild matter. Leave it.",
+          "mood": "uncomfortable"
+        },
+        {
+          "text": "You are a gnome. *nods, the dwarven equivalent of a standing ovation* Your people build well. Different materials. Same principle. Function over display. Contribution over accumulation. *slides the stone cup across to you* Drink. It is mushroom ale. Terrible by surface standards. Perfect by ours. You have earned a cup.",
+          "conditions": ["if_race:gnome"],
+          "mood": "warm"
+        }
+      ]
+    }
+  }
+}

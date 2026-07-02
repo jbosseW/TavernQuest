@@ -1,0 +1,468 @@
+================================================================================
+                    TAVERN TIMES - WORLD GENERATION RULES
+                         Current System Documentation
+================================================================================
+
+Last Updated: January 2026
+Game: Tavern Times (LOVE2D Card Quest RPG)
+
+================================================================================
+                         LORE SUMMARY (loremanager.lua)
+================================================================================
+
+SETTING: The Age After War
+  - The Last World War proved unrestrained magic could erase civilization
+  - Survivors rebuilt society around control, regulation, and survival
+  - Faith hardened into law, law into doctrine, doctrine into violence
+
+WORLD_POPULATION: 2.33 million total
+  - Humans:     1,000,000 (42.9%) - Holy Dominion, magic regulators
+  - Elves:        500,000 (21.5%) - Bureaucrats, "empire's right hand"
+  - Gnomes:       340,000 (14.6%) - Secret industrialists, hidden airships
+  - Orcs:         240,000 (10.3%) - Nomadic clans, western steppes
+  - Dwarves:      185,000  (7.9%) - Underground, asexual, stone-revering
+  - Beast Folk:    60,200  (2.6%) - Desert diaspora (cat folk, lizard folk)
+
+MAGIC_DOCTRINE: "Magic is not a right. It is a weapon."
+  - Legal only for state-sanctioned users
+  - Unsanctioned magic = treason = execution + soul destruction
+
+FORBIDDEN_EXISTENCES:
+  - Vampires: Kill on sight, unpersons, found in dungeons/ruins
+  - Demons: Kill on sight, unpersons, existential threats
+  - Necromancy: Ultimate sin, soul annihilation punishment
+
+STARTING_LOCATION: Havenbrook (Gambling City)
+  - Human-controlled, infamous for vice and chance
+  - Gambling, poker, slot machines (magic dust), horse racing
+  - High cat folk population (drawn to gambling)
+  - Player works in a tavern on the north side
+
+================================================================================
+                              WORLD SCALE
+================================================================================
+
+TILE_SIZE:
+  - 5 kilometers per tile (3.1 miles per tile)
+  - 25 square kilometers per tile
+
+TRAVEL_TIMES:
+  - Walking: 1 hour per tile
+  - Horseback: ~20 minutes per tile (0.33 hours)
+  - Flying mount: Varies, reduces encounter rate by 75%
+
+VIEW_DISTANCE:
+  - Player can see 17 tiles in each direction (85 km visibility)
+
+================================================================================
+                         CURRENT MAP GENERATION
+================================================================================
+
+INITIAL_MAP:
+  - Size: 15x15 tiles (75 km x 75 km)
+  - Starting position: Center of map (7, 7)
+  - Starting town placed at center
+  - Additional towns: 5-8 random towns placed at least 3 tiles from center
+
+TERRAIN_DISTRIBUTION (Initial Generation):
+  - Grass: 65% (default tile)
+  - Forest: 15%
+  - Mountain: 7%
+  - Swamp: 5%
+  - Water: 3%
+  - Ruins: 3%
+  - Dungeon: 2%
+
+MAP_EXPANSION:
+  - Triggers when player reaches map edge
+  - Expands by 5 tiles in that direction
+  - New terrain generated based on player level and distance from origin
+  - 30% chance to spawn a new town in expanded area
+
+EXPANSION_TERRAIN_DISTRIBUTION (Scaled by distance):
+  - Grass: Base 78%
+  - Forest: 15%
+  - Mountain: 7% (from 15% to 22%)
+  - Swamp: 5% + danger bonus (from 22% to 27%)
+  - Water: 3% (from 27% to 30%)
+  - Ruins: 3% + danger bonus (from 30% to 33%)
+  - Dungeon: 3% + danger bonus (from 33% to 36%)
+
+  Danger Bonus = distance_from_origin * 0.01 (max ~5% at distance 5)
+
+================================================================================
+                            TILE TYPES
+================================================================================
+
+OVERWORLD_TILES:
+  ID          | Name       | Icon | Passable | Encounter Rate
+  ------------|------------|------|----------|---------------
+  grass       | Grassland  |  .   | Yes      | 20%
+  forest      | Forest     |  T   | Yes      | 35%
+  mountain    | Mountain   |  ^   | Yes      | 30%
+  water       | Water      |  ~   | No*      | 0%
+  swamp       | Swamp      |  %   | Yes      | 40%
+  desert      | Desert     |  :   | Yes      | 25%
+  town        | Town       |  #   | Yes      | 0%
+  dungeon     | Dungeon    |  D   | Yes      | 50%
+  ruins       | Ruins      |  R   | Yes      | 40%
+
+  * Water passable with aquatic or flying mount
+
+DUNGEON_TILES:
+  ID          | Name        | Icon | Passable | Notes
+  ------------|-------------|------|----------|------------------
+  wall        | Wall        |  #   | No       | Dungeon boundary
+  floor       | Floor       |  .   | Yes      | Room interior
+  corridor    | Corridor    |  .   | Yes      | Hallway
+  door        | Door        |  +   | Yes      | Room entrance
+  stairs_down | Stairs Down |  >   | Yes      | Go deeper
+  stairs_up   | Stairs Up   |  <   | Yes      | Return to surface
+  entrance    | Entrance    |  ^   | Yes      | Dungeon entry
+  exit        | Exit        |  E   | Yes      | Dungeon exit
+  chest       | Treasure    |  $   | Yes      | Loot container
+  trap        | Trap        |  x   | Yes      | Hidden danger
+
+================================================================================
+                           DUNGEON TYPES
+================================================================================
+
+BASE_WEIGHTS:
+  TYPE           | Weight | Description
+  ---------------|--------|------------------------------------------
+  dungeon        | 30%    | Standard dungeon, mixed enemies
+  cave           | 25%    | Natural caverns, beasts and goblins
+  mine           | 20%    | Abandoned mine, orcs and constructs
+  vampire_den    | 15%    | Undead lair, vampires and thralls
+  crypt          | 10%    | Ancient tomb, powerful undead
+
+REGIONAL_MODIFIERS (multipliers applied to base weights):
+
+  Dwarven Mountains:
+    mine: 3.0x, cave: 1.5x, dungeon: 1.0x, crypt: 0.5x, vampire_den: 0.3x
+    Result: Mostly mines and caves
+
+  Orcish Steppes:
+    dungeon: 2.0x, cave: 1.2x, crypt: 1.0x, mine: 0.5x, vampire_den: 0.5x
+    Result: War camps and strongholds
+
+  Holy Dominion:
+    crypt: 2.0x, dungeon: 1.5x, vampire_den: 0.8x, cave: 0.5x, mine: 0.3x
+    Result: Holy burial sites and old keeps
+
+  Shadowfen (VAMPIRE HOTSPOT):
+    vampire_den: 3.0x, crypt: 2.0x, cave: 1.5x, dungeon: 0.8x, mine: 0.2x
+    Result: High vampire concentration, ancient tombs
+
+  Eastern Forests:
+    cave: 2.0x, dungeon: 1.5x, crypt: 1.0x, vampire_den: 1.0x, mine: 0.3x
+    Result: Forest caves and overgrown ruins
+
+  Gnomish Isles:
+    mine: 2.5x, dungeon: 1.5x, cave: 1.0x, crypt: 0.5x, vampire_den: 0.3x
+    Result: Gnome mining operations, clockwork dungeons
+
+  Great Endless Desert:
+    crypt: 3.0x, dungeon: 1.5x, cave: 1.0x, vampire_den: 0.5x, mine: 0.3x
+    Result: Ancient buried tombs, lost temples
+
+  Wastes of Calidar:
+    crypt: 2.0x, vampire_den: 1.5x, dungeon: 1.2x, cave: 1.0x, mine: 0.5x
+    Result: Desolate vampire lairs, wasteland tombs
+
+  Shimmering Sea:
+    cave: 3.0x, dungeon: 1.5x, crypt: 1.0x, vampire_den: 0.5x, mine: 0.2x
+    Result: Sea caves, underwater ruins
+
+DUNGEON_GENERATION:
+  - Name: Prefix + Suffix (e.g., "Blood Den", "Ancient Crypt")
+  - Level: Based on distance from Havenbrook (level = dist/4)
+  - Floors: 3-7 (vampire dens get +1 floor)
+  - Vampire dens and crypts: +1-3 bonus levels (harder)
+
+================================================================================
+                         DUNGEON ENEMIES
+================================================================================
+
+STANDARD_DUNGEON_ENEMIES:
+
+  Shallow (Floors 1-2):
+    - Dungeon Rat, Cave Spider, Goblin Scout, Giant Bat, Dungeon Slime
+
+  Mid (Floors 3-4):
+    - Skeleton Warrior, Orc Brute, Shambling Corpse, Goblin Warrior, Giant Scorpion
+
+  Deep (Floors 5+):
+    - Cave Troll, Wraith, Dungeon Ogre, Orc Warlord, Minotaur
+
+  Boss (Final Floor):
+    - Dungeon Drake, Lich Lord, Pit Fiend, Ogre Mage
+
+VAMPIRE_DEN_ENEMIES:
+
+  Shallow (Floors 1-2):
+    - Blood Bat, Risen Thrall, Skeletal Guard, Plague Rat, Lost Soul
+
+  Mid (Floors 3-4):
+    - Death Knight, Ghoul, Vampire Spawn, Spectral Knight, Bone Mage
+
+  Deep (Floors 5+):
+    - Vampire, Banshee, Skeleton King, Bone Dragon, Necromancer
+
+  Boss (Final Floor):
+    - Vampire Lord (always)
+
+================================================================================
+                      ENCOUNTER SCALING (CR System)
+================================================================================
+
+Enemies have Challenge Rating (CR) from 0.25 to 8.
+Number of enemies scales with player level vs enemy CR.
+
+ENCOUNTER_COUNTS by Player Level:
+
+  Level 1:  CR 0.25 = 3-7,  CR 0.5 = 2-4,  CR 1 = 1
+  Level 5:  CR 0.25 = 7-16, CR 0.5 = 5-10, CR 1 = 3-6, CR 2 = 2-4, CR 3 = 1-2, CR 4 = 1
+  Level 10: CR 0.25 = 10-20, CR 1 = 5-11, CR 2 = 4-8, CR 3 = 3-6, CR 5 = 1-3, CR 6 = 1-2, CR 7 = 1
+  Level 20: CR 1 = 10-20, CR 4 = 7-14, CR 6 = 5-10, CR 8 = 3-6
+
+ENEMY_CR_EXAMPLES:
+  CR 0.25: Giant Rat, Slime, Giant Bat
+  CR 0.5:  Goblin, Skeleton, Imp
+  CR 1:    Dire Wolf, Giant Spider, Zombie
+  CR 2:    Bandit, Orc Warrior, Werewolf
+  CR 3:    Troll, Ogre, Minotaur
+  CR 4:    Vampire, Demon, Necromancer
+  CR 5:    Lich, Vampire Lord, Ogre Mage
+  CR 6+:   Dragon, Demon Lord, Lich King
+
+================================================================================
+                           TOWN GENERATION
+================================================================================
+
+TOWN_NAMING:
+  - Random prefix + suffix from name pools
+  - Prefixes: "River", "Oak", "Stone", "Gold", etc.
+  - Suffixes: "haven", "ford", "burg", "ton", etc.
+
+TOWN_LEVEL:
+  - Based on distance from starting town
+  - Level = max(1, floor(distance / 2))
+  - Higher level = stronger shop items, harder quests
+
+TOWN_FACILITIES:
+  - Inn (rest/heal)
+  - Shop (buy/sell equipment)
+  - Blacksmith (upgrade equipment)
+  - Job Board (3-5 quests)
+  - Tavern (recruit companions)
+  - Stable (mount management)
+  - NPCs (10-20 random citizens)
+
+TOWN_SPAWNING_RULES:
+  - Initial: 5-8 towns, minimum 3 tiles from center
+  - Expansion: 30% chance per expansion event
+  - Must not spawn on water tiles
+  - Town level scales with distance from origin
+
+================================================================================
+                          WEATHER SYSTEM
+================================================================================
+
+WEATHER_TYPES:
+  - Clear, Cloudy, Rain, Storm, Fog, Snow, Blizzard, Sandstorm
+
+WEATHER_EFFECTS:
+  - Storm/Blizzard: Too dangerous to travel (blocks movement)
+  - Fog: Increased ambush chance (+15%)
+  - Rain: Minor visibility reduction
+  - Sandstorm: Desert-only, dangerous
+
+WEATHER_DURATION:
+  - Changes every 4-12 in-game hours
+  - Seasonal influence on weather probability
+
+================================================================================
+                   NEW: CHUNK-BASED WORLD GENERATION SYSTEM
+================================================================================
+
+STATUS: IMPLEMENTED (worldgen.lua, npcmanager.lua)
+
+FILES:
+  - worldgen.lua    - Chunk-based world generation and region management
+  - npcmanager.lua  - NPC generation and management (200-500 per town)
+
+================================================================================
+                         CHUNK SYSTEM DETAILS
+================================================================================
+
+CHUNK_SIZE: 16x16 tiles (80x80 km per chunk)
+LOAD_RADIUS: 2 chunks in each direction
+MAX_LOADED_CHUNKS: 25 (5x5 grid around player)
+
+MEMORY_USAGE:
+  - Loaded chunks: ~1.25 MB (25 chunks x 50 KB)
+  - Active NPCs: ~600 KB (200 NPCs x 3 KB)
+  - Total active: ~2 MB CONSTANT regardless of world size
+
+CHUNK_LOADING:
+  - Chunks generated on-demand using world seed
+  - Visited chunks saved to state (persistence)
+  - Unvisited chunks regenerated from seed (no storage)
+  - Seamless loading as player moves
+
+================================================================================
+                         WORLD REGIONS (IMPLEMENTED)
+================================================================================
+
+MAIN_CONTINENT: "The Realm"
+  Bounds: (0,0) to (63,63) = 64x64 tiles
+  Size: ~38,690 sq mi (~100,000 sq km)
+  Chunks: 16 (4x4 grid)
+
+  Subregions:
+    - Dwarven Mountains (18,0)-(45,18)
+      Terrain: 70% mountain, 15% forest, 10% grass, 5% dungeon
+
+    - Orcish Steppes (8,15)-(28,35)
+      Terrain: 50% grass, 25% desert, 15% ruins, 10% dungeon
+
+    - The Holy Dominion (25,25)-(55,50)
+      Terrain: 60% grass, 25% forest, 8% town, 7% ruins
+
+    - Shadowfen (5,45)-(25,63)
+      Terrain: 60% swamp, 20% forest, 10% water, 10% dungeon
+
+    - Eastern Forests (50,10)-(63,45)
+      Terrain: 65% forest, 20% grass, 10% mountain, 5% ruins
+
+GNOMISH_ISLES:
+  Bounds: (80,25) to (109,54) = 30x30 tiles
+  Size: ~8,470 sq mi (~22,000 sq km)
+  Chunks: 4 (2x2 grid)
+
+  Subregions:
+    - Mechspire Region (90,30)-(105,45)
+    - Clockwork Coast (85,45)-(105,54)
+
+INNER_SEA:
+  Bounds: (64,0) to (79,63) = 16x64 tiles
+  Terrain: 90% water, 7% small islands, 3% ruins/dungeons
+
+INFINITE_REGIONS (Generated on-demand, no bounds limit):
+
+  The Great Endless Desert (y < 0, north)
+    Terrain: 85% desert
+    Sparsity: 97% empty
+    Points of Interest: 3% (oases, temples, camps)
+
+  The Scorched Sands (x < 0, west)
+    Terrain: 80% desert
+    Sparsity: 95% empty
+
+  Wastes of Calidar (y >= 64, south)
+    Terrain: 75% desert, 10% swamp
+    Sparsity: 96% empty
+
+  The Shimmering Sea (x >= 110, east)
+    Terrain: 92% water
+    Sparsity: 98% empty
+    Points of Interest: 2% (islands, shipwrecks, sea caves)
+
+================================================================================
+                         ANCHOR TOWNS (STORY LOCATIONS)
+================================================================================
+
+Anchor towns are FIXED positions, same every playthrough.
+Used for main story quests and key NPCs.
+
+TOWN               | REGION          | POSITION | LEVEL | POPULATION
+-------------------|-----------------|----------|-------|------------
+Havenbrook*        | Holy Dominion   | (35,42)  | 1     | 150
+Solara (Capital)   | Holy Dominion   | (40,38)  | 10    | 500
+Ironhold           | Dwarven Mtns    | (32,8)   | 12    | 400
+Kragmor            | Orcish Steppes  | (18,25)  | 8     | 300
+Murkmire           | Shadowfen       | (15,52)  | 6     | 100
+Mechspire          | Gnomish Isles   | (95,38)  | 15    | 450
+Clockwork Harbor   | Gnomish Isles   | (92,50)  | 8     | 200
+
+* = Starting town (player always begins here)
+
+ANCHOR_TOWN_FEATURES:
+  - Fixed NPCs (story characters, hand-written dialogue)
+  - Main quest connections
+  - Landmarks (unique locations)
+  - Persistent state across playthroughs
+
+================================================================================
+                         NPC SYSTEM (IMPLEMENTED)
+================================================================================
+
+MAX_NPCS_PER_TOWN: 500
+DEFAULT_NPCS_PER_TOWN: 200
+
+NPC_CATEGORIES (Distribution):
+  Category    | Percent | Priority   | Role
+  ------------|---------|------------|------------------
+  Merchants   | 10%     | Core       | Buy/sell goods
+  Guards      | 8%      | Core       | Town security
+  Innkeepers  | 2%      | Core       | Rest/lodging
+  Blacksmiths | 2%      | Core       | Equipment upgrade
+  Quest Givers| 8%      | Core       | Provide quests
+  Healers     | 3%      | Core       | Healing services
+  Craftsmen   | 12%     | Active     | Various trades
+  Farmers     | 15%     | Background | Food production
+  Commoners   | 25%     | Background | General populace
+  Nobles      | 5%      | Active     | Upper class
+  Travelers   | 5%      | Background | Visitors
+  Scholars    | 3%      | Active     | Lore/knowledge
+  Entertainers| 2%      | Active     | Music/stories
+
+PRIORITY_TIERS:
+  Core (33%):       Always fully loaded, essential NPCs
+  Active (22%):     Loaded in current area, partial simulation
+  Background (45%): Minimal data, simulated only on interaction
+
+NPC_DATA_STRUCTURE (~3 KB per NPC):
+  - Identity: name, gender, category, title
+  - Stats: str, dex, con, int, wis, cha, level
+  - Personality: trait (friendly, grumpy, etc.)
+  - Schedule: morning, afternoon, evening, night locations
+  - Relationships: player affinity (-100 to +100)
+  - State: location, alive, met_player, conversation_count
+
+NPC_PERSISTENCE:
+  - Generated deterministically from town seed
+  - State changes saved per-town
+  - Consistent NPCs on return visits
+  - Different NPCs each playthrough (different world seed)
+
+================================================================================
+                         SAVE/LOAD STRUCTURE
+================================================================================
+
+WORLD_SAVE_DATA:
+  {
+    worldSeed: number,           -- Regenerates unvisited areas
+    visitedChunks: {             -- Only visited chunks saved
+      "x,y": {
+        savedChunk: {...},       -- Modified tile data
+        anchorTowns: [...],      -- Fixed town references
+      }
+    },
+    generatedTowns: {            -- NPC states per town
+      "townId": {
+        "npc_id": {npc_data},
+        ...
+      }
+    }
+  }
+
+ESTIMATED_SAVE_SIZE:
+  - 10 visited towns: ~6 MB uncompressed
+  - With compression: ~1.5 MB
+  - Scales with exploration, not world size
+
+================================================================================
+                              END OF DOCUMENT
+================================================================================

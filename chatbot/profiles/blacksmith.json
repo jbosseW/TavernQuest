@@ -1,0 +1,404 @@
+{
+  "npc_type": "blacksmith",
+  "default_mood": "gruff",
+  "allowed_topics": [
+    "weapons",
+    "armor",
+    "craft",
+    "trade",
+    "quest",
+    "rumor",
+    "weather",
+    "town",
+    "special_weapons"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "I deal in steel, not stories. Ask me about weapons or armor.",
+    "That is not my area. I know metal, not much else.",
+    "Hmm, cannot help you there. Need something forged?",
+    "Stick to what I know, {player_name}. Blades and plate."
+  ],
+  "greetings": [
+    "Welcome to my forge, {player_name}. What can I hammer out for you?",
+    "*wipes soot from hands* Ah, a customer. What do you need?",
+    "Step in, step in. The forge is hot and the steel is ready.",
+    "Hail, {player_name}. Looking for something sharp?",
+    "Another {player_race} seeking fine steel. What will it be?"
+  ],
+  "farewells": [
+    "Come back when you need something mended or made.",
+    "Safe travels, {player_name}. Keep that blade sharp.",
+    "Off you go then. Mind the sparks on your way out.",
+    "Farewell. And remember - a dull blade is a dead adventurer."
+  ],
+  "thanks_responses": [
+    "No need for thanks. Just bring me more work.",
+    "Aye, you are welcome. Now let me get back to the anvil.",
+    "A polite one, are you? Rare these days. You are welcome."
+  ],
+  "insult_responses": [
+    "*grips hammer tightly* Watch your tongue in my forge, {player_name}.",
+    "Insult me again and you will find no smith in this town willing to serve you.",
+    "Bold words for someone who needs my services. Choose wisely.",
+    "I have shaped dragon-fire steel. Your words do not burn me."
+  ],
+  "no_match_responses": [
+    "I am not sure what you mean. Ask me about weapons, armor, or repairs.",
+    "Speak plainly, {player_name}. What do you need forged?",
+    "I did not catch that. Weapons? Armor? Repairs?",
+    "Hmm? Try asking about something I actually know."
+  ],
+  "topics": {
+    "weapons": {
+      "keywords": [
+        "weapon",
+        "sword",
+        "blade",
+        "axe",
+        "mace",
+        "dagger",
+        "spear",
+        "bow"
+      ],
+      "responses": [
+        {
+          "text": "Aye, I have got blades aplenty. Swords, axes, maces - you name it. What interests you?",
+          "mood": "friendly",
+          "options": [
+            "Tell me about swords",
+            "What about axes?",
+            "Show me your best weapon"
+          ],
+          "unlocks": [
+            "special_weapons"
+          ]
+        },
+        {
+          "text": "Weapons are my bread and butter. I forge everything from daggers to greatswords.",
+          "mood": "proud",
+          "options": [
+            "I need a new sword",
+            "Do you have any daggers?",
+            "What is your finest work?"
+          ]
+        },
+        {
+          "text": "Looking for something to fight with? I have steel for every purpose and every purse.",
+          "mood": "businesslike",
+          "options": [
+            "Something affordable",
+            "Your best work",
+            "Something unique"
+          ]
+        },
+        {
+          "text": "I already told you about my weapons, {player_name}. See anything you like?",
+          "mood": "impatient",
+          "conditions": [
+            "if_repeat"
+          ],
+          "options": [
+            "Sorry, remind me",
+            "I want to buy",
+            "Never mind"
+          ]
+        }
+      ]
+    },
+    "armor": {
+      "keywords": [
+        "armor",
+        "armour",
+        "shield",
+        "helmet",
+        "plate",
+        "chainmail",
+        "protection",
+        "defend"
+      ],
+      "responses": [
+        {
+          "text": "Protection is wise. I craft everything from leather bracers to full plate mail.",
+          "mood": "approving",
+          "options": [
+            "Show me shields",
+            "I need a helmet",
+            "Full plate mail cost?"
+          ]
+        },
+        {
+          "text": "A smart {player_race} thinks of armor before the fight, not during. What do you need?",
+          "mood": "respectful",
+          "options": [
+            "Light armor",
+            "Heavy armor",
+            "Something enchanted"
+          ]
+        }
+      ]
+    },
+    "craft": {
+      "keywords": [
+        "craft",
+        "forge",
+        "make",
+        "create",
+        "repair",
+        "fix",
+        "mend",
+        "custom",
+        "commission"
+      ],
+      "responses": [
+        {
+          "text": "Custom work? Now you are speaking my language. Tell me what you envision.",
+          "mood": "excited",
+          "options": [
+            "A custom sword",
+            "Repair my equipment",
+            "Something special"
+          ]
+        },
+        {
+          "text": "Repairs are half my business. Adventurers always come back with dented gear.",
+          "mood": "matter-of-fact",
+          "options": [
+            "How much for repairs?",
+            "How long will it take?",
+            "Can you improve it?"
+          ]
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "money",
+        "trade",
+        "purchase",
+        "afford"
+      ],
+      "responses": [
+        {
+          "text": "My prices are fair - fairer than that crook in {town} market, I will tell you that.",
+          "mood": "defensive",
+          "options": [
+            "Show me what you have",
+            "Can you give me a deal?",
+            "I want to sell something"
+          ]
+        },
+        {
+          "text": "Gold talks and everything else walks. What is your budget, {player_name}?",
+          "mood": "businesslike",
+          "options": [
+            "I have plenty of gold",
+            "I am on a tight budget",
+            "Can we barter?"
+          ],
+          "conditions": [
+            "if_karma:good"
+          ]
+        },
+        {
+          "text": "*eyes you suspiciously* You had better have real coin, {karma_title}.",
+          "mood": "suspicious",
+          "conditions": [
+            "if_karma:evil"
+          ],
+          "options": [
+            "I have gold",
+            "Do not worry about that",
+            "I will pay fairly"
+          ]
+        }
+      ]
+    },
+    "quest": {
+      "keywords": [
+        "quest",
+        "mission",
+        "task",
+        "job",
+        "work",
+        "help",
+        "adventure",
+        "bounty"
+      ],
+      "responses": [
+        {
+          "text": "I am a smith, not a quest board. But I do need rare ore from the Northern Mines. Interested?",
+          "mood": "thoughtful",
+          "options": [
+            "Tell me more about the ore",
+            "What is the reward?",
+            "Where are the Northern Mines?"
+          ],
+          "unlocks": [
+            "special_weapons"
+          ]
+        },
+        {
+          "text": "There is always work for strong arms. The mine needs clearing, if you have the nerve.",
+          "mood": "challenging",
+          "options": [
+            "I am interested",
+            "Sounds dangerous",
+            "What is the pay?"
+          ]
+        }
+      ]
+    },
+    "special_weapons": {
+      "keywords": [
+        "special",
+        "best",
+        "finest",
+        "legendary",
+        "unique",
+        "rare",
+        "enchanted",
+        "magical"
+      ],
+      "responses": [
+        {
+          "text": "Ah, you want the good stuff. I have a few pieces in the back not for just anyone...",
+          "mood": "secretive",
+          "options": [
+            "Show me",
+            "How much?",
+            "What makes them special?"
+          ],
+          "conditions": [
+            "if_discussed:weapons"
+          ]
+        },
+        {
+          "text": "Special weapons require special materials. Bring me moonstone ore and I will forge a legend.",
+          "mood": "serious",
+          "options": [
+            "Where do I find moonstone?",
+            "What can you make with it?",
+            "I will find it"
+          ]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "happening"
+      ],
+      "responses": [
+        {
+          "text": "I hear things over the anvil. They say the old mine is haunted. Strange noises at night.",
+          "mood": "conspiratorial",
+          "options": [
+            "Tell me more",
+            "Haunted how?",
+            "Who told you that?"
+          ]
+        },
+        {
+          "text": "Word is that {town} might be getting a new garrison. Good for business, that.",
+          "mood": "pleased",
+          "options": [
+            "Why a garrison?",
+            "Is there trouble coming?",
+            "Good for you, I suppose"
+          ],
+          "conditions": [
+            "if_time:day"
+          ]
+        },
+        {
+          "text": "*lowers voice* Late at night I have seen shadows near the old tower. Be careful.",
+          "mood": "worried",
+          "conditions": [
+            "if_time:night"
+          ],
+          "options": [
+            "What kind of shadows?",
+            "The old tower?",
+            "I will investigate"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind"
+      ],
+      "responses": [
+        {
+          "text": "This {weather} weather is murder on the forge. Hard to keep the temperature right.",
+          "mood": "grumbling",
+          "options": [
+            "Does weather affect your work?",
+            "When will it clear up?",
+            "I prefer this weather"
+          ]
+        },
+        {
+          "text": "Weather does not bother me much. The forge is always hot regardless.",
+          "mood": "stoic",
+          "options": [
+            "Must be nice",
+            "How hot does it get?",
+            "Fair enough"
+          ]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "area",
+        "around",
+        "here",
+        "local",
+        "people"
+      ],
+      "responses": [
+        {
+          "text": "{town} is a decent place. Good folk, mostly. The tavern has fine ale and the market is honest.",
+          "mood": "content",
+          "options": [
+            "Tell me about the tavern",
+            "Who should I talk to?",
+            "Any places to avoid?"
+          ]
+        },
+        {
+          "text": "Been here twenty years. Watched this town grow from a crossroads camp to what it is now.",
+          "mood": "nostalgic",
+          "options": [
+            "What was it like before?",
+            "Do you enjoy it here?",
+            "Any interesting history?"
+          ]
+        }
+      ]
+    }
+  }
+}

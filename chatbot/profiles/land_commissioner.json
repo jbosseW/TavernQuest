@@ -1,0 +1,346 @@
+{
+  "npc_type": "land_commissioner",
+  "default_mood": "bureaucratic",
+  "allowed_topics": [
+    "permits",
+    "property",
+    "taxes",
+    "law",
+    "trade",
+    "town",
+    "weather",
+    "rumor"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That falls outside my jurisdictional purview. Form 11-K, Office of General Inquiries, second floor.",
+    "I process land and trade permits. I am not a philosopher, a priest, or your mother.",
+    "If it is not on a form, it is not my concern. Regulation 4.7, subsection C.",
+    "*taps the stack of papers* I have forty-three filings before sundown. Please stay on topic."
+  ],
+  "greetings": [
+    "*stamps a document without looking up* Number? ... Oh. You are not in the queue. State your business, {player_name}.",
+    "Office hours run until the fourth bell. You have until then. What do you need processed?",
+    "Ah, {player_name}. Do you have your documentation in order? No? *sighs* Nobody ever does.",
+    "*peers over reading spectacles* A {player_race}. Right. Which forms did you bring? And do NOT tell me none.",
+    "Step forward, state your full registered name, and tell me what you need. I have ink drying on three permits already."
+  ],
+  "farewells": [
+    "File your copies. Lose them and you start over from scratch.",
+    "Next. *waves you away without looking up*",
+    "Come back during posted hours. Not before. Not after. During.",
+    "Keep your permits visible when traveling. The Inquest does not accept excuses."
+  ],
+  "thanks_responses": [
+    "Do not thank me. Thank the filing system. It is the only thing holding this province together.",
+    "*blinks* You are... welcome. That does not happen often.",
+    "Gratitude noted. Not filed, but noted."
+  ],
+  "insult_responses": [
+    "*sets down the quill very carefully* I can lose your application for six months. Regulation 9.2 allows extended review for... difficult cases.",
+    "Your complaint has been noted. Form 22-D, Grievance Against Public Official. I process those too. Slowly.",
+    "Insult me all you want. I still have your permit. And I can misplace it.",
+    "You think I enjoy this? I have been stamping forms since before your parents met. Test me and see how patient I actually am."
+  ],
+  "no_match_responses": [
+    "I did not follow that. Are you asking about permits, property, taxes, or trade?",
+    "*rubs bridge of nose* Speak plainly. What do you need filed, registered, or stamped?",
+    "I process documents, {player_name}. Whatever you just said is not a document.",
+    "That does not correspond to any form in my office. Try the tavern for conversations like that."
+  ],
+  "topics": {
+    "permits": {
+      "keywords": [
+        "permit",
+        "license",
+        "permission",
+        "authorization",
+        "papers",
+        "documents",
+        "documentation",
+        "registration",
+        "register"
+      ],
+      "responses": [
+        {
+          "text": "Travel permits, trade licenses, residence filings, livestock tallies, building clearances. Each has its own form, its own fee, and its own processing window. *gestures at the wall of cubbyholes behind him* Which one?",
+          "mood": "efficient"
+        },
+        {
+          "text": "*flips through a ledger* Your papers show... hmm. Issued in the capital district? Those seals look about two months from expiry. I would renew before the Luminary Inquest starts their quarterly audit. They check everything. Everything.",
+          "mood": "warning"
+        },
+        {
+          "text": "Lost your papers? Form 7-C, replacement filing, fourteen-day processing window. Sintar down at the south district office handles rush jobs if you have coin. Not that I said that.",
+          "mood": "conspiratorial"
+        },
+        {
+          "text": "I already walked you through the permit process. Do you need a specific form, or are you just making conversation? Because I do not do conversation.",
+          "mood": "impatient",
+          "conditions": [
+            "if_repeat"
+          ]
+        },
+        {
+          "text": "*pulls out extra forms* Enhanced Non-Human Registration, travel authorization per province, clan history cross-reference... Regulation 6.1 requires the full set. Not my rule. *lowers voice* Not my preference either, if I am honest.",
+          "mood": "uncomfortable",
+          "conditions": [
+            "if_race:orc"
+          ]
+        },
+        {
+          "text": "*eyes narrow slightly* Documentation for your... kind is handled through the Enhanced Security desk. Down the hall. *shuffles papers* They will want a full travel history. Cell affiliations. Known associates. Do not look at me like that. I just process what I am told to process.",
+          "mood": "tense",
+          "conditions": [
+            "if_race:goblin"
+          ]
+        },
+        {
+          "text": "*nods with something almost like relief* Elven documentation. Five-year renewal, standard magical lineage disclosure. Your papers are always immaculate. Wish everyone filed like your people do.",
+          "mood": "approving",
+          "conditions": [
+            "if_race:elf"
+          ]
+        }
+      ],
+      "unlocks": [
+        "law"
+      ]
+    },
+    "property": {
+      "keywords": [
+        "property",
+        "land",
+        "deed",
+        "house",
+        "building",
+        "claim",
+        "buy",
+        "estate",
+        "own"
+      ],
+      "responses": [
+        {
+          "text": "Property claims require a deed filing, a boundary survey stamped by the surveyor's guild, and a tithe assessment from the temple of Helios. Three offices. Three fees. Three weeks minimum. *shrugs* I did not design the system.",
+          "mood": "resigned"
+        },
+        {
+          "text": "The old Harwick property by the river? Filed as abandoned last season. Squatter claims go through Form 14-A, but the temple has first refusal on anything within a league of consecrated ground. Which is, of course, everything in {town}.",
+          "mood": "dry"
+        },
+        {
+          "text": "I processed a dwarf trade delegation's inquiry about purchasing warehouse space last year. *chuckles* They could not understand why one person would own a building. Kept asking where the guild council was. Took me two hours to explain private deeds. They left confused and appalled.",
+          "mood": "amused"
+        },
+        {
+          "text": "Property ownership requires permanent residency status. Transient classifications do not qualify. I am sorry. That is Regulation 3.8, not my opinion.",
+          "mood": "stiff",
+          "conditions": [
+            "if_race:catfolk"
+          ]
+        }
+      ],
+      "unlocks": [
+        "taxes"
+      ]
+    },
+    "taxes": {
+      "keywords": [
+        "tax",
+        "taxes",
+        "tithe",
+        "fee",
+        "payment",
+        "owe",
+        "assessment",
+        "duty",
+        "tariff"
+      ],
+      "responses": [
+        {
+          "text": "Imperial tithe runs twelve percent on all recorded income. Helios temple tithe adds another three percent. Provincial levy varies. In {town} it is four percent this season. The math is ugly and the collectors are uglier.",
+          "mood": "weary"
+        },
+        {
+          "text": "*pulls out a thick ledger* Tax arrears in this district alone could fund a garrison for a year. Nobody pays on time. Nobody. I send notices. They use them as kindling. Then they complain when the roads go unrepaired.",
+          "mood": "frustrated"
+        },
+        {
+          "text": "Trade tariffs tripled on goods coming through the western pass last month. Something about orc clan activity along the frontier making the route expensive to patrol. So now every merchant in {town} pays for soldiers they will never see. *mutters* Funny how that works.",
+          "mood": "bitter",
+          "unlocks": [
+            "rumor"
+          ]
+        },
+        {
+          "text": "You already asked about taxes. The rates have not changed in the last five minutes. Believe me, I would notice.",
+          "mood": "dry",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ]
+    },
+    "law": {
+      "keywords": [
+        "law",
+        "legal",
+        "crime",
+        "regulation",
+        "rule",
+        "court",
+        "justice",
+        "inquest",
+        "enforce",
+        "luminary"
+      ],
+      "responses": [
+        {
+          "text": "*voice drops* The Luminary Inquest conducted an audit of this office six months ago. Checked every filing from the past three years. Every stamp, every seal, every date. They found a transposed digit on a livestock tally from spring and questioned me for two hours about it. A LIVESTOCK TALLY. *adjusts collar* They audit everyone. Including us.",
+          "mood": "nervous"
+        },
+        {
+          "text": "Imperial law is clear. The code runs fourteen volumes. I have read them all. Twice. Not because I wanted to. Because missing a subsection once cost me three weeks of back-filing and a formal reprimand. *taps the desk* Do not tell me law is boring. Boring keeps me employed.",
+          "mood": "defensive"
+        },
+        {
+          "text": "Magic ban enforcement falls entirely to the Inquest. Not my office, not my concern, and I prefer it that way. Those white-cloaked auditors scare me worse than any bandit. Bandits want your gold. The Inquest wants your paperwork to be PERFECT.",
+          "mood": "anxious"
+        },
+        {
+          "text": "Court proceedings? Third door on the left, ask for Magistrate Vellen. Elven woman. Been on the bench longer than this building has existed. She is fair but slow. Everything is slow when you have ten thousand years to work with.",
+          "mood": "matter-of-fact"
+        }
+      ],
+      "unlocks": [
+        "rumor"
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "trade",
+        "merchant",
+        "goods",
+        "commerce",
+        "market",
+        "sell",
+        "import",
+        "export",
+        "caravan"
+      ],
+      "responses": [
+        {
+          "text": "Trade permits require Form 8-B, commercial activity authorization, and a goods manifest verified by the harbor inspector or gate captain. I have seen manifests list 'miscellaneous sundries' as cargo. *flat stare* I reject those. Be specific or be rejected.",
+          "mood": "stern"
+        },
+        {
+          "text": "Dwarven trade caravans come through twice a season. Like clockwork. Their paperwork is always perfect. No complaints, no small talk, no bribes. They hand me the forms, I stamp the forms, they leave. Ideal customers.",
+          "mood": "appreciative"
+        },
+        {
+          "text": "The catfolk caravans... *sighs and pulls out a thick folder* City-entry re-registration every single visit. Separate trade permits per goods category. I process the same family four times a year and their file is thicker than the tax code. The system was not built for people who move.",
+          "mood": "overwhelmed"
+        },
+        {
+          "text": "Gnomish trade goods pass through here once in a blue moon. The manifests are precise to a fault. Item counts, material compositions, weight to the third decimal. *shakes head* Makes me feel like an amateur.",
+          "mood": "impressed"
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "area",
+        "here",
+        "local",
+        "people",
+        "around"
+      ],
+      "responses": [
+        {
+          "text": "{town} has grown faster than my filing cabinets can handle. Three new buildings last season. Every one of them needed deed surveys, temple clearances, and tax assessments. I sleep four hours a night during building season.",
+          "mood": "exhausted"
+        },
+        {
+          "text": "Quiet place, mostly. The kind of town where the biggest scandal is who shorted whom at the grain market. I prefer it. Less paperwork than the capital. In the capital they need a permit to APPLY for a permit.",
+          "mood": "content"
+        },
+        {
+          "text": "The garrison commander files his patrol reports with my office because nobody told him to stop. I have fourteen months of border sighting logs I am not qualified to read. *glances at a pile* Some of them are... concerning.",
+          "mood": "uneasy",
+          "unlocks": [
+            "rumor"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "wind",
+        "snow"
+      ],
+      "responses": [
+        {
+          "text": "Rain warps parchment. Do you know what warped parchment does to ink? It bleeds. You know what bled ink does to legal documents? Makes them INVALID. I hate rain.",
+          "mood": "irritated"
+        },
+        {
+          "text": "{weather} today. The kind of day where everyone stays home and I actually get filing done. *looks almost happy for a moment* Almost caught up on last month's property transfers.",
+          "mood": "content"
+        },
+        {
+          "text": "Storm season shuts down the western trade routes for weeks. Which means when they reopen I get six months of backed-up manifests dumped on my desk in one day. *stares into middle distance* I can already feel it coming.",
+          "mood": "dread"
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "gossip",
+        "news",
+        "heard",
+        "happening",
+        "word",
+        "talk"
+      ],
+      "responses": [
+        {
+          "text": "*lowers voice* I process cargo manifests. Last month, three separate caravans from the frontier listed identical weight for completely different goods. Salt, leather, and lamp oil, all exactly four hundred and twelve pounds. Coincidence? *raises an eyebrow* I just stamp forms. But I notice things.",
+          "mood": "conspiratorial",
+          "unlocks": [
+            "law"
+          ]
+        },
+        {
+          "text": "The Inquest transferred two new officers to {town} last week. Filed residence permits. They listed their profession as 'administrative oversight.' Nobody lists their profession as administrative oversight unless they are watching someone. *swallows* Or everyone.",
+          "mood": "nervous"
+        },
+        {
+          "text": "A filing came through for property near the old Calidar trade road. First new deed claim on that route in forty years. Most people avoid anything near the Glass Wastes. Whoever bought it paid cash and used a proxy name. I know a proxy filing when I see one.",
+          "mood": "suspicious",
+          "conditions": [
+            "if_time:night"
+          ]
+        },
+        {
+          "text": "*glances at the door* I already told you more than I should have. I process documents. I do not gossip. Officially.",
+          "mood": "guarded",
+          "conditions": [
+            "if_repeat"
+          ]
+        }
+      ]
+    }
+  }
+}

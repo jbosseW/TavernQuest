@@ -1,0 +1,20 @@
+{
+  "npc_id": "verify2",
+  "discussed_topics": [
+    "explosions"
+  ],
+  "unlocked_topics": [],
+  "turn_count": 1,
+  "mood": "excited",
+  "last_topics": [
+    "explosions"
+  ],
+  "repeat_counts": {
+    "explosions": 1
+  },
+  "player_sentiment": 0.0,
+  "variables": {},
+  "_recent_responses": [
+    "Every alchemist has explosion stories. The ones who do not are the ones who did not survive."
+  ]
+}

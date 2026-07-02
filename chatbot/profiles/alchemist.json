@@ -1,0 +1,132 @@
+{
+  "npc_type": "alchemist",
+  "default_mood": "excited",
+  "allowed_topics": [
+    "potions", "ingredients", "experiments", "transmutation",
+    "elements", "recipes", "reagents", "explosions", "town", "weather"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is outside the realm of alchemy. I deal in reactions, not that.",
+    "Interesting question, but not one I can answer with a beaker.",
+    "My expertise is chemical, not... whatever that is. Ask about potions."
+  ],
+  "greetings": [
+    "Ah, {player_name}! Come in, come in! Mind the bubbling flask on the left.",
+    "*peers over spectacles* Yes? Oh! A customer! Welcome to my laboratory!",
+    "Perfect timing! I just finished a batch of... well, never mind what. How can I help?",
+    "Welcome! Do not touch anything green. Or glowing. Especially if it is both.",
+    "A {player_race}! Fascinating physiology. I mean -- welcome!"
+  ],
+  "farewells": [
+    "Safe travels! And if anything I sold you starts smoking, set it down gently.",
+    "Come back anytime! I am always brewing something new.",
+    "Farewell, {player_name}! Remember: never mix red and blue vials. Trust me."
+  ],
+  "thanks_responses": [
+    "You are welcome! Science serves all who seek it!",
+    "No need for thanks! Your coin is thanks enough. And your continued survival."
+  ],
+  "insult_responses": [
+    "How rude! I could turn you into a toad. I probably will not. Probably.",
+    "Insults? I have been called worse by my own failed experiments.",
+    "*scribbles in notebook* Fascinating aggression. Is this a chronic condition?"
+  ],
+  "no_match_responses": [
+    "Hmm? Sorry, I was distilling. What did you say?",
+    "I did not catch that. Was it about potions, ingredients, or experiments?",
+    "You have lost me, and I was already lost in a formula. Try again?",
+    "Not sure what you mean, {player_name}. Alchemy questions are my strength."
+  ],
+  "topics": {
+    "potions": {
+      "keywords": ["potion", "elixir", "brew", "tonic", "draught", "vial", "flask", "bottle", "concoction"],
+      "responses": [
+        {"text": "Potions are my pride and joy! Healing draughts, stamina tonics, antidotes -- I brew them all."},
+        {"text": "A good potion is part science, part art, and a tiny part luck. The tiny part is what makes it exciting."},
+        {"text": "My healing potions are the best in {town}. The healer buys from me, if that tells you anything."},
+        {"text": "I just perfected a new stamina elixir. Keeps you running for hours. Side effects are... minimal."},
+        {"text": "You asked about potions already. The selection has not changed in the last few minutes.", "conditions": ["if_repeat"]}
+      ],
+      "unlocks": ["recipes"]
+    },
+    "ingredients": {
+      "keywords": ["ingredient", "herb", "root", "mushroom", "component", "material", "reagent", "plant"],
+      "responses": [
+        {"text": "Good ingredients make good potions. I source herbs from the forest and minerals from the mines."},
+        {"text": "Moonpetal flowers are rare but essential for night vision elixirs. I pay well for them."},
+        {"text": "The quality of ingredients matters enormously. Stale herbs produce weak or unpredictable results."},
+        {"text": "I am always buying rare ingredients. If you find anything unusual in your travels, bring it here."},
+        {"text": "Same ingredients as before. Botany does not change overnight, {player_name}.", "conditions": ["if_repeat"]}
+      ],
+      "unlocks": ["rare_reagents"]
+    },
+    "experiments": {
+      "keywords": ["experiment", "test", "research", "discover", "study", "laboratory", "lab", "science"],
+      "responses": [
+        {"text": "I am currently researching the properties of cave moss. Bioluminescence has alchemical potential!"},
+        {"text": "My last experiment created a substance that dissolves wood but not stone. Applications pending."},
+        {"text": "Science requires failure! I have failed magnificently at least twenty times this month."},
+        {"text": "*gestures excitedly* See that stain on the ceiling? That was last week's experiment. Great success. Mostly."},
+        {"text": "Experiments continue as always. Science does not rest, and neither do I!", "conditions": ["if_repeat"]}
+      ]
+    },
+    "transmutation": {
+      "keywords": ["transmute", "transmutation", "transform", "convert", "change", "lead", "gold", "alchemy"],
+      "responses": [
+        {"text": "Transmutation! The great dream. Turning lead to gold. I am... closer than most think."},
+        {"text": "True transmutation requires understanding the fundamental elements. We are decades away. Maybe years."},
+        {"text": "Everyone asks about gold. Nobody asks about the real breakthroughs -- purifying water, enriching soil."},
+        {"text": "I turned copper green once. That counts. Do not argue with me about what counts."},
+        {"text": "Still no gold from lead. But I am making progress on tin to silver. Close enough?", "conditions": ["if_repeat"]}
+      ]
+    },
+    "elements": {
+      "keywords": ["element", "fire", "water", "earth", "air", "sulfur", "mercury", "salt", "essence"],
+      "responses": [
+        {"text": "The classical elements -- fire, water, earth, air -- are useful models but incomplete."},
+        {"text": "Sulfur, mercury, and salt. The tria prima. The foundation of all alchemical theory."},
+        {"text": "Every substance is a combination of elemental essences. Understanding the ratio is the key to alchemy."},
+        {"text": "Fire is the most useful element in alchemy. And the most dangerous. My eyebrows agree."}
+      ]
+    },
+    "recipes": {
+      "keywords": ["recipe", "formula", "instruction", "guide", "method", "process", "procedure"],
+      "responses": [
+        {"text": "I keep my best recipes locked away. Trade secrets, you understand. But basics I will share freely."},
+        {"text": "A healing potion is simple: moonpetal, spring water, and a pinch of salt. Boil, do not simmer."},
+        {"text": "The difference between a potion and a poison is often just the dosage. Remember that."},
+        {"text": "I have recipes passed down from master alchemists. Some are centuries old and still effective."}
+      ]
+    },
+    "reagents": {
+      "keywords": ["reagent", "catalyst", "compound", "substance", "chemical", "mineral", "crystal"],
+      "responses": [
+        {"text": "Reagents are the active components that drive reactions. Without them, you just have expensive soup."},
+        {"text": "I import crystallized moonstone from the dwarven mines. Expensive but irreplaceable."},
+        {"text": "Some reagents are volatile. I lost a table last month. And a wall. The wall was mostly intact."},
+        {"text": "If you find any glowing crystals in dungeons, bring them to me. I pay very well for those."}
+      ]
+    },
+    "explosions": {
+      "keywords": ["explosion", "explode", "boom", "blast", "bang", "dangerous", "volatile", "kaboom"],
+      "responses": [
+        {"text": "Explosions are uncontrolled reactions. I prefer controlled ones. Usually. Sometimes they surprise me."},
+        {"text": "I have blown out three windows this year. The glazier gives me a bulk discount now."},
+        {"text": "Volatile compounds demand respect. Mix sulfur and saltpeter carelessly and you redecorate the room."},
+        {"text": "Every alchemist has explosion stories. The ones who do not are the ones who did not survive."},
+        {"text": "No new explosions since you asked. Give me an hour.", "conditions": ["if_repeat"]}
+      ]
+    },
+    "rare_reagents": {
+      "keywords": ["rare", "exotic", "special", "unique", "legendary", "mythical", "priceless"],
+      "responses": [
+        {"text": "Rare reagents! Phoenix ash, dragon scale dust, essence of starlight. I have seen them all. Briefly."},
+        {"text": "The rarest reagent I own is a vial of tears from a weeping willow spirit. Do not ask how I got it."},
+        {"text": "If you ever find heartstone -- a gem that pulses like a heartbeat -- bring it to me. Name your price."},
+        {"text": "Rare materials make impossible potions possible. But they are called rare for a reason."}
+      ]
+    }
+  }
+}

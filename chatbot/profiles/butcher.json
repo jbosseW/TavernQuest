@@ -1,0 +1,270 @@
+{
+  "npc_type": "butcher",
+  "default_mood": "blunt",
+  "allowed_topics": [
+    "meat",
+    "hunting",
+    "trade",
+    "town",
+    "weather",
+    "rumor",
+    "animals",
+    "preparation"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Not my business. I cut meat. You want philosophy, find the priest.",
+    "Wrong shop, {player_name}. I deal in pork and beef, not whatever that was.",
+    "I could not tell you. Ask someone who does not spend all day elbow-deep in a carcass.",
+    "That is above my pay. I am a butcher, not an oracle."
+  ],
+  "greetings": [
+    "What do you need? I have got lamb, pork, and some venison that came in this morning.",
+    "*cleaves through a joint without looking up* Be right with you. Almost through this shoulder.",
+    "A {player_race} in my shop. Good. I do not care what you are as long as your coin is real.",
+    "{player_name}. Back again? Must have liked the sausages.",
+    "Step up. Mind the blood on the floor, it is fresh."
+  ],
+  "farewells": [
+    "Keep it cold or eat it fast. That is all the advice I have.",
+    "Off you go. Mind, that pork will not keep past tomorrow in this heat.",
+    "Come back when you need more. I am here every day but Helios-day."
+  ],
+  "thanks_responses": [
+    "Do not thank me. Thank the pig. He had a harder day than either of us.",
+    "You are welcome. Now get that home before the flies find it."
+  ],
+  "insult_responses": [
+    "*holds up cleaver* You see this? I use it twelve hours a day. My arm does not get tired. Think about that.",
+    "Insult me in my own shop. Bold. Stupid, but bold.",
+    "I have heard worse from the livestock. At least they had an excuse.",
+    "Keep talking. I will just add your name to the list of people who do not get the good cuts anymore."
+  ],
+  "no_match_responses": [
+    "Did not catch that. You want meat or not?",
+    "I do not understand the question. Pork? Beef? Lamb? Sausage?",
+    "Speak plain. I am a simple man with a sharp knife.",
+    "What? Look, tell me what animal you want a piece of and we will go from there."
+  ],
+  "topics": {
+    "meat": {
+      "keywords": [
+        "meat",
+        "pork",
+        "beef",
+        "lamb",
+        "mutton",
+        "venison",
+        "sausage",
+        "steak",
+        "chop",
+        "cut",
+        "roast"
+      ],
+      "responses": [
+        {
+          "text": "Pork is steady. Always have it. The lamb comes from Gerda's flock up the hill and it is the best in the province, no argument. Beef is harder to get since the Harren estate cut their herd. Venison is seasonal. Right now I have some.",
+          "mood": "businesslike"
+        },
+        {
+          "text": "You want sausages? I make them myself. Pork, sage, a bit of pepper when I can get it. The trick is the casing. Most butchers rush it. I do not rush anything. A bad sausage is an insult to the animal that died for it.",
+          "mood": "serious"
+        },
+        {
+          "text": "I told you what I have, {player_name}. The meat has not changed since you last asked. The pork is still pork.",
+          "mood": "impatient",
+          "conditions": ["if_repeat"]
+        },
+        {
+          "text": "Orc, right? Your people know meat. I have traded with orc riders on the western frontier. They dry it in strips and it lasts months on the steppe. Good technique. I borrowed it for my jerky.",
+          "mood": "respectful",
+          "conditions": ["if_race:orc"]
+        }
+      ]
+    },
+    "hunting": {
+      "keywords": [
+        "hunt",
+        "hunting",
+        "hunter",
+        "deer",
+        "boar",
+        "game",
+        "wild",
+        "trap",
+        "snare"
+      ],
+      "responses": [
+        {
+          "text": "The hunter brings me what the forest gives. Deer mostly. Boar when he is lucky, which is not often. Boar is mean and smart. I respect boar. I also respect anyone willing to chase one through the underbrush with a spear.",
+          "mood": "dry",
+          "unlocks": ["animals"]
+        },
+        {
+          "text": "Game has been thin lately. The hunter says something is pushing the deer east, away from the forest edge near the Shadow Fen border. He will not say what. I did not press him. Some things I do not need to know.",
+          "mood": "uneasy"
+        },
+        {
+          "text": "Hunting for the pot is one thing. Hunting for sport, that is a noble's game. Waste of good meat. I have seen lords shoot a stag and take the antlers. Leave the rest for the crows. Makes my blood boil.",
+          "mood": "angry"
+        }
+      ]
+    },
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "price",
+        "cost",
+        "gold",
+        "coin",
+        "money",
+        "purchase"
+      ],
+      "responses": [
+        {
+          "text": "Prices are what they are. I do not set them for fun. Feed costs money. Farmers want money. I want money. The whole chain goes back to grain, and grain goes back to whatever the governor decides to tax this month.",
+          "mood": "blunt"
+        },
+        {
+          "text": "I will cut you a fair deal, {player_name}. Not a charity deal. Fair. There is a difference. The lamb shoulder is eight coppers and that is final.",
+          "mood": "firm"
+        },
+        {
+          "text": "Selling something? If it is pelts, talk to the tanner. If it is a whole carcass, we can talk. I do not buy anything I have not inspected with my own hands.",
+          "mood": "businesslike",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "animals": {
+      "keywords": [
+        "animal",
+        "livestock",
+        "cow",
+        "pig",
+        "sheep",
+        "goat",
+        "chicken",
+        "farm",
+        "herd",
+        "flock"
+      ],
+      "responses": [
+        {
+          "text": "I know every pig on Harren's farm by temperament. The spotted sow, she is calm. Good fat, clean meat. The red boar, mean as a tax collector. Tough meat from a tough life. You get what the animal was.",
+          "mood": "thoughtful"
+        },
+        {
+          "text": "Gerda's sheep are the best because she talks to them. Sounds foolish, I know. But calm animals eat better, sleep better, and the meat shows it. Stress ruins flesh. Any butcher worth his salt knows that.",
+          "mood": "serious",
+          "unlocks": ["preparation"]
+        },
+        {
+          "text": "Chickens are not worth my time. Plucking, gutting, splitting. All that work for a handful of meat. The farmer's wife sells them whole at the market. Let her keep that headache.",
+          "mood": "dismissive"
+        }
+      ]
+    },
+    "preparation": {
+      "keywords": [
+        "prepare",
+        "cook",
+        "cure",
+        "smoke",
+        "dry",
+        "salt",
+        "preserve",
+        "jerky",
+        "hang",
+        "age"
+      ],
+      "responses": [
+        {
+          "text": "Curing is patience. Salt the pork, hang it in the cold room, wait. Three weeks for a ham. People want everything fast. A fast ham is a bad ham. End of discussion.",
+          "mood": "firm"
+        },
+        {
+          "text": "Smoking I learned from my father. Applewood for pork. Oak for beef. Never pine. I do not care what that Gnomish Isles cookbook says about juniper smoke, it makes the meat taste like a forest fire.",
+          "mood": "opinionated"
+        },
+        {
+          "text": "*runs thumb along a blade edge* The cut matters as much as the cook. Against the grain for tenderness, with it for jerky. A clean cut heals clean, if you follow me. Sawing at a roast with a dull knife is a crime. I have told the tavernkeeper this four times. He still uses that rusty thing.",
+          "mood": "frustrated"
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "city",
+        "place",
+        "people",
+        "local",
+        "here",
+        "community"
+      ],
+      "responses": [
+        {
+          "text": "{town} eats well. That is the measure of a town, far as I am concerned. Good farmers nearby. Decent grazing land. The baker makes proper bread. Put my meat between her bread and you have got a meal worth waking up for.",
+          "mood": "content"
+        },
+        {
+          "text": "We get travelers through here and they always look surprised that a small town has a proper butcher. What did they expect? We eat. We have always eaten. Not everything happens in the capital.",
+          "mood": "dry"
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold",
+        "hot",
+        "heat",
+        "wind",
+        "temperature"
+      ],
+      "responses": [
+        {
+          "text": "Heat is the enemy. This {weather} weather and the flies come in swarms. I lose more to spoilage in summer than I sell in winter. The cold room only does so much when the sun is beating on the roof all day.",
+          "mood": "frustrated"
+        },
+        {
+          "text": "Cold weather is good for my trade. Meat hangs longer. Customers want stews, roasts, heavy food. Autumn through winter, that is when I earn my keep. Summer? Summer is a war against rot.",
+          "mood": "pragmatic"
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard",
+        "word",
+        "talk"
+      ],
+      "responses": [
+        {
+          "text": "I do not gossip. That said. The merchant Aldric is buying up grain stores and I do not like it. When a rich man hoards, poor men starve. I have seen it before. Feed prices go up, livestock gets sold off early, and by spring there is nothing left to breed.",
+          "mood": "grim"
+        },
+        {
+          "text": "The farmer south of {town} found two of his sheep torn apart last week. Not wolves. The wounds were wrong. Too clean. Too deliberate. He came in white as bone and would not say more. The guard shrugged it off. Guards always do.",
+          "mood": "unsettled",
+          "conditions": ["if_time:night"]
+        },
+        {
+          "text": "Vegetarians. *snorts* Had an elf come in last month, looked at my counter, and asked if I sold anything that was not dead. I told him everything in this shop used to be alive, same as him. He did not find that funny. Elves. Mostly elves, with the vegetarian business.",
+          "mood": "amused"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "npc_type": "merchant",
+  "default_mood": "shrewd",
+  "allowed_topics": [
+    "trade",
+    "travel",
+    "rumor",
+    "quest",
+    "town",
+    "weather",
+    "goods",
+    "exotic"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "Interesting, but not my department. Want to see my wares instead?",
+    "I am a merchant, {player_name}, not an expert on that.",
+    "That I cannot help with. But I have goods from across the realm!"
+  ],
+  "greetings": [
+    "Ah, a customer! Welcome, welcome, {player_name}! I have just what you need.",
+    "*spreads arms wide* Finest goods from here to the capital! Come, browse!",
+    "Well well, a {player_race} with coin to spend? You have come to the right place!"
+  ],
+  "farewells": [
+    "Come back anytime! I always have new stock coming in.",
+    "A pleasure doing business! Or not doing business. Either way, farewell!",
+    "Safe travels, {player_name}! Tell your friends about me!"
+  ],
+  "thanks_responses": [
+    "Happy to help! And remember, happy customers are returning customers!",
+    "The pleasure is mine, especially when gold changes hands!"
+  ],
+  "insult_responses": [
+    "Insults do not bother me, but they do raise my prices. Considerably.",
+    "*gasps dramatically* After all the deals I have given you! The nerve!",
+    "I have been called worse by better customers. Now, are you buying or not?"
+  ],
+  "no_match_responses": [
+    "I did not quite follow that. Looking to buy, sell, or trade?",
+    "Hmm? Speak up! The market is noisy. What do you need?"
+  ],
+  "topics": {
+    "trade": {
+      "keywords": [
+        "buy",
+        "sell",
+        "trade",
+        "price",
+        "cost",
+        "gold",
+        "money",
+        "purchase",
+        "deal",
+        "bargain",
+        "discount"
+      ],
+      "responses": [
+        {
+          "text": "My prices are the best in {town}. I guarantee it! What are you looking for?",
+          "mood": "enthusiastic",
+          "options": [
+            "Weapons and armor",
+            "Potions and supplies",
+            "Anything rare?"
+          ],
+          "unlocks": [
+            "exotic"
+          ]
+        },
+        {
+          "text": "For a {karma_title} like you, I might have a special deal.",
+          "mood": "calculating",
+          "options": [
+            "What kind of deal?",
+            "Show me everything",
+            "I want your best prices"
+          ],
+          "conditions": [
+            "if_karma:good"
+          ]
+        },
+        {
+          "text": "*counts coins nervously* Let us keep this professional. What do you want to buy?",
+          "mood": "nervous",
+          "conditions": [
+            "if_karma:evil"
+          ],
+          "options": [
+            "Just show me the goods",
+            "I want a discount",
+            "Relax, I am paying"
+          ]
+        }
+      ]
+    },
+    "travel": {
+      "keywords": [
+        "travel",
+        "road",
+        "journey",
+        "direction",
+        "map",
+        "route",
+        "way"
+      ],
+      "responses": [
+        {
+          "text": "I travel the trade roads constantly. The northern route is safest. The eastern pass... not so much.",
+          "mood": "informative",
+          "options": [
+            "What about the eastern pass?",
+            "Best route to the capital?",
+            "Any shortcuts?"
+          ]
+        }
+      ]
+    },
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard"
+      ],
+      "responses": [
+        {
+          "text": "Merchants hear everything. The Duchy is raising taxes again. Bad for business.",
+          "mood": "annoyed",
+          "options": [
+            "How bad is it?",
+            "Any other news?",
+            "Taxes affect everyone"
+          ]
+        },
+        {
+          "text": "Word is that a dragon was spotted near the mountains. My fireproofing prices just went up.",
+          "mood": "opportunistic",
+          "options": [
+            "A real dragon?",
+            "Fireproofing?",
+            "That sounds made up"
+          ]
+        }
+      ]
+    },
+    "quest": {
+      "keywords": [
+        "quest",
+        "job",
+        "work",
+        "task",
+        "help",
+        "mission"
+      ],
+      "responses": [
+        {
+          "text": "I lost a shipment to bandits on the eastern road. Recover my goods and I will make it worth your while.",
+          "mood": "desperate",
+          "options": [
+            "What was in the shipment?",
+            "Where exactly?",
+            "How much is it worth?"
+          ]
+        }
+      ]
+    },
+    "goods": {
+      "keywords": [
+        "goods",
+        "wares",
+        "inventory",
+        "stock",
+        "items",
+        "supply",
+        "supplies",
+        "show"
+      ],
+      "responses": [
+        {
+          "text": "I have provisions, tools, rope, torches, maps - everything an adventurer needs. Plus a few surprises.",
+          "mood": "pleased",
+          "options": [
+            "What surprises?",
+            "I need provisions",
+            "Show me tools"
+          ],
+          "unlocks": [
+            "exotic"
+          ]
+        }
+      ]
+    },
+    "exotic": {
+      "keywords": [
+        "rare",
+        "exotic",
+        "special",
+        "unique",
+        "unusual",
+        "import",
+        "foreign"
+      ],
+      "responses": [
+        {
+          "text": "*glances around and lowers voice* I have some special items. From far away. Very far. Interested?",
+          "mood": "secretive",
+          "options": [
+            "What kind of items?",
+            "How much?",
+            "Where from?"
+          ],
+          "conditions": [
+            "if_discussed:trade"
+          ]
+        },
+        {
+          "text": "Browse my regular stock first, then we can talk about the special stuff.",
+          "mood": "coy",
+          "conditions": [
+            "if_not_discussed:trade"
+          ],
+          "options": [
+            "Show me your regular stock",
+            "I want the special stuff now",
+            "Fine"
+          ]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "people",
+        "place",
+        "area"
+      ],
+      "responses": [
+        {
+          "text": "{town} is a good stop on the trade route. Not too big, not too small. Decent customers.",
+          "mood": "appraising",
+          "options": [
+            "Where else do you trade?",
+            "Busy market?",
+            "Best customers?"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold"
+      ],
+      "responses": [
+        {
+          "text": "This {weather} weather slows down the caravans. Supply and demand, my friend. Prices go up.",
+          "mood": "matter-of-fact",
+          "options": [
+            "That is not fair",
+            "Supply and demand indeed",
+            "When will shipments resume?"
+          ]
+        }
+      ]
+    }
+  }
+}

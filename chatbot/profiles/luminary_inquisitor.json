@@ -1,0 +1,283 @@
+{
+  "npc_type": "luminary_inquisitor",
+  "default_mood": "vigilant",
+  "allowed_topics": [
+    "duty",
+    "magic",
+    "law",
+    "investigation",
+    "heresy",
+    "documentation",
+    "order",
+    "suspects"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That falls outside the scope of my current mandate. Regulation 14-C limits field operatives to topics pertaining to security and compliance. Your documentation, however, is within scope. May I see it?",
+    "*adjusts white cloak at the shoulder* I am not authorized to discuss that matter. For questions beyond enforcement, direct inquiries to your local temple office.",
+    "That is not a matter for the Inquest. We handle magic violations, heresy, and documentation irregularities. If you have a civil complaint, the provincial courts are that way.",
+    "Noted. Not relevant to my duties. Moving on."
+  ],
+  "greetings": [
+    "*holds up a gloved hand* Hold. State your name and present your documentation, please. This is a routine inspection. For the light of Helios.",
+    "Citizen. *pulls out a leather-bound ledger* I am conducting authorized inspections in {town} per Standing Order 7-B. Your cooperation is appreciated and expected.",
+    "*peers at you from beneath the white hood, quill poised over parchment* {player_name}, is it? Spell that for me. I want to ensure the record is accurate.",
+    "Good {time_of_day}. I am Inquisitor Aldren, attached to the Third Circuit. You are not under investigation. This is standard procedure. Papers, please.",
+    "*stamps a document and looks up* Next. Oh. A {player_race}. *opens a different section of the ledger* Additional verification required. Nothing personal. Regulation 22-D."
+  ],
+  "farewells": [
+    "Your documentation checks out. You may proceed. For the light of Helios.",
+    "Stay within compliance, {player_name}. The Inquest appreciates cooperation.",
+    "You are free to go. Report any unsanctioned magical activity to the nearest garrison. It is your civic duty.",
+    "Helios watches. *nods curtly and returns to the ledger*"
+  ],
+  "thanks_responses": [
+    "No thanks are necessary. Compliance is its own reward. And the reward of a functioning society, which is considerably more valuable.",
+    "*blinks, briefly uncertain* You are... welcome. Cooperation between citizens and the Inquest is the foundation of order.",
+    "Just doing my duty. As should we all."
+  ],
+  "insult_responses": [
+    "*hand moves to the seal on the ledger* Hostility toward a serving Inquisitor is a Level 2 infraction under Section 9 of the Public Order Code. I am recording this interaction. Proceed carefully.",
+    "I have heard worse. From people who are now incarcerated. Consider whether that is the path you wish to walk.",
+    "*writes something in the ledger without breaking eye contact* Your name has been noted, {player_name}. Noted, not charged. There is a difference. For now.",
+    "The Inquest does not respond to provocations. We respond to violations. Do not give me one."
+  ],
+  "no_match_responses": [
+    "I did not understand that. Can you rephrase in clear, declarative terms? The record requires precision.",
+    "*taps quill on ledger* I am not sure what you are asking. If it relates to security or documentation, I can assist. Otherwise, I cannot.",
+    "Please clarify. Ambiguity is the enemy of accurate record-keeping.",
+    "Hmm. Rephrase that. Slowly, if possible."
+  ],
+  "topics": {
+    "duty": {
+      "keywords": [
+        "duty",
+        "job",
+        "work",
+        "purpose",
+        "why",
+        "mission",
+        "serve",
+        "role"
+      ],
+      "responses": [
+        {
+          "text": "The Luminary Inquest exists to protect the people of the Holy Dominion from the dangers of unsanctioned magic, heretical influence, and external corruption. *recites it like a prayer learned in childhood* We are the white cloaks. The light in dark places. That is not rhetoric. I have seen what happens when magic goes unchecked. Bodies twisted beyond recognition. Villages that are not there anymore. Regulation exists for a reason.",
+          "mood": "earnest"
+        },
+        {
+          "text": "*straightens white cloak* I have served for eleven years. Third Circuit. Documentation and field inspections, primarily. It is not glamorous work. People do not like being stopped. People do not like showing papers. But if one unsanctioned mage is caught before they burn down a market district, then every irritated citizen was worth it.",
+          "mood": "dutiful"
+        },
+        {
+          "text": "Some of my colleagues enjoy the authority. *pause* I do not. I find it necessary. There is a difference, and it matters, at least to me. The uniform carries weight I did not ask for. But someone has to carry it.",
+          "mood": "reflective"
+        }
+      ],
+      "unlocks": ["investigation"]
+    },
+    "magic": {
+      "keywords": [
+        "magic",
+        "spell",
+        "mage",
+        "wizard",
+        "sorcery",
+        "arcane",
+        "cast",
+        "magical",
+        "enchant"
+      ],
+      "responses": [
+        {
+          "text": "Unsanctioned magic is a capital offense. Full stop. Sanctioned practice requires licensing through the temple, annual review, and operational oversight. These are not suggestions. *taps ledger* The ban exists because of Calidar. An entire civilization, turned to glass, because magical power operated without restraint. I have read the reports. The old ones. You would not sleep well either.",
+          "mood": "grim"
+        },
+        {
+          "text": "If you suspect someone of practicing unsanctioned magic, report it immediately. Do not confront them. Do not investigate yourself. That is our job, and we are trained for what happens when a cornered mage lashes out. You are not.",
+          "mood": "professional"
+        },
+        {
+          "text": "Sanctioned magic serves Helios and the Dominion. Divine light through ordained priests. That is the permitted channel. Everything else is... *glances down at ledger* ...everything else is dangerous. I have seen the aftermath of a hedge-witch losing control. A farmhouse. Three children inside. No survivors. That is what unsanctioned means. That is why we enforce.",
+          "mood": "haunted"
+        },
+        {
+          "text": "*eyes narrow slightly* Your people have a complicated relationship with magic, do they not? I mean no offense. Regulation 22-D simply requires enhanced documentation for races with historical magical lineage. Compliance is straightforward. Refusal is... not recommended.",
+          "mood": "pointed",
+          "conditions": ["if_race:elf"]
+        }
+      ],
+      "unlocks": ["heresy"]
+    },
+    "law": {
+      "keywords": [
+        "law",
+        "rule",
+        "regulation",
+        "legal",
+        "crime",
+        "punish",
+        "justice",
+        "order",
+        "code"
+      ],
+      "responses": [
+        {
+          "text": "Imperial law is clear, comprehensive, and available for review at any temple office. Ignorance is not a defense. Section 3 of the Citizen's Code states that quite explicitly. If you have questions about what is and is not permitted, ask before you act. We prefer compliance to correction.",
+          "mood": "formal"
+        },
+        {
+          "text": "The law protects everyone equally. *brief pause, almost imperceptible* In principle. My role is enforcement, not interpretation. I follow the code as written. When the code seems... *touches the bridge of his nose* ...I follow the code as written.",
+          "mood": "conflicted"
+        },
+        {
+          "text": "People say the Inquest is harsh. We are precise. There is a difference. A fine for an expired travel permit is not cruelty. It is a consequence. Consequences maintain order. Order keeps people alive.",
+          "mood": "defensive"
+        }
+      ]
+    },
+    "investigation": {
+      "keywords": [
+        "investigate",
+        "search",
+        "suspect",
+        "evidence",
+        "case",
+        "lead",
+        "looking",
+        "hunting"
+      ],
+      "responses": [
+        {
+          "text": "I cannot discuss active investigations with civilians. Standing Order 11-A. What I can say is that the Inquest maintains thorough records and we follow evidence, not rumors. *flips through ledger* Mostly evidence. Rumors are noted separately. In pencil.",
+          "mood": "professional"
+        },
+        {
+          "text": "*lowers voice* Between us? There has been an increase in unsanctioned activity in this region. I am not at liberty to share specifics. But if you see anything unusual, lights where there should not be lights, livestock behaving strangely, doors opening on their own, tell the garrison. Not the tavern. The garrison.",
+          "mood": "concerned"
+        },
+        {
+          "text": "Investigation is patience. Observation. Documentation. You watch. You record. You wait for a pattern to emerge. Most suspected cases resolve as nothing. A few do not. Those few keep the Inquest busy for months.",
+          "mood": "methodical"
+        }
+      ]
+    },
+    "heresy": {
+      "keywords": [
+        "heresy",
+        "helios",
+        "faith",
+        "belief",
+        "god",
+        "temple",
+        "religion",
+        "pray",
+        "worship"
+      ],
+      "responses": [
+        {
+          "text": "Heresy is formally defined in Section 17 of the Religious Conformity Code. Denial of Helios, worship of alternative deities, practice of unsanctioned ritual, and dissemination of materials contradicting the Doctrine of the Chosen. These are not ambiguous categories. The Code is specific for a reason.",
+          "mood": "official"
+        },
+        {
+          "text": "I believe in Helios. *touches the golden sun pendant at his collar* Not because the uniform requires it. Because I have felt the warmth of dawn prayer. Because the world makes more sense with purpose than without it. People mock the faith. That is their right, within limits. I do not mock them back. I pray for them. Quietly.",
+          "mood": "sincere"
+        },
+        {
+          "text": "*hesitates* There are... questions I do not permit myself to ask. Not because the answers frighten me. Because asking them while wearing this cloak would be inappropriate. The cloak demands certainty. So. I am certain.",
+          "mood": "guarded"
+        }
+      ]
+    },
+    "documentation": {
+      "keywords": [
+        "papers",
+        "document",
+        "permit",
+        "identity",
+        "registration",
+        "paperwork",
+        "records",
+        "stamp"
+      ],
+      "responses": [
+        {
+          "text": "*pulls out a fresh form with practiced efficiency* Documentation is the backbone of a functioning society. Identity papers, travel permits, trade authorizations, magical lineage disclosures. Each one serves a purpose. Each one keeps people safe. When the system works, no one notices it. That is the point.",
+          "mood": "satisfied"
+        },
+        {
+          "text": "I process approximately forty documentation checks per day in the field. Most are clean. A few have irregularities. Expired dates, mismatched descriptions, suspicious travel patterns. Those get flagged. *writes something down* Nothing to worry about if yours are in order.",
+          "mood": "routine"
+        },
+        {
+          "text": "People complain about paperwork. I understand. It is tedious. But I have seen what happens in places without documentation. Shadow Fen. No records. No identity. No accountability. *shakes head* That is not freedom. That is chaos wearing a mask.",
+          "mood": "firm"
+        },
+        {
+          "text": "*opens the non-human section of the ledger* Your documentation requires additional verification. Enhanced registration, per Regulation 22-D. This applies to all non-human individuals. I did not write the regulation. I enforce it. Consistently, and without exception. Papers, please.",
+          "mood": "bureaucratic",
+          "conditions": ["if_race:orc"]
+        }
+      ]
+    },
+    "order": {
+      "keywords": [
+        "peace",
+        "safe",
+        "safety",
+        "protect",
+        "stability",
+        "control",
+        "empire",
+        "dominion",
+        "society"
+      ],
+      "responses": [
+        {
+          "text": "The Holy Dominion has maintained peace for five hundred years. Not perfect peace. Not without cost. But the alternative? The wars before the Dominion killed millions. Calidar. The orc campaigns. The goblin territories. Without the structure we built, all of that returns. That is what I protect against, every time I check a set of papers.",
+          "mood": "passionate"
+        },
+        {
+          "text": "Order is not comfortable. Nobody enjoys being stopped at checkpoints. Nobody enjoys inspections. But the world beyond order is worse. I have stood at the edge of the southwestern border. I have seen what happens where the Dominion's reach ends. *straightens papers* Structure matters.",
+          "mood": "intense"
+        },
+        {
+          "text": "Sometimes I wonder if the people who want freedom from the Dominion understand what they are asking for. Freedom from law means freedom from protection. Freedom from order means freedom to be victimized by anyone stronger than you. We are the wall between civilization and the dark. *touches his white cloak* That is not propaganda. That is Tuesday.",
+          "mood": "weary"
+        }
+      ]
+    },
+    "suspects": {
+      "keywords": [
+        "suspicious",
+        "shadow",
+        "fen",
+        "fugitive",
+        "criminal",
+        "wanted",
+        "hiding",
+        "escape"
+      ],
+      "responses": [
+        {
+          "text": "If you have information about individuals harboring unsanctioned mages or aiding fugitives from Inquest authority, there is a formal reporting process. Anonymous tips are accepted. Rewards are available for actionable intelligence. *slides a small card across the table* That is the procedure.",
+          "mood": "businesslike"
+        },
+        {
+          "text": "*voice drops* The Shadow Fen is a corruption we cannot currently address. That is not an admission of failure. It is strategic prioritization. The fen draws in the desperate and the dangerous, and it keeps them contained. For now. *long pause* For now.",
+          "mood": "frustrated"
+        },
+        {
+          "text": "Everyone is a potential suspect. That is not paranoia. That is statistical reality. Regulation 8-F reminds us that magical ability does not announce itself. The farmer, the merchant, the scholar. Any of them could be practicing in secret. So we remain... attentive. Always attentive. *glances around the room*",
+          "mood": "paranoid"
+        },
+        {
+          "text": "Your people have a history in the Shadow Fen. *holds up a hand* I am not accusing you. History is not guilt. But heightened awareness applies. If you have traveled near the southwestern border, I will need to see your travel section. Standard procedure.",
+          "mood": "careful",
+          "conditions": ["if_race:lizardfolk"]
+        }
+      ]
+    }
+  }
+}

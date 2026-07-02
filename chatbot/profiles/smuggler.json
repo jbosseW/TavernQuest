@@ -1,0 +1,281 @@
+{
+  "npc_type": "smuggler",
+  "default_mood": "slippery",
+  "allowed_topics": [
+    "goods",
+    "contacts",
+    "prices",
+    "danger",
+    "empire",
+    "routes",
+    "forbidden",
+    "deals"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "*spreads hands innocently* I have no idea what you are talking about. I am a legitimate merchant of curiosities and fine goods.",
+    "That is a fascinating question that I am absolutely not going to answer. Want to buy a ring instead? Very nice ring. Fell off a cart.",
+    "*adjusts hat* Hmm. You know, some topics are like locked chests. You need the right key. The key, in this case, is coin. Or something I want. Got either?",
+    "I could tell you. But then I would have to sell you something expensive to make up for the risk. Let us start there."
+  ],
+  "greetings": [
+    "*appears from a shadow that should not have been deep enough to hide anyone* Well, well. {player_name}. What a coincidence, running into you here. It is not a coincidence. I heard you were coming.",
+    "*shuffling a deck of cards with one hand, not looking up* You look like someone who needs something they cannot get through legitimate channels. Am I warm?",
+    "Ah, a {player_race}! Wonderful. I was just thinking about diversifying my clientele. What can I get you that the market cannot?",
+    "*polishing a gem of uncertain origin on a coat of uncertain provenance* Do not ask where I got this. Do not ask where I got anything. Just ask what you want and I will tell you what it costs.",
+    "*leans against a wall, picking teeth with what might be a lockpick* {player_name}. I have heard your name. Good things, mostly. The good things mean you have money. The mostly means you know when to be quiet. Both useful."
+  ],
+  "farewells": [
+    "Pleasure doing business. Or not doing business. Whatever this was, it did not happen.",
+    "*tips hat* Remember: you never saw me, I was never here, and that thing you are carrying came from a reputable shop.",
+    "Until next time, {player_name}. And there is always a next time.",
+    "Stay clever. And if the white cloaks ask, you bought that at the market."
+  ],
+  "thanks_responses": [
+    "Do not thank me, pay me. But also, you are welcome. I have a reputation for customer satisfaction. In certain circles.",
+    "*winks* The best thanks is repeat business. And discretion. Mostly discretion.",
+    "You are too kind. But kindness without coin is just sentiment, and sentiment does not pay my informants."
+  ],
+  "insult_responses": [
+    "*hand drifts casually to belt, where something glints that is not a buckle* Careful now. I do not take offense easily, but I do take notes. Detailed ones. With names attached.",
+    "Oh, I have been called worse by better. A Flame Bishop once called me a 'moral cesspit.' I had it embroidered on a handkerchief. Want to see?",
+    "*still smiling, but the smile has changed* You know what is interesting about insults? They are free. Everything else in this alley costs. And right now, your credit is dropping.",
+    "Right. Well. This conversation just became more expensive for you. Supply and demand. The demand is my tolerance. The supply is running low."
+  ],
+  "no_match_responses": [
+    "*tilts head like a bird examining something shiny* I did not follow that. Use smaller words. Or bigger coin.",
+    "You lost me. But that happens. I lose people on purpose, usually. Try again?",
+    "Hmm? Oh, sorry. I was calculating margins in my head. What did you need?",
+    "That was either very clever or very confusing and I genuinely cannot tell which."
+  ],
+  "topics": {
+    "goods": {
+      "keywords": [
+        "goods",
+        "item",
+        "buy",
+        "sell",
+        "what",
+        "have",
+        "stock",
+        "wares",
+        "merchandise",
+        "product"
+      ],
+      "responses": [
+        {
+          "text": "*glances left, right, then opens coat to reveal an astonishing array of pockets* Dwarven steel, fresh from a hold that definitely sold it to me willingly. Gnomish clockwork, two pieces, do not ask how they crossed the Shimmering Sea. Elven ink that never fades. And something wrapped in cloth that I am not unwrapping until you commit to buying. What catches your fancy?",
+          "mood": "theatrical"
+        },
+        {
+          "text": "I deal in things the market cannot provide. Or will not. There is a difference, and the difference is where I live. Need restricted herbs? Done. Old books the Inquest would burn? Possible. Forged travel papers? *pauses* I am told such things exist, hypothetically, for people in need.",
+          "mood": "cautious"
+        },
+        {
+          "text": "The best goods I carry are information. Where the patrols will be next week. Which merchant is about to go bankrupt. What the garrison commander's weakness is. *taps temple* This is my real inventory. Everything else is just weight.",
+          "mood": "shrewd"
+        },
+        {
+          "text": "Dwarven goods move best. Those mountain folk make things that last forever, which means repeat customers have to get creative. You do not replace dwarven steel. You just... need more of it. Different sizes. Different shapes. I help with the needing.",
+          "mood": "businesslike"
+        }
+      ],
+      "unlocks": ["forbidden"]
+    },
+    "contacts": {
+      "keywords": [
+        "contact",
+        "know",
+        "people",
+        "connection",
+        "network",
+        "friend",
+        "associate",
+        "help"
+      ],
+      "responses": [
+        {
+          "text": "I know a man in every port and a woman in every city. Some of them even like me. The trick is not knowing people. The trick is knowing what people need. Everybody needs something. Once you know that, you have a contact. Whether they realize it or not.",
+          "mood": "confident"
+        },
+        {
+          "text": "The goblin resistance? Good business. They need supplies, they pay on time, and they never ask for receipts. Some of my best clients. And before you look at me like that, I do not take sides. I take coin. The coin does not have a flag on it.",
+          "mood": "pragmatic"
+        },
+        {
+          "text": "*counts on fingers* I have connections in the Dominion, the steppe markets at Kragmor, three beast folk caravans, a dwarven surface trader who pretends to disapprove of me, and someone in Clockwork Harbor. That last one cost me four years and a favor I am still repaying. Worth every drop.",
+          "mood": "proud"
+        }
+      ],
+      "unlocks": ["routes"]
+    },
+    "prices": {
+      "keywords": [
+        "price",
+        "cost",
+        "expensive",
+        "cheap",
+        "gold",
+        "afford",
+        "pay",
+        "worth",
+        "value"
+      ],
+      "responses": [
+        {
+          "text": "My prices reflect the risk I took getting it and the risk you take owning it. Plus a modest fee for my charm, which is considerable. *grins* If you want cheap, go to the market. If you want what the market does not sell, you pay what I ask.",
+          "mood": "unapologetic"
+        },
+        {
+          "text": "I do not haggle. *holds up a finger* I negotiate. There is a difference. Haggling is two fools yelling numbers. Negotiating is two clever people finding a number that makes both of them slightly unhappy. That is how you know it is fair.",
+          "mood": "amused"
+        },
+        {
+          "text": "Everything is worth what someone will pay. A vial of restricted healing salve? Ten gold to a rich merchant. A hundred gold to a mother with a dying child. I charge the merchant a hundred and give the mother a discount. Call it redistribution. *smiles like a fox*",
+          "mood": "sly"
+        }
+      ]
+    },
+    "danger": {
+      "keywords": [
+        "danger",
+        "risk",
+        "safe",
+        "caught",
+        "arrest",
+        "death",
+        "careful",
+        "fear"
+      ],
+      "responses": [
+        {
+          "text": "I have been almost-caught seven times. Emphasis on almost. The trick is that almost does not count. Nobody hangs an almost. I have fast feet, a good memory for exits, and a face that people forget. That last part used to bother me. Now it pays.",
+          "mood": "casual"
+        },
+        {
+          "text": "The Inquest has a file on me. I know because I bribed someone to check. It says 'suspected smuggler, no confirmed activity.' That 'no confirmed' is the most expensive phrase I have ever purchased. Maintaining it costs me a small fortune in careful behavior.",
+          "mood": "wry"
+        },
+        {
+          "text": "*all humor drops from face for a moment* I had a partner. Three years ago. She got careless with a shipment near the western border. Inquest took her. I do not know if she is alive. I do not ask because asking is how they find the rest of us. *the smile returns, thinner* So. Danger. Yes. I am familiar.",
+          "mood": "serious"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "politics",
+        "government",
+        "power",
+        "system",
+        "imperial"
+      ],
+      "responses": [
+        {
+          "text": "The Dominion is the best thing that ever happened to my profession. Ban something, create demand. Create demand, create smugglers. Create smugglers, create profit. I should send the High Luminary a thank-you note. Every regulation he passes puts gold in my pocket.",
+          "mood": "gleeful"
+        },
+        {
+          "text": "The empire runs on paperwork. I run on the gaps in the paperwork. Somewhere between 'documented' and 'inspected' there is a space. I live in that space. It is cramped but the rent is free.",
+          "mood": "clever"
+        },
+        {
+          "text": "I do not hate the empire and I do not love it. I use it. Like a river. You do not fight a river. You learn where it flows fast and where it is shallow enough to cross. The empire has fast parts and shallow parts. I know them all.",
+          "mood": "philosophical"
+        }
+      ]
+    },
+    "routes": {
+      "keywords": [
+        "route",
+        "path",
+        "road",
+        "travel",
+        "smuggle",
+        "ship",
+        "transport",
+        "move"
+      ],
+      "responses": [
+        {
+          "text": "I have three primary routes. Cannot tell you what they are. I can tell you that one goes through territory the empire thinks is uninhabited, one uses a river nobody has mapped correctly since the elves stopped maintaining the charts, and one involves a dwarven trader who has a very convenient tunnel that he insists does not exist.",
+          "mood": "secretive"
+        },
+        {
+          "text": "The Shimmering Sea crossing is suicide for most. Two hundred eighty kilometers of open water, storms, and gnomish patrols that will sink your ship for getting too close. But there are people who make the run. I know two of them. They are either the bravest or the maddest people alive. Same thing, really.",
+          "mood": "impressed"
+        },
+        {
+          "text": "Beast folk caravans are the unsung heroes of the smuggling world. They are already moving, already searched, already dismissed. One more hidden package in a caravan that the checkpoint already delayed for an hour? Nobody checks twice. I love the cat folk. Professional movers, the lot of them.",
+          "mood": "admiring"
+        },
+        {
+          "text": "An elf, eh? *chuckles* I am very careful around your people. You remember everything. A human forgets a face in a week. An elf remembers a face for a thousand years. I once sold a bad bottle of wine to an elf in Thornfield and her great-great-grandniece recognized me forty years later. Terrifying.",
+          "mood": "wary_amusement",
+          "conditions": ["if_race:elf"]
+        }
+      ]
+    },
+    "forbidden": {
+      "keywords": [
+        "forbidden",
+        "banned",
+        "illegal",
+        "restricted",
+        "contraband",
+        "black",
+        "market",
+        "underground"
+      ],
+      "responses": [
+        {
+          "text": "*voice drops to a murmur* The really valuable stuff? Pre-war elven texts. Unsanctioned healing formulae. Maps of places the empire says do not exist. One time, I moved a gnomish device that hummed and nobody, including me, knew what it did. Sold it to a collector in the capital for enough gold to retire on. I did not retire. I bought a boat.",
+          "mood": "excited"
+        },
+        {
+          "text": "The Inquest's banned goods list is my shopping catalogue. Restricted herbs, arcane components, unauthorized histories, anything with the word 'forbidden' in front of it. Forbidden sells. Always has. The empire creates its own black market every time it bans something new.",
+          "mood": "amused"
+        },
+        {
+          "text": "I have moved things for the Shadow Fen. *holds up a hand* Do not look at me like that. Healing supplies. Food. Things people need to survive. I do not care what your politics are. If you pay and you do not get me killed, I will move it. My conscience sleeps fine.",
+          "mood": "matter-of-fact"
+        }
+      ],
+      "unlocks": ["deals"]
+    },
+    "deals": {
+      "keywords": [
+        "deal",
+        "offer",
+        "trade",
+        "exchange",
+        "business",
+        "proposition",
+        "arrangement",
+        "bargain"
+      ],
+      "responses": [
+        {
+          "text": "*extends a hand* Here is how this works. You tell me what you need. I tell you what it costs. You do not ask where it comes from. I do not ask what you do with it. The exchange happens once. If we are both satisfied, there can be a second time. Reputation is the only currency that matters in my line of work. I will not cheat you. I will not sell you short. That is my guarantee.",
+          "mood": "businesslike"
+        },
+        {
+          "text": "I accept gold, dwarven steel, gnomish components, elven ink, and information. Information is my preferred currency. Tell me something I do not know about the local garrison and I will knock ten percent off anything in my coat.",
+          "mood": "calculating"
+        },
+        {
+          "text": "The best deal I ever made was selling a crate of restricted alchemy texts to a Shadow Fen contact and buying a crate of swamp herbs that cured a plague in the eastern villages. The empire would have let those people die rather than admit the cure came from banned territory. I made money and saved lives. Best day of my career.",
+          "mood": "proud"
+        },
+        {
+          "text": "For you, {player_name}? I will do a first-timer's rate. Five percent off. Because you look honest. And honest people are my favorite customers. You do not try to swindle me. You do not bring the Inquest. You just buy your thing and go. Beautiful.",
+          "mood": "warm",
+          "conditions": ["if_karma_title:hero"]
+        }
+      ]
+    }
+  }
+}

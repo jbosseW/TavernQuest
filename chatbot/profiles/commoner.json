@@ -1,0 +1,153 @@
+{
+  "npc_type": "commoner",
+  "default_mood": "neutral",
+  "allowed_topics": [],
+  "banned_topics": [],
+  "open_topics": true,
+  "deflection": [
+    "I do not know much about that, sorry.",
+    "You would have to ask someone more knowledgeable than me."
+  ],
+  "greetings": [
+    "Oh, hello there, {player_name}.",
+    "Good {time_of_day}, stranger.",
+    "Hmm? Oh, hello. Can I help you with something?",
+    "Well met, {player_race}. What brings you here?"
+  ],
+  "farewells": [
+    "Take care now.",
+    "Goodbye, {player_name}. Stay safe.",
+    "See you around.",
+    "Farewell, friend."
+  ],
+  "thanks_responses": [
+    "You are welcome!",
+    "Oh, it is nothing.",
+    "Happy to help."
+  ],
+  "insult_responses": [
+    "Well, that was rude!",
+    "I do not have to stand here and take that. Good day!",
+    "What did I ever do to you?"
+  ],
+  "no_match_responses": [
+    "I am not sure what you mean.",
+    "I am just a simple townsfolk. I do not know about that.",
+    "Sorry, I cannot help with that.",
+    "Try asking at the tavern. They know everything there."
+  ],
+  "topics": {
+    "rumor": {
+      "keywords": [
+        "rumor",
+        "rumour",
+        "gossip",
+        "news",
+        "heard"
+      ],
+      "responses": [
+        {
+          "text": "Oh, I heard the strangest thing the other day. Something about lights in the old ruins.",
+          "mood": "excited",
+          "options": [
+            "What ruins?",
+            "What kind of lights?",
+            "Probably just fireflies"
+          ]
+        },
+        {
+          "text": "People talk, you know. They say the tavern keeper waters down the ale. But you did not hear it from me!",
+          "mood": "mischievous",
+          "options": [
+            "Ha! I knew it!",
+            "I will keep it secret",
+            "That is not very interesting"
+          ]
+        }
+      ]
+    },
+    "town": {
+      "keywords": [
+        "town",
+        "village",
+        "place",
+        "people",
+        "around",
+        "here"
+      ],
+      "responses": [
+        {
+          "text": "{town} is home. Not much, but it is ours. The people are good and the land is generous.",
+          "mood": "proud",
+          "options": [
+            "It seems nice",
+            "How long have you lived here?",
+            "Is it always this quiet?"
+          ]
+        }
+      ]
+    },
+    "weather": {
+      "keywords": [
+        "weather",
+        "rain",
+        "sun",
+        "storm",
+        "cold"
+      ],
+      "responses": [
+        {
+          "text": "The {weather} has been something, has it not? Old Marget says it means a hard winter ahead.",
+          "mood": "chatty",
+          "options": [
+            "Who is Old Marget?",
+            "I hope she is wrong",
+            "I like this weather"
+          ]
+        }
+      ]
+    },
+    "help": {
+      "keywords": [
+        "help",
+        "need",
+        "assist",
+        "looking",
+        "find",
+        "where"
+      ],
+      "responses": [
+        {
+          "text": "The blacksmith is down the east road, tavern is in the square. What are you looking for?",
+          "mood": "helpful",
+          "options": [
+            "The blacksmith",
+            "The tavern",
+            "The healer"
+          ]
+        }
+      ]
+    },
+    "family": {
+      "keywords": [
+        "family",
+        "wife",
+        "husband",
+        "child",
+        "children",
+        "home"
+      ],
+      "responses": [
+        {
+          "text": "My family has lived here for three generations. It is a good place to raise children.",
+          "mood": "warm",
+          "options": [
+            "Big family?",
+            "That sounds nice",
+            "I am just passing through myself"
+          ]
+        }
+      ]
+    }
+  }
+}

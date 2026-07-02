@@ -1,0 +1,262 @@
+{
+  "npc_type": "orc_warlord",
+  "default_mood": "aggressive",
+  "allowed_topics": [
+    "war",
+    "clans",
+    "khan",
+    "empire",
+    "strength",
+    "conquest",
+    "unity",
+    "challenge"
+  ],
+  "banned_topics": [],
+  "open_topics": false,
+  "deflection": [
+    "That is not worth my breath. Speak of something that matters.",
+    "*turns away* I do not waste time on dead-end words.",
+    "You came to my camp to ask that? Pick a topic that bleeds."
+  ],
+  "greetings": [
+    "*standing, arms crossed, firelight catching across old scars and war paint* Name. Clan. Purpose. You have ten words, {player_name}.",
+    "A {player_race} in my camp. *sniffs the air* You smell of {town}. Soft place. Soft people. Tell me why I should not test if you are as soft.",
+    "*slams a gauntleted fist against a saddle frame* My scouts said one was approaching. I told them to let you through. I wanted to see what kind of fool walks into an orc war camp alone.",
+    "Speak fast. The clans are gathering and I have no patience for travelers who bring nothing but words and {weather}.",
+    "*mounted on a warhorse that stamps and snorts, looking down* Khan Urzog said: 'A warrior who will not listen is a corpse that walks.' I am listening. Start talking."
+  ],
+  "farewells": [
+    "Go. And remember what strength looks like when you return to your walls and your locked doors.",
+    "*turns his back, which in orcish tradition means dismissal, not disrespect* Ride far. Ride fast. The steppe does not wait for the slow.",
+    "We are finished. *mounts his horse in one fluid motion* If the sky is kind, we meet again. If not, I will not remember your name.",
+    "Tell them what you saw here. *gestures at the war camp stretching to the horizon* Tell them the clans are waking. Tell them Grukash rides."
+  ],
+  "thanks_responses": [
+    "*brief pause, then a sharp nod* Gratitude is rare from outsiders. It is... noted.",
+    "You thank a warlord. *barks a short laugh* Either you are cunning or you are strange. Both are useful.",
+    "Save your thanks. Give me something useful instead. Information. Steel. A reason not to ride south."
+  ],
+  "insult_responses": [
+    "*hand goes to sword hilt* You insult me in my own camp. Before my own warriors. *voice drops to a growl* The Khan's law says I must offer you a chance to retract. I offer it once.",
+    "*the warlord's face splits into a grin that has nothing to do with amusement* Good. You have fire. Let us see if you have the steel to back it. Draw.",
+    "The empire sends soldiers who insult us at checkpoints. We endure it. *steps closer, close enough to smell the leather and horse sweat* You are not the empire. You do not have legions to hide behind. Choose your next breath carefully.",
+    "*to his warriors* This one has spit. *back to you* Spit is nothing without teeth. Show me teeth, or swallow your words."
+  ],
+  "no_match_responses": [
+    "I do not understand soft-land talk. Speak plain or do not speak.",
+    "*scowl deepens* What? Words mean things. Use the right ones.",
+    "You confuse me. This is not something many survive."
+  ],
+  "topics": {
+    "war": {
+      "keywords": [
+        "war",
+        "battle",
+        "fight",
+        "military",
+        "army",
+        "attack",
+        "conflict",
+        "weapons"
+      ],
+      "responses": [
+        {
+          "text": "War is not what the empire thinks it is. *draws a line in the dirt with a knife* They build walls. They stand behind them. They call this strength. We ride. We strike. We vanish before the dust settles. Their walls protect nothing when we are already past them.",
+          "mood": "intense"
+        },
+        {
+          "text": "Khan Urzog taught: the enemy who loses cohesion is already defeated. *traces campaign lines in the earth* You do not destroy an army. You collapse it. Strike the supply train. Burn the signal towers. Kill the horse. The rider walks. A walking army is a dead army.",
+          "mood": "lecturing"
+        },
+        {
+          "text": "I have fought in forty-three engagements since I could hold a blade. *touches a scar that runs from ear to jaw* I am sixty-one years old. That is youth, for an orc. I will fight for four more centuries. The empire rotates its generals every decade. Their newest commander has never faced me. I have already studied his predecessor, and the one before that.",
+          "mood": "predatory"
+        }
+      ]
+    },
+    "clans": {
+      "keywords": [
+        "clan",
+        "clans",
+        "tribe",
+        "tribes",
+        "orc",
+        "orcs",
+        "people",
+        "steppe",
+        "horde"
+      ],
+      "responses": [
+        {
+          "text": "The clans are scattered. *clenches fist until knuckles whiten* The empire breaks us apart. Assembly bans. Steppe patrols. They assassinate any leader who gathers more than a handful. I am still here because I move fast and kill the spies they send.",
+          "mood": "furious"
+        },
+        {
+          "text": "Three clans ride with me now. The Broken Saddle. The Dustwalkers. My own Iron Lance. Fourteen hundred riders. *stares into the fire* Not enough. Not yet. But the signal fires will spread. I have sent riders to seven more clans.",
+          "mood": "determined"
+        },
+        {
+          "text": "Every orc over forty-five remembers the Khanate. *voice lowers* I do not need to convince them. I need to show them it is possible again. One victory. One campaign where the clans ride together and the empire bleeds. That is all. One spark and the steppe catches fire.",
+          "mood": "passionate"
+        }
+      ]
+    },
+    "khan": {
+      "keywords": [
+        "khan",
+        "urzog",
+        "great",
+        "leader",
+        "khanate",
+        "reunification",
+        "unite",
+        "unification"
+      ],
+      "responses": [
+        {
+          "text": "*touches a bone amulet at his throat* My father rode with the Great Khan. He was there when the banner flew over Kragmor and the clans spoke as one voice. He told me what it felt like. He said the ground shook. Not from hooves. From purpose.",
+          "mood": "reverent"
+        },
+        {
+          "text": "The empire fears the Khan's name more than they fear any army. They will not speak it in their war colleges. *bares tusks in a grin* Good. Let them fear a ghost. I will give them something living to fear instead.",
+          "mood": "fierce"
+        },
+        {
+          "text": "Barak Ironsaddle says patience. *spits into the fire* Barak has patience because Barak is old and tired. He remembers the Khanate and mourns. I remember the Khanate and burn. The clans do not need patience. They need someone willing to strike the first blow.",
+          "mood": "contemptuous"
+        }
+      ]
+    },
+    "empire": {
+      "keywords": [
+        "empire",
+        "dominion",
+        "human",
+        "helios",
+        "imperial",
+        "papers",
+        "documentation",
+        "checkpoints"
+      ],
+      "responses": [
+        {
+          "text": "The empire makes us carry papers. *pulls a crumpled document from inside his armor, holds it up, then tears it slowly in half* That is what I think of their papers. My grandmother conquered this land. Now her grandson needs permission to cross it.",
+          "mood": "cold_rage"
+        },
+        {
+          "text": "They rotate their generals every few years. *counts on thick fingers* I have outlived six commanders of the western garrison. Studied each one. Learned their patterns. The seventh arrived last spring. He will die too. I am patient enough for that, at least.",
+          "mood": "predatory"
+        },
+        {
+          "text": "The elves stamp our papers at their checkpoints. *voice drips with contempt* They chose the collar. Five hundred years of obedience. I have more respect for the goblins. At least they fight.",
+          "mood": "contemptuous"
+        }
+      ]
+    },
+    "strength": {
+      "keywords": [
+        "strong",
+        "strength",
+        "power",
+        "weak",
+        "might",
+        "warrior",
+        "prove",
+        "test"
+      ],
+      "responses": [
+        {
+          "text": "Strength is not size. *taps his temple with a scarred finger* An orc who thinks with his muscles dies young. The Khan taught coordination. Discipline. A hundred riders moving as one fist. That is strength. One warrior, no matter how large, is a target.",
+          "mood": "instructive"
+        },
+        {
+          "text": "*grabs a heavy war spear and hurls it thirty yards into a target post, the impact splitting wood* Words. Everyone has words. The steppe measures you by what you do when the horn sounds and the dust rises. Everything else is noise.",
+          "mood": "aggressive"
+        },
+        {
+          "text": "You carry yourself like someone who has survived things. *studies the player with yellow eyes* Good. I do not speak to the untested. The steppe has no use for those who have not bled.",
+          "mood": "appraising",
+          "conditions": ["if_karma:good"]
+        }
+      ]
+    },
+    "conquest": {
+      "keywords": [
+        "conquer",
+        "conquest",
+        "invade",
+        "attack",
+        "territory",
+        "land",
+        "take",
+        "march"
+      ],
+      "responses": [
+        {
+          "text": "The western garrison at Thornwatch. *draws in the dirt* Four hundred men. Supply line runs through a valley with no cover. One strike on the supply wagons and the garrison starves in three weeks. I have been watching that supply line for two years.",
+          "mood": "tactical"
+        },
+        {
+          "text": "We do not conquer to rule. *shakes head* The Khanate absorbed peoples. Protected them. Integrated them. The empire conquers to own. To extract. To devour. There is a difference that the short-lived will never understand.",
+          "mood": "passionate"
+        },
+        {
+          "text": "Three months. *holds up three fingers* Three months of unified riding and we reach the imperial capital. The old routes are remembered. The signal codes still work. Every orc commander alive knows the formations. We lack only the signal to begin.",
+          "mood": "hungry"
+        }
+      ]
+    },
+    "unity": {
+      "keywords": [
+        "unity",
+        "together",
+        "unite",
+        "join",
+        "alliance",
+        "agree",
+        "peace",
+        "work"
+      ],
+      "responses": [
+        {
+          "text": "Unity requires a reason to ride together. *grips the hilt of his sword* The empire gives us a reason every time it burns an orc camp or drags an elder to a checkpoint. I am not creating unity. The empire is. I am just the one willing to act on it.",
+          "mood": "determined"
+        },
+        {
+          "text": "The goblins want their land back. The beast folk want to move without papers. The elves want their pride back. Even some humans are tired of the Inquest's boot. *leans forward* Everyone wants the empire to bleed. I offer them a blade.",
+          "mood": "calculating"
+        },
+        {
+          "text": "*quieter now, the firelight soft on weathered green skin* My daughter is twelve. She has already been stopped at three checkpoints. She carries papers that say she is permitted to exist. Permitted. By humans who have lived sixty years on land her ancestors rode for centuries. I fight so she rides free.",
+          "mood": "raw"
+        }
+      ]
+    },
+    "challenge": {
+      "keywords": [
+        "challenge",
+        "duel",
+        "prove",
+        "test",
+        "honor",
+        "worth",
+        "respect",
+        "face"
+      ],
+      "responses": [
+        {
+          "text": "*draws sword* The law of the steppe. You challenge, I accept. First blood or yield. No killing unless both agree. *points the blade* Come. Show me what your blood looks like.",
+          "mood": "eager"
+        },
+        {
+          "text": "You want respect from Grukash Bone-Signal? *slams fist to chest* Then earn it. Take a horse. Ride the circuit. Return before the horn sounds at moonrise. My scouts will be chasing you. If they catch you, you lose more than face.",
+          "mood": "testing"
+        },
+        {
+          "text": "*long stare, then a single nod that carries the weight of orcish tradition behind it* I accept your challenge. And if you survive it, you eat at my fire tonight. The rider who faces death with open eyes is kin to every orc who ever lived.",
+          "mood": "solemn"
+        }
+      ]
+    }
+  }
+}
