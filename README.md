@@ -37,7 +37,7 @@ See [`docs/GAP_ANALYSIS.md`](docs/GAP_ANALYSIS.md). Priority: audio SFX pass + c
 
 ## AI development note
 
-Built primarily through AI-assisted "vibe coding" with **Anthropic Claude** (Claude Code) and **OpenAI Codex** for review. Human direction owned the design, the extensive worldbuilding/lore corpus, and priorities; the AI agents did most of the implementation across the 147 modules. The NPC "chatbot" is a hand-rolled **keyword/synonym matcher, not an LLM** — it runs fully offline with no model or API. Given the size and the lack of tests, expect rough edges; the boot path and syntax are verified, deeper systems are lightly playtested.
+Developed with AI assistance — **Anthropic Claude** (Claude Code) for implementation and **OpenAI Codex** for review. Human direction owned the design, the extensive worldbuilding/lore corpus, and priorities. The NPC "chatbot" is a hand-rolled **keyword/synonym matcher, not an LLM** — it runs fully offline with no model or API. Given the size and the lack of tests, expect rough edges; the boot path and syntax are verified, deeper systems are lightly playtested.
 
 ## License
 
