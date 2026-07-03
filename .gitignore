@@ -20,3 +20,7 @@ savegames/
 
 # Claude Code
 .claude/
+*.env
+.env
+__pycache__/
+*.pyc
