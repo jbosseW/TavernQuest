@@ -39,3 +39,8 @@ __pycache__/
 *.webp
 *.bmp
 *.tga
+*.psd
+*.aseprite
+*.aiff
+*.xm
+*.mod
